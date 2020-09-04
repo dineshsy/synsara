@@ -1,0 +1,27 @@
+{
+    "name": "synsara-backend",
+    "version": "1.0.0",
+    "description": "backend for synsara",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo no tests bro",
+        "dev": "nodemon server.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "mongoose": "^5.10.2"
+    },
+    "keywords": [
+        "symposium",
+        "node",
+        "mongodb",
+        "mongoose"
+    ],
+    "author": "synsara",
+    "license": "ISC",
+    "devDependencies": {
+        "nodemon": "^2.0.4"
+    }
+}

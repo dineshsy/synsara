@@ -1,0 +1,22 @@
+{
+    "name": "synsara",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "frontend-dependencies": "cd frontend && npm install",
+        "backend-dependencies": "cd backend && npm install",
+        "install-dependencies": "concurrently \"npm run frontend-dependencies\" \"npm run backend-dependencies\"",
+        "frontend": "cd frontend && npm run dev",
+        "backend": "cd backend && npm run dev",
+        "start": "concurrently \"npm run frontend\" \"npm run backend\""
+    },
+    "author": "Dinesh",
+    "license": "Private",
+    "dependencies": {
+        "concurrently": "^5.1.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.2"
+    }
+}
