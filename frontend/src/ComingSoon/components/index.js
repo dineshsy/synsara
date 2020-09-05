@@ -5,7 +5,7 @@ import { Instagram } from '../../Assets/svg/Instagram'
 import { Linkedin } from '../../Assets/svg/Linkedin'
 import { Timer } from './Timer/Timer'
 import { Facebook } from '../../Assets/svg/Facebook'
-import { sizeMaxW, sizeMaxH } from '../../utils/MediaQueires'
+import { sizeMaxH } from '../../utils/MediaQueires'
 
 export const fadeInAnim = (offset) => keyframes`
     from{
