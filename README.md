@@ -20,7 +20,7 @@ Its an a web application.
     -   with this content
     ```
     PORT=3000
-    MONGO_DB_URI=mongodb://127.0.0.1:27017/food-search
+    MONGO_DB_URI=mongodb://127.0.0.1:27017/synsara
     ```
 
 ### Project Structure
