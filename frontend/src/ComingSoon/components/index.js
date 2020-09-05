@@ -84,20 +84,30 @@ const SocialIconsWrapper = styled.div`
     animation: ${fadeInAnim('100%')} 0.9s ease-in;
 `
 
+const IconWrapper = styled.div`
+    &:hover svg path {
+        fill: gray;
+    }
+`
+
 export const index = () => {
     return (
         <ComingSoonWrapper>
             <Synsara>SYNSARA 2020</Synsara>
             <ComingSoon>COMING SOON</ComingSoon>
-            <Timer
-                targetDateString="09/05/2020 17:13:00" /* MM/DD/YYYY H:M:S */
-            />
+            <Timer targetDateString="09/10/2020" /* MM/DD/YYYY H:M:S */ />
 
             <FollowUs>Follow us for more updates</FollowUs>
             <SocialIconsWrapper>
-                <Facebook fill="#ffe249" width="5rem" height="5rem" />
-                <Instagram fill="#ffe249" width="5rem" height="5rem" />
-                <Linkedin fill="#ffe249" width="5rem" height="5rem" />
+                <IconWrapper>
+                    <Facebook fill="#ffe249" width="5rem" height="5rem" />
+                </IconWrapper>
+                <IconWrapper>
+                    <Instagram fill="#ffe249" width="5rem" height="5rem" />
+                </IconWrapper>
+                <IconWrapper>
+                    <Linkedin fill="#ffe249" width="5rem" height="5rem" />
+                </IconWrapper>
             </SocialIconsWrapper>
         </ComingSoonWrapper>
     )
