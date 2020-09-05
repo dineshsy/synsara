@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ComingSoonBg from '../../Assets/Images/coming-soon-bg.png'
 import { Instagram } from '../../Assets/svg/Instagram'
 import { Linkedin } from '../../Assets/svg/Linkedin'
+import { Timer } from './Timer/Timer'
 const ComingSoonWrapper = styled.section`
     width: 100%;
     height: 100%;
@@ -62,8 +63,9 @@ const SocialIconsWrapper = styled.div`
 export const index = () => {
     return (
         <ComingSoonWrapper>
-            <Synsara>சின்சாரா 2020</Synsara>
+            <Synsara>SYNSARA 2020</Synsara>
             <ComingSoon>COMING SOON</ComingSoon>
+            <Timer />
             <FollowUs>Follow us for more updates</FollowUs>
             <SocialIconsWrapper>
                 <Instagram fill="#ffe249" width="5rem" height="5rem" />
