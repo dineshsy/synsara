@@ -5,6 +5,7 @@ import { Instagram } from '../../Assets/svg/Instagram'
 import { Linkedin } from '../../Assets/svg/Linkedin'
 import { Timer } from './Timer/Timer'
 import { Facebook } from '../../Assets/svg/Facebook'
+import { sizeMaxW, sizeMaxH } from '../../utils/MediaQueires'
 
 export const fadeInAnim = (offset) => keyframes`
     from{
@@ -50,6 +51,11 @@ const Synsara = styled.h2`
     color: #e5e5e5;
     margin-bottom: 1rem;
     animation: ${fadeInAnim('-100%')} 0.9s ease-in;
+
+    @media ${sizeMaxH.tablet} {
+        line-height: 3rem;
+        font-size: 4rem;
+    }
 `
 const FollowUs = styled.h3`
     font-size: 4.6875rem;
@@ -58,6 +64,11 @@ const FollowUs = styled.h3`
     text-shadow: 0px 8px 6px rgba(0, 0, 0, 0.3);
     margin-bottom: 1.5rem;
     animation: ${fadeInAnim('100%')} 0.8s ease-in;
+
+    @media ${sizeMaxH.tablet} {
+        line-height: 3rem;
+        font-size: 4rem;
+    }
 `
 
 const ComingSoon = styled.h1`
@@ -69,6 +80,11 @@ const ComingSoon = styled.h1`
     color: #ffe249;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     @media (max-width: 500px) {
+        font-size: 5rem;
+        line-height: 5.5rem;
+    }
+    @media (max-height: 500px) {
+        line-height: 5.5rem;
         font-size: 5rem;
     }
     margin-bottom: 1.5rem;
@@ -93,7 +109,9 @@ const IconWrapper = styled.div`
 export const index = () => {
     return (
         <ComingSoonWrapper>
-            <Synsara>SYNSARA 20²⁰</Synsara>
+            <Synsara>
+                SYNSARA 20<sup>20</sup>
+            </Synsara>
             <ComingSoon>COMING SOON</ComingSoon>
             <Timer targetDateString="09/10/2020" /* MM/DD/YYYY H:M:S */ />
 

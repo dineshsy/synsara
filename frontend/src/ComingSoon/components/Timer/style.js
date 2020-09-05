@@ -9,6 +9,9 @@ export const TimerWrapper = styled.div`
     @media (max-width: 760px) {
         gap: 1.5rem;
     }
+    @media (max-height: 760px) {
+        gap: 1.5rem;
+    }
 `
 
 export const CounterWrapper = styled.div`
@@ -29,6 +32,13 @@ export const CounterWrapper = styled.div`
         background: none;
         border: none;
     }
+    @media (max-height: 760px) {
+        width: fit-content;
+        height: fit-content;
+        border-radius: none;
+        background: none;
+        border: none;
+    }
 `
 
 export const Text = styled.h1`
@@ -36,6 +46,9 @@ export const Text = styled.h1`
     color: ${({ color }) => color};
 
     @media (max-width: 450px) {
+        font-size: ${({ fontSize }) => `${fontSize - 2}em`};
+    }
+    @media (max-height: 450px) {
         font-size: ${({ fontSize }) => `${fontSize - 2}em`};
     }
 `
