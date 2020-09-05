@@ -93,7 +93,7 @@ const IconWrapper = styled.div`
 export const index = () => {
     return (
         <ComingSoonWrapper>
-            <Synsara>SYNSARA 2020</Synsara>
+            <Synsara>SYNSARA 20²⁰</Synsara>
             <ComingSoon>COMING SOON</ComingSoon>
             <Timer targetDateString="09/10/2020" /* MM/DD/YYYY H:M:S */ />
 
