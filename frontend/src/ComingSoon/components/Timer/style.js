@@ -4,6 +4,7 @@ export const TimerWrapper = styled.div`
     display: grid;
     gap: 3.5rem;
     grid-auto-flow: column;
+    margin-bottom: 0.5rem;
 `
 
 export const CounterWrapper = styled.div`
@@ -17,7 +18,7 @@ export const CounterWrapper = styled.div`
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid #e5e5e5;
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
         width: fit-content;
         height: fit-content;
         border-radius: none;

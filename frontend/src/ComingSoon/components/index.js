@@ -29,30 +29,34 @@ const ComingSoonWrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column;
+    flex-direction: column;
 `
 const Synsara = styled.h2`
     font-size: 6.5rem;
     text-align: center;
     color: #e5e5e5;
+    margin-bottom: 0.5rem;
 `
 const FollowUs = styled.h3`
     font-size: 4.6875rem;
     text-align: center;
     color: #e5e5e5;
     text-shadow: 0px 8px 6px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0.5rem;
 `
 
 const ComingSoon = styled.h1`
     font-family: 'Bungee Shade', cursive;
+    line-height: 10rem;
     font-size: 9.375rem;
     width: 100%;
     text-align: center;
     color: #ffe249;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     @media (max-width: 500px) {
         font-size: 5rem;
     }
+    margin-bottom: 1rem;
 `
 
 const SocialIconsWrapper = styled.div`
