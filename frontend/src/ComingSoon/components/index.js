@@ -52,7 +52,7 @@ const Synsara = styled.h2`
     margin-bottom: 1rem;
     animation: ${fadeInAnim('-100%')} 0.9s ease-in;
 
-    @media ${sizeMaxH.tablet} {
+    @media ${sizeMaxH.mobileL} {
         line-height: 3rem;
         font-size: 4rem;
     }
@@ -66,8 +66,8 @@ const FollowUs = styled.h3`
     animation: ${fadeInAnim('100%')} 0.8s ease-in;
 
     @media ${sizeMaxH.tablet} {
-        line-height: 3rem;
-        font-size: 4rem;
+        line-height: 4rem;
+        font-size: 3.65rem;
     }
 `
 
@@ -80,11 +80,11 @@ const ComingSoon = styled.h1`
     color: #ffe249;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     @media (max-width: 500px) {
-        font-size: 5rem;
+        font-size: 6rem;
         line-height: 5.5rem;
     }
     @media (max-height: 500px) {
-        line-height: 5.5rem;
+        line-height: 4rem;
         font-size: 5rem;
     }
     margin-bottom: 1.5rem;
@@ -103,6 +103,13 @@ const SocialIconsWrapper = styled.div`
 const IconWrapper = styled.div`
     &:hover svg path {
         fill: gray;
+    }
+
+    @media ${sizeMaxH.mobileL} {
+        svg {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
     }
 `
 
