@@ -50,6 +50,9 @@ const ComingSoon = styled.h1`
     text-align: center;
     color: #ffe249;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @media (max-width: 500px) {
+        font-size: 5rem;
+    }
 `
 
 const SocialIconsWrapper = styled.div`
