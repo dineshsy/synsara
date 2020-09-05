@@ -4,7 +4,11 @@ export const TimerWrapper = styled.div`
     display: grid;
     gap: 3.5rem;
     grid-auto-flow: column;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 760px) {
+        gap: 1.5rem;
+    }
 `
 
 export const CounterWrapper = styled.div`
@@ -18,7 +22,7 @@ export const CounterWrapper = styled.div`
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid #e5e5e5;
 
-    @media (max-width: 700px) {
+    @media (max-width: 760px) {
         width: fit-content;
         height: fit-content;
         border-radius: none;
@@ -28,6 +32,10 @@ export const CounterWrapper = styled.div`
 `
 
 export const Text = styled.h1`
-    font-size: ${({ fontSize }) => fontSize};
+    font-size: ${({ fontSize }) => `${fontSize}em`};
     color: ${({ color }) => color};
+
+    @media (max-width: 450px) {
+        font-size: ${({ fontSize }) => `${fontSize - 2}em`};
+    }
 `
