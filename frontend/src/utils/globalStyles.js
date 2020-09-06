@@ -47,3 +47,10 @@ export const ResponsiveBoilerPlate = createGlobalStyle`
         color: white;
     }
 `
+
+export const theme = {
+    primary: '#3B93F7',
+    secondary: '#3563C1',
+    textdark: '#333333',
+    textlight: '#FFFFFF',
+}
