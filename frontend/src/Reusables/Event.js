@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { withTheme, keyframes } from 'styled-components'
 import { Button } from './Button'
+import useResizeObserver from '../utils/useResizeObserver'
 
 export const fadeInAnim = keyframes`
     from{
@@ -74,7 +75,7 @@ const EventRegistration = styled.div`
     @media (max-width: 740px) {
         flex-direction: row;
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-end;
     }
 `
 
@@ -85,7 +86,8 @@ const EventImage = styled.img`
 `
 
 const EventHolder = ({ title, description, rules, img }) => {
-    return (
+    const [width] = useResizeObserver()
+    return width >= 740 ? (
         <EventWrapper>
             <EventDetails>
                 <div>
@@ -103,6 +105,35 @@ const EventHolder = ({ title, description, rules, img }) => {
             </EventDetails>
             <EventRegistration>
                 <EventImage src={img} />
+                <Button>Register</Button>
+            </EventRegistration>
+        </EventWrapper>
+    ) : (
+        <EventWrapper>
+            <EventDetails>
+                <div>
+                    <EventTitle>{title}</EventTitle>
+                    <div
+                        style={{
+                            display: 'grid',
+                            gridAutoFlow: 'column',
+                            gap: '1rem',
+                        }}
+                    >
+                        <EventDescription>{description}</EventDescription>
+                        <EventImage src={img} />
+                    </div>
+                </div>
+                <div>
+                    <EventTitle>Rules</EventTitle>
+                    <EventRules>
+                        {rules.map((rule, idx) => (
+                            <li key={idx}>{rule}</li>
+                        ))}
+                    </EventRules>
+                </div>
+            </EventDetails>
+            <EventRegistration>
                 <Button>Register</Button>
             </EventRegistration>
         </EventWrapper>
