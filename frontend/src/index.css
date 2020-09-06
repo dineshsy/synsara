@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *,
 *::after,
 *::before {
@@ -13,7 +14,7 @@ html {
 }
 
 body {
-    font-family: 'Bubblegum Sans', cursive;
+    font-family: 'Poppins', cursive;
     box-sizing: border-box;
 }
 
