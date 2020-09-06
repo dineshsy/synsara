@@ -30,7 +30,7 @@ body {
 
 #fp-nav {
     top: unset !important;
-    bottom: 10% !important;
+    bottom: 5% !important;
     left: 5% !important;
 }
 
@@ -63,4 +63,11 @@ body {
     transform: rotate(45deg);
     border-top: 2px solid #000;
     border-right: 2px solid #000;
+}
+
+@media (max-width: 768px) {
+    .fp-controlArrow.fp-prev,
+    .fp-controlArrow.fp-next {
+        display: none;
+    }
 }

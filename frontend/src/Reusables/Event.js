@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { withTheme, keyframes } from 'styled-components'
+import { Button } from './Button'
 
 export const fadeInAnim = keyframes`
     from{
@@ -19,7 +20,7 @@ const EventWrapper = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-
+    justify-content: center;
     @media (max-width: 740px) {
         flex-direction: column;
     }
@@ -27,91 +28,82 @@ const EventWrapper = styled.div`
 
 const EventTitle = styled.h2`
     color: ${({ theme }) => theme.primary};
-    font-size: 40px;
+    font-size: 4rem;
     margin-bottom: 1.3rem;
 
     @media (max-width: 740px) {
-        font-size: 30px;
+        font-size: 3rem;
     }
 `
 const EventDetails = styled.div`
     width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    height: fit-content;
+    display: grid;
+    gap: 1.5rem;
     @media (max-width: 740px) {
         width: 100%;
     }
 `
 const EventDescription = styled.p`
-    font-size: 20px;
+    font-size: 2rem;
     color: ${({ theme }) => theme.textdark};
     margin-bottom: 1.3rem;
 `
 const EventRules = styled.ol`
     line-height: 46px;
-    font-size: 20px;
+    font-size: 2rem;
     margin-left: 1em;
     color: ${({ theme }) => theme.textdark};
+
+    li {
+        line-height: 2.4rem;
+    }
+    li:not(:last-child) {
+        margin-bottom: 2rem;
+    }
 `
 
 const EventRegistration = styled.div`
     padding: 2rem;
-    width: 50%;
+    width: fit-content;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     @media (max-width: 740px) {
+        flex-direction: row;
         width: 100%;
+        justify-content: space-between;
     }
 `
 
 const EventImage = styled.img`
-    width: 250px;
-    height: 250px;
+    width: 15rem;
+    height: 15rem;
     animation: ${fadeInAnim} 0.4s ease-in;
-`
-
-const EventRegisterButton = styled.button`
-    width: 10rem;
-    height: 3rem;
-    position: relative;
-    background-color: #3563c1;
-    color: ${({ theme }) => theme.textlight};
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-    margin-top: 10rem;
-    cursor: pointer;
-    outline: none;
-    filter: drop-shadow(6px 6px 4px #000);
-    transform: translate(-2%, -2%);
-    -webkit-tap-highlight-color: transparent;
-
-    &:active {
-        filter: drop-shadow(4px 4px 2px #000);
-        transform: translate(-1%, -1%);
-        transition: all 0.2s;
-    }
 `
 
 const EventHolder = ({ title, description, rules, img }) => {
     return (
         <EventWrapper>
             <EventDetails>
-                <EventTitle>{title}</EventTitle>
-                <EventDescription>{description}</EventDescription>
-                <EventTitle>Rules</EventTitle>
-                <EventRules>
-                    {rules.map((rule, idx) => (
-                        <li key={idx}>{rule}</li>
-                    ))}
-                </EventRules>
+                <div>
+                    <EventTitle>{title}</EventTitle>
+                    <EventDescription>{description}</EventDescription>
+                </div>
+                <div>
+                    <EventTitle>Rules</EventTitle>
+                    <EventRules>
+                        {rules.map((rule, idx) => (
+                            <li key={idx}>{rule}</li>
+                        ))}
+                    </EventRules>
+                </div>
             </EventDetails>
             <EventRegistration>
                 <EventImage src={img} />
-                <EventRegisterButton>Register</EventRegisterButton>
+                <Button>Register</Button>
             </EventRegistration>
         </EventWrapper>
     )
