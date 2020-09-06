@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 *,
 *::after,
 *::before {
@@ -13,11 +12,55 @@ html {
 }
 
 body {
-    font-family: 'Bubblegum Sans', cursive;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
 ::selection {
     background-color: #2aa3f6;
     color: white;
+}
+
+
+/* Overrinding Navbar Styles of fullPage.js*/
+
+.fp-tooltip {
+    color: #333333 !important;
+}
+
+#fp-nav {
+    top: unset !important;
+    bottom: 10% !important;
+    left: 5% !important;
+}
+
+
+/* Overriding Control Arrow of fullPage.js */
+
+.fp-controlArrow.fp-prev {
+    left: 42px !important;
+    display: block;
+    width: 5rem !important;
+    height: 5rem;
+    border-width: unset !important;
+    background-color: transparent;
+    border-color: unset !important;
+    border: none;
+    transform: rotate(45deg);
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
+}
+
+.fp-controlArrow.fp-next {
+    right: 42px !important;
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    border-width: unset !important;
+    background-color: transparent;
+    border-color: unset !important;
+    border: none;
+    transform: rotate(45deg);
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
 }
