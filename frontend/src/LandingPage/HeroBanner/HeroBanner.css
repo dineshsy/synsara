@@ -1,0 +1,66 @@
+.hero {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.hero__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+}
+
+.hero__logo {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.hero__img {
+    position: absolute;
+    top: 10rem;
+    right: 5rem;
+    height: 50rem;
+    width: 50rem;
+}
+
+.hero__text {
+    position: absolute;
+    top: 30%;
+    width: 50%;
+}
+
+.hero__text #button {
+    font-size: 1.4rem;
+}
+
+.hero__primary {
+    color: #3b93f7;
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+.hero__secondary {
+    width: 575px;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 5rem;
+    color: #3563c1;
+}
+
+.btn__hero {
+    width: 187px;
+    height: 63px;
+    background: #3563c1;
+    border-radius: 10px;
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    .hero__secondary {
+        width: 300px;
+        font-size: 2.3rem;
+        line-height: 3.2rem;
+    }
+}
