@@ -12,10 +12,10 @@ const EventWrapper = styled.div`
     margin: auto;
 
     @media ${sizeMaxW.laptopL} {
-        padding: 2rem;
+        padding: 1rem;
     }
     @media ${sizeMaxH.laptopL} {
-        padding: 2rem;
+        padding: 1rem;
     }
 `
 
