@@ -8,7 +8,6 @@ const SectionWrapper = styled.section`
     min-height: 100vh;
     padding: 5rem 2rem;
     margin: auto;
-    position: relative;
 `
 
 export const Section = (props) => {
