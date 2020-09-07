@@ -16,7 +16,11 @@
     top: 4rem;
     left: 4rem;
 }
-
+.hero__bg img {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+}
 .hero__img {
     position: absolute;
     top: 10rem;
