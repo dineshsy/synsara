@@ -42,7 +42,7 @@
 }
 
 .hero__secondary {
-    width: 575px;
+    width: 475px;
     font-weight: 600;
     font-size: 3rem;
     line-height: 5rem;
@@ -61,5 +61,6 @@
     .hero__secondary {
         font-size: 2.3rem;
         line-height: 3.2rem;
+        width: 200px;
     }
 }
