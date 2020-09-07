@@ -3,6 +3,7 @@ import { HeroBanner } from './HeroBanner/HeroBanner'
 import ReactFullpage from '@fullpage/react-fullpage'
 import { NonTechEvents } from './NonTechEvents/NonTechEvents'
 import { TechEvents } from './TechEvents/TechEvents'
+import AboutUs from './AboutUs/AboutUs'
 
 export const index = () => {
     return (
@@ -15,6 +16,7 @@ export const index = () => {
                 'Home',
                 'Non-Technical Events',
                 'Technical Events',
+                'About Us',
             ]}
             showActiveTooltip={true}
             render={({ state, fullpageApi }) => {
@@ -28,6 +30,9 @@ export const index = () => {
                         </div>
                         <div className="section">
                             <TechEvents />
+                        </div>
+                        <div className="section">
+                            <AboutUs />
                         </div>
                     </ReactFullpage.Wrapper>
                 )
