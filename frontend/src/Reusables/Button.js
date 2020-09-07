@@ -27,6 +27,11 @@ const ButtonWrapper = styled.button`
         transform: translate(-1%, -1%);
         transition: all 0.2s;
     }
+
+    @media (max-width: 768px) {
+        width: 10.6875rem;
+        height: 3.5375rem;
+    }
 `
 
 export const Button = ({ children, onClick }) => {

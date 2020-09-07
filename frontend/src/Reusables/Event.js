@@ -20,10 +20,15 @@ const EventWrapper = styled.div`
     padding: 2rem;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     @media (max-width: 740px) {
         flex-direction: column;
+        align-items: unset;
+    }
+
+    @media (max-height: 425px) {
+        align-items: unset;
     }
 `
 
@@ -33,7 +38,18 @@ const EventTitle = styled.h2`
     margin-bottom: 1.3rem;
 
     @media (max-width: 740px) {
-        font-size: 3rem;
+        font-size: 2.7rem;
+        margin-bottom: 0.7rem;
+    }
+
+    @media (max-width: 330px) {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-height: 425px) {
+        font-size: 2.7rem;
+        margin-bottom: 0.7rem;
     }
 `
 const EventDetails = styled.div`
@@ -41,19 +57,30 @@ const EventDetails = styled.div`
     height: fit-content;
     display: grid;
     gap: 1.5rem;
+
     @media (max-width: 740px) {
         width: 100%;
+        gap: 0.2rem;
     }
 `
 const EventDescription = styled.p`
     font-size: 2rem;
     color: ${({ theme }) => theme.textdark};
     margin-bottom: 1.3rem;
+
+    @media (max-height: 425px) {
+        font-size: 1.3rem;
+        margin-bottom: 0.7rem;
+    }
+
+    @media (max-width: 330px) {
+        font-size: 1.5rem;
+        margin-bottom: 0.7rem;
+    }
 `
 const EventRules = styled.ol`
-    line-height: 46px;
     font-size: 2rem;
-    margin-left: 1em;
+    margin-left: 1rem;
     color: ${({ theme }) => theme.textdark};
 
     li {
@@ -61,6 +88,27 @@ const EventRules = styled.ol`
     }
     li:not(:last-child) {
         margin-bottom: 2rem;
+    }
+
+    @media (max-height: 425px) {
+        margin-left: 1.4rem;
+        font-size: 1.3rem;
+        li {
+            line-height: 1.5rem;
+        }
+        li:not(:last-child) {
+            margin-bottom: 0.8rem;
+        }
+    }
+
+    @media (max-width: 330px) {
+        font-size: 1.5rem;
+        li {
+            line-height: 1.8rem;
+        }
+        li:not(:last-child) {
+            margin-bottom: 1rem;
+        }
     }
 `
 
@@ -83,6 +131,11 @@ const EventImage = styled.img`
     width: 15rem;
     height: 15rem;
     animation: ${fadeInAnim} 0.4s ease-in;
+
+    @media (max-height: 425px) {
+        width: 8rem;
+        height: 8rem;
+    }
 `
 
 const EventHolder = ({ title, description, rules, img }) => {
