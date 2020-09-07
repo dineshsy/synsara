@@ -31,10 +31,6 @@
     width: 50%;
 }
 
-.hero__text #button {
-    font-size: 1.4rem;
-}
-
 .hero__primary {
     color: #3b93f7;
     font-weight: 600;
@@ -59,7 +55,6 @@
 
 @media (max-width: 1024px) {
     .hero__secondary {
-        width: 300px;
         font-size: 2.3rem;
         line-height: 3.2rem;
     }

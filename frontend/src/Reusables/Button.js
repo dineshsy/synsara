@@ -6,7 +6,7 @@ const ButtonWrapper = styled.button`
     position: relative;
     background-color: #3563c1;
     color: ${({ theme }) => theme.textlight};
-    font-size: 2rem;
+    font-size: 1.4rem;
     border: none;
     border-radius: 0.625rem;
     cursor: pointer;
