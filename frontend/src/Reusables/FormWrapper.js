@@ -10,12 +10,14 @@ const FormWrapperStyle = styled.section`
     display: flex;
     flex-flow: column;
     justify-content: center;
+    padding: 3rem;
     svg {
         width: 60%;
         height: 60%;
         position: absolute;
         top: 0;
         right: 0;
+        z-index: -1;
     }
 
     #button {
