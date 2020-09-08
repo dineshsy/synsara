@@ -60,9 +60,9 @@
 
 @media (max-width: 1024px) {
     .hero__secondary {
-        font-size: 1.3rem;
+        font-size: 2rem;
         line-height: 2rem;
-        width: 200px;
+        width: 7rem;
     }
     .hero__bg {
         width: 80%;
@@ -76,18 +76,17 @@
     }
     .hero__text {
         top: 70%;
-        left: 10%;
+        left: 20%;
     }
     .hero__primary {
         color: #3b93f7;
-        font-weight: 600;
-        font-size: 2rem;
+        text-align: center;
+        font-size: 3rem;
     }
 
     .hero__secondary {
         width: 175px;
-        font-weight: 600;
-
+        text-align: start;
         color: #3563c1;
     }
 }
