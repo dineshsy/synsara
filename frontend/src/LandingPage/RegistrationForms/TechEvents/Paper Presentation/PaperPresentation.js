@@ -3,9 +3,19 @@ import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
-class MemeContestForm extends Component {
+class PaperPresentationForm extends Component {
     state = {
         textfields: [
+            {
+                id: 'gaming-form-0',
+                inputType: 'text',
+                state: 'normal',
+                name: 'single or team',
+                label: 'Single Particpant or team?',
+                placeholder: 'Team',
+                value: '',
+                readOnly: false,
+            },
             {
                 id: 'gaming-form-0',
                 inputType: 'text',
@@ -20,19 +30,19 @@ class MemeContestForm extends Component {
                 id: 'gaming-form-1',
                 inputType: 'text',
                 state: 'normal',
-                name: 'email',
-                label: 'Email ID',
-                placeholder: 'johndoe@gmail.com',
+                name: 'hackerrank username',
+                label: 'Hackerrank Username (Create if unavailable)',
+                placeholder: 'john_30',
                 value: '',
                 readOnly: false,
             },
             {
-                id: 'gaming-form-3',
+                id: 'gaming-form-2',
                 inputType: 'text',
                 state: 'normal',
-                name: 'instagram id',
-                label: 'Instagram ID',
-                placeholder: 'itsdark_nine',
+                name: 'email',
+                label: 'Email ID',
+                placeholder: 'johndoe@gmail.com',
                 value: '',
                 readOnly: false,
             },
@@ -47,7 +57,7 @@ class MemeContestForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-3',
+                id: 'gaming-form-5',
                 inputType: 'text',
                 state: 'normal',
                 name: 'department and year',
@@ -57,7 +67,7 @@ class MemeContestForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-5',
+                id: 'gaming-form-3',
                 inputType: 'text',
                 state: 'normal',
                 name: 'phone number',
@@ -116,7 +126,7 @@ class MemeContestForm extends Component {
     }
     render() {
         return (
-            <FormWrapper formName="Meme Contest">
+            <FormWrapper formName="Paper Presentation">
                 <InputWrapper>
                     {this.state.textfields.map((field) => (
                         <Textfield
@@ -132,4 +142,4 @@ class MemeContestForm extends Component {
     }
 }
 
-export default MemeContestForm
+export default PaperPresentationForm

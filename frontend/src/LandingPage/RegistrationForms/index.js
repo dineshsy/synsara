@@ -7,6 +7,8 @@ import ConnexionsForm from './NonTechEvents/Connexions/ConnexionsForm'
 import { FORM_ROUTES } from '../../utils/constants'
 import PhotographyForm from './NonTechEvents/Photography/PhotographyForm'
 import MemeContestForm from './NonTechEvents/MemeContest/MemeContest'
+import CodingForm from './TechEvents/Coding/CodingForm'
+import PaperPresentationForm from './TechEvents/Paper Presentation/PaperPresentation'
 
 export const Index = () => {
     return (
@@ -29,6 +31,12 @@ export const Index = () => {
                 </Route>
                 <Route path={`/${FORM_ROUTES.nonTechEvents.memeContest}`}>
                     <MemeContestForm />
+                </Route>
+                <Route path={`/${FORM_ROUTES.techEvents.coding}`}>
+                    <CodingForm />
+                </Route>
+                <Route path={`/${FORM_ROUTES.techEvents.paperPresentation}`}>
+                    <PaperPresentationForm />
                 </Route>
             </Switch>
         </BrowserRouter>

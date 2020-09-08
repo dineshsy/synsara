@@ -7,25 +7,13 @@ const AboutUsWrapper = styled.section`
     height: 100%;
     max-width: 1440px;
     min-height: 100vh;
-    padding: 4rem;
+    padding: 6rem;
     margin: auto;
 `
 
 const Title = styled.h2`
-    color: ${(props) => props.theme.primary};
-    font-size: 86px;
-    @media (max-width: 1024px) {
-        font-size: 60px;
-    }
-
-    @media (max-width: 768px) {
-        font-size: 30px;
-        width: 40%;
-    }
-
-    @media (max-height: 425px) {
-        font-size: 24px;
-    }
+    color: ${(props) => props.theme.secondary};
+    font-size: 6rem;
 `
 
 const Heading = styled.h1`
@@ -50,7 +38,7 @@ const Heading = styled.h1`
 
 const Body = styled.p`
     width: 55%;
-    color: ${(props) => props.theme.secondary};
+    color: ${(props) => props.theme.textdark};
     font-size: 16px;
     text-align: justify;
 
