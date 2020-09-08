@@ -10,7 +10,7 @@ const FormWrapperStyle = styled.section`
     display: flex;
     flex-flow: column;
     justify-content: center;
-    padding: 5rem;
+    padding: 7rem;
     svg {
         width: 60%;
         height: 60%;
@@ -23,10 +23,9 @@ const FormWrapperStyle = styled.section`
     #button {
         font-weight: 600;
     }
-    margin-left: 8%;
 
     @media (max-width: 1024px) {
-        margin-left: 4%;
+        padding: 5rem;
     }
 `
 
