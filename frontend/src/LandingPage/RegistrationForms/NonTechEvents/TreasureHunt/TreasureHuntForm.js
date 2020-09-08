@@ -3,7 +3,7 @@ import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
-export default class GamingForm extends Component {
+export default class TreasureHuntForm extends Component {
     state = {
         textfields: [
             {
@@ -106,7 +106,7 @@ export default class GamingForm extends Component {
     }
     render() {
         return (
-            <FormWrapper formName="Gaming">
+            <FormWrapper formName="Treasure Hunt">
                 <InputWrapper>
                     {this.state.textfields.map((field) => (
                         <Textfield

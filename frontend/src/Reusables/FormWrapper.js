@@ -10,7 +10,7 @@ const FormWrapperStyle = styled.section`
     display: flex;
     flex-flow: column;
     justify-content: center;
-    padding: 3rem;
+    padding: 5rem;
     svg {
         width: 60%;
         height: 60%;
@@ -23,6 +23,11 @@ const FormWrapperStyle = styled.section`
     #button {
         font-weight: 600;
     }
+    margin-left: 8%;
+
+    @media (max-width: 1024px) {
+        margin-left: 4%;
+    }
 `
 
 const Header = styled.h1`
@@ -30,7 +35,12 @@ const Header = styled.h1`
     width: fit-content;
     height: fit-content;
     color: ${({ theme }) => theme.secondary};
+    margin-bottom: 2rem;
     font-weight: 600;
+
+    @media (max-width: 768px) {
+        font-size: 5.5rem;
+    }
 `
 
 export const FormWrapper = ({ children, formName }) => {

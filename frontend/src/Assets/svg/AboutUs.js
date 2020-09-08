@@ -65,7 +65,7 @@ const AboutUsProgrammerIconSVG = styled.svg`
     margin-top: 2rem;
     path {
         transform-origin: center;
-        transform: scale(0.8);
+        transform: scale(0.6);
     }
 
     @media (max-width: 1260px) {

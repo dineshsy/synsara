@@ -3,7 +3,7 @@ import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
-export default class GamingForm extends Component {
+class MemeContestForm extends Component {
     state = {
         textfields: [
             {
@@ -13,8 +13,8 @@ export default class GamingForm extends Component {
                 name: 'fullname',
                 label: 'Full Name',
                 placeholder: 'John Doe',
-                value: '',
-                readOnly: false,
+                value: 'Asd',
+                readOnly: true,
             },
             {
                 id: 'gaming-form-1',
@@ -30,14 +30,24 @@ export default class GamingForm extends Component {
                 id: 'gaming-form-2',
                 inputType: 'text',
                 state: 'normal',
-                name: 'game ID',
-                label: 'Game ID',
-                placeholder: 'John Doe',
+                name: 'phone number',
+                label: 'Phone Number',
+                placeholder: '9632587412',
                 value: '',
                 readOnly: false,
             },
             {
                 id: 'gaming-form-3',
+                inputType: 'text',
+                state: 'normal',
+                name: 'instagram id',
+                label: 'Instagram ID',
+                placeholder: 'itsdark_nine',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-4',
                 inputType: 'text',
                 state: 'normal',
                 name: 'college name',
@@ -47,7 +57,7 @@ export default class GamingForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-4',
+                id: 'gaming-form-5',
                 inputType: 'text',
                 state: 'normal',
                 name: 'phone number',
@@ -106,7 +116,7 @@ export default class GamingForm extends Component {
     }
     render() {
         return (
-            <FormWrapper formName="Gaming">
+            <FormWrapper formName="Meme Contest">
                 <InputWrapper>
                     {this.state.textfields.map((field) => (
                         <Textfield
@@ -121,3 +131,5 @@ export default class GamingForm extends Component {
         )
     }
 }
+
+export default MemeContestForm

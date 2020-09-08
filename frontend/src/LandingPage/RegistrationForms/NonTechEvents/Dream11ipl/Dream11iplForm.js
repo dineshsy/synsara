@@ -3,7 +3,8 @@ import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
-export default class GamingForm extends Component {
+
+class Dream11iplForm extends Component {
     state = {
         textfields: [
             {
@@ -30,9 +31,9 @@ export default class GamingForm extends Component {
                 id: 'gaming-form-2',
                 inputType: 'text',
                 state: 'normal',
-                name: 'game ID',
-                label: 'Game ID',
-                placeholder: 'John Doe',
+                name: 'college name',
+                label: 'College Name',
+                placeholder: 'Sri Sairam Engineering College',
                 value: '',
                 readOnly: false,
             },
@@ -40,8 +41,8 @@ export default class GamingForm extends Component {
                 id: 'gaming-form-3',
                 inputType: 'text',
                 state: 'normal',
-                name: 'college name',
-                label: 'College Name',
+                name: 'department and year',
+                label: 'Department & Year',
                 placeholder: 'Sri Sairam Engineering College',
                 value: '',
                 readOnly: false,
@@ -106,7 +107,7 @@ export default class GamingForm extends Component {
     }
     render() {
         return (
-            <FormWrapper formName="Gaming">
+            <FormWrapper formName="Dream 11 ipl">
                 <InputWrapper>
                     {this.state.textfields.map((field) => (
                         <Textfield
@@ -121,3 +122,5 @@ export default class GamingForm extends Component {
         )
     }
 }
+
+export default Dream11iplForm

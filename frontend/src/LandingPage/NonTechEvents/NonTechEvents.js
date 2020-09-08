@@ -43,7 +43,7 @@ export const NonTechEvents = () => {
                 <EventWrapper>
                     <Event
                         description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
-                        title="Shooting Game"
+                        title="Dream 11 ipl"
                         rules={[
                             'Vivamus suscipit tortor eget felis porttitor volutpat.',
                             'Vivamus suscipit tortor eget felis porttitor volutpat.',
@@ -51,6 +51,7 @@ export const NonTechEvents = () => {
                             'Vivamus suscipit tortor eget felis porttitor volutpat.',
                         ]}
                         img={ComingSoonImg}
+                        registerRoute={ROUTES.dream11IPL}
                     />
                 </EventWrapper>
             </div>
@@ -58,7 +59,7 @@ export const NonTechEvents = () => {
                 <EventWrapper>
                     <Event
                         description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
-                        title="Shooting Game"
+                        title="Treasure Hunt"
                         rules={[
                             'Vivamus suscipit tortor eget felis porttitor volutpat.',
                             'Vivamus suscipit tortor eget felis porttitor volutpat.',
@@ -66,6 +67,55 @@ export const NonTechEvents = () => {
                             'Vivamus suscipit tortor eget felis porttitor volutpat.',
                         ]}
                         img={ComingSoonImg}
+                        registerRoute={ROUTES.treasureHunt}
+                    />
+                </EventWrapper>
+            </div>
+            <div className="slide">
+                <EventWrapper>
+                    <Event
+                        description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
+                        title="Connexions"
+                        rules={[
+                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                        ]}
+                        img={ComingSoonImg}
+                        registerRoute={ROUTES.connexions}
+                    />
+                </EventWrapper>
+            </div>
+            <div className="slide">
+                <EventWrapper>
+                    <Event
+                        description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
+                        title="Photography"
+                        rules={[
+                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                        ]}
+                        img={ComingSoonImg}
+                        registerRoute={ROUTES.photography}
+                    />
+                </EventWrapper>
+            </div>
+            <div className="slide">
+                <EventWrapper>
+                    <Event
+                        description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
+                        title="Meme Contest"
+                        rules={[
+                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                        ]}
+                        img={ComingSoonImg}
+                        registerRoute={ROUTES.memeContest}
                     />
                 </EventWrapper>
             </div>

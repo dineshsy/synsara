@@ -2,12 +2,12 @@ import React from 'react'
 import { AboutUsBg, AboutUsProgrammerIcon } from '../../Assets/svg/AboutUs'
 import styled from 'styled-components'
 
-const AboutUsWrapper = styled.div`
+const AboutUsWrapper = styled.section`
     width: 100%;
-    height: 100%h;
+    height: 100%;
     max-width: 1440px;
     min-height: 100vh;
-    padding: 5.6875rem;
+    padding: 4rem;
     margin: auto;
 `
 
@@ -94,7 +94,6 @@ export default function AboutUs() {
                 </Body>
                 <div
                     style={{
-                        height: '100%',
                         display: 'flex',
                         flexDirection: 'row',
                         justifyContent: 'center',
