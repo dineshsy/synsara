@@ -9,7 +9,7 @@
     top: 0;
     right: 0;
     height: 100vh;
-    width: 45%;
+    width: 50%;
 }
 
 .hero__logo {
@@ -17,11 +17,13 @@
     top: 4rem;
     left: 4rem;
 }
+
 .hero__bg img {
     position: absolute;
     width: 2rem;
     height: 2rem;
 }
+
 .hero__img {
     position: absolute;
     top: 10rem;

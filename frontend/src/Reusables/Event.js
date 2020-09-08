@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import styled, { withTheme, keyframes } from 'styled-components'
 import { Button } from './Button'
 import useResizeObserver from '../utils/useResizeObserver'
@@ -17,17 +18,14 @@ export const fadeInAnim = keyframes`
 const EventWrapper = styled.div`
     width: 100%;
     height: 100%;
+    min-height: 100vh;
     padding: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    @media (max-width: 740px) {
+    @media (max-width: 750px) {
         flex-direction: column;
-        align-items: unset;
-    }
-
-    @media (max-height: 425px) {
         align-items: unset;
     }
 `
@@ -37,7 +35,7 @@ const EventTitle = styled.h2`
     font-size: 4rem;
     margin-bottom: 1.3rem;
 
-    @media (max-width: 740px) {
+    @media (max-width: 750px) {
         font-size: 2.7rem;
         margin-bottom: 0.7rem;
     }
@@ -58,7 +56,7 @@ const EventDetails = styled.div`
     display: grid;
     gap: 1.5rem;
 
-    @media (max-width: 740px) {
+    @media (max-width: 750px) {
         width: 100%;
         gap: 0.2rem;
     }
@@ -120,7 +118,8 @@ const EventRegistration = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    @media (max-width: 740px) {
+
+    @media (max-width: 750px) {
         flex-direction: row;
         width: 100%;
         justify-content: flex-end;
@@ -131,16 +130,17 @@ const EventImage = styled.img`
     width: 15rem;
     height: 15rem;
     animation: ${fadeInAnim} 0.4s ease-in;
-
+    margin-right: 2.7rem;
     @media (max-height: 425px) {
         width: 8rem;
         height: 8rem;
     }
 `
 
-const EventHolder = ({ title, description, rules, img }) => {
+const EventHolder = ({ title, description, rules, img, registerRoute }) => {
     const [width] = useResizeObserver()
-    return width >= 740 ? (
+    const history = useHistory()
+    return width >= 750 ? (
         <EventWrapper>
             <EventDetails>
                 <div>
@@ -158,7 +158,11 @@ const EventHolder = ({ title, description, rules, img }) => {
             </EventDetails>
             <EventRegistration>
                 <EventImage src={img} />
-                <Button>Register</Button>
+                <Button
+                    onClick={() => history.push(`/register/${registerRoute}`)}
+                >
+                    Register
+                </Button>
             </EventRegistration>
         </EventWrapper>
     ) : (
@@ -187,7 +191,11 @@ const EventHolder = ({ title, description, rules, img }) => {
                 </div>
             </EventDetails>
             <EventRegistration>
-                <Button>Register</Button>
+                <Button
+                    onClick={() => history.push(`/register/${registerRoute}`)}
+                >
+                    Register
+                </Button>
             </EventRegistration>
         </EventWrapper>
     )
