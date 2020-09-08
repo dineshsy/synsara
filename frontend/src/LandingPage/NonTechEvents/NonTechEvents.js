@@ -46,7 +46,7 @@ export const NonTechEvents = () => {
                 'Vivamus suscipit tortor eget felis porttitor volutpat.',
             ],
             img: ComingSoonImg,
-            route: ROUTES.gaming,
+            route: ROUTES.dream11IPL,
         },
         {
             description:
@@ -115,7 +115,7 @@ export const NonTechEvents = () => {
         },
     ]
 
-    const temp = nonTechEvents.map((slide, index) => {
+    const nonTech = nonTechEvents.map((slide, index) => {
         return (
             <div className="slide">
                 <EventWrapper>
@@ -131,5 +131,5 @@ export const NonTechEvents = () => {
         )
     })
 
-    return <>{temp}</>
+    return <>{nonTech}</>
 }
