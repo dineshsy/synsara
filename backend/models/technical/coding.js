@@ -6,7 +6,27 @@ var Coding = new Schema({
         type: String,
         default: '',
     },
-    hackerrank_username: {
+    hackerrankUsername: {
+        type: String,
+        default: '',
+    },
+    emailId: {
+        type: String,
+        default: '',
+    },
+    dept: {
+        type: String,
+        default: '',
+    },
+    year: {
+        type: String,
+        default: '',
+    },
+    collegeName: {
+        type: String,
+        default: '',
+    },
+    mobileNumber: {
         type: String,
         default: '',
     },
