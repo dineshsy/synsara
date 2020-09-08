@@ -1,0 +1,64 @@
+.checkbox-container {
+    width: 100%;
+    height: auto;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    width: 28px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+
+.checkbox input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    appearance: button;
+    border-radius: 4px;
+    float: left;
+    outline: none;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.checkbox input[type='checkbox']:checked {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-image: url('../../../../../Assets/Images/checkbox-on.png');
+    background-size: cover;
+}
+
+.checkbox-container .checkbox-label,
+.checkbox-container .checkbox-label-disable,
+.checkbox-container .checkbox-label-error {
+    width: auto;
+    height: auto;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.85);
+    font-family: sans-serif;
+    float: left;
+}
+
+.checkbox-container .checkbox-label-error {
+    color: #dc3545;
+}
+
+.checkbox-container .checkbox-label a,
+.checkbox-container .checkbox-label-disable a,
+.checkbox-container .checkbox-label-error a {
+    margin-left: 0.3rem;
+    height: auto;
+    text-decoration: none;
+    line-height: 1;
+    color: #506d6e;
+    border-bottom: 1px inset rgba(0, 0, 0, 0.85);
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import styled, { withTheme, keyframes } from 'styled-components'
 import { Button } from './Button'
 import useResizeObserver from '../utils/useResizeObserver'
@@ -136,8 +137,9 @@ const EventImage = styled.img`
     }
 `
 
-const EventHolder = ({ title, description, rules, img }) => {
+const EventHolder = ({ title, description, rules, img, registerRoute }) => {
     const [width] = useResizeObserver()
+    const history = useHistory()
     return width >= 750 ? (
         <EventWrapper>
             <EventDetails>
@@ -156,7 +158,11 @@ const EventHolder = ({ title, description, rules, img }) => {
             </EventDetails>
             <EventRegistration>
                 <EventImage src={img} />
-                <Button>Register</Button>
+                <Button
+                    onClick={() => history.push(`/register/${registerRoute}`)}
+                >
+                    Register
+                </Button>
             </EventRegistration>
         </EventWrapper>
     ) : (
@@ -185,7 +191,11 @@ const EventHolder = ({ title, description, rules, img }) => {
                 </div>
             </EventDetails>
             <EventRegistration>
-                <Button>Register</Button>
+                <Button
+                    onClick={() => history.push(`/register/${registerRoute}`)}
+                >
+                    Register
+                </Button>
             </EventRegistration>
         </EventWrapper>
     )

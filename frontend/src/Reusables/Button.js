@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 const ButtonWrapper = styled.button`
+    width: fit-content;
     min-width: 11.6875rem;
     height: 3.9375rem;
     position: relative;
