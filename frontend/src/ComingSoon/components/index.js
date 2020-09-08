@@ -120,7 +120,7 @@ export const index = () => {
                 SYNSARA 20<sup>20</sup>
             </Synsara>
             <ComingSoon>COMING SOON</ComingSoon>
-            <Timer targetDateString="20/10/2020" /* MM/DD/YYYY H:M:S */ />
+            <Timer targetDateString="09/20/2020" /* MM/DD/YYYY H:M:S */ />
 
             <FollowUs>Follow us for more updates</FollowUs>
             <SocialIconsWrapper>
