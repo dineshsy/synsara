@@ -31,6 +31,7 @@ body {
     top: unset !important;
     bottom: 5% !important;
     left: 2% !important;
+    visibility: hidden;
 }
 
 /* Overriding Control Arrow of fullPage.js */
