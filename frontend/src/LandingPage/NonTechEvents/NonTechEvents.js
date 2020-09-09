@@ -117,7 +117,7 @@ export const NonTechEvents = () => {
 
     const nonTech = nonTechEvents.map((slide, index) => {
         return (
-            <div className="slide">
+            <div className="slide" key={index}>
                 <EventWrapper>
                     <Event
                         description={slide.description}

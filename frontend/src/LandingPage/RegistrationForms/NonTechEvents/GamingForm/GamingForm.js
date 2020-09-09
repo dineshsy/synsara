@@ -1,15 +1,10 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
 import GamingFormBg from './GamingFormBg'
 class GamingForm extends Component {
-    constructor(props) {
-        super(props)
-        this.firsInputRef = createRef()
-    }
-
     state = {
         textfields: [
             {
@@ -53,7 +48,7 @@ class GamingForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-3',
+                id: 'gaming-form-4',
                 inputType: 'text',
                 state: 'normal',
                 name: 'department and year',
@@ -63,7 +58,7 @@ class GamingForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-4',
+                id: 'gaming-form-5',
                 inputType: 'text',
                 state: 'normal',
                 name: 'phone number',
@@ -73,11 +68,6 @@ class GamingForm extends Component {
                 readOnly: false,
             },
         ],
-    }
-
-    componentDidMount() {
-        console.log(this.firsInputRef)
-        this.firsInputRef.current.textFieldRef.current.focus()
     }
 
     handleInputValueChange = (event) => {
@@ -134,7 +124,6 @@ class GamingForm extends Component {
                     <InputWrapper>
                         {this.state.textfields.map((field, idx) => (
                             <Textfield
-                                ref={idx === 0 ? this.firsInputRef : null}
                                 textfield={field}
                                 key={field.id}
                                 handleInputValueChange={

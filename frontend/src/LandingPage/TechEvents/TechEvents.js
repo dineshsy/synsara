@@ -78,7 +78,7 @@ export const TechEvents = () => {
 
     const tech = TechEvents.map((slide, index) => {
         return (
-            <div className="slide">
+            <div className="slide" key={index}>
                 <EventWrapper>
                     <Event
                         description={slide.description}
