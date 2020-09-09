@@ -25,9 +25,9 @@ const ScrollIndicatorWrapper = styled.div`
     height: fit-content;
     .round {
         z-index: 150;
-        position: fixed;
-        top: ${({ index }) => `${index}%`};
-        left: calc(100% / 2 - 40px);
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
         background-color: ${(props) => props.theme.secondary};
         width: 40px;
         height: 40px;
@@ -89,12 +89,9 @@ const ScrollIndicatorWrapper = styled.div`
     }
 `
 
-export const ScrollIndicator = ({ index, fullpageApi }) => {
+export const ScrollIndicator = ({ fullpageApi }) => {
     return (
-        <ScrollIndicatorWrapper
-            onClick={() => fullpageApi.moveSlideRight()}
-            index={index}
-        >
+        <ScrollIndicatorWrapper onClick={() => fullpageApi.moveSlideRight()}>
             <div class="round">
                 <div id="cta">
                     <span class="arrow primera next "></span>

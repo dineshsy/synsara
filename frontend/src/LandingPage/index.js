@@ -33,20 +33,18 @@ export const index = () => {
                                     <HeroBanner fullpageApi={fullpageApi} />
                                 </div>
                                 <div className="section">
-                                    <div>
+                                    <div style={{ position: 'relative' }}>
                                         <NonTechEvents />
                                         <ScrollIndicator
                                             fullpageApi={fullpageApi}
-                                            index={48}
                                         />
                                     </div>
                                 </div>
                                 <div className="section">
-                                    <div>
+                                    <div style={{ position: 'relative' }}>
                                         <TechEvents />
                                         <ScrollIndicator
                                             fullpageApi={fullpageApi}
-                                            index={73}
                                         />
                                     </div>
                                 </div>
