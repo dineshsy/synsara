@@ -12,6 +12,7 @@ const ButtonWrapper = styled.button`
     border-radius: 0.625rem;
     cursor: pointer;
     outline: none;
+    overflow: hidden;
     filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.25));
     transform: translate(-2%, -2%);
     -webkit-tap-highlight-color: transparent;
@@ -37,11 +38,56 @@ const ButtonWrapper = styled.button`
         width: 10.6875rem;
         height: 3.5375rem;
     }
+
+    span {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.3);
+
+        width: 100px;
+        height: 100px;
+        margin-top: -50px;
+        margin-left: -50px;
+
+        animation: ripple 1s;
+        opacity: 0;
+    }
+
+    @keyframes ripple {
+        from {
+            opacity: 1;
+            transform: scale(0);
+        }
+
+        to {
+            opacity: 0;
+            transform: scale(10);
+        }
+    }
 `
 
 export const Button = ({ children, onClick }) => {
+    const onBtnClick = (e) => {
+        const button = document.querySelector('#button')
+
+        let ripple = document.createElement('span')
+        button.appendChild(ripple)
+
+        let x = e.pageX - e.target.offsetLeft
+        let y = e.pageY - e.target.offsetTop
+
+        ripple.style.left = `${x}px`
+        ripple.style.top = `${y}px`
+
+        setTimeout(() => {
+            ripple.remove()
+        }, 300)
+
+        if (onClick) onClick(e)
+    }
+
     return (
-        <ButtonWrapper id="button" onClick={onClick}>
+        <ButtonWrapper id="button" onClick={onBtnClick}>
             {children}
         </ButtonWrapper>
     )
