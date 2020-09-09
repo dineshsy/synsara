@@ -3,8 +3,9 @@ import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
-import GamingFormBg from './GamingFormBg'
-class GamingForm extends Component {
+import ConnexionsFormBg from './ConnexionsFormBg'
+
+class ConnexionsForm extends Component {
     state = {
         textfields: [
             {
@@ -31,9 +32,9 @@ class GamingForm extends Component {
                 id: 'gaming-form-2',
                 inputType: 'text',
                 state: 'normal',
-                name: 'game ID',
-                label: 'Game ID',
-                placeholder: 'Game ID',
+                name: 'zoom id',
+                label: 'Zoom ID',
+                placeholder: '123 456 7899',
                 value: '',
                 readOnly: false,
             },
@@ -118,25 +119,21 @@ class GamingForm extends Component {
     }
     render() {
         return (
-            <>
-                <FormWrapper formName="Gaming">
-                    <GamingFormBg />
-                    <InputWrapper>
-                        {this.state.textfields.map((field, idx) => (
-                            <Textfield
-                                textfield={field}
-                                key={field.id}
-                                handleInputValueChange={
-                                    this.handleInputValueChange
-                                }
-                            />
-                        ))}
-                    </InputWrapper>
-                    <Button onClick={this.handleFormSubmit}>SUBMIT</Button>
-                </FormWrapper>
-            </>
+            <FormWrapper formName="Connexions">
+                <ConnexionsFormBg />
+                <InputWrapper>
+                    {this.state.textfields.map((field) => (
+                        <Textfield
+                            textfield={field}
+                            key={field.id}
+                            handleInputValueChange={this.handleInputValueChange}
+                        />
+                    ))}
+                </InputWrapper>
+                <Button onClick={this.handleFormSubmit}>SUBMIT</Button>
+            </FormWrapper>
         )
     }
 }
 
-export default GamingForm
+export default ConnexionsForm

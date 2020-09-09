@@ -3,8 +3,9 @@ import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
-import GamingFormBg from './GamingFormBg'
-class GamingForm extends Component {
+import TreasureHuntBg from './TreasureHuntBg'
+
+export default class TreasureHuntForm extends Component {
     state = {
         textfields: [
             {
@@ -28,16 +29,6 @@ class GamingForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-2',
-                inputType: 'text',
-                state: 'normal',
-                name: 'game ID',
-                label: 'Game ID',
-                placeholder: 'Game ID',
-                value: '',
-                readOnly: false,
-            },
-            {
                 id: 'gaming-form-3',
                 inputType: 'text',
                 state: 'normal',
@@ -48,7 +39,7 @@ class GamingForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-4',
+                id: 'gaming-form-3',
                 inputType: 'text',
                 state: 'normal',
                 name: 'department and year',
@@ -58,7 +49,7 @@ class GamingForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-5',
+                id: 'gaming-form-4',
                 inputType: 'text',
                 state: 'normal',
                 name: 'phone number',
@@ -118,25 +109,19 @@ class GamingForm extends Component {
     }
     render() {
         return (
-            <>
-                <FormWrapper formName="Gaming">
-                    <GamingFormBg />
-                    <InputWrapper>
-                        {this.state.textfields.map((field, idx) => (
-                            <Textfield
-                                textfield={field}
-                                key={field.id}
-                                handleInputValueChange={
-                                    this.handleInputValueChange
-                                }
-                            />
-                        ))}
-                    </InputWrapper>
-                    <Button onClick={this.handleFormSubmit}>SUBMIT</Button>
-                </FormWrapper>
-            </>
+            <FormWrapper formName="Treasure Hunt">
+                <TreasureHuntBg />
+                <InputWrapper>
+                    {this.state.textfields.map((field) => (
+                        <Textfield
+                            textfield={field}
+                            key={field.id}
+                            handleInputValueChange={this.handleInputValueChange}
+                        />
+                    ))}
+                </InputWrapper>
+                <Button onClick={this.handleFormSubmit}>SUBMIT</Button>
+            </FormWrapper>
         )
     }
 }
-
-export default GamingForm

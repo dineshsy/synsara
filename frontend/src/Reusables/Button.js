@@ -18,6 +18,10 @@ const ButtonWrapper = styled.button`
     white-space: nowrap;
     padding: 0.2rem 1.1rem;
 
+    &:focus {
+        outline: none;
+    }
+
     &:hover {
         filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
         transform: translate(-2%, -10%);

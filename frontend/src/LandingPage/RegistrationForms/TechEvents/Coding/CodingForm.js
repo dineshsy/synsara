@@ -3,8 +3,8 @@ import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
-import GamingFormBg from './GamingFormBg'
-class GamingForm extends Component {
+import CodingFormBg from './CodingFormBg'
+class CodingForm extends Component {
     state = {
         textfields: [
             {
@@ -21,9 +21,9 @@ class GamingForm extends Component {
                 id: 'gaming-form-1',
                 inputType: 'text',
                 state: 'normal',
-                name: 'email',
-                label: 'Email ID',
-                placeholder: 'johndoe@gmail.com',
+                name: 'hackerrank username',
+                label: 'Hackerrank Username (Create if unavailable)',
+                placeholder: 'john_30',
                 value: '',
                 readOnly: false,
             },
@@ -31,14 +31,14 @@ class GamingForm extends Component {
                 id: 'gaming-form-2',
                 inputType: 'text',
                 state: 'normal',
-                name: 'game ID',
-                label: 'Game ID',
-                placeholder: 'Game ID',
+                name: 'email',
+                label: 'Email ID',
+                placeholder: 'johndoe@gmail.com',
                 value: '',
                 readOnly: false,
             },
             {
-                id: 'gaming-form-3',
+                id: 'gaming-form-4',
                 inputType: 'text',
                 state: 'normal',
                 name: 'college name',
@@ -48,7 +48,7 @@ class GamingForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-4',
+                id: 'gaming-form-5',
                 inputType: 'text',
                 state: 'normal',
                 name: 'department and year',
@@ -58,7 +58,7 @@ class GamingForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-5',
+                id: 'gaming-form-6',
                 inputType: 'text',
                 state: 'normal',
                 name: 'phone number',
@@ -99,6 +99,7 @@ class GamingForm extends Component {
                 field.state = 'normal'
                 field.hint = null
             }
+
             return null
         })
 
@@ -118,25 +119,21 @@ class GamingForm extends Component {
     }
     render() {
         return (
-            <>
-                <FormWrapper formName="Gaming">
-                    <GamingFormBg />
-                    <InputWrapper>
-                        {this.state.textfields.map((field, idx) => (
-                            <Textfield
-                                textfield={field}
-                                key={field.id}
-                                handleInputValueChange={
-                                    this.handleInputValueChange
-                                }
-                            />
-                        ))}
-                    </InputWrapper>
-                    <Button onClick={this.handleFormSubmit}>SUBMIT</Button>
-                </FormWrapper>
-            </>
+            <FormWrapper formName="Coding">
+                <CodingFormBg />
+                <InputWrapper>
+                    {this.state.textfields.map((field) => (
+                        <Textfield
+                            textfield={field}
+                            key={field.id}
+                            handleInputValueChange={this.handleInputValueChange}
+                        />
+                    ))}
+                </InputWrapper>
+                <Button onClick={this.handleFormSubmit}>SUBMIT</Button>
+            </FormWrapper>
         )
     }
 }
 
-export default GamingForm
+export default CodingForm
