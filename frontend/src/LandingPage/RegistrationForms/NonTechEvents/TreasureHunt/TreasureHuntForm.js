@@ -3,6 +3,8 @@ import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
+import TreasureHuntBg from './TreasureHuntBg'
+
 export default class TreasureHuntForm extends Component {
     state = {
         textfields: [
@@ -88,6 +90,7 @@ export default class TreasureHuntForm extends Component {
                 field.state = 'normal'
                 field.hint = null
             }
+            return null
         })
 
         this.setState({ textfields })
@@ -107,6 +110,7 @@ export default class TreasureHuntForm extends Component {
     render() {
         return (
             <FormWrapper formName="Treasure Hunt">
+                <TreasureHuntBg />
                 <InputWrapper>
                     {this.state.textfields.map((field) => (
                         <Textfield

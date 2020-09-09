@@ -3,6 +3,8 @@ import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
+import PaperPresentationBg from './PaperPresentationBg'
+
 class PaperPresentationForm extends Component {
     state = {
         textfields: [
@@ -108,6 +110,7 @@ class PaperPresentationForm extends Component {
                 field.state = 'normal'
                 field.hint = null
             }
+            return null
         })
 
         this.setState({ textfields })
@@ -127,6 +130,7 @@ class PaperPresentationForm extends Component {
     render() {
         return (
             <FormWrapper formName="Paper Presentation">
+                <PaperPresentationBg />
                 <InputWrapper>
                     {this.state.textfields.map((field) => (
                         <Textfield

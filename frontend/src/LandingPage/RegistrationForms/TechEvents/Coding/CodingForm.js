@@ -3,6 +3,7 @@ import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
+import CodingFormBg from './CodingFormBg'
 class CodingForm extends Component {
     state = {
         textfields: [
@@ -98,6 +99,8 @@ class CodingForm extends Component {
                 field.state = 'normal'
                 field.hint = null
             }
+
+            return null
         })
 
         this.setState({ textfields })
@@ -117,6 +120,7 @@ class CodingForm extends Component {
     render() {
         return (
             <FormWrapper formName="Coding">
+                <CodingFormBg />
                 <InputWrapper>
                     {this.state.textfields.map((field) => (
                         <Textfield

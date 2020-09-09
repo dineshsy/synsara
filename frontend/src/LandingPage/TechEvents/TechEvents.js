@@ -19,42 +19,78 @@ const EventWrapper = styled.div`
         padding: 1rem;
     }
 `
-const ROUTES = FORM_ROUTES.techEvents
+const ROUTES = FORM_ROUTES.nonTechEvents
 export const TechEvents = () => {
-    return (
-        <>
+    const TechEvents = [
+        {
+            description:
+                'Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis.',
+            title: 'Coding',
+            rules: [
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+            ],
+            img: ComingSoonImg,
+            route: ROUTES.gaming,
+        },
+        {
+            description:
+                'Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis.',
+            title: 'Paper presentation (Business Ideas)',
+            rules: [
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+            ],
+            img: ComingSoonImg,
+            route: ROUTES.gaming,
+        },
+        {
+            description:
+                'Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis.',
+            title: 'Debugging',
+            rules: [
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+            ],
+            img: ComingSoonImg,
+            route: ROUTES.gaming,
+        },
+        {
+            description:
+                'Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis.',
+            title: 'App / web development OR Hackathon',
+            rules: [
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+            ],
+            img: ComingSoonImg,
+            route: ROUTES.gaming,
+        },
+    ]
+
+    const tech = TechEvents.map((slide, index) => {
+        return (
             <div className="slide">
                 <EventWrapper>
                     <Event
-                        description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
-                        title="Coding"
-                        rules={[
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                        ]}
-                        img={ComingSoonImg}
-                        registerRoute={ROUTES.coding}
+                        description={slide.description}
+                        title={slide.title}
+                        rules={slide.rules}
+                        img={slide.img}
+                        registerRoute={slide.route}
                     />
                 </EventWrapper>
             </div>
-            <div className="slide">
-                <EventWrapper>
-                    <Event
-                        description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
-                        title="Paper Presentation"
-                        rules={[
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                        ]}
-                        img={ComingSoonImg}
-                        registerRoute={ROUTES.paperPresentation}
-                    />
-                </EventWrapper>
-            </div>
-        </>
-    )
+        )
+    })
+
+    return <>{tech}</>
 }

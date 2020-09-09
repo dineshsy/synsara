@@ -63,30 +63,14 @@ const AboutUsBg = () => {
 
 const AboutUsProgrammerIconSVG = styled.svg`
     margin-top: 2rem;
-    path {
-        transform-origin: center;
-        transform: scale(0.6);
-    }
-
-    @media (max-width: 1260px) {
-        path {
-            transform-origin: center;
-            transform: translate(-54px, -54px) scale(0.6);
-        }
-    }
+    width: 20%;
+    height: auto;
 
     @media (max-width: 820px) {
-        path {
-            transform-origin: center;
-            transform: translate(-61px, -61px) scale(0.4);
-        }
+        width: 40%;
     }
 
     @media (max-height: 435px) {
-        path {
-            transform-origin: center;
-            transform: translate(-61px, -61px) scale(0.4);
-        }
         margin-top: 1rem;
     }
 `
@@ -94,8 +78,6 @@ const AboutUsProgrammerIconSVG = styled.svg`
 const AboutUsProgrammerIcon = () => {
     return (
         <AboutUsProgrammerIconSVG
-            width="514"
-            height="273"
             viewBox="0 0 514 273"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

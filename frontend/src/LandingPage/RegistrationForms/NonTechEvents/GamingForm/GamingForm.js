@@ -1,9 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
-export default class GamingForm extends Component {
+import GamingFormBg from './GamingFormBg'
+class GamingForm extends Component {
+    constructor(props) {
+        super(props)
+        this.firsInputRef = createRef()
+    }
+
     state = {
         textfields: [
             {
@@ -69,6 +75,11 @@ export default class GamingForm extends Component {
         ],
     }
 
+    componentDidMount() {
+        console.log(this.firsInputRef)
+        this.firsInputRef.current.textFieldRef.current.focus()
+    }
+
     handleInputValueChange = (event) => {
         let textfields = this.state.textfields.concat()
         textfields.map((field) => {
@@ -98,6 +109,7 @@ export default class GamingForm extends Component {
                 field.state = 'normal'
                 field.hint = null
             }
+            return null
         })
 
         this.setState({ textfields })
@@ -116,18 +128,26 @@ export default class GamingForm extends Component {
     }
     render() {
         return (
-            <FormWrapper formName="Gaming">
-                <InputWrapper>
-                    {this.state.textfields.map((field) => (
-                        <Textfield
-                            textfield={field}
-                            key={field.id}
-                            handleInputValueChange={this.handleInputValueChange}
-                        />
-                    ))}
-                </InputWrapper>
-                <Button onClick={this.handleFormSubmit}>SUBMIT</Button>
-            </FormWrapper>
+            <>
+                <FormWrapper formName="Gaming">
+                    <GamingFormBg />
+                    <InputWrapper>
+                        {this.state.textfields.map((field, idx) => (
+                            <Textfield
+                                ref={idx === 0 ? this.firsInputRef : null}
+                                textfield={field}
+                                key={field.id}
+                                handleInputValueChange={
+                                    this.handleInputValueChange
+                                }
+                            />
+                        ))}
+                    </InputWrapper>
+                    <Button onClick={this.handleFormSubmit}>SUBMIT</Button>
+                </FormWrapper>
+            </>
         )
     }
 }
+
+export default GamingForm

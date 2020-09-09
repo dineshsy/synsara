@@ -21,104 +21,115 @@ const EventWrapper = styled.div`
 `
 const ROUTES = FORM_ROUTES.nonTechEvents
 export const NonTechEvents = () => {
-    return (
-        <>
+    const nonTechEvents = [
+        {
+            description:
+                'Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis.',
+            title: 'Shooting Game',
+            rules: [
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+            ],
+            img: ComingSoonImg,
+            route: ROUTES.gaming,
+        },
+        {
+            description:
+                'Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis.',
+            title: 'Dream 11 IPL',
+            rules: [
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+            ],
+            img: ComingSoonImg,
+            route: ROUTES.dream11IPL,
+        },
+        {
+            description:
+                'Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis.',
+            title: 'Treasure hunt',
+            rules: [
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+            ],
+            img: ComingSoonImg,
+            route: ROUTES.gaming,
+        },
+        {
+            description:
+                'Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis.',
+            title: 'Connexions',
+            rules: [
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+            ],
+            img: ComingSoonImg,
+            route: ROUTES.gaming,
+        },
+        {
+            description:
+                'Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis.',
+            title: 'Photography contest',
+            rules: [
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+            ],
+            img: ComingSoonImg,
+            route: ROUTES.gaming,
+        },
+        {
+            description:
+                'Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis.',
+            title: 'Meme contest',
+            rules: [
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+            ],
+            img: ComingSoonImg,
+            route: ROUTES.gaming,
+        },
+        {
+            description:
+                'Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis.',
+            title: 'Insta reels contest',
+            rules: [
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+                'Vivamus suscipit tortor eget felis porttitor volutpat.',
+            ],
+            img: ComingSoonImg,
+            route: ROUTES.gaming,
+        },
+    ]
+
+    const nonTech = nonTechEvents.map((slide, index) => {
+        return (
             <div className="slide">
                 <EventWrapper>
                     <Event
-                        description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
-                        title="Shooting Game"
-                        rules={[
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                        ]}
-                        img={ComingSoonImg}
-                        registerRoute={ROUTES.gaming}
+                        description={slide.description}
+                        title={slide.title}
+                        rules={slide.rules}
+                        img={slide.img}
+                        registerRoute={slide.route}
                     />
                 </EventWrapper>
             </div>
-            <div className="slide">
-                <EventWrapper>
-                    <Event
-                        description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
-                        title="Dream 11 ipl"
-                        rules={[
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                        ]}
-                        img={ComingSoonImg}
-                        registerRoute={ROUTES.dream11IPL}
-                    />
-                </EventWrapper>
-            </div>
-            <div className="slide">
-                <EventWrapper>
-                    <Event
-                        description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
-                        title="Treasure Hunt"
-                        rules={[
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                        ]}
-                        img={ComingSoonImg}
-                        registerRoute={ROUTES.treasureHunt}
-                    />
-                </EventWrapper>
-            </div>
-            <div className="slide">
-                <EventWrapper>
-                    <Event
-                        description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
-                        title="Connexions"
-                        rules={[
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                        ]}
-                        img={ComingSoonImg}
-                        registerRoute={ROUTES.connexions}
-                    />
-                </EventWrapper>
-            </div>
-            <div className="slide">
-                <EventWrapper>
-                    <Event
-                        description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
-                        title="Photography"
-                        rules={[
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                        ]}
-                        img={ComingSoonImg}
-                        registerRoute={ROUTES.photography}
-                    />
-                </EventWrapper>
-            </div>
-            <div className="slide">
-                <EventWrapper>
-                    <Event
-                        description="Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,lacinia eget consectetur sed, convallis."
-                        title="Meme Contest"
-                        rules={[
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                            'Vivamus suscipit tortor eget felis porttitor volutpat.',
-                        ]}
-                        img={ComingSoonImg}
-                        registerRoute={ROUTES.memeContest}
-                    />
-                </EventWrapper>
-            </div>
-        </>
-    )
+        )
+    })
+
+    return <>{nonTech}</>
 }

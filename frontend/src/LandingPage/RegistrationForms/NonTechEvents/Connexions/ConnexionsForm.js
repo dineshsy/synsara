@@ -3,6 +3,8 @@ import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
+import ConnexionsFormBg from './ConnexionsFormBg'
+
 class ConnexionsForm extends Component {
     state = {
         textfields: [
@@ -27,7 +29,7 @@ class ConnexionsForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-3',
+                id: 'gaming-form-2',
                 inputType: 'text',
                 state: 'normal',
                 name: 'zoom id',
@@ -37,7 +39,7 @@ class ConnexionsForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-4',
+                id: 'gaming-form-3',
                 inputType: 'text',
                 state: 'normal',
                 name: 'college name',
@@ -47,7 +49,7 @@ class ConnexionsForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-3',
+                id: 'gaming-form-4',
                 inputType: 'text',
                 state: 'normal',
                 name: 'department and year',
@@ -57,7 +59,7 @@ class ConnexionsForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-2',
+                id: 'gaming-form-5',
                 inputType: 'text',
                 state: 'normal',
                 name: 'phone number',
@@ -98,6 +100,7 @@ class ConnexionsForm extends Component {
                 field.state = 'normal'
                 field.hint = null
             }
+            return null
         })
 
         this.setState({ textfields })
@@ -117,6 +120,7 @@ class ConnexionsForm extends Component {
     render() {
         return (
             <FormWrapper formName="Connexions">
+                <ConnexionsFormBg />
                 <InputWrapper>
                     {this.state.textfields.map((field) => (
                         <Textfield

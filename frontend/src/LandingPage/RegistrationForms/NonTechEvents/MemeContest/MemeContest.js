@@ -3,6 +3,7 @@ import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
+import MemeContestBg from './MemeContestBg'
 class MemeContestForm extends Component {
     state = {
         textfields: [
@@ -98,6 +99,7 @@ class MemeContestForm extends Component {
                 field.state = 'normal'
                 field.hint = null
             }
+            return null
         })
 
         this.setState({ textfields })
@@ -117,6 +119,7 @@ class MemeContestForm extends Component {
     render() {
         return (
             <FormWrapper formName="Meme Contest">
+                <MemeContestBg />
                 <InputWrapper>
                     {this.state.textfields.map((field) => (
                         <Textfield
