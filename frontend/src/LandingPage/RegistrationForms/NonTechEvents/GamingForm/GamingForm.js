@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { FormWrapper } from '../../../../Reusables/FormWrapper'
-import { InputWrapper } from '../../style'
+import { InputWrapper, Label, RadioButtonWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import Dropdown from '../../../../Reusables/inputs/drop-down/drop-down'
 import { Button } from '../../../../Reusables/Button'
 import GamingFormBg from './GamingFormBg'
 import arrowDownIcon from '../../../../Assets/Images/arrow-down.png'
+import RadioButton from '../../../../Reusables/inputs/RadioButton/RadioButton'
 
 class GamingForm extends Component {
     state = {
@@ -64,6 +65,7 @@ class GamingForm extends Component {
         dropdowns: [
             {
                 toggle: false,
+                value: '',
                 field: {
                     id: 'gaming-form-6',
                     inputType: 'text',
@@ -99,6 +101,35 @@ class GamingForm extends Component {
                 ],
             },
         ],
+        radioButtons: [
+            {
+                label: 'Year',
+                name: 'year',
+                error: '',
+                options: [
+                    {
+                        id: 'gaming-form-rb-0',
+                        active: false,
+                        label: 'I',
+                    },
+                    {
+                        id: 'gaming-form-rb-1',
+                        active: false,
+                        label: 'II',
+                    },
+                    {
+                        id: 'gaming-form-rb-2',
+                        active: false,
+                        label: 'III',
+                    },
+                    {
+                        id: 'gaming-form-rb-3',
+                        active: false,
+                        label: 'IV',
+                    },
+                ],
+            },
+        ],
     }
 
     handleInputValueChange = (event) => {
@@ -113,39 +144,6 @@ class GamingForm extends Component {
         this.setState({
             textfields,
         })
-    }
-
-    handleFormSubmit = (event) => {
-        event.preventDefault()
-
-        let textfields = this.state.textfields.concat()
-        let isValid = true
-
-        textfields.map((field) => {
-            if (!field.value.trim().length) {
-                isValid = false
-                field.state = 'error'
-                field.hint = `Please provide ${field.name}`
-            } else {
-                field.state = 'normal'
-                field.hint = null
-            }
-            return null
-        })
-
-        this.setState({ textfields })
-        if (isValid) {
-            const data = {
-                fullName: this.state.textfields[0].value,
-                email: this.state.textfields[1].value,
-                gameID: this.state.textfields[2].value,
-                collegeName: this.state.textfields[3].value,
-                phoneNumber: this.state.textfields[4].value,
-            }
-
-            console.log(data)
-            // API call to backend
-        }
     }
 
     handleDropdowntoggle = (index) => {
@@ -184,6 +182,80 @@ class GamingForm extends Component {
         }, 150)
     }
 
+    handleRadioButtonClick = (index, id) => {
+        const radioButtons = this.state.radioButtons.concat()
+        radioButtons[index].options.forEach((option) => {
+            if (option.id === id) {
+                option.active = true
+            } else {
+                option.active = false
+            }
+        })
+
+        this.setState({ radioButtons })
+    }
+
+    handleFormSubmit = (event) => {
+        event.preventDefault()
+
+        let textfields = this.state.textfields.concat()
+        let dropdowns = this.state.dropdowns.concat()
+        let radioButtons = this.state.radioButtons.concat()
+        let isValid = true
+
+        textfields.forEach((field) => {
+            if (!field.value.trim().length) {
+                isValid = false
+                field.state = 'error'
+                field.hint = `Please provide ${field.name}`
+            } else {
+                field.state = 'normal'
+                field.hint = null
+            }
+            return null
+        })
+
+        dropdowns.forEach((dropdown) => {
+            if (!dropdown.value.trim().length) {
+                isValid = false
+                dropdown.field.state = 'error'
+                dropdown.field.hint = `Please provide ${dropdown.field.name}`
+            } else {
+                dropdown.field.state = 'normal'
+                dropdown.field.hint = ''
+            }
+        })
+
+        radioButtons.forEach((button) => {
+            let isRadioButtonValid = false
+            button.options.forEach((option) => {
+                if (option.active) {
+                    isRadioButtonValid = true
+                }
+            })
+            if (!isRadioButtonValid) {
+                isValid = false
+                button.error = `Please prrovide ${button.name}`
+            } else {
+                button.error = ``
+            }
+        })
+
+        this.setState({ textfields, dropdowns, radioButtons })
+        if (isValid) {
+            const data = {
+                fullName: this.state.textfields[0].value,
+                email: this.state.textfields[1].value,
+                gameID: this.state.textfields[2].value,
+                collegeName: this.state.textfields[3].value,
+                phoneNumber: this.state.textfields[4].value,
+            }
+
+            console.log(data)
+            // API call to backend
+        }
+    }
+
     render() {
         const field = this.state.textfields
         return (
@@ -220,6 +292,30 @@ class GamingForm extends Component {
                                 this.handleDropdownClick(0, name)
                             }
                         />
+                        <div>
+                            <Label state="normal" size="1.5rem">
+                                {this.state.radioButtons[0].label}
+                            </Label>
+                            <RadioButtonWrapper>
+                                {this.state.radioButtons[0].options.map(
+                                    (button) => (
+                                        <RadioButton
+                                            key={button.id}
+                                            {...button}
+                                            radioBtnClick={(id) =>
+                                                this.handleRadioButtonClick(
+                                                    0,
+                                                    id
+                                                )
+                                            }
+                                        />
+                                    )
+                                )}
+                            </RadioButtonWrapper>
+                            <Label state="error" size="1rem">
+                                {this.state.radioButtons[0].error}
+                            </Label>
+                        </div>
                         <Textfield
                             textfield={field[4]}
                             key={field[4].id}
