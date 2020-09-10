@@ -1,5 +1,5 @@
 .dropdown-menu {
-    width: 19.875rem;
+    width: 27rem;
     height: auto;
     display: grid;
     grid-template-rows: repeat(2, auto);
@@ -25,10 +25,10 @@
 .dropdown-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 27rem;
     height: auto;
     max-height: 10rem;
-    transform: translateY(4.5rem);
+    transform: translateY(6.25rem);
     position: absolute;
     background-color: #415479;
     box-shadow: 0 2px 4px rgba(92, 99, 105, 0.15);
@@ -44,7 +44,7 @@
     align-items: center;
     padding-left: 0.5rem;
     padding: 0.4rem;
-    font-size: 1rem;
+    font-size: 1.25rem;
     cursor: pointer;
     z-index: 2000 !important;
 }

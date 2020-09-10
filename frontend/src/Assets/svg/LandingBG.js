@@ -25,6 +25,7 @@ export const LandingBG = () => {
                     fill="url(#paint0_linear)"
                 />
                 <rect
+                    style={{ animationDelay: '0s' }}
                     id="float"
                     x="684"
                     y="399"
@@ -33,6 +34,7 @@ export const LandingBG = () => {
                     fill="url(#pattern0)"
                 />
                 <rect
+                    style={{ animationDelay: '0.05s' }}
                     id="float_2"
                     x="353.131"
                     y="54"
@@ -42,6 +44,7 @@ export const LandingBG = () => {
                     fill="url(#pattern1)"
                 />
                 <rect
+                    style={{ animationDelay: '0.1s' }}
                     id="float_3"
                     x="513"
                     y="83.3269"
@@ -51,6 +54,7 @@ export const LandingBG = () => {
                     fill="url(#pattern2)"
                 />
                 <rect
+                    style={{ animationDelay: '0.15s' }}
                     id="float_4"
                     x="840"
                     y="76"
@@ -59,6 +63,7 @@ export const LandingBG = () => {
                     fill="url(#pattern3)"
                 />
                 <rect
+                    style={{ animationDelay: '0.2s' }}
                     id="float_5"
                     x="824"
                     y="499"
@@ -67,6 +72,7 @@ export const LandingBG = () => {
                     fill="url(#pattern4)"
                 />
                 <rect
+                    style={{ animationDelay: '0.25s' }}
                     id="float_6"
                     x="191.666"
                     y="67.6241"
@@ -76,6 +82,7 @@ export const LandingBG = () => {
                     fill="url(#pattern5)"
                 />
                 <rect
+                    style={{ animationDelay: '0.3s' }}
                     id="float_7"
                     x="191.666"
                     y="67.6241"
@@ -85,6 +92,7 @@ export const LandingBG = () => {
                     fill="url(#pattern6)"
                 />
                 <rect
+                    style={{ animationDelay: '0.35s' }}
                     id="float_8"
                     x="643"
                     y="118"
@@ -93,6 +101,7 @@ export const LandingBG = () => {
                     fill="url(#pattern7)"
                 />
                 <rect
+                    style={{ animationDelay: '0.4s' }}
                     id="float_9"
                     x="828.637"
                     y="176.443"
@@ -103,6 +112,7 @@ export const LandingBG = () => {
                 />
 
                 <rect
+                    style={{ animationDelay: '0.45s' }}
                     id="float_11"
                     x="107"
                     y="158"
@@ -121,6 +131,7 @@ export const LandingBG = () => {
                     fill="white"
                 />
                 <rect
+                    style={{ animationDelay: '0.5s' }}
                     id="float_14"
                     x="602"
                     y="237"

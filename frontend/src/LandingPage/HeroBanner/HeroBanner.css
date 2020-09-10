@@ -4,6 +4,10 @@
     width: 100%;
 }
 
+.hero #button {
+    margin-top: 4rem;
+}
+
 .hero__bg {
     position: absolute;
     top: 0;
@@ -106,5 +110,6 @@
     }
     .hero__text {
         margin-bottom: 40% !important;
+        text-align: center;
     }
 }

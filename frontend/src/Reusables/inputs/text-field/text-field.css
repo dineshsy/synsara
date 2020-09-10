@@ -1,5 +1,5 @@
 .text-field-container {
-    width: 22rem;
+    width: 27rem;
     display: grid;
     grid-template-rows: auto auto auto;
     background-color: transparent;
@@ -109,7 +109,7 @@
 .text-field-container .field-box-disable {
     padding: 0 0.75rem;
     width: 100%;
-    height: 3rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -146,7 +146,7 @@
 .text-field-container .field-box-disable .field {
     width: 100%;
     height: auto;
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: 1.5;
     color: white;
     background-color: transparent !important;
@@ -175,7 +175,7 @@
     height: 1.1rem;
     display: flex;
     align-items: flex-end;
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 1.5;
     text-align: left;
     float: left;

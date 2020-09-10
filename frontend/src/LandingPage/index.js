@@ -6,6 +6,7 @@ import { NonTechEvents } from './NonTechEvents/NonTechEvents'
 import { TechEvents } from './TechEvents/TechEvents'
 import AboutUs from './AboutUs/AboutUs'
 import { Index as RegistrationForms } from './RegistrationForms'
+import { ScrollIndicator } from '../Reusables/ScrollIndicator'
 export const index = () => {
     return (
         <Switch>
@@ -29,13 +30,23 @@ export const index = () => {
                         return (
                             <ReactFullpage.Wrapper>
                                 <div className="section">
-                                    <HeroBanner />
+                                    <HeroBanner fullpageApi={fullpageApi} />
                                 </div>
                                 <div className="section">
-                                    <NonTechEvents />
+                                    <div style={{ position: 'relative' }}>
+                                        <NonTechEvents />
+                                        <ScrollIndicator
+                                            fullpageApi={fullpageApi}
+                                        />
+                                    </div>
                                 </div>
                                 <div className="section">
-                                    <TechEvents />
+                                    <div style={{ position: 'relative' }}>
+                                        <TechEvents />
+                                        <ScrollIndicator
+                                            fullpageApi={fullpageApi}
+                                        />
+                                    </div>
                                 </div>
                                 <div className="section">
                                     <AboutUs />
