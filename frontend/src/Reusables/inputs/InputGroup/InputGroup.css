@@ -1,0 +1,34 @@
+.field-name {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: normal;
+    line-height: 17px;
+    float: left;
+}
+
+.input-group-container {
+    height: 12rem;
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    column-gap: 50px;
+    row-gap: 10px;
+}
+
+.input-group-error {
+    color: #dc3545;
+    margin-top: 0.75rem;
+    width: inherit;
+    height: 1.1rem;
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    text-align: left;
+    float: left;
+    font-weight: 600;
+    white-space: nowrap;
+}

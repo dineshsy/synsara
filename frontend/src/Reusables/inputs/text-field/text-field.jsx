@@ -182,8 +182,8 @@ class Textfield extends Component {
                             <div className="suffix">{textfield.suffix}</div>
                         )}
                     </div>
-                    {textfield.hint === undefined &&
-                    textfield.hint === '' ? null : (
+                    {(textfield.hint === undefined && textfield.hint === '') ||
+                    this.props.noHelper ? null : (
                         <div
                             className={this.getHelperTextClasses(
                                 textfield.state

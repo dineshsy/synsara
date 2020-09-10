@@ -4,6 +4,9 @@ import { InputWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import { Button } from '../../../../Reusables/Button'
 import GamingFormBg from './GamingFormBg'
+import { withTheme } from 'styled-components'
+import InputGroup from '../../../../Reusables/inputs/InputGroup/InputGroup'
+
 class GamingForm extends Component {
     state = {
         textfields: [
@@ -11,9 +14,9 @@ class GamingForm extends Component {
                 id: 'gaming-form-0',
                 inputType: 'text',
                 state: 'normal',
-                name: 'fullname',
-                label: 'Full Name',
-                placeholder: 'John Doe',
+                name: 'teamleader',
+                label: 'Team Leader Name',
+                placeholder: 'John',
                 value: '',
                 readOnly: false,
             },
@@ -21,8 +24,8 @@ class GamingForm extends Component {
                 id: 'gaming-form-1',
                 inputType: 'text',
                 state: 'normal',
-                name: 'email',
-                label: 'Email ID',
+                name: 'email1',
+                label: '',
                 placeholder: 'johndoe@gmail.com',
                 value: '',
                 readOnly: false,
@@ -31,8 +34,68 @@ class GamingForm extends Component {
                 id: 'gaming-form-2',
                 inputType: 'text',
                 state: 'normal',
-                name: 'game ID',
-                label: 'Game ID',
+                name: 'email2',
+                label: '',
+                placeholder: 'johndoe@gmail.com',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-3',
+                inputType: 'text',
+                state: 'normal',
+                name: 'email3',
+                label: '',
+                placeholder: 'johndoe@gmail.com',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-4',
+                inputType: 'text',
+                state: 'normal',
+                name: 'email4',
+                label: '',
+                placeholder: 'johndoe@gmail.com',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-5',
+                inputType: 'text',
+                state: 'normal',
+                name: 'gameid1',
+                label: '',
+                placeholder: 'Game ID',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-6',
+                inputType: 'text',
+                state: 'normal',
+                name: 'gameid2',
+                label: '',
+                placeholder: 'Game ID',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-7',
+                inputType: 'text',
+                state: 'normal',
+                name: 'gameid3',
+                label: '',
+                placeholder: 'Game ID',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-8',
+                inputType: 'text',
+                state: 'normal',
+                name: 'gameid4',
+                label: '',
                 placeholder: 'Game ID',
                 value: '',
                 readOnly: false,
@@ -59,7 +122,7 @@ class GamingForm extends Component {
             },
             {
                 id: 'gaming-form-5',
-                inputType: 'text',
+                inputType: 'integer',
                 state: 'normal',
                 name: 'phone number',
                 label: 'Phone Number',
@@ -94,7 +157,7 @@ class GamingForm extends Component {
             if (!field.value.trim().length) {
                 isValid = false
                 field.state = 'error'
-                field.hint = `Please provide ${field.name}`
+                field.hint = `Please provide ${field.label}`
             } else {
                 field.state = 'normal'
                 field.hint = null
@@ -117,20 +180,56 @@ class GamingForm extends Component {
         }
     }
     render() {
+        const { textfields } = this.state
+        const { theme } = this.props
         return (
             <>
                 <FormWrapper formName="Gaming">
                     <GamingFormBg />
                     <InputWrapper>
-                        {this.state.textfields.map((field, idx) => (
-                            <Textfield
-                                textfield={field}
-                                key={field.id}
-                                handleInputValueChange={
-                                    this.handleInputValueChange
-                                }
-                            />
-                        ))}
+                        <Textfield
+                            textfield={textfields[0]}
+                            handleInputValueChange={this.handleInputValueChange}
+                            maxWidth="250px"
+                        />
+
+                        <InputGroup
+                            label="Email"
+                            theme={theme}
+                            textfields={[
+                                textfields[1],
+                                textfields[2],
+                                textfields[3],
+                                textfields[4],
+                            ]}
+                            onchangeHandler={this.handleInputValueChange}
+                        />
+                        <InputGroup
+                            label="Game ID"
+                            theme={theme}
+                            textfields={[
+                                textfields[5],
+                                textfields[6],
+                                textfields[7],
+                                textfields[8],
+                            ]}
+                            onchangeHandler={this.handleInputValueChange}
+                        />
+                        <Textfield
+                            textfield={textfields[9]}
+                            handleInputValueChange={this.handleInputValueChange}
+                            maxWidth="250px"
+                        />
+                        <Textfield
+                            textfield={textfields[10]}
+                            handleInputValueChange={this.handleInputValueChange}
+                            maxWidth="250px"
+                        />
+                        <Textfield
+                            textfield={textfields[11]}
+                            handleInputValueChange={this.handleInputValueChange}
+                            maxWidth="250px"
+                        />
                     </InputWrapper>
                     <Button onClick={this.handleFormSubmit}>SUBMIT</Button>
                 </FormWrapper>
@@ -139,4 +238,4 @@ class GamingForm extends Component {
     }
 }
 
-export default GamingForm
+export default withTheme(GamingForm)

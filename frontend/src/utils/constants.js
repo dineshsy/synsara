@@ -2,6 +2,8 @@ export const FORM_ROUTES = {
     techEvents: {
         coding: 'coding',
         paperPresentation: 'paper-presentation',
+        debugging: 'debugging',
+        hackathon: 'hackathon',
     },
     nonTechEvents: {
         gaming: 'gaming',
