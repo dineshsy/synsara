@@ -36,7 +36,7 @@ export default function InputGroup({
                     <TextField
                         key={idx}
                         textfield={textfield}
-                        maxWidth="100px"
+                        maxWidth="12.5rem"
                         handleInputValueChange={onchangeHandler}
                         noHelper={true}
                     />

@@ -18,7 +18,7 @@
 
 .hero__logo {
     position: absolute;
-    top: 0rem;
+    top: 2rem;
     left: 2rem;
 }
 
@@ -80,6 +80,10 @@
 }
 
 @media (max-width: 768px) {
+    .hero__logo {
+        top: 1%;
+        left: 1%;
+    }
     .hero__logo img {
         width: 40%;
     }

@@ -33,6 +33,7 @@ const DropdownContainer = styled.div`
         border: 2px solid transparent;
     }
     .dropdown:hover {
+        color: ${(props) => props.theme.textlight} !important;
         background-color: ${(props) => rgba(props.theme.textdark, 1)};
     }
 

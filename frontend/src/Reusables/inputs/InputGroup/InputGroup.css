@@ -8,14 +8,14 @@
 }
 
 .input-group-container {
-    height: 12rem;
+    height: 14rem;
 }
 
 .input-group {
     display: grid;
-    grid-template-columns: 100px 100px;
-    column-gap: 50px;
-    row-gap: 10px;
+    grid-template-columns: 12.5rem 12.5rem;
+    column-gap: 2rem;
+    row-gap: 2rem;
 }
 
 .input-group-error {

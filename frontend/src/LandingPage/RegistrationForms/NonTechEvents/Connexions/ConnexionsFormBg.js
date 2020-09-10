@@ -47,8 +47,8 @@ export default function ConnexionsFormBg() {
                 fill="url(#paint0_linear)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M86.8776 1327.2C74.3299 1303.23 67.7644 1232.33 141.869 1140.49C165.166 1111.63 187.028 1090.93 206.254 1072.73C263.477 1018.56 297.339 986.501 276.13 826.877C259.507 701.764 349.728 666.973 454.552 626.552C528.4 598.075 609.496 566.803 665.587 499.186C785.003 355.232 838.651 331.361 948.258 348.982L948.111 344.034C803.1 312.227 752.154 320.858 616.03 487.127C559.768 555.849 478.399 587.61 404.301 616.533C299.123 657.587 208.598 692.923 225.329 820.127C246.675 982.42 212.705 1015 155.302 1070.05C136.015 1088.55 114.084 1109.58 90.7164 1138.92C16.3811 1232.26 23.0035 1304.35 35.6066 1328.72L86.8776 1327.2Z"
                 fill="#DCF8FB"
             />
@@ -72,8 +72,8 @@ export default function ConnexionsFormBg() {
                     y2="1412.33"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#3B93F7" />
-                    <stop offset="1" stop-color="#3563C1" />
+                    <stop stopColor="#3B93F7" />
+                    <stop offset="1" stopColor="#3563C1" />
                 </linearGradient>
                 <image id="image0" width="581" height="504" href={connexions} />
             </defs>

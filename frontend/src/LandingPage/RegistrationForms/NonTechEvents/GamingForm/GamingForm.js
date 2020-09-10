@@ -9,6 +9,7 @@ import { withTheme } from 'styled-components'
 import InputGroup from '../../../../Reusables/inputs/InputGroup/InputGroup'
 import arrowDownIcon from '../../../../Assets/Images/arrow-down.png'
 import RadioButton from '../../../../Reusables/inputs/RadioButton/RadioButton'
+import { DEPARTMENTS } from '../../../../utils/constants'
 
 class GamingForm extends Component {
     state = {
@@ -139,28 +140,11 @@ class GamingForm extends Component {
                     imgBtn: arrowDownIcon,
                     readOnly: true,
                 },
-                dropdown: [
-                    {
-                        id: 'dropdown-1',
-                        name: 'Computer Science and Engineering',
-                        state: 'not selected',
-                    },
-                    {
-                        id: 'dropdown-2',
-                        name: 'Instrumentation Engineering',
-                        state: 'not selected',
-                    },
-                    {
-                        id: 'dropdown-3',
-                        name: 'Mechanical Engineering',
-                        state: 'not selected',
-                    },
-                    {
-                        id: 'dropdown-4',
-                        name: 'Information Technology',
-                        state: 'not selected',
-                    },
-                ],
+                dropdown: DEPARTMENTS.map((department, idx) => ({
+                    id: `dropdown-${idx + 1}`,
+                    name: department,
+                    state: 'not selected',
+                })),
             },
         ],
         radioButtons: [
@@ -297,7 +281,7 @@ class GamingForm extends Component {
             })
             if (!isRadioButtonValid) {
                 isValid = false
-                button.error = `Please prrovide ${button.name}`
+                button.error = `Please provide ${button.name}`
             } else {
                 button.error = ``
             }
@@ -332,19 +316,30 @@ class GamingForm extends Component {
                             key={field[0].id}
                             handleInputValueChange={this.handleInputValueChange}
                         />
-                        <Textfield
-                            textfield={field[1]}
-                            key={field[1].id}
-                            handleInputValueChange={this.handleInputValueChange}
+                        <InputGroup
+                            label="Email"
+                            onchangeHandler={this.handleInputValueChange}
+                            textfields={[
+                                textfields[1],
+                                textfields[2],
+                                textfields[3],
+                                textfields[4],
+                            ]}
+                            theme={theme}
+                        />
+                        <InputGroup
+                            label="Game ID"
+                            onchangeHandler={this.handleInputValueChange}
+                            textfields={[
+                                textfields[5],
+                                textfields[6],
+                                textfields[7],
+                                textfields[8],
+                            ]}
+                            theme={theme}
                         />
                         <Textfield
-                            textfield={field[2]}
-                            key={field[2].id}
-                            handleInputValueChange={this.handleInputValueChange}
-                        />
-                        <Textfield
-                            textfield={field[3]}
-                            key={field[3].id}
+                            textfield={textfields[9]}
                             handleInputValueChange={this.handleInputValueChange}
                         />
                         <Dropdown
@@ -356,7 +351,7 @@ class GamingForm extends Component {
                                 this.handleDropdownClick(0, name)
                             }
                         />
-                        <div>
+                        <div style={{ height: '9rem' }}>
                             <Label state="normal" size="1.5rem">
                                 {this.state.radioButtons[0].label}
                             </Label>
@@ -376,13 +371,12 @@ class GamingForm extends Component {
                                     )
                                 )}
                             </RadioButtonWrapper>
-                            <Label state="error" size="1rem">
+                            <Label state="error" size="1.25rem">
                                 {this.state.radioButtons[0].error}
                             </Label>
                         </div>
                         <Textfield
-                            textfield={field[4]}
-                            key={field[4].id}
+                            textfield={field[10]}
                             handleInputValueChange={this.handleInputValueChange}
                         />
                     </InputWrapper>
