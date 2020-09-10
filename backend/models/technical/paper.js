@@ -2,14 +2,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var Paper = new Schema({
-    member1: {
-        type: Member,
-        default: '',
-    },
-    member2: {
-        type: Member,
-        default: '',
-    },
+    members: [Member],
 })
 
 const Member = new Schema({

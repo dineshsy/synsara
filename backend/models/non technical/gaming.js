@@ -1,25 +1,6 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
-var Gaming = new Schema({
-    captain: {
-        type: Player,
-        default: '',
-    },
-    player2: {
-        type: Player,
-        default: '',
-    },
-    player3: {
-        type: Player,
-        default: '',
-    },
-    player4: {
-        type: Player,
-        default: '',
-    },
-})
-
 const Player = new Schema({
     name: {
         type: String,
@@ -49,6 +30,10 @@ const Player = new Schema({
         type: String,
         default: '',
     },
+})
+
+var Gaming = new Schema({
+    players: [Player],
 })
 
 module.exports = mongoose.model('Gaming', Gaming)

@@ -6,7 +6,6 @@ const mailer = require('../components/mail')
 const formRouter = express.Router()
 
 formRouter.route('/').post((req, res, next) => {
-    console.log('post')
     Participants.create(req.body)
         .then(
             (participant) => {

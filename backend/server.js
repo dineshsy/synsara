@@ -5,8 +5,6 @@ var logger = require('morgan')
 const bodyParser = require('body-parser')
 const dotenv = require('dotenv')
 
-const formRouter = require('../backend/routes/form')
-
 dotenv.config()
 
 const app = express()
@@ -55,7 +53,8 @@ server.listen(process.env.PORT, () => {
     console.log('server connected')
 })
 
-app.use('/register', formRouter)
+app.use('/technical', require('./routes/technicalRoutes'))
+app.use('/nontechnical', require('./routes/nonTechnicalRoutes'))
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
