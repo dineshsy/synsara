@@ -7,6 +7,7 @@ import { TechEvents } from './TechEvents/TechEvents'
 import AboutUs from './AboutUs/AboutUs'
 import { Index as RegistrationForms } from './RegistrationForms'
 import { ScrollIndicator } from '../Reusables/ScrollIndicator'
+import { PageNotFound } from '../Reusables/PageNotFound'
 export const index = () => {
     return (
         <Switch>
@@ -56,6 +57,7 @@ export const index = () => {
                     }}
                 />
             </Route>
+            <Route path="*" component={PageNotFound} />
         </Switch>
     )
 }

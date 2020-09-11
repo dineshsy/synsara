@@ -9,6 +9,7 @@ import PhotographyForm from './NonTechEvents/Photography/PhotographyForm'
 import MemeContestForm from './NonTechEvents/MemeContest/MemeContest'
 import CodingForm from './TechEvents/Coding/CodingForm'
 import PaperPresentationForm from './TechEvents/Paper Presentation/PaperPresentation'
+import { PageNotFound } from '../../Reusables/PageNotFound'
 
 export const Index = () => {
     return (
@@ -38,6 +39,7 @@ export const Index = () => {
                 <Route path={`/${FORM_ROUTES.techEvents.paperPresentation}`}>
                     <PaperPresentationForm />
                 </Route>
+                <Route path="*" component={PageNotFound} />
             </Switch>
         </BrowserRouter>
     )
