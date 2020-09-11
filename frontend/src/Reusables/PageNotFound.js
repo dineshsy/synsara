@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { Link } from 'react-router-dom'
-import { sizeMaxW, sizeMaxH, sizeMinH } from '../utils/MediaQueires'
+import { sizeMaxW, sizeMaxH, sizeMinH, sizeMinW } from '../utils/MediaQueires'
 
 const PageNotFoundWrapper = styled.section`
     width: 100%;
@@ -73,6 +73,10 @@ const RobotWrapper = styled.div`
     }
     @media ${sizeMinH.mobileL} {
         height: 40rem;
+    }
+    @media screen and ${sizeMinH.mobileL} and ${sizeMinW.tablet} {
+        width: 70rem;
+        height: 70rem;
     }
 `
 
