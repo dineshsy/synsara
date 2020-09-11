@@ -155,6 +155,16 @@
     float: left;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
 .text-field-container .field-box img,
 .text-field-container .field-box-error img,
 .text-field-container .field-box-disable img {

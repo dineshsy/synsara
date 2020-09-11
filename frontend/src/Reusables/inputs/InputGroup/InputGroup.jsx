@@ -44,7 +44,7 @@ export default function InputGroup({
             </div>
             {valid ? null : (
                 <div className="input-group-error">
-                    {`Please provide All ${label}s`}
+                    {`Please provide All valid ${label}s`}
                 </div>
             )}
         </div>

@@ -1,13 +1,24 @@
 import React, { Component } from 'react'
+import { withTheme } from 'styled-components'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
+
 import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper, Label, RadioButtonWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import Dropdown from '../../../../Reusables/inputs/drop-down/drop-down'
 import { Button } from '../../../../Reusables/Button'
 import CodingFormBg from './CodingFormBg'
-import { withTheme } from 'styled-components'
 import arrowDownIcon from '../../../../Assets/Images/arrow-down.png'
 import RadioButton from '../../../../Reusables/inputs/RadioButton/RadioButton'
+
+import {
+    validateTextFields,
+    validateDropdowns,
+    validateRadioButtons,
+} from '../../../../utils/FormValidator'
+import { Loader } from '../../../../Reusables/ButtonLoader'
+import { registerCodingEvent } from '../../../../redux/Events/TechEvents/Actions'
 import { DEPARTMENTS } from '../../../../utils/constants'
 
 class CodingForm extends Component {
@@ -25,7 +36,7 @@ class CodingForm extends Component {
             },
             {
                 id: 'gaming-form-1',
-                inputType: 'text',
+                inputType: 'email',
                 state: 'normal',
                 name: 'email',
                 label: 'Email ID',
@@ -55,7 +66,7 @@ class CodingForm extends Component {
             },
             {
                 id: 'gaming-form-4',
-                inputType: 'integer',
+                inputType: 'number',
                 state: 'normal',
                 name: 'phone number',
                 label: 'Phone Number',
@@ -115,6 +126,18 @@ class CodingForm extends Component {
                 ],
             },
         ],
+    }
+
+    componentDidUpdate(prevProps) {
+        if (
+            prevProps.isCodingRegistered !== this.props.isCodingRegistered &&
+            this.props.isCodingRegistered
+        ) {
+            alert('Coding event registered successfully')
+        }
+        if (prevProps.isError !== this.props.isError && this.props.isError) {
+            alert('Coding event registered failed')
+        }
     }
 
     handleInputValueChange = (event) => {
@@ -186,57 +209,39 @@ class CodingForm extends Component {
         let textfields = this.state.textfields.concat()
         let dropdowns = this.state.dropdowns.concat()
         let radioButtons = this.state.radioButtons.concat()
-        let isValid = true
 
-        textfields.forEach((field) => {
-            if (!field.value.trim().length) {
-                isValid = false
-                field.state = 'error'
-                field.hint = `Please provide ${field.label}`
-            } else {
-                field.state = 'normal'
-                field.hint = null
-            }
-            return null
+        const [validatedTextfields, isTextFieldsValid] = validateTextFields(
+            textfields
+        )
+        const [validatedDropdowns, isDropdownValid] = validateDropdowns(
+            dropdowns
+        )
+        const [
+            validatedRadioButtons,
+            isRadioButtonValid,
+        ] = validateRadioButtons(radioButtons)
+
+        this.setState({
+            validatedTextfields,
+            validatedDropdowns,
+            validatedRadioButtons,
         })
-
-        dropdowns.forEach((dropdown) => {
-            if (!dropdown.value.trim().length) {
-                isValid = false
-                dropdown.field.state = 'error'
-                dropdown.field.hint = `Please provide ${dropdown.field.name}`
-            } else {
-                dropdown.field.state = 'normal'
-                dropdown.field.hint = ''
-            }
-        })
-
-        radioButtons.forEach((button) => {
-            let isRadioButtonValid = false
-            button.options.forEach((option) => {
-                if (option.active) {
-                    isRadioButtonValid = true
-                }
+        if (isDropdownValid && isTextFieldsValid && isRadioButtonValid) {
+            var year = null
+            this.state.radioButtons[0].options.forEach((option) => {
+                if (option.active) year = option.label
             })
-            if (!isRadioButtonValid) {
-                isValid = false
-                button.error = `Please provide ${button.name}`
-            } else {
-                button.error = ``
-            }
-        })
-
-        this.setState({ textfields, dropdowns, radioButtons })
-        if (isValid) {
             const data = {
-                fullName: this.state.textfields[0].value,
-                email: this.state.textfields[1].value,
-                gameID: this.state.textfields[2].value,
+                name: this.state.textfields[0].value,
+                emailId: this.state.textfields[1].value,
+                hackerrankUsername: this.state.textfields[2].value,
                 collegeName: this.state.textfields[3].value,
-                phoneNumber: this.state.textfields[4].value,
+                mobileNumber: this.state.textfields[4].value,
+                dept: this.state.dropdowns[0].value,
+                year,
             }
 
-            console.log(data)
+            this.props.registerCodingEvent(data)
             // API call to backend
         }
     }
@@ -303,11 +308,29 @@ class CodingForm extends Component {
                             handleInputValueChange={this.handleInputValueChange}
                         />
                     </InputWrapper>
-                    <Button onClick={this.handleFormSubmit}>SUBMIT</Button>
+                    <Button
+                        onClick={this.handleFormSubmit}
+                        disabled={this.props.isLoading}
+                    >
+                        {this.props.isLoading ? <Loader /> : 'SUBMIT'}
+                    </Button>
                 </FormWrapper>
             </>
         )
     }
 }
 
-export default withTheme(CodingForm)
+const mapStateToProps = ({ techEvents }) => ({
+    isLoading: techEvents.isLoading,
+    isError: techEvents.isError,
+    isCodingRegistered: techEvents.isCodingRegistered,
+})
+
+const mapDispatchToProps = {
+    registerCodingEvent,
+}
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withTheme
+)(CodingForm)

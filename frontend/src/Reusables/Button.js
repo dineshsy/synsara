@@ -66,7 +66,7 @@ const ButtonWrapper = styled.button`
     }
 `
 
-export const Button = ({ children, onClick }) => {
+export const Button = ({ children, onClick, disabled }) => {
     const onBtnClick = (e) => {
         const button = document.querySelector('#button')
 
@@ -87,7 +87,7 @@ export const Button = ({ children, onClick }) => {
     }
 
     return (
-        <ButtonWrapper id="button" onClick={onBtnClick}>
+        <ButtonWrapper id="button" onClick={disabled ? null : onBtnClick}>
             {children}
         </ButtonWrapper>
     )

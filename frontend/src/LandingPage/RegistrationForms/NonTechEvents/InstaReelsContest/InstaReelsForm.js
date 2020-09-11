@@ -25,7 +25,7 @@ class InstaReelForm extends Component {
             },
             {
                 id: 'gaming-form-1',
-                inputType: 'text',
+                inputType: 'email',
                 state: 'normal',
                 name: 'email',
                 label: 'Email ID',
@@ -55,7 +55,7 @@ class InstaReelForm extends Component {
             },
             {
                 id: 'gaming-form-4',
-                inputType: 'integer',
+                inputType: 'number',
                 state: 'normal',
                 name: 'phone number',
                 label: 'Phone Number',

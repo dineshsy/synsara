@@ -6,7 +6,7 @@ const mailer = require('../../components/mail')
 const dream11Router = express.Router()
 
 dream11Router.route('/').post((req, res, next) => {
-    Connexion.findOne({ emailId: req.body.emailId }).then((participant) => {
+    Dream11.findOne({ emailId: req.body.emailId }).then((participant) => {
         if (participant != null) {
             console.log('Participant already registered', participant)
             res.statusCode = 409
