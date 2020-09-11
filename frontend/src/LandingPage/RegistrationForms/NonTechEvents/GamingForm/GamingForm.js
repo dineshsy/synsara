@@ -10,7 +10,8 @@ import InputGroup from '../../../../Reusables/inputs/InputGroup/InputGroup'
 import arrowDownIcon from '../../../../Assets/Images/arrow-down.png'
 import RadioButton from '../../../../Reusables/inputs/RadioButton/RadioButton'
 import { DEPARTMENTS } from '../../../../utils/constants'
-
+import { registerGamingEvent } from '../../../../redux/Events/NonTechEvents/Actions'
+import { connect } from 'react-redux'
 class GamingForm extends Component {
     state = {
         textfields: [
@@ -178,6 +179,18 @@ class GamingForm extends Component {
         ],
     }
 
+    componentDidUpdate(prevProps) {
+        if (
+            prevProps.isGamingRegistered !== this.props.isGamingRegistered &&
+            this.props.isGamingRegistered
+        ) {
+            alert('gaming event registered successfully')
+        }
+        if (prevProps.isError !== this.props.isError && this.props.isError) {
+            alert('gaming event registered failed')
+        }
+    }
+
     handleInputValueChange = (event) => {
         let textfields = this.state.textfields.concat()
         textfields.map((field) => {
@@ -296,9 +309,7 @@ class GamingForm extends Component {
                 collegeName: this.state.textfields[3].value,
                 phoneNumber: this.state.textfields[4].value,
             }
-
-            console.log(data)
-            // API call to backend
+            this.props.registerGamingEvent(data)
         }
     }
 
@@ -387,4 +398,17 @@ class GamingForm extends Component {
     }
 }
 
-export default withTheme(GamingForm)
+const mapStateToProps = ({ nonTechEvents }) => ({
+    isLoading: nonTechEvents.isLoading,
+    isError: nonTechEvents.isError,
+    isGamingRegistered: nonTechEvents.isGamingRegistered,
+})
+
+const mapDispatchToProps = {
+    registerGamingEvent,
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(withTheme(GamingForm))

@@ -2,6 +2,7 @@ import ActionTypes from './ActionTypes'
 
 const INITIAL_STATE = {
     isLoading: false,
+    isError: false,
     isCodingRegistered: false,
     isPaperPresentationRegistered: false,
     isDebuggingRegistered: false,
@@ -14,6 +15,7 @@ const techEventsReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 isLoading: true,
+                isError: false,
                 isCodingRegistered: false,
                 isPaperPresentationRegistered: false,
                 isDebuggingRegistered: false,
@@ -31,6 +33,7 @@ const techEventsReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 isCodingRegistered: false,
                 isLoading: false,
+                isError: true,
             }
         case ActionTypes.REGISTER_PAPERPRESENTATION_EVENT_SUCCESS:
             return {
@@ -43,6 +46,7 @@ const techEventsReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 isPaperPresentationRegistered: false,
                 isLoading: false,
+                isError: true,
             }
         case ActionTypes.REGISTER_DEBUGGING_EVENT_SUCCESS:
             return {
@@ -55,6 +59,7 @@ const techEventsReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 isDebuggingRegistered: false,
                 isLoading: false,
+                isError: true,
             }
         case ActionTypes.REGISTER_HACKATHON_EVENT_SUCCESS:
             return {
@@ -67,6 +72,7 @@ const techEventsReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 isHackathonRegistered: false,
                 isLoading: false,
+                isError: true,
             }
 
         default:

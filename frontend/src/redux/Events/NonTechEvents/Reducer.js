@@ -2,6 +2,7 @@ import ActionTypes from './ActionTypes'
 
 const INITIAL_STATE = {
     isLoading: false,
+    isError: false,
     isGamingRegistered: false,
     isDream11IPLRegistered: false,
     isTreasureHuntRegistered: false,
@@ -16,6 +17,7 @@ const nonTechEventsReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 isLoading: true,
+                isError: false,
                 isGamingRegistered: false,
                 isDream11IPLRegistered: false,
                 isTreasureHuntRegistered: false,
@@ -34,6 +36,7 @@ const nonTechEventsReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 isGamingRegistered: false,
                 isLoading: false,
+                isError: true,
             }
         case ActionTypes.REGISTER_DREAM11IPL_EVENT_SUCCESS:
             return {
@@ -45,6 +48,7 @@ const nonTechEventsReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 isDream11IPLRegistered: false,
+                isError: true,
                 isLoading: false,
             }
         case ActionTypes.REGISTER_TREASUREHUNT_EVENT_SUCCESS:
@@ -58,6 +62,7 @@ const nonTechEventsReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 isTreasureHuntRegistered: false,
                 isLoading: false,
+                isError: true,
             }
         case ActionTypes.REGISTER_CONNEXIONS_EVENT_SUCCESS:
             return {
@@ -69,6 +74,7 @@ const nonTechEventsReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 isConnexionsRegistered: false,
+                isError: true,
                 isLoading: false,
             }
         case ActionTypes.REGISTER_PHOTOGRAPHY_EVENT_SUCCESS:
@@ -81,6 +87,7 @@ const nonTechEventsReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 isPhotographyRegistered: false,
+                isError: true,
                 isLoading: false,
             }
         case ActionTypes.REGISTER_MEMECONTEST_EVENT_SUCCESS:
@@ -93,6 +100,7 @@ const nonTechEventsReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 isMemeContestRegistered: false,
+                isError: true,
                 isLoading: false,
             }
         default:
