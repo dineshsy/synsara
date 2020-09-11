@@ -20,9 +20,9 @@ export const registerDream11iplEvent = (data) => (dispatch) => {
         .then((res) =>
             dispatch({ type: ActionTypes.REGISTER_DREAM11IPL_EVENT_SUCCESS })
         )
-        .catch((err) =>
+        .catch((err) => {
             dispatch({ type: ActionTypes.REGISTER_DREAM11IPL_EVENT_FAIL })
-        )
+        })
 }
 
 export const registerConnexionsEvent = (data) => (dispatch) => {
@@ -49,7 +49,7 @@ export const registerPhotographyEvent = (data) => (dispatch) => {
         )
 }
 
-export const registerPhotographyEvent = (data) => (dispatch) => {
+export const registerTreasureHuntEvent = (data) => (dispatch) => {
     dispatch({ type: ActionTypes.NON_TECH_EVENTS_LOADING })
     axios
         .post('/nontechnical/treasure', data)
