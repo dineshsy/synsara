@@ -2,30 +2,18 @@ import React from 'react'
 import { AboutUsBg, AboutUsProgrammerIcon } from '../../Assets/svg/AboutUs'
 import styled from 'styled-components'
 
-const AboutUsWrapper = styled.div`
+const AboutUsWrapper = styled.section`
     width: 100%;
-    height: 100%h;
+    height: 100%;
     max-width: 1440px;
     min-height: 100vh;
-    padding: 5.6875rem;
+    padding: 6rem;
     margin: auto;
 `
 
 const Title = styled.h2`
-    color: ${(props) => props.theme.primary};
-    font-size: 86px;
-    @media (max-width: 1024px) {
-        font-size: 60px;
-    }
-
-    @media (max-width: 768px) {
-        font-size: 30px;
-        width: 40%;
-    }
-
-    @media (max-height: 425px) {
-        font-size: 24px;
-    }
+    color: ${(props) => props.theme.secondary};
+    font-size: 6rem;
 `
 
 const Heading = styled.h1`
@@ -50,7 +38,7 @@ const Heading = styled.h1`
 
 const Body = styled.p`
     width: 55%;
-    color: ${(props) => props.theme.secondary};
+    color: ${(props) => props.theme.textdark};
     font-size: 16px;
     text-align: justify;
 
@@ -94,7 +82,6 @@ export default function AboutUs() {
                 </Body>
                 <div
                     style={{
-                        height: '100%',
                         display: 'flex',
                         flexDirection: 'row',
                         justifyContent: 'center',

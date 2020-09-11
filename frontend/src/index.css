@@ -21,6 +21,7 @@ body {
     color: white;
 }
 
+
 /* Overrinding Navbar Styles of fullPage.js*/
 
 .fp-tooltip {
@@ -31,7 +32,9 @@ body {
     top: unset !important;
     bottom: 5% !important;
     left: 2% !important;
+    visibility: hidden;
 }
+
 
 /* Overriding Control Arrow of fullPage.js */
 
@@ -69,7 +72,6 @@ body {
         width: 3rem !important;
         height: 3rem;
     }
-
     .fp-tooltip {
         font-size: 1.3rem !important;
     }
@@ -80,4 +82,10 @@ body {
     .fp-controlArrow.fp-next {
         display: none;
     }
+}
+
+a:focus,
+button:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px #4c9aff;
 }

@@ -19,7 +19,7 @@ const EventWrapper = styled.div`
         padding: 1rem;
     }
 `
-const ROUTES = FORM_ROUTES.nonTechEvents
+const ROUTES = FORM_ROUTES.techEvents
 export const TechEvents = () => {
     const TechEvents = [
         {
@@ -33,7 +33,7 @@ export const TechEvents = () => {
                 'Vivamus suscipit tortor eget felis porttitor volutpat.',
             ],
             img: ComingSoonImg,
-            route: ROUTES.gaming,
+            route: ROUTES.coding,
         },
         {
             description:
@@ -46,7 +46,7 @@ export const TechEvents = () => {
                 'Vivamus suscipit tortor eget felis porttitor volutpat.',
             ],
             img: ComingSoonImg,
-            route: ROUTES.gaming,
+            route: ROUTES.paperPresentation,
         },
         {
             description:
@@ -78,7 +78,7 @@ export const TechEvents = () => {
 
     const tech = TechEvents.map((slide, index) => {
         return (
-            <div className="slide">
+            <div className="slide" key={index}>
                 <EventWrapper>
                     <Event
                         description={slide.description}

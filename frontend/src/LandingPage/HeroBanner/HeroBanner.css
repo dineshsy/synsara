@@ -4,38 +4,36 @@
     width: 100%;
 }
 
+.hero #button {
+    margin-top: 4rem;
+}
+
 .hero__bg {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: fit-content;
     width: 50%;
 }
 
 .hero__logo {
     position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
-
-.hero__bg img {
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
+    top: 2rem;
+    left: 2rem;
 }
 
 .hero__img {
     position: absolute;
-    top: 10rem;
-    right: 5rem;
-    height: 50rem;
-    width: 50rem;
+    bottom: 0rem;
+    right: 10rem;
+    height: 80%;
+    width: 80%;
 }
 
 .hero__text {
-    position: absolute;
-    top: 30%;
-    width: 50%;
+    width: 100%;
+    max-width: 1550px;
+    margin: auto;
 }
 
 .hero__primary {
@@ -45,7 +43,7 @@
 }
 
 .hero__secondary {
-    width: 475px;
+    max-width: 50rem;
     font-weight: 600;
     font-size: 3rem;
     line-height: 5rem;
@@ -60,35 +58,62 @@
     color: white;
 }
 
+.content-wrapper {
+    width: 100%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
 @media (max-width: 1024px) {
     .hero__secondary {
-        font-size: 2rem;
-        line-height: 2rem;
-        width: 7rem;
-    }
-    .hero__bg {
-        width: 80%;
-        height: 60vh;
-    }
-    .hero__img {
-        width: 30rem;
-        height: 30rem;
-        top: 16rem;
-        right: 3rem;
-    }
-    .hero__text {
-        top: 70%;
-        left: 20%;
-    }
-    .hero__primary {
-        color: #3b93f7;
-        text-align: center;
-        font-size: 3rem;
+        font-size: 2.3rem;
+        line-height: 3.2rem;
     }
 
-    .hero__secondary {
-        width: 175px;
-        text-align: start;
-        color: #3563c1;
+    .hero__logo img {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero__logo {
+        top: 1%;
+        left: 1%;
+    }
+    .hero__logo img {
+        width: 40%;
+    }
+}
+
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+}
+
+.hero__bg [id^='float'] {
+    animation: float 3s ease-in-out infinite;
+}
+
+@media (max-width: 425px) {
+    .hero__bg {
+        width: 80%;
+    }
+    .hero__text {
+        margin-bottom: 40% !important;
+        text-align: center;
     }
 }
