@@ -111,7 +111,7 @@ export const NonTechEvents = () => {
                 'Vivamus suscipit tortor eget felis porttitor volutpat.',
             ],
             img: ComingSoonImg,
-            route: ROUTES.memeContest,
+            route: ROUTES.instareels,
         },
     ]
 

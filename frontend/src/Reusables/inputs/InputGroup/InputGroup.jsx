@@ -10,7 +10,7 @@ export default function InputGroup({
     onchangeHandler,
 }) {
     let valid = true
-    textfields.map((Textfield) => {
+    textfields.forEach((Textfield) => {
         valid = valid && Textfield.state === 'normal'
     })
 

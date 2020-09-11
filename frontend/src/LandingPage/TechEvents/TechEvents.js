@@ -59,7 +59,7 @@ export const TechEvents = () => {
                 'Vivamus suscipit tortor eget felis porttitor volutpat.',
             ],
             img: ComingSoonImg,
-            route: ROUTES.gaming,
+            route: ROUTES.debugging,
         },
         {
             description:
@@ -72,7 +72,7 @@ export const TechEvents = () => {
                 'Vivamus suscipit tortor eget felis porttitor volutpat.',
             ],
             img: ComingSoonImg,
-            route: ROUTES.gaming,
+            route: ROUTES.hackathon,
         },
     ]
 

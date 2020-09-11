@@ -12,6 +12,7 @@ export const FORM_ROUTES = {
         connexions: 'connexions',
         photography: 'photography',
         memeContest: 'meme-contest',
+        instareels: 'insta-reels',
     },
 }
 

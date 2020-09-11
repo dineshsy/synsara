@@ -184,7 +184,6 @@ class Dropdown extends Component {
                     {dropdownMenu.toggle ? (
                         <ul
                             aria-expanded="false"
-                            role="list"
                             style={{
                                 backgroundColor: lighten(
                                     0.5,
@@ -195,7 +194,7 @@ class Dropdown extends Component {
                         >
                             {dropdownMenu.dropdown.map((dropdown) => (
                                 <li
-                                    tabindex={
+                                    tabIndex={
                                         dropdown.state === 'selected'
                                             ? '-1'
                                             : '0'

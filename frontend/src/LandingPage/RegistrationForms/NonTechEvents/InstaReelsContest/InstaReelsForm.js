@@ -4,53 +4,21 @@ import { InputWrapper, Label, RadioButtonWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import Dropdown from '../../../../Reusables/inputs/drop-down/drop-down'
 import { Button } from '../../../../Reusables/Button'
-import GamingFormBg from './GamingFormBg'
+import InstaReelFormBg from './InstaReelFormBg'
 import { withTheme } from 'styled-components'
-import InputGroup from '../../../../Reusables/inputs/InputGroup/InputGroup'
 import arrowDownIcon from '../../../../Assets/Images/arrow-down.png'
 import RadioButton from '../../../../Reusables/inputs/RadioButton/RadioButton'
 import { DEPARTMENTS } from '../../../../utils/constants'
-import { registerGamingEvent } from '../../../../redux/Events/NonTechEvents/Actions'
-import { connect } from 'react-redux'
-class GamingForm extends Component {
+
+class InstaReelForm extends Component {
     state = {
         textfields: [
             {
                 id: 'gaming-form-0',
                 inputType: 'text',
                 state: 'normal',
-                name: 'name1',
-                label: '',
-                placeholder: 'John',
-                value: '',
-                readOnly: false,
-            },
-            {
-                id: 'gaming-form-0',
-                inputType: 'text',
-                state: 'normal',
-                name: 'name2',
-                label: '',
-                placeholder: 'John',
-                value: '',
-                readOnly: false,
-            },
-            {
-                id: 'gaming-form-0',
-                inputType: 'text',
-                state: 'normal',
-                name: 'name3',
-                label: '',
-                placeholder: 'John',
-                value: '',
-                readOnly: false,
-            },
-            {
-                id: 'gaming-form-0',
-                inputType: 'text',
-                state: 'normal',
-                name: 'name4',
-                label: '',
+                name: 'name',
+                label: 'Name',
                 placeholder: 'John',
                 value: '',
                 readOnly: false,
@@ -59,8 +27,8 @@ class GamingForm extends Component {
                 id: 'gaming-form-1',
                 inputType: 'text',
                 state: 'normal',
-                name: 'email1',
-                label: '',
+                name: 'email',
+                label: 'Email ID',
                 placeholder: 'johndoe@gmail.com',
                 value: '',
                 readOnly: false,
@@ -69,69 +37,9 @@ class GamingForm extends Component {
                 id: 'gaming-form-2',
                 inputType: 'text',
                 state: 'normal',
-                name: 'email2',
-                label: '',
-                placeholder: 'johndoe@gmail.com',
-                value: '',
-                readOnly: false,
-            },
-            {
-                id: 'gaming-form-3',
-                inputType: 'text',
-                state: 'normal',
-                name: 'email3',
-                label: '',
-                placeholder: 'johndoe@gmail.com',
-                value: '',
-                readOnly: false,
-            },
-            {
-                id: 'gaming-form-4',
-                inputType: 'text',
-                state: 'normal',
-                name: 'email4',
-                label: '',
-                placeholder: 'johndoe@gmail.com',
-                value: '',
-                readOnly: false,
-            },
-            {
-                id: 'gaming-form-5',
-                inputType: 'text',
-                state: 'normal',
-                name: 'gameid1',
-                label: '',
-                placeholder: 'Game ID',
-                value: '',
-                readOnly: false,
-            },
-            {
-                id: 'gaming-form-6',
-                inputType: 'text',
-                state: 'normal',
-                name: 'gameid2',
-                label: '',
-                placeholder: 'Game ID',
-                value: '',
-                readOnly: false,
-            },
-            {
-                id: 'gaming-form-7',
-                inputType: 'text',
-                state: 'normal',
-                name: 'gameid3',
-                label: '',
-                placeholder: 'Game ID',
-                value: '',
-                readOnly: false,
-            },
-            {
-                id: 'gaming-form-8',
-                inputType: 'text',
-                state: 'normal',
-                name: 'gameid4',
-                label: '',
-                placeholder: 'Game ID',
+                name: 'instagramid',
+                label: 'Instagram ID',
+                placeholder: 'itsdark_nine',
                 value: '',
                 readOnly: false,
             },
@@ -146,7 +54,7 @@ class GamingForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-5',
+                id: 'gaming-form-4',
                 inputType: 'integer',
                 state: 'normal',
                 name: 'phone number',
@@ -209,18 +117,6 @@ class GamingForm extends Component {
         ],
     }
 
-    componentDidUpdate(prevProps) {
-        if (
-            prevProps.isGamingRegistered !== this.props.isGamingRegistered &&
-            this.props.isGamingRegistered
-        ) {
-            alert('gaming event registered successfully')
-        }
-        if (prevProps.isError !== this.props.isError && this.props.isError) {
-            alert('gaming event registered failed')
-        }
-    }
-
     handleInputValueChange = (event) => {
         let textfields = this.state.textfields.concat()
         textfields.map((field) => {
@@ -248,7 +144,7 @@ class GamingForm extends Component {
     handleDropdownClick = (index, clickDropdown) => {
         let dropdowns = this.state.dropdowns.concat()
         let dropdownMenu = dropdowns[index]
-        dropdownMenu.dropdown.forEach((dropdown) => {
+        dropdownMenu.dropdown.map((dropdown) => {
             if (
                 dropdown.name === clickDropdown &&
                 dropdown.state !== 'selected'
@@ -332,72 +228,41 @@ class GamingForm extends Component {
 
         this.setState({ textfields, dropdowns, radioButtons })
         if (isValid) {
-            var year = null
-            this.state.radioButtons[0].options.forEach((option) => {
-                if (option.active) year = option.label
-            })
             const data = {
-                players: [],
+                fullName: this.state.textfields[0].value,
+                email: this.state.textfields[1].value,
+                gameID: this.state.textfields[2].value,
+                collegeName: this.state.textfields[3].value,
+                phoneNumber: this.state.textfields[4].value,
             }
-            for (let index = 0; index < 4; index++) {
-                data.players.push({
-                    name: this.state.textfields[0 + index].value,
-                    emailId: this.state.textfields[4 + index].value,
-                    gamingId: this.state.textfields[8 + index].value,
-                    collegeName: this.state.textfields[12].value,
-                    mobileNumber: this.state.textfields[13].value,
-                    dept: this.state.dropdowns[0].value,
-                    year,
-                })
-            }
-            this.props.registerGamingEvent(data)
+
+            console.log(data)
+            // API call to backend
         }
     }
 
     render() {
-        const { textfields } = this.state
         const { theme } = this.props
         const field = this.state.textfields
         return (
             <>
-                <FormWrapper formName="Gaming">
-                    <GamingFormBg />
+                <FormWrapper formName="Insta Reel Contest">
+                    <InstaReelFormBg />
                     <InputWrapper>
-                        <InputGroup
-                            label="Participants Name"
-                            onchangeHandler={this.handleInputValueChange}
-                            textfields={[
-                                textfields[0],
-                                textfields[1],
-                                textfields[2],
-                                textfields[3],
-                            ]}
-                            theme={theme}
-                        />
-                        <InputGroup
-                            label="Email"
-                            onchangeHandler={this.handleInputValueChange}
-                            textfields={[
-                                textfields[4],
-                                textfields[5],
-                                textfields[6],
-                                textfields[7],
-                            ]}
-                            theme={theme}
-                        />
-                        <InputGroup
-                            label="Game ID"
-                            onchangeHandler={this.handleInputValueChange}
-                            textfields={[
-                                textfields[8],
-                                textfields[9],
-                                textfields[10],
-                                textfields[11],
-                            ]}
-                            theme={theme}
+                        <Textfield
+                            textfield={field[0]}
+                            handleInputValueChange={this.handleInputValueChange}
                         />
                         <Textfield
-                            textfield={textfields[12]}
+                            textfield={field[1]}
+                            handleInputValueChange={this.handleInputValueChange}
+                        />
+                        <Textfield
+                            textfield={field[2]}
+                            handleInputValueChange={this.handleInputValueChange}
+                        />
+                        <Textfield
+                            textfield={field[3]}
                             handleInputValueChange={this.handleInputValueChange}
                         />
                         <Dropdown
@@ -434,7 +299,7 @@ class GamingForm extends Component {
                             </Label>
                         </div>
                         <Textfield
-                            textfield={field[13]}
+                            textfield={field[4]}
                             handleInputValueChange={this.handleInputValueChange}
                         />
                     </InputWrapper>
@@ -445,17 +310,4 @@ class GamingForm extends Component {
     }
 }
 
-const mapStateToProps = ({ nonTechEvents }) => ({
-    isLoading: nonTechEvents.isLoading,
-    isError: nonTechEvents.isError,
-    isGamingRegistered: nonTechEvents.isGamingRegistered,
-})
-
-const mapDispatchToProps = {
-    registerGamingEvent,
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(withTheme(GamingForm))
+export default withTheme(InstaReelForm)
