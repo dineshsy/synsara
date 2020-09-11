@@ -1,10 +1,6 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
-var Paper = new Schema({
-    members: [Member],
-})
-
 const Member = new Schema({
     name: {
         type: String,
@@ -30,6 +26,10 @@ const Member = new Schema({
         type: String,
         default: '',
     },
+})
+
+var Paper = new Schema({
+    members: [Member],
 })
 
 module.exports = mongoose.model('Paper', Paper)
