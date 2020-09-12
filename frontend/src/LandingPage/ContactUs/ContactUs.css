@@ -1,0 +1,100 @@
+.person-col {
+    width: 100%;
+}
+
+.person {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2.7rem 0;
+    text-align: center;
+}
+
+.person__shape {
+    width: 6rem;
+    height: 6rem;
+    clip-path: circle(50% at 50% 50%);
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+}
+
+.person__photo {
+    height: 100%;
+    backface-visibility: hidden;
+    transition: all 0.5s;
+}
+
+.person__text {
+    font-weight: 700 !important;
+    font-size: 1.1rem;
+}
+
+.person__name {
+    color: #3563c1;
+    font-size: 1.7rem;
+}
+
+.ellipse__box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20rem;
+}
+
+@media (max-width: 1090px) {
+    .person__name {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 990px) {
+    .person {
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .person {
+        text-align: left;
+        margin-left: 2rem;
+    }
+    .person__shape {
+        display: inline-block;
+        width: 5rem;
+        height: 5rem;
+    }
+    .person__text {
+        display: inline-block;
+        line-height: 1.4;
+        margin-left: 1.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .person__text {
+        display: inline-block;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 1000px) and (orientation: landscape) {
+    .person {
+        padding: 1rem 0;
+        text-align: left;
+    }
+
+    .person__shape {
+        display: inline-block;
+        width: 5rem;
+        height: 5rem;
+    }
+    .person__text {
+        display: inline-block;
+        line-height: 1.4;
+        margin-left: 1.5rem;
+        font-size: 1.2rem;
+    }
+}

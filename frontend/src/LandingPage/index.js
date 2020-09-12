@@ -4,7 +4,7 @@ import { HeroBanner } from './HeroBanner/HeroBanner'
 import ReactFullpage from '@fullpage/react-fullpage'
 import { NonTechEvents } from './NonTechEvents/NonTechEvents'
 import { TechEvents } from './TechEvents/TechEvents'
-import AboutUs from './AboutUs/AboutUs'
+import ContactUs from './ContactUs/ContactUs'
 import { Index as RegistrationForms } from './RegistrationForms'
 import { ScrollIndicator } from '../Reusables/ScrollIndicator'
 import { PageNotFound } from '../Reusables/PageNotFound'
@@ -24,13 +24,13 @@ export const index = () => {
                         'Home',
                         'Non-Technical Events',
                         'Technical Events',
-                        'About Us',
+                        'Contact Us',
                     ]}
                     showActiveTooltip={true}
                     render={({ state, fullpageApi }) => {
                         return (
                             <ReactFullpage.Wrapper>
-                                <div className="section">
+                                {/* <div className="section">
                                     <HeroBanner fullpageApi={fullpageApi} />
                                 </div>
                                 <div className="section">
@@ -48,9 +48,9 @@ export const index = () => {
                                             fullpageApi={fullpageApi}
                                         />
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className="section">
-                                    <AboutUs />
+                                    <ContactUs />
                                 </div>
                             </ReactFullpage.Wrapper>
                         )
