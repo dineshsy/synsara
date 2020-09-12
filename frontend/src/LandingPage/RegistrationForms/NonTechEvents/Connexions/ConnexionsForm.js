@@ -128,19 +128,6 @@ class ConnexionsForm extends Component {
         ],
     }
 
-    componentDidUpdate(prevProps) {
-        if (
-            prevProps.isConnexionsRegistered !==
-                this.props.isConnexionsRegistered &&
-            this.props.isConnexionsRegistered
-        ) {
-            alert('Connexions event registered successfully')
-        }
-        if (prevProps.isError !== this.props.isError && this.props.isError) {
-            alert('Connexions event registered failed')
-        }
-    }
-
     handleInputValueChange = (event) => {
         let textfields = this.state.textfields.concat()
         textfields.map((field) => {

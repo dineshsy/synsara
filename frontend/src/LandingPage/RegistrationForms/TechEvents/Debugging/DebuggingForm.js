@@ -10,6 +10,8 @@ import arrowDownIcon from '../../../../Assets/Images/arrow-down.png'
 import RadioButton from '../../../../Reusables/inputs/RadioButton/RadioButton'
 import { DEPARTMENTS } from '../../../../utils/constants'
 
+/* TODO: update fields, validation and redux */
+
 class DebuggingForm extends Component {
     state = {
         textfields: [

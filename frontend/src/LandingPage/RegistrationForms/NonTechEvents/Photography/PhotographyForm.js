@@ -128,19 +128,6 @@ class PhotographyForm extends Component {
         ],
     }
 
-    componentDidUpdate(prevProps) {
-        if (
-            prevProps.isDream11IPLRegistered !==
-                this.props.isDream11IPLRegistered &&
-            this.props.isDream11IPLRegistered
-        ) {
-            alert('Photography event registered successfully')
-        }
-        if (prevProps.isError !== this.props.isError && this.props.isError) {
-            alert('Photography event registered failed')
-        }
-    }
-
     handleInputValueChange = (event) => {
         let textfields = this.state.textfields.concat()
         textfields.map((field) => {

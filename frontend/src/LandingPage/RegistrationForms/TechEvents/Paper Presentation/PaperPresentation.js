@@ -10,6 +10,8 @@ import arrowDownIcon from '../../../../Assets/Images/arrow-down.png'
 import RadioButton from '../../../../Reusables/inputs/RadioButton/RadioButton'
 import { DEPARTMENTS } from '../../../../utils/constants'
 
+/* TODO: Design changes, fields, redux */
+
 class PaperPresentationForm extends Component {
     state = {
         textfields: [

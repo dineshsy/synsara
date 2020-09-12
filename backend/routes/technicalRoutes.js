@@ -6,9 +6,9 @@ const paperRouter = require('./technical/paperRouter')
 
 const techApp = express()
 
-// techApp.use('/coding', codingRouter)
+techApp.use('/coding', codingRouter)
 // techApp.use('/debugging', debuggingRouter)
 // techApp.use('/hackathon', hackathonRouter)
-// techApp.use('/paper', paperRouter)
+techApp.use('/paper', paperRouter)
 
 module.exports = techApp
