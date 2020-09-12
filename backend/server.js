@@ -23,7 +23,7 @@ app.use(function (req, res, next) {
     )
     res.header('Access-Control-Expose-Headers', 'Access-Control-Allow-O')
 
-    if (req.header === 'OPTIONS') {
+    if (req.method === 'OPTIONS') {
         res.header(
             'Access-Control-Allow-Methods',
             'PUT, POST, GET, PATCH, DELETE'
