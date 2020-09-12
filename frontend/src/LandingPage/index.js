@@ -30,7 +30,7 @@ export const index = () => {
                     render={({ state, fullpageApi }) => {
                         return (
                             <ReactFullpage.Wrapper>
-                                {/* <div className="section">
+                                <div className="section">
                                     <HeroBanner fullpageApi={fullpageApi} />
                                 </div>
                                 <div className="section">
@@ -48,7 +48,7 @@ export const index = () => {
                                             fullpageApi={fullpageApi}
                                         />
                                     </div>
-                                </div> */}
+                                </div>
                                 <div className="section">
                                     <ContactUs />
                                 </div>
