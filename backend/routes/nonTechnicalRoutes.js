@@ -10,7 +10,7 @@ const nonTechApp = express()
 nonTechApp.use('/connexion', connexionRouter)
 nonTechApp.use('/dream11', dream11Router)
 nonTechApp.use('/gaming', gamingRouter)
-// nonTechApp.use('/photo', photoRouter)
-// nonTechApp.use('/treasure', treasureHuntRouter)
+nonTechApp.use('/photo', photoRouter)
+nonTechApp.use('/treasure', treasureHuntRouter)
 
 module.exports = nonTechApp
