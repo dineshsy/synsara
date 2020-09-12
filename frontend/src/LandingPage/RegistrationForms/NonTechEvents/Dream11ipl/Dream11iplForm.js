@@ -118,19 +118,6 @@ class Dream11iplForm extends Component {
         ],
     }
 
-    componentDidUpdate(prevProps) {
-        if (
-            prevProps.isDream11IPLRegistered !==
-                this.props.isDream11IPLRegistered &&
-            this.props.isDream11IPLRegistered
-        ) {
-            alert('Dream 11 ipl event registered successfully')
-        }
-        if (prevProps.isError !== this.props.isError && this.props.isError) {
-            alert('Dream 11 ipl event registered failed')
-        }
-    }
-
     handleInputValueChange = (event) => {
         let textfields = this.state.textfields.concat()
         textfields.map((field) => {

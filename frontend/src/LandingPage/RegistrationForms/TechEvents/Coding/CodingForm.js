@@ -128,18 +128,6 @@ class CodingForm extends Component {
         ],
     }
 
-    componentDidUpdate(prevProps) {
-        if (
-            prevProps.isCodingRegistered !== this.props.isCodingRegistered &&
-            this.props.isCodingRegistered
-        ) {
-            alert('Coding event registered successfully')
-        }
-        if (prevProps.isError !== this.props.isError && this.props.isError) {
-            alert('Coding event registered failed')
-        }
-    }
-
     handleInputValueChange = (event) => {
         let textfields = this.state.textfields.concat()
         textfields.map((field) => {

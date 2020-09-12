@@ -8,9 +8,16 @@ export const registerGamingEvent = (data) => (dispatch, getState) => {
         .post('/nontechnical/gaming', data)
         .then((res) => {
             dispatch({ type: ActionTypes.REGISTER_GAMING_EVENT_SUCCESS })
+            dispatch(registrationSuccess({ ...res.data, name: 'Hooray!' }))
         })
         .catch((err) => {
             dispatch({ type: ActionTypes.REGISTER_GAMING_EVENT_FAIL })
+            dispatch(
+                registrationFailed({
+                    err_type: err.response.status,
+                    event: 'Gaming',
+                })
+            )
         })
 }
 
@@ -18,11 +25,18 @@ export const registerDream11iplEvent = (data) => (dispatch) => {
     dispatch({ type: ActionTypes.NON_TECH_EVENTS_LOADING })
     axios
         .post('/nontechnical/dream11', data)
-        .then((res) =>
+        .then((res) => {
             dispatch({ type: ActionTypes.REGISTER_DREAM11IPL_EVENT_SUCCESS })
-        )
+            dispatch(registrationSuccess(res.data))
+        })
         .catch((err) => {
             dispatch({ type: ActionTypes.REGISTER_DREAM11IPL_EVENT_FAIL })
+            dispatch(
+                registrationFailed({
+                    err_type: err.response.status,
+                    event: 'Dream 11 ipl',
+                })
+            )
         })
 }
 
@@ -49,46 +63,74 @@ export const registerPhotographyEvent = (data) => (dispatch) => {
     dispatch({ type: ActionTypes.NON_TECH_EVENTS_LOADING })
     axios
         .post('/nontechnical/photo', data)
-        .then((res) =>
+        .then((res) => {
             dispatch({ type: ActionTypes.REGISTER_PHOTOGRAPHY_EVENT_SUCCESS })
-        )
-        .catch((err) =>
+            dispatch(registrationSuccess(res.data))
+        })
+        .catch((err) => {
             dispatch({ type: ActionTypes.REGISTER_PHOTOGRAPHY_EVENT_FAIL })
-        )
+            dispatch(
+                registrationFailed({
+                    err_type: err.response.status,
+                    event: 'Photography',
+                })
+            )
+        })
 }
 
 export const registerTreasureHuntEvent = (data) => (dispatch) => {
     dispatch({ type: ActionTypes.NON_TECH_EVENTS_LOADING })
     axios
         .post('/nontechnical/treasure', data)
-        .then((res) =>
+        .then((res) => {
+            dispatch(registrationSuccess(res.data))
             dispatch({ type: ActionTypes.REGISTER_TREASUREHUNT_EVENT_SUCCESS })
-        )
-        .catch((err) =>
+        })
+        .catch((err) => {
             dispatch({ type: ActionTypes.REGISTER_TREASUREHUNT_EVENT_FAIL })
-        )
+            dispatch(
+                registrationFailed({
+                    err_type: err.response.status,
+                    event: 'Treasure Hunt',
+                })
+            )
+        })
 }
 
 export const registerMemeContestEvent = (data) => (dispatch) => {
     dispatch({ type: ActionTypes.NON_TECH_EVENTS_LOADING })
     axios
         .post('/nontechnical/*MEME_CONTEST_ROUTE*', data)
-        .then((res) =>
+        .then((res) => {
+            dispatch(registrationSuccess(res.data))
             dispatch({ type: ActionTypes.REGISTER_MEMECONTEST_EVENT_SUCCESS })
-        )
-        .catch((err) =>
+        })
+        .catch((err) => {
             dispatch({ type: ActionTypes.REGISTER_MEMECONTEST_EVENT_FAIL })
-        )
+            dispatch(
+                registrationFailed({
+                    err_type: err.response.status,
+                    event: 'Meme Contest',
+                })
+            )
+        })
 }
 
 export const registerInstaReelsEvent = (data) => (dispatch) => {
     dispatch({ type: ActionTypes.NON_TECH_EVENTS_LOADING })
     axios
         .post('/nontechnical/*INSTA_REELS_ROUTE*', data)
-        .then((res) =>
+        .then((res) => {
+            dispatch(registrationSuccess(res.data))
             dispatch({ type: ActionTypes.REGISTER_INSTA_REEL_CONTEST_SUCCESS })
-        )
-        .catch((err) =>
+        })
+        .catch((err) => {
             dispatch({ type: ActionTypes.REGISTER_INSTA_REEL_CONTEST_FAIL })
-        )
+            dispatch(
+                registrationFailed({
+                    err_type: err.response.status,
+                    event: 'Insta Reel',
+                })
+            )
+        })
 }

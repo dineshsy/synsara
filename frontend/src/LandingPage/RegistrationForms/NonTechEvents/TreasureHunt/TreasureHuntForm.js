@@ -118,19 +118,6 @@ class TreasureHuntForm extends Component {
         ],
     }
 
-    componentDidUpdate(prevProps) {
-        if (
-            prevProps.isTreasureHuntRegistered !==
-                this.props.isTreasureHuntRegistered &&
-            this.props.isTreasureHuntRegistered
-        ) {
-            alert('TreasureHunt event registered successfully')
-        }
-        if (prevProps.isError !== this.props.isError && this.props.isError) {
-            alert('TreasureHunt event registered failed')
-        }
-    }
-
     handleInputValueChange = (event) => {
         let textfields = this.state.textfields.concat()
         textfields.map((field) => {

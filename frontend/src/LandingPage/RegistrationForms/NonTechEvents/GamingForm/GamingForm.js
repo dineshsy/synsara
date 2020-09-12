@@ -216,18 +216,6 @@ class GamingForm extends Component {
         ],
     }
 
-    componentDidUpdate(prevProps) {
-        if (
-            prevProps.isGamingRegistered !== this.props.isGamingRegistered &&
-            this.props.isGamingRegistered
-        ) {
-            alert('gaming event registered successfully')
-        }
-        if (prevProps.isError !== this.props.isError && this.props.isError) {
-            alert('gaming event registered failed')
-        }
-    }
-
     handleInputValueChange = (event) => {
         let textfields = this.state.textfields.concat()
         textfields.map((field) => {
