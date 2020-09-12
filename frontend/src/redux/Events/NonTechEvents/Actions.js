@@ -1,5 +1,6 @@
 import ActionTypes from './ActionTypes'
 import axios from '../../../utils/axiosConfig'
+import { registrationFailed, registrationSuccess } from '../Toast/Actions'
 
 export const registerGamingEvent = (data) => (dispatch, getState) => {
     dispatch({ type: ActionTypes.NON_TECH_EVENTS_LOADING })
@@ -29,12 +30,19 @@ export const registerConnexionsEvent = (data) => (dispatch) => {
     dispatch({ type: ActionTypes.NON_TECH_EVENTS_LOADING })
     axios
         .post('/nontechnical/connexion', data)
-        .then((res) =>
+        .then((res) => {
             dispatch({ type: ActionTypes.REGISTER_CONNEXIONS_EVENT_SUCCESS })
-        )
-        .catch((err) =>
+            dispatch(registrationSuccess(res.data))
+        })
+        .catch((err) => {
             dispatch({ type: ActionTypes.REGISTER_CONNEXIONS_EVENT_FAIL })
-        )
+            dispatch(
+                registrationFailed({
+                    err_type: err.response.status,
+                    event: 'Connexions',
+                })
+            )
+        })
 }
 
 export const registerPhotographyEvent = (data) => (dispatch) => {
