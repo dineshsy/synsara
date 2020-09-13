@@ -39,8 +39,8 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
-    height: 20rem;
+    bottom: -5rem;
+    height: fit-content;
 }
 
 @media (max-width: 1090px) {
@@ -71,6 +71,9 @@
         margin-left: 1.5rem;
         font-size: 1.2rem;
     }
+    .ellipse__box {
+        display: none;
+    }
 }
 
 @media (max-width: 350px) {
@@ -80,7 +83,7 @@
     }
 }
 
-@media (max-width: 1000px) and (orientation: landscape) {
+@media (max-width: 1000px) and (max-height: 420px) and (orientation: landscape) {
     .person {
         padding: 1rem 0;
         text-align: left;
@@ -96,5 +99,8 @@
         line-height: 1.4;
         margin-left: 1.5rem;
         font-size: 1.2rem;
+    }
+    .ellipse__box {
+        display: none;
     }
 }
