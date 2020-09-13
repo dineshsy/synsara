@@ -7,10 +7,6 @@
     float: left;
 }
 
-.input-group-container {
-    height: 14rem;
-}
-
 .input-group {
     display: grid;
     grid-template-columns: 12.5rem 12.5rem;

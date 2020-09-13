@@ -4,10 +4,10 @@ import TextField from '../text-field/text-field'
 
 export default function InputGroup({
     label,
-    children,
     theme,
     textfields,
     onchangeHandler,
+    rows,
 }) {
     let valid = true
     textfields.forEach((Textfield) => {
@@ -19,6 +19,7 @@ export default function InputGroup({
             style={{
                 display: 'flex',
                 flexDirection: 'column',
+                height: rows === 1 ? '7.5rem' : '14rem',
             }}
             className="input-group-container"
         >

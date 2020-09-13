@@ -11,9 +11,7 @@ import { PageNotFound } from '../Reusables/PageNotFound'
 export const index = () => {
     return (
         <Switch>
-            <Route path="/register/:formID">
-                <RegistrationForms />
-            </Route>
+            <Route path="/register" component={RegistrationForms} />
             <Route path="/" exact>
                 <ReactFullpage
                     scrollingSpeed={1000}

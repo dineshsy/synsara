@@ -22,6 +22,9 @@ const BgSVG = styled.svg`
 
     @media ${sizeMaxW.mobileL} {
         height: 40%;
+        image {
+            visibility: hidden;
+        }
     }
 
     @media ${sizeMaxH.mobileL} {

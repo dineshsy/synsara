@@ -20,7 +20,6 @@
     height: 16px;
     background-color: transparent;
     border: 1px solid rgba(0, 0, 0, 0.5);
-    appearance: button;
     border-radius: 4px;
     float: left;
     outline: none;
@@ -32,7 +31,7 @@
     width: 20px;
     height: 20px;
     border: none;
-    background-image: url('../../../../../Assets/Images/checkbox-on.png');
+    background-image: url('../../../Assets/Images/check-icon.png');
     background-size: cover;
 }
 
@@ -41,10 +40,10 @@
 .checkbox-container .checkbox-label-error {
     width: auto;
     height: auto;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: rgba(0, 0, 0, 0.85);
-    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: normal;
+    line-height: 17px;
     float: left;
 }
 

@@ -45,7 +45,7 @@ export const registerPaperPresentationEvent = (data) => (dispatch) => {
     axios
         .post('/technical/paper', data)
         .then((res) => {
-            dispatch(registrationSuccess(res.data))
+            dispatch(registrationSuccess({ ...res.data, name: 'Hooray!' }))
             dispatch({
                 type: ActionTypes.REGISTER_PAPERPRESENTATION_EVENT_SUCCESS,
             })
