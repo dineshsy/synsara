@@ -1,35 +1,36 @@
 import React, { Component } from 'react'
+import { withTheme } from 'styled-components'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
+
 import { FormWrapper } from '../../../../Reusables/FormWrapper'
 import { InputWrapper, Label, RadioButtonWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import Dropdown from '../../../../Reusables/inputs/drop-down/drop-down'
 import { Button } from '../../../../Reusables/Button'
 import PaperPresentationFormBg from './PaperPresentationBg'
-import { withTheme } from 'styled-components'
 import arrowDownIcon from '../../../../Assets/Images/arrow-down.png'
 import RadioButton from '../../../../Reusables/inputs/RadioButton/RadioButton'
-import { DEPARTMENTS } from '../../../../utils/constants'
+import Checkbox from '../../../../Reusables/inputs/check-box/checkbox'
+import InputGroup from '../../../../Reusables/inputs/InputGroup/InputGroup'
 
-/* TODO: Design changes, fields, redux */
+import {
+    validateTextFields,
+    validateDropdowns,
+    validateRadioButtons,
+} from '../../../../utils/FormValidator'
+import { DEPARTMENTS } from '../../../../utils/constants'
+import { Loader } from '../../../../Reusables/ButtonLoader'
+import { registerPaperPresentationEvent } from '../../../../redux/Events/TechEvents/Actions'
 
 class PaperPresentationForm extends Component {
     state = {
         textfields: [
             {
-                id: 'gaming-form-2',
-                inputType: 'text',
-                state: 'normal',
-                name: 'singleOrteam',
-                label: 'Single Participant or Team?',
-                placeholder: 'Team',
-                value: '',
-                readOnly: false,
-            },
-            {
                 id: 'gaming-form-0',
                 inputType: 'text',
                 state: 'normal',
-                name: 'name',
+                name: 'name1',
                 label: 'Name',
                 placeholder: 'John',
                 value: '',
@@ -39,7 +40,17 @@ class PaperPresentationForm extends Component {
                 id: 'gaming-form-1',
                 inputType: 'text',
                 state: 'normal',
-                name: 'email',
+                name: 'name2',
+                label: '',
+                placeholder: 'John',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-2',
+                inputType: 'text',
+                state: 'normal',
+                name: 'email1',
                 label: 'Email ID',
                 placeholder: 'johndoe@gmail.com',
                 value: '',
@@ -49,6 +60,16 @@ class PaperPresentationForm extends Component {
                 id: 'gaming-form-3',
                 inputType: 'text',
                 state: 'normal',
+                name: 'email2',
+                label: '',
+                placeholder: 'johndoe@gmail.com',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-4',
+                inputType: 'text',
+                state: 'normal',
                 name: 'college name',
                 label: 'College Name',
                 placeholder: 'Sri Sairam Engineering College',
@@ -56,7 +77,7 @@ class PaperPresentationForm extends Component {
                 readOnly: false,
             },
             {
-                id: 'gaming-form-4',
+                id: 'gaming-form-5',
                 inputType: 'integer',
                 state: 'normal',
                 name: 'phone number',
@@ -115,6 +136,14 @@ class PaperPresentationForm extends Component {
                         label: 'IV',
                     },
                 ],
+            },
+        ],
+        checkboxs: [
+            {
+                id: 1,
+                name: 'team-or-single',
+                checkState: false,
+                state: 'normal',
             },
         ],
     }
@@ -182,134 +211,246 @@ class PaperPresentationForm extends Component {
         this.setState({ radioButtons })
     }
 
+    handleCheckboxValueChange = (idx) => {
+        let checkboxs = this.state.checkboxs
+        checkboxs[idx].checkState = checkboxs[idx].checkState ? false : true
+        this.setState({
+            checkboxs,
+        })
+    }
+
     handleFormSubmit = (event) => {
         event.preventDefault()
 
         let textfields = this.state.textfields.concat()
         let dropdowns = this.state.dropdowns.concat()
         let radioButtons = this.state.radioButtons.concat()
-        let isValid = true
+        const checkbox = this.state.checkboxs[0]
 
-        textfields.forEach((field) => {
-            if (!field.value.trim().length) {
-                isValid = false
-                field.state = 'error'
-                field.hint = `Please provide ${field.label}`
-            } else {
-                field.state = 'normal'
-                field.hint = null
-            }
-            return null
+        const [validatedTextfields, isTextFieldsValid] = validateTextFields(
+            checkbox.checkState
+                ? [textfields[0], textfields[2], textfields[4], textfields[5]]
+                : textfields
+        )
+        const [validatedDropdowns, isDropdownValid] = validateDropdowns(
+            dropdowns
+        )
+        const [
+            validatedRadioButtons,
+            isRadioButtonValid,
+        ] = validateRadioButtons(radioButtons)
+
+        this.setState({
+            validatedTextfields,
+            validatedDropdowns,
+            validatedRadioButtons,
         })
-
-        dropdowns.forEach((dropdown) => {
-            if (!dropdown.value.trim().length) {
-                isValid = false
-                dropdown.field.state = 'error'
-                dropdown.field.hint = `Please provide ${dropdown.field.name}`
-            } else {
-                dropdown.field.state = 'normal'
-                dropdown.field.hint = ''
-            }
-        })
-
-        radioButtons.forEach((button) => {
-            let isRadioButtonValid = false
-            button.options.forEach((option) => {
-                if (option.active) {
-                    isRadioButtonValid = true
-                }
+        if (isTextFieldsValid && isDropdownValid && isRadioButtonValid) {
+            var year = null
+            this.state.radioButtons[0].options.forEach((option) => {
+                if (option.active) year = option.label
             })
-            if (!isRadioButtonValid) {
-                isValid = false
-                button.error = `Please provide ${button.name}`
-            } else {
-                button.error = ``
-            }
-        })
-
-        this.setState({ textfields, dropdowns, radioButtons })
-        if (isValid) {
             const data = {
-                fullName: this.state.textfields[0].value,
-                email: this.state.textfields[1].value,
-                gameID: this.state.textfields[2].value,
-                collegeName: this.state.textfields[3].value,
-                phoneNumber: this.state.textfields[4].value,
+                members: [
+                    {
+                        name: this.state.textfields[0].value,
+                        emailId: this.state.textfields[2].value,
+                        collegeName: this.state.textfields[4].value,
+                        mobileNumber: this.state.textfields[5].value,
+                        dept: this.state.dropdowns[0].value,
+                        year,
+                    },
+                ],
             }
 
-            console.log(data)
-            // API call to backend
+            if (!checkbox.checkState)
+                data.members.push({
+                    name: this.state.textfields[1].value,
+                    emailId: this.state.textfields[3].value,
+                    collegeName: this.state.textfields[4].value,
+                    mobileNumber: this.state.textfields[5].value,
+                    dept: this.state.dropdowns[0].value,
+                    year,
+                })
+
+            this.props.registerPaperPresentationEvent(data)
         }
     }
 
     render() {
-        const { theme } = this.props
         const field = this.state.textfields
+        const { checkboxs } = this.state
         return (
             <>
                 <FormWrapper formName="Paper Presentation">
                     <PaperPresentationFormBg />
                     <InputWrapper>
-                        <Textfield
-                            textfield={field[0]}
-                            handleInputValueChange={this.handleInputValueChange}
-                        />
-                        <Textfield
-                            textfield={field[1]}
-                            handleInputValueChange={this.handleInputValueChange}
-                        />
-                        <Textfield
-                            textfield={field[2]}
-                            handleInputValueChange={this.handleInputValueChange}
-                        />
-                        <Textfield
-                            textfield={field[3]}
-                            handleInputValueChange={this.handleInputValueChange}
-                        />
-                        <Dropdown
-                            dropdownMenu={this.state.dropdowns[0]}
-                            handleDropdowntoggle={() =>
-                                this.handleDropdowntoggle(0)
-                            }
-                            handleDropdownClick={(name) =>
-                                this.handleDropdownClick(0, name)
-                            }
-                        />
-                        <div style={{ height: '9rem' }}>
-                            <Label state="normal" size="1.5rem">
-                                {this.state.radioButtons[0].label}
-                            </Label>
-                            <RadioButtonWrapper>
-                                {this.state.radioButtons[0].options.map(
-                                    (button) => (
-                                        <RadioButton
-                                            key={button.id}
-                                            {...button}
-                                            radioBtnClick={(id) =>
-                                                this.handleRadioButtonClick(
-                                                    0,
-                                                    id
-                                                )
-                                            }
-                                        />
-                                    )
-                                )}
-                            </RadioButtonWrapper>
-                            <Label state="error" size="1.25rem">
-                                {this.state.radioButtons[0].error}
-                            </Label>
-                        </div>
-                        <Textfield
-                            textfield={field[4]}
-                            handleInputValueChange={this.handleInputValueChange}
-                        />
+                        <Checkbox
+                            checkbox={this.state.checkboxs[0]}
+                            handleCheckboxValueChange={this.handleCheckboxValueChange.bind(
+                                this,
+                                0
+                            )}
+                        >
+                            Single participant?
+                        </Checkbox>
+                        {checkboxs[0].checkState ? (
+                            <>
+                                <Textfield
+                                    textfield={field[0]}
+                                    handleInputValueChange={
+                                        this.handleInputValueChange
+                                    }
+                                />
+                                <Textfield
+                                    textfield={field[2]}
+                                    handleInputValueChange={
+                                        this.handleInputValueChange
+                                    }
+                                />
+                                <Textfield
+                                    textfield={field[4]}
+                                    handleInputValueChange={
+                                        this.handleInputValueChange
+                                    }
+                                />
+                                <Dropdown
+                                    dropdownMenu={this.state.dropdowns[0]}
+                                    handleDropdowntoggle={() =>
+                                        this.handleDropdowntoggle(0)
+                                    }
+                                    handleDropdownClick={(name) =>
+                                        this.handleDropdownClick(0, name)
+                                    }
+                                />
+                                <div style={{ height: '9rem' }}>
+                                    <Label state="normal" size="1.5rem">
+                                        {this.state.radioButtons[0].label}
+                                    </Label>
+                                    <RadioButtonWrapper>
+                                        {this.state.radioButtons[0].options.map(
+                                            (button) => (
+                                                <RadioButton
+                                                    key={button.id}
+                                                    {...button}
+                                                    radioBtnClick={(id) =>
+                                                        this.handleRadioButtonClick(
+                                                            0,
+                                                            id
+                                                        )
+                                                    }
+                                                />
+                                            )
+                                        )}
+                                    </RadioButtonWrapper>
+                                    <Label state="error" size="1.25rem">
+                                        {this.state.radioButtons[0].error}
+                                    </Label>
+                                </div>
+                                <Textfield
+                                    textfield={field[5]}
+                                    handleInputValueChange={
+                                        this.handleInputValueChange
+                                    }
+                                />
+                            </>
+                        ) : (
+                            <>
+                                <InputGroup
+                                    textfields={[
+                                        { ...field[0], label: '' },
+                                        field[1],
+                                    ]}
+                                    label="Name"
+                                    theme={this.props.theme}
+                                    onchangeHandler={
+                                        this.handleInputValueChange
+                                    }
+                                    rows={1}
+                                />
+                                <InputGroup
+                                    textfields={[
+                                        { ...field[2], label: '' },
+                                        field[3],
+                                    ]}
+                                    label="Email ID"
+                                    theme={this.props.theme}
+                                    onchangeHandler={
+                                        this.handleInputValueChange
+                                    }
+                                    rows={1}
+                                />
+                                <Textfield
+                                    textfield={field[4]}
+                                    handleInputValueChange={
+                                        this.handleInputValueChange
+                                    }
+                                />
+                                <Dropdown
+                                    dropdownMenu={this.state.dropdowns[0]}
+                                    handleDropdowntoggle={() =>
+                                        this.handleDropdowntoggle(0)
+                                    }
+                                    handleDropdownClick={(name) =>
+                                        this.handleDropdownClick(0, name)
+                                    }
+                                />
+                                <div style={{ height: '9rem' }}>
+                                    <Label state="normal" size="1.5rem">
+                                        {this.state.radioButtons[0].label}
+                                    </Label>
+                                    <RadioButtonWrapper>
+                                        {this.state.radioButtons[0].options.map(
+                                            (button) => (
+                                                <RadioButton
+                                                    key={button.id}
+                                                    {...button}
+                                                    radioBtnClick={(id) =>
+                                                        this.handleRadioButtonClick(
+                                                            0,
+                                                            id
+                                                        )
+                                                    }
+                                                />
+                                            )
+                                        )}
+                                    </RadioButtonWrapper>
+                                    <Label state="error" size="1.25rem">
+                                        {this.state.radioButtons[0].error}
+                                    </Label>
+                                </div>
+                                <Textfield
+                                    textfield={field[5]}
+                                    handleInputValueChange={
+                                        this.handleInputValueChange
+                                    }
+                                />
+                            </>
+                        )}
                     </InputWrapper>
-                    <Button onClick={this.handleFormSubmit}>SUBMIT</Button>
+                    <Button
+                        onClick={this.handleFormSubmit}
+                        disabled={this.props.isLoading}
+                    >
+                        {this.props.isLoading ? <Loader /> : 'SUBMIT'}
+                    </Button>
                 </FormWrapper>
             </>
         )
     }
 }
 
-export default withTheme(PaperPresentationForm)
+const mapStateToProps = ({ techEvents }) => ({
+    isLoading: techEvents.isLoading,
+    isError: techEvents.isError,
+    isPaperPresentationRegistered: techEvents.isPaperPresentationRegistered,
+})
+
+const mapDispatchToProps = {
+    registerPaperPresentationEvent,
+}
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withTheme
+)(PaperPresentationForm)
