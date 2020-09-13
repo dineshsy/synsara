@@ -14,7 +14,7 @@ export const registerGamingEvent = (data) => (dispatch, getState) => {
             dispatch({ type: ActionTypes.REGISTER_GAMING_EVENT_FAIL })
             dispatch(
                 registrationFailed({
-                    err_type: err.response.status,
+                    err_type: err.response,
                     event: 'Gaming',
                 })
             )
@@ -33,7 +33,7 @@ export const registerDream11iplEvent = (data) => (dispatch) => {
             dispatch({ type: ActionTypes.REGISTER_DREAM11IPL_EVENT_FAIL })
             dispatch(
                 registrationFailed({
-                    err_type: err.response.status,
+                    err_type: err.response,
                     event: 'Dream 11 ipl',
                 })
             )
@@ -52,7 +52,7 @@ export const registerConnexionsEvent = (data) => (dispatch) => {
             dispatch({ type: ActionTypes.REGISTER_CONNEXIONS_EVENT_FAIL })
             dispatch(
                 registrationFailed({
-                    err_type: err.response.status,
+                    err_type: err.response,
                     event: 'Connexions',
                 })
             )
@@ -71,7 +71,7 @@ export const registerPhotographyEvent = (data) => (dispatch) => {
             dispatch({ type: ActionTypes.REGISTER_PHOTOGRAPHY_EVENT_FAIL })
             dispatch(
                 registrationFailed({
-                    err_type: err.response.status,
+                    err_type: err.response,
                     event: 'Photography',
                 })
             )
@@ -90,7 +90,7 @@ export const registerTreasureHuntEvent = (data) => (dispatch) => {
             dispatch({ type: ActionTypes.REGISTER_TREASUREHUNT_EVENT_FAIL })
             dispatch(
                 registrationFailed({
-                    err_type: err.response.status,
+                    err_type: err.response,
                     event: 'Treasure Hunt',
                 })
             )
@@ -109,7 +109,7 @@ export const registerMemeContestEvent = (data) => (dispatch) => {
             dispatch({ type: ActionTypes.REGISTER_MEMECONTEST_EVENT_FAIL })
             dispatch(
                 registrationFailed({
-                    err_type: err.response.status,
+                    err_type: err.response,
                     event: 'Meme Contest',
                 })
             )
@@ -128,7 +128,7 @@ export const registerInstaReelsEvent = (data) => (dispatch) => {
             dispatch({ type: ActionTypes.REGISTER_INSTA_REEL_CONTEST_FAIL })
             dispatch(
                 registrationFailed({
-                    err_type: err.response.status,
+                    err_type: err.response,
                     event: 'Insta Reel',
                 })
             )

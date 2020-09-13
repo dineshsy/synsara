@@ -14,7 +14,7 @@ export const registerCodingEvent = (data) => (dispatch) => {
             dispatch({ type: ActionTypes.REGISTER_CODING_EVENT_FAIL })
             dispatch(
                 registrationFailed({
-                    err_type: err.response.status,
+                    err_type: err.response,
                     event: 'Coding',
                 })
             )
@@ -33,7 +33,7 @@ export const registerDebuggingEvent = (data) => (dispatch) => {
             dispatch({ type: ActionTypes.REGISTER_DEBUGGING_EVENT_FAIL })
             dispatch(
                 registrationFailed({
-                    err_type: err.response.status,
+                    err_type: err.response,
                     event: 'Debugging',
                 })
             )
@@ -56,7 +56,7 @@ export const registerPaperPresentationEvent = (data) => (dispatch) => {
             })
             dispatch(
                 registrationFailed({
-                    err_type: err.response.status,
+                    err_type: err.response,
                     event: 'Paper Presentation',
                 })
             )
@@ -75,7 +75,7 @@ export const registerHackathonEvent = (data) => (dispatch) => {
             dispatch({ type: ActionTypes.REGISTER_HACKATHON_EVENT_FAIL })
             dispatch(
                 registrationFailed({
-                    err_type: err.response.status,
+                    err_type: err.response,
                     event: 'Hackathon',
                 })
             )

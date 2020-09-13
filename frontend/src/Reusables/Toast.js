@@ -199,7 +199,10 @@ class Toast extends React.Component {
         if (toast !== prevProps.toast) {
             if (toast.isError) {
                 const { error_details } = toast
-                if (error_details.err_type === 409) {
+                if (
+                    error_details.err_type &&
+                    error_details.err_type.status === 409
+                ) {
                     this.setState({
                         className: ['show', 'warning'],
                         msg: 'You have already registered for this event',
