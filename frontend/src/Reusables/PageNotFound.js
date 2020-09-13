@@ -3,6 +3,16 @@ import styled, { keyframes } from 'styled-components'
 import { Link } from 'react-router-dom'
 import { sizeMaxW, sizeMaxH, sizeMinH, sizeMinW } from '../utils/MediaQueires'
 
+const FadeIn = (x, y) => keyframes`
+    0%{
+        opacity: 0;
+        transform: translate(${x},${y});
+    } 100% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+`
+
 const PageNotFoundWrapper = styled.section`
     width: 100%;
     height: 100vh;
@@ -64,6 +74,31 @@ const RobotWrapper = styled.div`
         height: 100%;
         float: right;
         bottom: 0;
+    }
+
+    #Head {
+        opacity: 0;
+        animation: ${FadeIn(0, `-50px`)} 0.7s ease-in;
+        animation-fill-mode: forwards;
+        animation-delay: 0.3s;
+    }
+    #Leg {
+        opacity: 0;
+        animation: ${FadeIn(0, `50px`)} 0.7s ease-in;
+        animation-fill-mode: forwards;
+        animation-delay: 0.3s;
+    }
+    #LeftHand {
+        opacity: 0;
+        animation: ${FadeIn(`-50px`, `0`)} 0.7s ease-in;
+        animation-fill-mode: forwards;
+        animation-delay: 0.3s;
+    }
+    #RightHand {
+        opacity: 0;
+        animation: ${FadeIn(`50px`, `0`)} 0.7s ease-in;
+        animation-fill-mode: forwards;
+        animation-delay: 0.3s;
     }
 
     @media ${sizeMaxW.tablet} {
@@ -263,7 +298,7 @@ export const PageNotFound = () => {
                                 fill="black"
                             />
                         </g>
-                        <g id="RightH">
+                        <g id="RightHand">
                             <path
                                 id="Vector_23"
                                 d="M600.871 419.415V450.515C609.177 451.966 616.917 455.697 623.225 461.291C629.076 466.709 633.625 473.38 636.533 480.805C640.423 490.23 642.315 500.697 643.086 510.593C644.038 523.94 643.414 537.353 641.226 550.554H674.85C676.278 531.967 675.823 516.019 673.97 502.326C671.894 486.887 668.05 474.321 663.179 464.101C653.438 443.669 639.582 432.584 627.409 426.563C612.951 419.415 600.871 419.415 600.871 419.415Z"
@@ -311,16 +346,32 @@ export const PageNotFound = () => {
                                 d="M514.081 372.337H473.733V395.88H514.081V372.337Z"
                                 fill="#6C63FF"
                             />
-                            <path
-                                id="Vector_31"
-                                d="M434.722 165.166H423.144V264.742H434.722V165.166Z"
-                                fill="#6C63FF"
-                            />
-                            <path
-                                id="Vector_32"
-                                d="M567.489 165.166H555.91V264.742H567.489V165.166Z"
-                                fill="#6C63FF"
-                            />
+                            <g id="leftAntenna">
+                                <path
+                                    id="Vector_31"
+                                    d="M434.722 165.166H423.144V264.742H434.722V165.166Z"
+                                    fill="#6C63FF"
+                                />
+                                <path
+                                    id="Vector_35"
+                                    opacity="0.1"
+                                    d="M428.546 179.06C435.793 179.06 441.669 173.185 441.669 165.938C441.669 158.691 435.793 152.816 428.546 152.816C421.299 152.816 415.424 158.691 415.424 165.938C415.424 173.185 421.299 179.06 428.546 179.06Z"
+                                    fill="black"
+                                />
+                            </g>
+                            <g id="rightAntenna">
+                                <path
+                                    id="Vector_32"
+                                    d="M567.489 165.166H555.91V264.742H567.489V165.166Z"
+                                    fill="#6C63FF"
+                                />
+                                <path
+                                    id="Vector_36"
+                                    opacity="0.1"
+                                    d="M562.086 179.06C569.333 179.06 575.209 173.185 575.209 165.938C575.209 158.691 569.333 152.816 562.086 152.816C554.839 152.816 548.964 158.691 548.964 165.938C548.964 173.185 554.839 179.06 562.086 179.06Z"
+                                    fill="black"
+                                />
+                            </g>
                             <path
                                 id="Vector_33"
                                 d="M428.546 178.288C435.793 178.288 441.669 172.413 441.669 165.166C441.669 157.919 435.793 152.044 428.546 152.044C421.299 152.044 415.424 157.919 415.424 165.166C415.424 172.413 421.299 178.288 428.546 178.288Z"
@@ -330,18 +381,6 @@ export const PageNotFound = () => {
                                 id="Vector_34"
                                 d="M562.086 178.288C569.333 178.288 575.209 172.413 575.209 165.166C575.209 157.919 569.333 152.044 562.086 152.044C554.839 152.044 548.964 157.919 548.964 165.166C548.964 172.413 554.839 178.288 562.086 178.288Z"
                                 fill="#6C63FF"
-                            />
-                            <path
-                                id="Vector_35"
-                                opacity="0.1"
-                                d="M428.546 179.06C435.793 179.06 441.669 173.185 441.669 165.938C441.669 158.691 435.793 152.816 428.546 152.816C421.299 152.816 415.424 158.691 415.424 165.938C415.424 173.185 421.299 179.06 428.546 179.06Z"
-                                fill="black"
-                            />
-                            <path
-                                id="Vector_36"
-                                opacity="0.1"
-                                d="M562.086 179.06C569.333 179.06 575.209 173.185 575.209 165.938C575.209 158.691 569.333 152.816 562.086 152.816C554.839 152.816 548.964 158.691 548.964 165.938C548.964 173.185 554.839 179.06 562.086 179.06Z"
-                                fill="black"
                             />
                         </g>
                     </g>

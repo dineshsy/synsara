@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import GamingForm from './NonTechEvents/GamingForm/GamingForm'
 import Dream11iplForm from './NonTechEvents/Dream11ipl/Dream11iplForm'
 import TreasureHuntForm from './NonTechEvents/TreasureHunt/TreasureHuntForm'
@@ -15,40 +15,40 @@ import DebuggingForm from './TechEvents/Debugging/DebuggingForm'
 
 export const Index = () => {
     return (
-        <BrowserRouter basename="/register">
-            <Switch>
-                <Route path={`/${FORM_ROUTES.nonTechEvents.gaming}`}>
-                    <GamingForm />
-                </Route>
-                <Route path={`/${FORM_ROUTES.nonTechEvents.dream11IPL}`}>
-                    <Dream11iplForm />
-                </Route>
-                <Route path={`/${FORM_ROUTES.nonTechEvents.treasureHunt}`}>
-                    <TreasureHuntForm />
-                </Route>
-                <Route path={`/${FORM_ROUTES.nonTechEvents.connexions}`}>
-                    <ConnexionsForm />
-                </Route>
-                <Route path={`/${FORM_ROUTES.nonTechEvents.photography}`}>
-                    <PhotographyForm />
-                </Route>
-                <Route path={`/${FORM_ROUTES.nonTechEvents.memeContest}`}>
-                    <MemeContestForm />
-                </Route>
-                <Route path={`/${FORM_ROUTES.nonTechEvents.instareels}`}>
-                    <InstaReelsForm />
-                </Route>
-                <Route path={`/${FORM_ROUTES.techEvents.coding}`}>
-                    <CodingForm />
-                </Route>
-                <Route path={`/${FORM_ROUTES.techEvents.paperPresentation}`}>
-                    <PaperPresentationForm />
-                </Route>
-                <Route path={`/${FORM_ROUTES.techEvents.debugging}`}>
-                    <DebuggingForm />
-                </Route>
-                <Route path="*" component={PageNotFound} />
-            </Switch>
-        </BrowserRouter>
+        <Switch>
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.gaming}`}>
+                <GamingForm />
+            </Route>
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.dream11IPL}`}>
+                <Dream11iplForm />
+            </Route>
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.treasureHunt}`}>
+                <TreasureHuntForm />
+            </Route>
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.connexions}`}>
+                <ConnexionsForm />
+            </Route>
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.photography}`}>
+                <PhotographyForm />
+            </Route>
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.memeContest}`}>
+                <MemeContestForm />
+            </Route>
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.instareels}`}>
+                <InstaReelsForm />
+            </Route>
+            <Route path={`/register/${FORM_ROUTES.techEvents.coding}`}>
+                <CodingForm />
+            </Route>
+            <Route
+                path={`/register/${FORM_ROUTES.techEvents.paperPresentation}`}
+            >
+                <PaperPresentationForm />
+            </Route>
+            <Route path={`/register/${FORM_ROUTES.techEvents.debugging}`}>
+                <DebuggingForm />
+            </Route>
+            <Route path="*" component={PageNotFound} />
+        </Switch>
     )
 }
