@@ -9,6 +9,9 @@ import PhotographyForm from './NonTechEvents/Photography/PhotographyForm'
 import MemeContestForm from './NonTechEvents/MemeContest/MemeContest'
 import CodingForm from './TechEvents/Coding/CodingForm'
 import PaperPresentationForm from './TechEvents/Paper Presentation/PaperPresentation'
+import { PageNotFound } from '../../Reusables/PageNotFound'
+import InstaReelsForm from './NonTechEvents/InstaReelsContest/InstaReelsForm'
+import DebuggingForm from './TechEvents/Debugging/DebuggingForm'
 
 export const Index = () => {
     return (
@@ -32,12 +35,19 @@ export const Index = () => {
                 <Route path={`/${FORM_ROUTES.nonTechEvents.memeContest}`}>
                     <MemeContestForm />
                 </Route>
+                <Route path={`/${FORM_ROUTES.nonTechEvents.instareels}`}>
+                    <InstaReelsForm />
+                </Route>
                 <Route path={`/${FORM_ROUTES.techEvents.coding}`}>
                     <CodingForm />
                 </Route>
                 <Route path={`/${FORM_ROUTES.techEvents.paperPresentation}`}>
                     <PaperPresentationForm />
                 </Route>
+                <Route path={`/${FORM_ROUTES.techEvents.debugging}`}>
+                    <DebuggingForm />
+                </Route>
+                <Route path="*" component={PageNotFound} />
             </Switch>
         </BrowserRouter>
     )

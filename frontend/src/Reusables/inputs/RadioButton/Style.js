@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
     display: flex;
@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
     align-items: center;
     background-color: transparent;
     color: white;
-`;
+`
 
 export const Radio = styled.button`
     box-sizing: border-box;
@@ -28,11 +28,10 @@ export const Radio = styled.button`
     ${(props) =>
         props.active &&
         css`
-            border: 6px solid #bdbdbd;
-            background-color: ${(props) => props.theme.panel.textPrimary};
-
+            border: 3px solid #bdbdbd;
+            background-color: ${(props) => props.theme.primary};
         `}
-`;
+`
 
 export const Label = styled.div`
     font-weight: normal;
@@ -40,4 +39,4 @@ export const Label = styled.div`
     font-style: normal;
     line-height: 22px;
     color: #828282;
-`;
+`

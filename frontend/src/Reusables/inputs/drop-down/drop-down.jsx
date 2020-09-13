@@ -2,7 +2,7 @@ import React, { Component, createRef } from 'react'
 import './drop-down.css'
 import TextField from '../text-field/text-field'
 import styled, { withTheme } from 'styled-components'
-import { setLightness, rgba } from 'polished'
+import { setLightness, rgba, lighten } from 'polished'
 import {
     ENTER_KEY_CODE,
     DOWN_ARROW_KEY_CODE,
@@ -28,17 +28,18 @@ const DropdownContainer = styled.div`
     }
 
     .dropdown-container::-webkit-scrollbar-thumb {
-        background-color: ${(props) => setLightness(0.5, props.theme.textdark)};
+        background-color: ${(props) => rgba(props.theme.grey, 0.25)};
         border-radius: 20px;
         border: 2px solid transparent;
     }
     .dropdown:hover {
+        color: ${(props) => props.theme.textlight} !important;
         background-color: ${(props) => rgba(props.theme.textdark, 1)};
     }
 
     .dropdown-selected {
         color: #0050a7;
-        background-color: ${(props) => rgba(props.theme.textdark, 1)};
+        background-color: ${(props) => lighten(0.25, props.theme.grey)};
     }
 `
 class Dropdown extends Component {
@@ -47,7 +48,7 @@ class Dropdown extends Component {
         this.listItemIds = []
         this.dropdownRef = createRef()
         document.addEventListener('mousedown', this.handleClickOutside)
-        document.addEventListener('focusin', this.handleFocusOutside)
+        // document.addEventListener('focusin', this.handleFocusOutside)
     }
 
     handleClickOutside = (event) => {
@@ -183,19 +184,17 @@ class Dropdown extends Component {
                     {dropdownMenu.toggle ? (
                         <ul
                             aria-expanded="false"
-                            role="list"
                             style={{
-                                backgroundColor: setLightness(
-                                    0.25,
+                                backgroundColor: lighten(
+                                    0.5,
                                     this.props.theme.grey
                                 ),
-                                width: this.props.maxWidth,
                             }}
                             className="dropdown-container"
                         >
                             {dropdownMenu.dropdown.map((dropdown) => (
                                 <li
-                                    tabindex={
+                                    tabIndex={
                                         dropdown.state === 'selected'
                                             ? '-1'
                                             : '0'

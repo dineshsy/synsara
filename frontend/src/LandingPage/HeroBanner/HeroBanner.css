@@ -4,6 +4,10 @@
     width: 100%;
 }
 
+.hero #button {
+    margin-top: 4rem;
+}
+
 .hero__bg {
     position: absolute;
     top: 0;
@@ -14,8 +18,8 @@
 
 .hero__logo {
     position: absolute;
-    top: 4rem;
-    left: 4rem;
+    top: 2rem;
+    left: 2rem;
 }
 
 .hero__img {
@@ -66,9 +70,22 @@
 
 @media (max-width: 1024px) {
     .hero__secondary {
-        font-size: 2rem;
-        line-height: 2rem;
-        width: 7rem;
+        font-size: 2.3rem;
+        line-height: 3.2rem;
+    }
+
+    .hero__logo img {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero__logo {
+        top: 1%;
+        left: 1%;
+    }
+    .hero__logo img {
+        width: 40%;
     }
 }
 
@@ -97,5 +114,6 @@
     }
     .hero__text {
         margin-bottom: 40% !important;
+        text-align: center;
     }
 }

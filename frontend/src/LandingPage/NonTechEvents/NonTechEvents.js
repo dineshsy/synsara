@@ -59,7 +59,7 @@ export const NonTechEvents = () => {
                 'Vivamus suscipit tortor eget felis porttitor volutpat.',
             ],
             img: ComingSoonImg,
-            route: ROUTES.gaming,
+            route: ROUTES.treasureHunt,
         },
         {
             description:
@@ -72,7 +72,7 @@ export const NonTechEvents = () => {
                 'Vivamus suscipit tortor eget felis porttitor volutpat.',
             ],
             img: ComingSoonImg,
-            route: ROUTES.gaming,
+            route: ROUTES.connexions,
         },
         {
             description:
@@ -85,7 +85,7 @@ export const NonTechEvents = () => {
                 'Vivamus suscipit tortor eget felis porttitor volutpat.',
             ],
             img: ComingSoonImg,
-            route: ROUTES.gaming,
+            route: ROUTES.photography,
         },
         {
             description:
@@ -98,7 +98,7 @@ export const NonTechEvents = () => {
                 'Vivamus suscipit tortor eget felis porttitor volutpat.',
             ],
             img: ComingSoonImg,
-            route: ROUTES.gaming,
+            route: ROUTES.memeContest,
         },
         {
             description:
@@ -111,7 +111,7 @@ export const NonTechEvents = () => {
                 'Vivamus suscipit tortor eget felis porttitor volutpat.',
             ],
             img: ComingSoonImg,
-            route: ROUTES.gaming,
+            route: ROUTES.instareels,
         },
     ]
 

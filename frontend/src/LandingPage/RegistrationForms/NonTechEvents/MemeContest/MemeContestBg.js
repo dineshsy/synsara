@@ -40,12 +40,12 @@ export default function MemeContestBg() {
                 fill="#3B93F7"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M975 382.997C950.662 371.166 879.599 366.705 790.005 443.5C761.839 467.642 741.8 490.109 724.177 509.865C671.726 568.669 640.688 603.467 480.505 587C354.955 574.093 322.854 665.306 285.558 771.282C259.283 845.942 230.429 927.929 164.505 986C24.1542 1109.63 1.88395 1163.96 22.747 1273H17.797C-18.2951 1129 -11.1784 1077.82 150.982 936.823C218.005 878.548 247.34 796.273 274.054 721.35C311.972 615.002 344.608 523.468 472.252 536.421C635.107 552.946 666.663 518.026 719.989 459.015C737.905 439.189 758.279 416.644 786.914 392.416C878.009 315.346 950.261 319.829 975 331.704V382.997Z"
                 fill="#DCF8FB"
             />
-            <g clip-path="url(#clip0)">
+            <g clipPath="url(#clip0)">
                 <path
                     opacity="0.1"
                     d="M598.695 49.6224C569.878 48.6246 542.432 39.3149 516.225 29.1321C490.017 18.9492 464.059 7.67064 435.914 2.27187C417.823 -1.19813 397.132 -1.68811 382.559 8.01808C368.529 17.3724 363.996 33.4707 361.561 48.4286C359.726 59.6805 358.649 71.5248 363.671 82.0595C367.162 89.3737 373.356 95.5208 377.634 102.523C392.537 126.902 382.002 156.956 365.857 180.761C358.288 191.923 349.494 202.587 343.648 214.458C337.802 226.329 335.117 239.96 340.233 252.107C345.3 264.134 357.38 273.15 370.466 279.498C397.043 292.393 428.349 296.081 458.898 298.175C526.501 302.799 594.461 300.799 662.242 298.79C687.328 298.046 712.52 297.297 737.196 293.413C750.901 291.262 765.047 287.841 774.998 279.604C787.626 269.123 790.756 251.377 782.292 238.232C768.097 216.187 728.861 210.712 718.927 187.055C713.469 174.03 719.074 159.526 727.013 147.451C744.04 121.539 772.576 98.8082 774.081 69.1952C775.11 48.8563 761.391 28.4862 740.179 18.8602C717.948 8.77534 687.114 10.0448 670.72 26.74C653.822 43.8896 624.141 50.5088 598.695 49.6224Z"
@@ -796,13 +796,13 @@ export default function MemeContestBg() {
                     y2="114.621"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#808080" stop-opacity="0.25" />
+                    <stop stopColor="#808080" stopOpacity="0.25" />
                     <stop
                         offset="0.54"
-                        stop-color="#808080"
-                        stop-opacity="0.12"
+                        stopColor="#808080"
+                        stopOpacity="0.12"
                     />
-                    <stop offset="1" stop-color="#808080" stop-opacity="0.1" />
+                    <stop offset="1" stopColor="#808080" stopOpacity="0.1" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear"
@@ -812,13 +812,13 @@ export default function MemeContestBg() {
                     y2="66430.5"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#808080" stop-opacity="0.25" />
+                    <stop stopColor="#808080" stopOpacity="0.25" />
                     <stop
                         offset="0.54"
-                        stop-color="#808080"
-                        stop-opacity="0.12"
+                        stopColor="#808080"
+                        stopOpacity="0.12"
                     />
-                    <stop offset="1" stop-color="#808080" stop-opacity="0.1" />
+                    <stop offset="1" stopColor="#808080" stopOpacity="0.1" />
                 </linearGradient>
                 <linearGradient
                     id="paint2_linear"
@@ -828,13 +828,13 @@ export default function MemeContestBg() {
                     y2="241.974"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#808080" stop-opacity="0.25" />
+                    <stop stopColor="#808080" stopOpacity="0.25" />
                     <stop
                         offset="0.54"
-                        stop-color="#808080"
-                        stop-opacity="0.12"
+                        stopColor="#808080"
+                        stopOpacity="0.12"
                     />
-                    <stop offset="1" stop-color="#808080" stop-opacity="0.1" />
+                    <stop offset="1" stopColor="#808080" stopOpacity="0.1" />
                 </linearGradient>
                 <linearGradient
                     id="paint3_linear"
@@ -844,13 +844,13 @@ export default function MemeContestBg() {
                     y2="306.651"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#808080" stop-opacity="0.25" />
+                    <stop stopColor="#808080" stopOpacity="0.25" />
                     <stop
                         offset="0.54"
-                        stop-color="#808080"
-                        stop-opacity="0.12"
+                        stopColor="#808080"
+                        stopOpacity="0.12"
                     />
-                    <stop offset="1" stop-color="#808080" stop-opacity="0.1" />
+                    <stop offset="1" stopColor="#808080" stopOpacity="0.1" />
                 </linearGradient>
                 <clipPath id="clip0">
                     <rect

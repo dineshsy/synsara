@@ -4,8 +4,10 @@ import { HeroBanner } from './HeroBanner/HeroBanner'
 import ReactFullpage from '@fullpage/react-fullpage'
 import { NonTechEvents } from './NonTechEvents/NonTechEvents'
 import { TechEvents } from './TechEvents/TechEvents'
-import AboutUs from './AboutUs/AboutUs'
+import ContactUs from './ContactUs/ContactUs'
 import { Index as RegistrationForms } from './RegistrationForms'
+import { ScrollIndicator } from '../Reusables/ScrollIndicator'
+import { PageNotFound } from '../Reusables/PageNotFound'
 export const index = () => {
     return (
         <Switch>
@@ -22,29 +24,40 @@ export const index = () => {
                         'Home',
                         'Non-Technical Events',
                         'Technical Events',
-                        'About Us',
+                        'Contact Us',
                     ]}
                     showActiveTooltip={true}
                     render={({ state, fullpageApi }) => {
                         return (
                             <ReactFullpage.Wrapper>
                                 <div className="section">
-                                    <HeroBanner />
+                                    <HeroBanner fullpageApi={fullpageApi} />
                                 </div>
                                 <div className="section">
-                                    <NonTechEvents />
+                                    <div style={{ position: 'relative' }}>
+                                        <NonTechEvents />
+                                        <ScrollIndicator
+                                            fullpageApi={fullpageApi}
+                                        />
+                                    </div>
                                 </div>
                                 <div className="section">
-                                    <TechEvents />
+                                    <div style={{ position: 'relative' }}>
+                                        <TechEvents />
+                                        <ScrollIndicator
+                                            fullpageApi={fullpageApi}
+                                        />
+                                    </div>
                                 </div>
                                 <div className="section">
-                                    <AboutUs />
+                                    <ContactUs />
                                 </div>
                             </ReactFullpage.Wrapper>
                         )
                     }}
                 />
             </Route>
+            <Route path="*" component={PageNotFound} />
         </Switch>
     )
 }
