@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import GamingForm from './NonTechEvents/GamingForm/GamingForm'
 import Dream11iplForm from './NonTechEvents/Dream11ipl/Dream11iplForm'
 import TreasureHuntForm from './NonTechEvents/TreasureHunt/TreasureHuntForm'
@@ -16,48 +16,36 @@ import { PageNotFound } from '../../Reusables/PageNotFound'
 export const Index = ({ match }) => {
     return (
         <Switch>
-            <Route path={`${match.path}/${FORM_ROUTES.nonTechEvents.gaming}`}>
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.gaming}`}>
                 <GamingForm />
             </Route>
-            <Route
-                path={`${match.path}/${FORM_ROUTES.nonTechEvents.dream11IPL}`}
-            >
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.dream11IPL}`}>
                 <Dream11iplForm />
             </Route>
-            <Route
-                path={`${match.path}/${FORM_ROUTES.nonTechEvents.treasureHunt}`}
-            >
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.treasureHunt}`}>
                 <TreasureHuntForm />
             </Route>
-            <Route
-                path={`${match.path}/${FORM_ROUTES.nonTechEvents.connexions}`}
-            >
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.connexions}`}>
                 <ConnexionsForm />
             </Route>
-            <Route
-                path={`${match.path}/${FORM_ROUTES.nonTechEvents.photography}`}
-            >
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.photography}`}>
                 <PhotographyForm />
             </Route>
-            <Route
-                path={`${match.path}/${FORM_ROUTES.nonTechEvents.memeContest}`}
-            >
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.memeContest}`}>
                 <MemeContestForm />
             </Route>
-            <Route
-                path={`${match.path}/${FORM_ROUTES.nonTechEvents.instareels}`}
-            >
+            <Route path={`/register/${FORM_ROUTES.nonTechEvents.instareels}`}>
                 <InstaReelsForm />
             </Route>
-            <Route path={`${match.path}/${FORM_ROUTES.techEvents.coding}`}>
+            <Route path={`/register/${FORM_ROUTES.techEvents.coding}`}>
                 <CodingForm />
             </Route>
             <Route
-                path={`${match.path}/${FORM_ROUTES.techEvents.paperPresentation}`}
+                path={`/register/${FORM_ROUTES.techEvents.paperPresentation}`}
             >
                 <PaperPresentationForm />
             </Route>
-            <Route path={`${match.path}/${FORM_ROUTES.techEvents.debugging}`}>
+            <Route path={`/register/${FORM_ROUTES.techEvents.debugging}`}>
                 <DebuggingForm />
             </Route>
             <Route path="*" component={PageNotFound} />
