@@ -22,12 +22,21 @@
     left: 2rem;
 }
 
+@keyframes rotating {
+    0% {
+        transform: translateX(200%) rotate(100deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .hero__img {
     position: absolute;
-    bottom: 0rem;
-    right: 10rem;
-    height: 80%;
-    width: 80%;
+    bottom: 10rem;
+    right: 17rem;
+    height: 70%;
+    width: 50%;
 }
 
 .hero__text {
@@ -43,10 +52,10 @@
 }
 
 .hero__secondary {
-    max-width: 50rem;
+    max-width: 62rem;
     font-weight: 600;
-    font-size: 3rem;
-    line-height: 5rem;
+    font-size: 2rem;
+    line-height: 3.5rem;
     color: #3563c1;
 }
 
@@ -70,10 +79,9 @@
 
 @media (max-width: 1024px) {
     .hero__secondary {
-        font-size: 2.3rem;
+        font-size: 2rem;
         line-height: 3.2rem;
     }
-
     .hero__logo img {
         width: 60%;
     }
@@ -86,6 +94,9 @@
     }
     .hero__logo img {
         width: 40%;
+    }
+    .hero__img {
+        right: 10rem;
     }
 }
 

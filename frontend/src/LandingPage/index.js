@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { HeroBanner } from './HeroBanner/HeroBanner'
 import ReactFullpage from '@fullpage/react-fullpage'
@@ -8,7 +8,14 @@ import ContactUs from './ContactUs/ContactUs'
 import { Index as RegistrationForms } from './RegistrationForms'
 import { ScrollIndicator } from '../Reusables/ScrollIndicator'
 import { PageNotFound } from '../Reusables/PageNotFound'
-export const index = () => {
+
+const Index = (props) => {
+    const [pageNumber, setPageNumber] = useState(0)
+
+    const afterLoad = (origin, destination, direction) => {
+        setPageNumber(destination.index)
+    }
+
     return (
         <Switch>
             <Route path="/register/:formID">
@@ -18,6 +25,7 @@ export const index = () => {
                 <ReactFullpage
                     scrollingSpeed={1000}
                     navigation={true}
+                    afterLoad={afterLoad}
                     navigationPosition="left"
                     slidesNavPosition="left"
                     navigationTooltips={[
@@ -31,11 +39,14 @@ export const index = () => {
                         return (
                             <ReactFullpage.Wrapper>
                                 <div className="section">
-                                    <HeroBanner fullpageApi={fullpageApi} />
+                                    <HeroBanner
+                                        fullpageApi={fullpageApi}
+                                        pageNumber={pageNumber}
+                                    />
                                 </div>
                                 <div className="section">
                                     <div style={{ position: 'relative' }}>
-                                        <NonTechEvents />
+                                        <NonTechEvents id="hero" />
                                         <ScrollIndicator
                                             fullpageApi={fullpageApi}
                                         />
@@ -50,7 +61,10 @@ export const index = () => {
                                     </div>
                                 </div>
                                 <div className="section">
-                                    <ContactUs />
+                                    <ContactUs
+                                        fullpageApi={fullpageApi}
+                                        pageNumber={pageNumber}
+                                    />
                                 </div>
                             </ReactFullpage.Wrapper>
                         )
@@ -61,3 +75,5 @@ export const index = () => {
         </Switch>
     )
 }
+
+export default Index
