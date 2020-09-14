@@ -22,7 +22,24 @@
 .person__photo {
     height: 100%;
     backface-visibility: hidden;
+    width: auto;
     transition: all 0.5s;
+}
+
+.person__photo--2 {
+    transform: scale(1.4);
+}
+
+.person__photo--4 {
+    transform: scale(2.3);
+}
+
+.person__photo--5 {
+    transform: scale(2.2) translateY(10px);
+}
+
+.person__photo--6 {
+    transform: scale(1.5);
 }
 
 .person__text {
@@ -41,6 +58,24 @@
     right: 0;
     bottom: -5rem;
     height: fit-content;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@keyframes floating {
+    from {
+        transform: translate(0, 0px);
+    }
+    65% {
+        transform: translate(0, 15px);
+    }
+    to {
+        transform: translate(0, -0px);
+    }
 }
 
 @media (max-width: 1090px) {
@@ -64,6 +99,18 @@
         display: inline-block;
         width: 5rem;
         height: 5rem;
+    }
+
+    .person__photo--4 {
+        transform: scale(2.3) translate(5px);
+    }
+
+    .person__photo--5 {
+        transform: scale(2.2) translate(5px, 7px);
+    }
+
+    .person__photo--6 {
+        transform: scale(1.5) translate(5px);
     }
     .person__text {
         display: inline-block;
