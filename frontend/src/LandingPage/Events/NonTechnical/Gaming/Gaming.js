@@ -10,6 +10,7 @@ import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
+
 export const Gaming = () => {
     const theme = useTheme()
     const history = useHistory()
