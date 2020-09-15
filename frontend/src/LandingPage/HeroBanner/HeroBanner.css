@@ -12,13 +12,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: 90%;
+    height: fit-content;
     width: 50%;
-}
-
-.hero__bg svg {
-    height: 108%;
-    float: right;
 }
 
 .hero__logo {
@@ -57,7 +52,7 @@
 }
 
 .hero__secondary {
-    max-width: 62rem;
+    max-width: 45rem;
     font-weight: 600;
     font-size: 2rem;
     line-height: 3.5rem;
