@@ -12,8 +12,13 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: fit-content;
+    height: 90%;
     width: 50%;
+}
+
+.hero__bg svg {
+    height: 108%;
+    float: right;
 }
 
 .hero__logo {
