@@ -11,6 +11,9 @@ export const EventWrapper = styled.section`
     @media ${sizeMaxW.tablet} {
         background: none;
     }
+    @media ${sizeMaxW.mobileL} {
+        padding: 2rem;
+    }
 `
 
 export const MainContentWrapper = styled.div`

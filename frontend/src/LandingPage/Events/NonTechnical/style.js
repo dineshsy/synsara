@@ -15,7 +15,7 @@ export const Label = styled.h1`
         @media ${sizeMinH.tablet} {
             font-size: calc(${size} / 1.15);
         }
-        @media ${sizeMinH.tablet} {
+        @media ${sizeMinH.laptop} {
             font-size: calc(${size} / 1);
         }
     `}

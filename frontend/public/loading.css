@@ -1,7 +1,7 @@
 .loader-wrapper {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: #3a8aed;
@@ -10,6 +10,7 @@
     align-items: center;
     transition: all 0.3s;
 }
+
 .loader {
     display: inline-block;
     width: 30px;
@@ -18,6 +19,7 @@
     border: 4px solid #fff;
     animation: loader 2s infinite ease;
 }
+
 .loader-inner {
     vertical-align: top;
     display: inline-block;
@@ -25,10 +27,12 @@
     background-color: #fff;
     animation: loader-inner 2s infinite ease-in;
 }
+
 .fade-out {
     visibility: hidden;
     opacity: 0;
 }
+
 @keyframes loader {
     0% {
         transform: rotate(0deg);
@@ -46,6 +50,7 @@
         transform: rotate(360deg);
     }
 }
+
 @keyframes loader-inner {
     0% {
         height: 0%;
