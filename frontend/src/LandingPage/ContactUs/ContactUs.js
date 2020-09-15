@@ -36,49 +36,48 @@ const ContactUsWrapper = styled.section`
                       animation: ${FadeIn(`0`, `50px`)} 0.3s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.3s;
                   }
                   .person--2 {
                       animation: ${FadeIn(`0`, `50px`)} 0.4s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.4s;
+                      animation-delay: 0.05s;
                   }
                   .person--3 {
                       animation: ${FadeIn(`0`, `50px`)} 0.5s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.5s;
+                      animation-delay: 0.15s;
                   }
                   .person--4 {
                       animation: ${FadeIn(`0`, `50px`)} 0.6s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.6s;
+                      animation-delay: 0.2s;
                   }
                   .person--5 {
                       animation: ${FadeIn(`0`, `50px`)} 0.7s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.7s;
+                      animation-delay: 0.25s;
                   }
                   .person--6 {
                       animation: ${FadeIn(`0`, `50px`)} 0.8s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.8s;
+                      animation-delay: 0.3s;
                   }
                   .person--7 {
                       animation: ${FadeIn(`0`, `50px`)} 0.9s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.9s;
+                      animation-delay: 0.35s;
                   }
                   .person--8 {
                       animation: ${FadeIn(`0`, `50px`)} 1s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 1s;
+                      animation-delay: 0.4s;
                   }
               `
             : null}
@@ -109,8 +108,8 @@ const FadeIn = (x, y) => keyframes`
 export default function ContactUs({ pageNumber }) {
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 3) {
-            setTimeout(() => setIsAnimated(true), 5000)
+        if (pageNumber === 3 && !isAnimated) {
+            setTimeout(() => setIsAnimated(true), 3500)
         }
     }, [pageNumber])
     return (
