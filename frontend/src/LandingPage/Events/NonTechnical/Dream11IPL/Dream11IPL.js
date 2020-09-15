@@ -10,8 +10,7 @@ import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
-
-export const Gaming = () => {
+export const Dream11IPL = () => {
     const theme = useTheme()
     const history = useHistory()
     return (
@@ -20,19 +19,20 @@ export const Gaming = () => {
                 <ContentWrapper gap="1rem">
                     <ContentWrapper gap="0rem">
                         <Label bold size="4.1rem" color={theme.secondary}>
-                            Aadukalam
+                            Tegidi
                         </Label>
                         <Label bold size="1.5rem" color={theme.primary}>
-                            "One-Shot, One Kill, No Luck, Pure Skill"
+                            "The essence of strategy is choosing what not to
+                            do."
                         </Label>
                     </ContentWrapper>
                     <Label size="2rem" color={theme.textdark}>
-                        Tamil Vanakkam to all you gamers out there. Synsara'20
-                        is on the search for the ultimate squad in all of India
-                        and we have a lot more than just a chicken dinner in
-                        store for you. Charge your phones, call your mates and
-                        get ready for an epic showdown in the Battlegrounds and
-                        remember - "Get to the safe zone!!"
+                        To all the master tacticians out there, take note as
+                        Synsara'20 has something just for you. Come and take
+                        part in a contest of Dream11 IPL Fantasy League to pit
+                        yourself against the very best in India. Bold choices
+                        demand incentives, and Synsara has you covered with some
+                        extravagant prizes to take home.
                     </Label>
                     <ContentWrapper gap="1rem">
                         <Label bold size="2.5rem" color={theme.secondary}>
@@ -40,23 +40,15 @@ export const Gaming = () => {
                         </Label>
                         <ContentWrapper gap="1rem">
                             <Label size="2rem" color={theme.textdark}>
-                                1. Each player is restricted to only one team
-                                and we do NOT allow players on Emulators.
+                                1. Participants will receive the contest code
+                                for the Dream11 contest before the start of the
+                                match.
                             </Label>
                             <Label size="2rem" color={theme.textdark}>
-                                2. Players trying to pull a fast one over the
-                                competition by teaming up or using hacks like
-                                ESP or Aimbots will get kicked out immediately.
-                            </Label>
-                            <Label size="2rem" color={theme.textdark}>
-                                3. Players are required to have all four maps
-                                installed and squad leaders are requested to
-                                keep up to date with our telegram channel for
-                                more information.
-                            </Label>
-                            <Label size="2rem" color={theme.textdark}>
-                                4. The number of rounds depends on the number of
-                                squads that turn up for the showdown.
+                                2. The contest is to be conducted in accordance
+                                with the rules and regulations of the Dream11
+                                mobile application and players are requested to
+                                refer to the same.
                             </Label>
                         </ContentWrapper>
                     </ContentWrapper>
@@ -481,7 +473,7 @@ export const Gaming = () => {
                     <Button
                         onClick={() =>
                             history.push(
-                                `/register/${FORM_ROUTES.nonTechEvents.gaming}`
+                                `/register/${FORM_ROUTES.nonTechEvents.dream11IPL}`
                             )
                         }
                     >

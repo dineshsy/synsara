@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import EventBG from '../../../../Assets/Images/events-bg.png'
 import { FadeIn } from '../../../../utils/globalStyles'
 import { sizeMaxW } from '../../../../utils/MediaQueires'
+
 export const EventWrapper = styled.section`
     width: 100%;
     height: 100%;
