@@ -2,10 +2,12 @@ import styled from 'styled-components'
 import EventBG from '../../../../Assets/Images/events-bg.png'
 import { FadeIn } from '../../../../utils/globalStyles'
 import { sizeMaxW } from '../../../../utils/MediaQueires'
+
 export const EventWrapper = styled.section`
     width: 100%;
     height: 100%;
     background: url('${EventBG}') no-repeat right;
+    padding: 6rem;
     @media ${sizeMaxW.tablet} {
         background: none;
     }
@@ -18,7 +20,6 @@ export const MainContentWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 0.4fr;
     margin: auto;
-    padding: 2rem;
     @media ${sizeMaxW.tablet} {
         grid-template-columns: 1fr;
     }

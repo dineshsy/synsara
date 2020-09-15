@@ -38,12 +38,12 @@ const Index = (props) => {
                     render={({ state, fullpageApi }) => {
                         return (
                             <ReactFullpage.Wrapper>
-                                <div className="section">
+                                {/* <div className="section">
                                     <HeroBanner
                                         fullpageApi={fullpageApi}
                                         pageNumber={pageNumber}
                                     />
-                                </div>
+                                </div> */}
                                 <div className="section">
                                     <div style={{ position: 'relative' }}>
                                         <NonTechEvents id="hero" />
