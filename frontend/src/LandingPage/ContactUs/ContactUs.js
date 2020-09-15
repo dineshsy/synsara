@@ -20,7 +20,7 @@ const Title = styled.h2`
     font-weight: 600;
 `
 
-const Body = styled.p`
+const Body = styled.div`
     width: 100%;
     color: ${(props) => props.theme.textdark};
     font-size: 13px;
