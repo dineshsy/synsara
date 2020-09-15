@@ -1,7 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState, useEffect } from 'react'
+import styled, { keyframes, css } from 'styled-components'
 import './ContactUs.css'
-import Person from '../../Assets/Images/person.png'
+import praba from '../../Assets/Images/praba.png'
+import srima from '../../Assets/Images/SRIMA.png'
+import linga from '../../Assets/Images/linga.png'
+import pooja from '../../Assets/Images/pooja.png'
+import Deep from '../../Assets/Images/Deep.png'
+import sandy from '../../Assets/Images/sandy.png'
+import Jade from '../../Assets/Images/Jade.png'
+import kaviya from '../../Assets/Images/kaviya.png'
 import { Halfellipse } from '../../Assets/svg/Halfellipse'
 
 const ContactUsWrapper = styled.section`
@@ -12,6 +19,69 @@ const ContactUsWrapper = styled.section`
     padding: 3rem 3rem 0 3rem;
     margin: auto;
     position: relative;
+    .person--1,
+    .person--2,
+    .person--3,
+    .person--4,
+    .person--5,
+    .person--6,
+    .person--7,
+    .person--8 {
+        opacity: ${({ isAnimated }) => (isAnimated ? `1` : `0`)};
+    }
+    ${({ pageNumber, isAnimated }) =>
+        pageNumber === 3 && !isAnimated
+            ? css`
+                  .person--1 {
+                      animation: ${FadeIn(`0`, `50px`)} 0.3s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 0.3s;
+                  }
+                  .person--2 {
+                      animation: ${FadeIn(`0`, `50px`)} 0.4s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 0.4s;
+                  }
+                  .person--3 {
+                      animation: ${FadeIn(`0`, `50px`)} 0.5s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 0.5s;
+                  }
+                  .person--4 {
+                      animation: ${FadeIn(`0`, `50px`)} 0.6s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 0.6s;
+                  }
+                  .person--5 {
+                      animation: ${FadeIn(`0`, `50px`)} 0.7s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 0.7s;
+                  }
+                  .person--6 {
+                      animation: ${FadeIn(`0`, `50px`)} 0.8s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 0.8s;
+                  }
+                  .person--7 {
+                      animation: ${FadeIn(`0`, `50px`)} 0.9s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 0.9s;
+                  }
+                  .person--8 {
+                      animation: ${FadeIn(`0`, `50px`)} 1s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 1s;
+                  }
+              `
+            : null}
 `
 
 const Title = styled.h2`
@@ -27,19 +97,34 @@ const Body = styled.div`
     text-align: justify;
 `
 
-export default function ContactUs() {
+const FadeIn = (x, y) => keyframes`
+    0%{
+        opacity: 0;
+        transform: translate(${x},${y});
+    } 100% {
+        opacity: 1;
+        transform: translate(0,0);
+    }`
+
+export default function ContactUs({ pageNumber }) {
+    const [isAnimated, setIsAnimated] = useState(false)
+    useEffect(() => {
+        if (pageNumber === 3) {
+            setTimeout(() => setIsAnimated(true), 5000)
+        }
+    }, [pageNumber])
     return (
         <>
-            <ContactUsWrapper>
+            <ContactUsWrapper pageNumber={pageNumber} isAnimated={isAnimated}>
                 <Title className="contactus__title">Event Coordinators</Title>
                 <Body>
                     <div className="row">
                         <div className="col-12 col-sm-6 col-lg-3 ">
-                            <div className="person">
+                            <div className="person person--1">
                                 <div className="person__shape">
                                     <img
-                                        src={Person}
-                                        className="person__photo"
+                                        src={praba}
+                                        className="person__photo person__photo--1"
                                     />
                                 </div>
                                 <div className="person__text">
@@ -56,11 +141,11 @@ export default function ContactUs() {
                             </div>
                         </div>
                         <div className="col-12 col-sm-6 col-lg-3">
-                            <div className="person">
+                            <div className="person person--2">
                                 <div className="person__shape">
                                     <img
-                                        src={Person}
-                                        className="person__photo"
+                                        src={srima}
+                                        className="person__photo person__photo--2"
                                     />
                                 </div>
                                 <div className="person__text">
@@ -75,11 +160,11 @@ export default function ContactUs() {
                             </div>
                         </div>
                         <div className="col-12 col-sm-6 col-lg-3">
-                            <div className="person">
+                            <div className="person person--3">
                                 <div className="person__shape">
                                     <img
-                                        src={Person}
-                                        className="person__photo"
+                                        src={linga}
+                                        className="person__photo person__photo--3"
                                     />
                                 </div>
                                 <div className="person__text">
@@ -94,11 +179,11 @@ export default function ContactUs() {
                             </div>
                         </div>
                         <div className="col-12 col-sm-6 col-lg-3">
-                            <div className="person">
+                            <div className="person person--4">
                                 <div className="person__shape">
                                     <img
-                                        src={Person}
-                                        className="person__photo"
+                                        src={pooja}
+                                        className="person__photo person__photo--4"
                                     />
                                 </div>
                                 <div className="person__text">
@@ -115,11 +200,11 @@ export default function ContactUs() {
                     </div>
                     <div className="row">
                         <div className="col-12 col-sm-6 col-lg-3">
-                            <div className="person">
+                            <div className="person person--5">
                                 <div className="person__shape">
                                     <img
-                                        src={Person}
-                                        className="person__photo"
+                                        src={Deep}
+                                        className="person__photo person__photo--5"
                                     />
                                 </div>
                                 <div className="person__text">
@@ -136,11 +221,11 @@ export default function ContactUs() {
                             </div>
                         </div>
                         <div className="col-12 col-sm-6 col-lg-3">
-                            <div className="person">
+                            <div className="person person--6">
                                 <div className="person__shape">
                                     <img
-                                        src={Person}
-                                        className="person__photo"
+                                        src={sandy}
+                                        className="person__photo person__photo--6"
                                     />
                                 </div>
                                 <div className="person__text">
@@ -155,11 +240,11 @@ export default function ContactUs() {
                             </div>
                         </div>
                         <div className="col-12 col-sm-6 col-lg-3">
-                            <div className="person">
+                            <div className="person person--7">
                                 <div className="person__shape">
                                     <img
-                                        src={Person}
-                                        className="person__photo"
+                                        src={Jade}
+                                        className="person__photo person__photo--7"
                                     />
                                 </div>
                                 <div className="person__text">
@@ -174,11 +259,11 @@ export default function ContactUs() {
                             </div>
                         </div>
                         <div className="col-12 col-sm-6 col-lg-3">
-                            <div className="person">
+                            <div className="person person--8">
                                 <div className="person__shape">
                                     <img
-                                        src={Person}
-                                        className="person__photo"
+                                        src={kaviya}
+                                        className="person__photo person__photo--8"
                                     />
                                 </div>
                                 <div className="person__text">
