@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, keyframes } from 'styled-components'
 
 export const ResponsiveBoilerPlate = createGlobalStyle`
     *,
@@ -55,3 +55,13 @@ export const theme = {
     textlight: '#FFFFFF',
     grey: '#BDBDBD',
 }
+
+export const FadeIn = (x, y) => keyframes`
+    0%{
+        opacity: 0;
+        transform: translate(${x},${y});
+    } 100% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+`

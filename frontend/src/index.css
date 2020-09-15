@@ -39,31 +39,31 @@ body {
 /* Overriding Control Arrow of fullPage.js */
 
 .fp-controlArrow.fp-prev {
-    left: 42px !important;
+    left: 32px !important;
     display: block;
-    width: 5rem !important;
-    height: 5rem;
+    width: 2.5rem !important;
+    height: 2.5rem;
     border-width: unset !important;
     background-color: transparent;
     border-color: unset !important;
     border: none;
     transform: rotate(45deg);
-    border-bottom: 2px solid #000;
-    border-left: 2px solid #000;
+    border-bottom: 3px solid #3563C1 !important;
+    border-left: 3px solid #3563C1 !important;
 }
 
 .fp-controlArrow.fp-next {
-    right: 42px !important;
+    right: 32px !important;
     display: block;
-    width: 5rem;
-    height: 5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-width: unset !important;
     background-color: transparent;
     border-color: unset !important;
     border: none;
     transform: rotate(45deg);
-    border-top: 2px solid #000;
-    border-right: 2px solid #000;
+    border-top: 3px solid #3563C1 !important;
+    border-right: 3px solid #3563C1 !important;
 }
 
 @media (max-height: 425px) {
