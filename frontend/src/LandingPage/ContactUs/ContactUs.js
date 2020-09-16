@@ -8,7 +8,7 @@ import pooja from '../../Assets/Images/pooja.webp'
 import Deep from '../../Assets/Images/Deep.webp'
 import sandy from '../../Assets/Images/sandy.webp'
 import Jade from '../../Assets/Images/Jade.webp'
-import kaviya from '../../Assets/Images/kaviya.webp'
+import kaviya from '../../Assets/Images/kaviya.'
 import { Halfellipse } from '../../Assets/svg/Halfellipse'
 
 const ContactUsWrapper = styled.section`
