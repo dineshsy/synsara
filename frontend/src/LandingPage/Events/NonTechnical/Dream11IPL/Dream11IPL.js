@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
     EventWrapper,
     ContentWrapper,
@@ -11,23 +11,44 @@ import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import Ipl from '../../../../Assets/Images/Ipl.png'
-export const Dream11IPL = () => {
+export const Dream11IPL = ({ pageNumber, slideInfo }) => {
+    const [currentPageno, currentSlideno] = slideInfo
+    const [isAnimated, setIsAnimated] = useState(false)
+    useEffect(() => {
+        if (pageNumber === 1 && currentSlideno == 6 && !isAnimated) {
+            setTimeout(() => setIsAnimated(true), 3500)
+        }
+    }, [pageNumber, slideInfo])
     const theme = useTheme()
     const history = useHistory()
     return (
-        <EventWrapper>
+        <EventWrapper
+            pageNumber={pageNumber}
+            slideInfo={currentSlideno}
+            isAnimated={isAnimated}
+        >
             <MainContentWrapper>
                 <ContentWrapper gap="1rem">
                     <ContentWrapper gap="0rem">
-                        <Label bold size="4.1rem" color={theme.secondary}>
+                        <Label
+                            className="event__title"
+                            bold
+                            size="4.1rem"
+                            color={theme.secondary}
+                        >
                             Tegidi
                         </Label>
-                        <Label bold size="1.5rem" color={theme.primary}>
+                        <Label
+                            className="para1"
+                            bold
+                            size="1.5rem"
+                            color={theme.primary}
+                        >
                             "The essence of strategy is choosing what not to
                             do."
                         </Label>
                     </ContentWrapper>
-                    <Label size="2rem" color={theme.textdark}>
+                    <Label className="para1" size="2rem" color={theme.textdark}>
                         To all the master tacticians out there, take note as
                         Synsara'20 has something just for you. Come and take
                         part in a contest of Dream11 IPL Fantasy League to pit
@@ -35,7 +56,7 @@ export const Dream11IPL = () => {
                         demand incentives, and Synsara has you covered with some
                         extravagant prizes to take home.
                     </Label>
-                    <ContentWrapper gap="1rem">
+                    <ContentWrapper className="para2" gap="1rem">
                         <Label bold size="2.5rem" color={theme.secondary}>
                             Rules:
                         </Label>
@@ -56,15 +77,17 @@ export const Dream11IPL = () => {
                 </ContentWrapper>
                 <RegisterWrapper>
                     <img src={Ipl} height="300" alt="ipl" />
-                    <Button
-                        onClick={() =>
-                            history.push(
-                                `/register/${FORM_ROUTES.nonTechEvents.dream11IPL}`
-                            )
-                        }
-                    >
-                        Register
-                    </Button>
+                    <div className="button__animation">
+                        <Button
+                            onClick={() =>
+                                history.push(
+                                    `/register/${FORM_ROUTES.nonTechEvents.dream11IPL}`
+                                )
+                            }
+                        >
+                            Register
+                        </Button>
+                    </div>
                 </RegisterWrapper>
             </MainContentWrapper>
         </EventWrapper>

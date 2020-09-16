@@ -11,6 +11,11 @@ import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import GamingBg from '../../../../Assets/Images/gaming.webp'
+import styled, { keyframes, css } from 'styled-components'
+
+const ImageWrapper = styled.div`
+    animation: float 3s ease-in-out infinite;
+`
 
 export const Gaming = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
@@ -85,7 +90,11 @@ export const Gaming = ({ pageNumber, slideInfo }) => {
                     </ContentWrapper>
                 </ContentWrapper>
                 <RegisterWrapper>
-                    <img src={GamingBg} alt="" height="200px" />
+                    <ImageWrapper>
+                        <div>
+                            <img src={GamingBg} alt="" height="200px" />
+                        </div>
+                    </ImageWrapper>
                     <div className="button__animation">
                         <Button
                             onClick={() =>

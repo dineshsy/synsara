@@ -14,27 +14,30 @@ const EventWrapper = styled.div`
     }
 `
 
-function TechincalEvents() {
+function TechincalEvents({ pageNumber, slideInfo }) {
     return (
         <>
             <div className="slide">
                 <EventWrapper>
-                    <Coding />
+                    <Coding pageNumber={pageNumber} slideInfo={slideInfo} />
                 </EventWrapper>
             </div>
             <div className="slide">
                 <EventWrapper>
-                    <PaperPresentation />
+                    <PaperPresentation
+                        pageNumber={pageNumber}
+                        slideInfo={slideInfo}
+                    />
                 </EventWrapper>
             </div>
             <div className="slide">
                 <EventWrapper>
-                    <Debugging />
+                    <Debugging pageNumber={pageNumber} slideInfo={slideInfo} />
                 </EventWrapper>
             </div>
             <div className="slide">
                 <EventWrapper>
-                    <Hackathon />
+                    <Hackathon pageNumber={pageNumber} slideInfo={slideInfo} />
                 </EventWrapper>
             </div>
         </>

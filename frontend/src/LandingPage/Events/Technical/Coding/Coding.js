@@ -1,11 +1,39 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState, useEffect } from 'react'
+import styled, { keyframes, css } from 'styled-components'
 import EventBg from '../../../../Assets/Images/events-bg.webp'
 import { sizeMaxW, sizeMaxH } from '../../../../utils/MediaQueires'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { Button } from '../../../../Reusables/Button'
 import { useHistory } from 'react-router-dom'
 import CodingBg from '../../../../Assets/Images/coding.webp'
+import { FadeIn } from '../../../../utils/globalStyles'
+const float = () => keyframes`
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+`
+const moveInLeft = () => keyframes`
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }`
 
 const CodingFormWrapper = styled.div`
     background: url(${EventBg}) no-repeat right;
@@ -28,6 +56,33 @@ const CodingFormWrapper = styled.div`
         width: 100%;
         flex-direction: column;
     }
+    ${({ pageNumber, slideInfo, isAnimated }) =>
+        pageNumber === 2 && slideInfo == 0 && !isAnimated
+            ? css`
+                  .para1 {
+                      animation: ${FadeIn(`0`, `50px`)} 0.5s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 0.8s;
+                  }
+                  .para2 {
+                      animation: ${FadeIn(`0`, `50px`)} 0.8s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 1s;
+                  }
+                  .event__title {
+                      animation-name: ${moveInLeft()};
+                      animation-duration: 2s;
+                  }
+                  .button__animation {
+                      animation: ${FadeIn(`0`, `150px`)} 1s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 1s;
+                  }
+              `
+            : null}
 `
 
 const EventTitle = styled.h1`
@@ -151,56 +206,86 @@ const EventHeading = styled.p`
     color: ${(props) => props.theme.secondary};
     margin-top: 1rem;
 `
+const ImageWrapper = styled.div`
+    animation: float 3s ease-in-out infinite;
+`
 
-export default function Coding(props) {
+export default function Coding({ pageNumber, slideInfo }) {
+    const [currentPageno, currentSlideno] = slideInfo
+    const [isAnimated, setIsAnimated] = useState(false)
+    useEffect(() => {
+        if (pageNumber === 2 && currentSlideno == 0 && !isAnimated) {
+            setTimeout(() => setIsAnimated(true), 3500)
+        }
+    }, [pageNumber, slideInfo])
+
     const history = useHistory()
 
     return (
-        <CodingFormWrapper>
+        <CodingFormWrapper
+            pageNumber={pageNumber}
+            slideInfo={currentSlideno}
+            isAnimated={isAnimated}
+        >
             <EventDetails>
-                <EventTitle>Kaniniral</EventTitle>
+                <div className="event__title">
+                    <EventTitle>Kaniniral</EventTitle>
+                </div>
                 <EventQuote>Where your code speaks rather than you</EventQuote>
+                <div className="para1">
+                    <p>
+                        <q>Hail Coders….!</q> A fascinating shout-out to all the
+                        technophiles out there.
+                    </p>
+                    <p>
+                        Save your dates on 9th and 10th to Test your competence
+                        among the top programmers in the town.
+                    </p>
+                    <p>This contest has two rounds.</p>
+                    <p>Platform: Hackerrank</p>
+                    <EventHeading>ROUND 1:</EventHeading>
+                </div>
+                <div className="para2">
+                    <ul>
+                        <li>This round will be held on 9 th of October.</li>
+                        <li>The time allotted will be 2 hours from 2-4 pm.</li>
+                        <li>
+                            The round consists of 3 Coding Challenges to solve.
+                        </li>
+                        <li>The results will be announced on the same day.</li>
+                    </ul>
 
-                <p>
-                    <q>Hail Coders….!</q> A fascinating shout-out to all the
-                    technophiles out there.
-                </p>
-                <p>
-                    Save your dates on 9th and 10th to Test your competence
-                    among the top programmers in the town.
-                </p>
-                <p>This contest has two rounds.</p>
-                <p>Platform: Hackerrank</p>
-                <EventHeading>ROUND 1:</EventHeading>
-                <ul>
-                    <li>This round will be held on 9 th of October.</li>
-                    <li>The time allotted will be 2 hours from 2-4 pm.</li>
-                    <li>The round consists of 3 Coding Challenges to solve.</li>
-                    <li>The results will be announced on the same day.</li>
-                </ul>
-
-                <EventHeading>ROUND 2:</EventHeading>
-                <ul>
-                    <li>
-                        The contestants Shortlisted from Round 1 will be
-                        intimated about Round 2.
-                    </li>
-                    <li>This round is on the 10th of October. ️</li>
-                    <li>The time duration will be 2 hours from 9 to 11 am.</li>
-                </ul>
+                    <EventHeading>ROUND 2:</EventHeading>
+                    <ul>
+                        <li>
+                            The contestants Shortlisted from Round 1 will be
+                            intimated about Round 2.
+                        </li>
+                        <li>This round is on the 10th of October. ️</li>
+                        <li>
+                            The time duration will be 2 hours from 9 to 11 am.
+                        </li>
+                    </ul>
+                </div>
             </EventDetails>
             <EventDetailsWithButton>
-                <img src={CodingBg} alt="" height="320px" />
+                <ImageWrapper>
+                    <div>
+                        <img src={CodingBg} alt="" height="320px" />
+                    </div>
+                </ImageWrapper>
                 <RegisterButton>
-                    <Button
-                        onClick={() =>
-                            history.push(
-                                `/register/${FORM_ROUTES.techEvents.coding}`
-                            )
-                        }
-                    >
-                        Register
-                    </Button>
+                    <div className="button__animation">
+                        <Button
+                            onClick={() =>
+                                history.push(
+                                    `/register/${FORM_ROUTES.techEvents.coding}`
+                                )
+                            }
+                        >
+                            Register
+                        </Button>
+                    </div>
                 </RegisterButton>
             </EventDetailsWithButton>
         </CodingFormWrapper>
