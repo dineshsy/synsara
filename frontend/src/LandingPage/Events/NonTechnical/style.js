@@ -6,16 +6,16 @@ export const Label = styled.h1`
         color: ${color};
         font-size: ${size};
         font-weight: ${bold ? 600 : 400};
-        @media ${sizeMaxH.mobile} {
+        @media ${sizeMinH.mobile} {
             font-size: calc(${size} / 1.5);
         }
-        @media ${sizeMaxH.mobileL} {
+        @media ${sizeMinH.mobileL} {
             font-size: calc(${size} / 1.45);
         }
-        @media ${sizeMaxH.tablet} {
+        @media ${sizeMinH.tablet} {
             font-size: calc(${size} / 1.15);
         }
-        @media ${sizeMinH.mobileL} {
+        @media ${sizeMinH.laptop} {
             font-size: calc(${size} / 1);
         }
     `}

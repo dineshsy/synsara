@@ -47,7 +47,7 @@ export const RegisterWrapper = styled.div`
     }
     @media ${sizeMaxW.tablet} {
         justify-content: flex-start;
-        > svg {
+        > img {
             display: none;
         }
     }

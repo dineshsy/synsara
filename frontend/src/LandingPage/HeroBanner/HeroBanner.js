@@ -15,36 +15,35 @@ const FadeIn = (x, y) => keyframes`
         transform: translate(0,0);
     }`
 export const HeroWrapper = styled.div`
-    ${({ pageNumber, isAnimated }) =>
-        pageNumber === 0 && !isAnimated
+    ${({ isAnimated, isWindowLoaded }) =>
+        !isAnimated && isWindowLoaded
             ? css`
                   .hero__primary {
                       animation: ${FadeIn(`0`, `50px`)} 1s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 1s;
+                      animation-delay: 0s;
                   }
                   .hero__secondary {
                       animation: ${FadeIn(`0`, `50px`)} 1s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 1.5s;
+                      animation-delay: 0.5s;
                   }
                   .hero__button {
-                      animation: ${FadeIn(`0`, `50px`)} 1.2s ease-in;
+                      animation: ${FadeIn(`0`, `50px`)} 1s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 1.8s;
+                      animation-delay: 0.75s;
                   }
                   .hero__img {
-                      animation: ${FadeIn(`-200px`, `0`)} 1.5s ease-in;
+                      animation: ${FadeIn(`0`, `100px`)} 1s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 3s;
                   }
                   .hero__logo {
                       animation-name: rotating;
-                      animation-duration: 3s;
+                      animation-duration: 1s;
                       animation-timing-function: ease-in-out;
                   }
               `
@@ -53,15 +52,19 @@ export const HeroWrapper = styled.div`
     width: 100%;
     height: 100%;
 `
-export const HeroBanner = ({ fullpageApi, pageNumber }) => {
+export const HeroBanner = ({ fullpageApi }) => {
     const [isAnimated, setIsAnimated] = useState(false)
+    const [isWindowLoaded, setIsWindowLoaded] = useState(false)
     useEffect(() => {
-        if (pageNumber === 0) {
+        window.onload = (e) => setIsWindowLoaded(true)
+    }, [])
+    useEffect(() => {
+        if (isWindowLoaded === 0) {
             setTimeout(() => setIsAnimated(true), 5000)
         }
-    }, [pageNumber])
+    }, [isWindowLoaded])
     return (
-        <HeroWrapper pageNumber={pageNumber} isAnimated={isAnimated}>
+        <HeroWrapper isWindowLoaded={isWindowLoaded} isAnimated={isAnimated}>
             <div className="hero">
                 <div className="hero__bg">
                     <LandingBG className="landing__bg" />
