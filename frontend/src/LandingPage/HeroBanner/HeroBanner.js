@@ -15,8 +15,8 @@ const FadeIn = (x, y) => keyframes`
         transform: translate(0,0);
     }`
 export const HeroWrapper = styled.div`
-    ${({ pageNumber, isAnimated, isWindowLoaded }) =>
-        pageNumber === 0 && !isAnimated && isWindowLoaded
+    ${({ isAnimated, isWindowLoaded }) =>
+        !isAnimated && isWindowLoaded
             ? css`
                   .hero__primary {
                       animation: ${FadeIn(`0`, `50px`)} 1s ease-in;
@@ -52,23 +52,19 @@ export const HeroWrapper = styled.div`
     width: 100%;
     height: 100%;
 `
-export const HeroBanner = ({ fullpageApi, pageNumber }) => {
+export const HeroBanner = ({ fullpageApi }) => {
     const [isAnimated, setIsAnimated] = useState(false)
     const [isWindowLoaded, setIsWindowLoaded] = useState(false)
     useEffect(() => {
         window.onload = (e) => setIsWindowLoaded(true)
     }, [])
     useEffect(() => {
-        if (pageNumber === 0) {
+        if (isWindowLoaded === 0) {
             setTimeout(() => setIsAnimated(true), 5000)
         }
-    }, [pageNumber])
+    }, [isWindowLoaded])
     return (
-        <HeroWrapper
-            isWindowLoaded={isWindowLoaded}
-            pageNumber={pageNumber}
-            isAnimated={isAnimated}
-        >
+        <HeroWrapper isWindowLoaded={isWindowLoaded} isAnimated={isAnimated}>
             <div className="hero">
                 <div className="hero__bg">
                     <LandingBG className="landing__bg" />

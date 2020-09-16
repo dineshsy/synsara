@@ -109,7 +109,7 @@ export default function ContactUs({ pageNumber }) {
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
         if (pageNumber === 3 && !isAnimated) {
-            setTimeout(() => setIsAnimated(true), 3500)
+            setTimeout(() => setIsAnimated(true), 1500)
         }
     }, [pageNumber])
     return (
