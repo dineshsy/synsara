@@ -10,7 +10,8 @@ import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
-import PhotographyBg from '../../../../Assets/Images/photography.webp'
+import PhotographyBg from '../../../../Assets/svg/photo.svg'
+
 export const Photography = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
@@ -72,7 +73,7 @@ export const Photography = ({ pageNumber, slideInfo }) => {
                     </ContentWrapper>
                 </ContentWrapper>
                 <RegisterWrapper>
-                    <img src={PhotographyBg} alt="" height="200px" />
+                    <img src={PhotographyBg} />
                     <div className="button__animation">
                         <Button
                             onClick={() =>
