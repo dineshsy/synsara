@@ -60,25 +60,25 @@ const ContactUsWrapper = styled.section`
                       animation: ${FadeIn(`0`, `50px`)} 0.7s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.6s;
+                      animation-delay: 0.7s;
                   }
                   .person--6 {
                       animation: ${FadeIn(`0`, `50px`)} 0.8s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.6s;
+                      animation-delay: 0.7s;
                   }
                   .person--7 {
                       animation: ${FadeIn(`0`, `50px`)} 0.9s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.6s;
+                      animation-delay: 0.7s;
                   }
                   .person--8 {
                       animation: ${FadeIn(`0`, `50px`)} 1s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.6s;
+                      animation-delay: 0.7s;
                   }
               `
             : null}
@@ -110,7 +110,7 @@ export default function ContactUs({ pageNumber }) {
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
         if (pageNumber === 3 && !isAnimated) {
-            setTimeout(() => setIsAnimated(true), 1500)
+            setTimeout(() => setIsAnimated(true), 2500)
         }
     }, [pageNumber])
     return (
