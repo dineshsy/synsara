@@ -71,11 +71,11 @@ export const HeroBanner = ({ fullpageApi }) => {
                     <img
                         src={Thiruvalluvar}
                         className="img-liquid hero__img"
-                        alt=""
+                        alt="thiruvalluvar"
                     />
                 </div>
                 <div className="hero__logo">
-                    <img src={Logo} />
+                    <img src={Logo} alt="logo" />
                 </div>
                 <div className="content-wrapper">
                     <div className="hero__text">

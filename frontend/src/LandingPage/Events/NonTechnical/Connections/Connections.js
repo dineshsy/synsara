@@ -10,7 +10,7 @@ import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
-import Connection from '../../../../Assets/Images/connections.png'
+import Connection from '../../../../Assets/Images/connexions.png'
 
 export const Connections = () => {
     const theme = useTheme()

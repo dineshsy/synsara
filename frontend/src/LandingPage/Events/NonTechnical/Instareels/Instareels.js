@@ -10,7 +10,7 @@ import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
-import Instareel from '../../../../Assets/Images/Instareel.png'
+import Instareel from '../../../../Assets/Images/instareel.webp'
 export const Instareels = () => {
     const theme = useTheme()
     const history = useHistory()
@@ -59,7 +59,7 @@ export const Instareels = () => {
                     </ContentWrapper>
                 </ContentWrapper>
                 <RegisterWrapper>
-                    <img src={Instareel} alt="" />
+                    <img src={Instareel} alt="" height="200px" />
                     <Button
                         onClick={() =>
                             history.push(

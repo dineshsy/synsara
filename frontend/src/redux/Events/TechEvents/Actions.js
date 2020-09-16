@@ -68,7 +68,7 @@ export const registerHackathonEvent = (data) => (dispatch) => {
     axios
         .post('/technical/hackathon', data)
         .then((res) => {
-            dispatch(registrationSuccess(res.data))
+            dispatch(registrationSuccess({ ...res.data, name: 'Hooray!' }))
             dispatch({ type: ActionTypes.REGISTER_HACKATHON_EVENT_SUCCESS })
         })
         .catch((err) => {

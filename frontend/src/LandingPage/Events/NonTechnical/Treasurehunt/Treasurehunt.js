@@ -10,7 +10,7 @@ import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
-import TreasureHuntSvg from '../../../../Assets/svg/treasurehunt.svg'
+import TreasurehuntBg from '../../../../Assets/Images/treasurehunt.webp'
 export const Treasurehunt = () => {
     const theme = useTheme()
     const history = useHistory()
@@ -58,7 +58,8 @@ export const Treasurehunt = () => {
                     </ContentWrapper>
                 </ContentWrapper>
                 <RegisterWrapper>
-                    <img src={TreasureHuntSvg} alt="" />
+                    <img src={TreasurehuntBg} alt="" height="200px" />
+
                     <Button
                         onClick={() =>
                             history.push(
