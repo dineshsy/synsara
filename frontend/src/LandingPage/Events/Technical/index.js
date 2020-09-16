@@ -4,17 +4,14 @@ import PaperPresentation from './PaperPresentation/PaperPresentation'
 import Debugging from './Debugging/Debugging'
 import Hackathon from './Hackathon/Hackathon'
 import styled, { withTheme } from 'styled-components'
+import { sizeMaxH, sizeMaxW } from '../../../utils/MediaQueires'
 
 const EventWrapper = styled.div`
-    height: 100%;
-    min-height: 100vh;
     width: 100%;
-    max-width: 1440px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
+    height: 100%;
+    @media screen and ${sizeMaxH.tablet} and ${sizeMaxW.tablet} {
+        padding: 2rem;
+    }
 `
 
 function TechincalEvents() {

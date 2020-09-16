@@ -9,16 +9,16 @@ import HackathonBg from './HackathonBg'
 
 const PaperPresentationWrapper = styled.div`
     background: url(${EventBg}) no-repeat right;
-    width: fit-content;
+    width: 100%;
     height: 100%;
-    padding: 0 6rem;
+    padding: 6rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
     @media ${sizeMaxW.tablet} {
-        padding: 0 4rem;
+        padding: 2rem;
         flex-direction: column;
         background: none;
     }
@@ -77,10 +77,12 @@ const EventQuote = styled.q`
 `
 
 const EventDetails = styled.div`
-    width: 60%;
+    width: 50%;
     font-size: 18px;
     line-height: 24px;
     max-width: 100%;
+    height: 100%;
+
     & ul {
         list-style: none;
     }
