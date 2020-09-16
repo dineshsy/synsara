@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import styled, { keyframes, css } from 'styled-components'
 import './ContactUs.css'
-import praba from '../../Assets/Images/praba.png'
-import srima from '../../Assets/Images/SRIMA.png'
-import linga from '../../Assets/Images/linga.png'
-import pooja from '../../Assets/Images/pooja.png'
-import Deep from '../../Assets/Images/Deep.png'
-import sandy from '../../Assets/Images/sandy.png'
-import Jade from '../../Assets/Images/Jade.png'
-import kaviya from '../../Assets/Images/kaviya.png'
+import praba from '../../Assets/Images/praba.webp'
+import srima from '../../Assets/Images/SRIMA.webp'
+import linga from '../../Assets/Images/linga.webp'
+import pooja from '../../Assets/Images/pooja.webp'
+import Deep from '../../Assets/Images/Deep.webp'
+import sandy from '../../Assets/Images/sandy.webp'
+import Jade from '../../Assets/Images/Jade.webp'
+import kaviya from '../../Assets/Images/kaviya.webp'
 import { Halfellipse } from '../../Assets/svg/Halfellipse'
 
 const ContactUsWrapper = styled.section`
@@ -36,48 +36,49 @@ const ContactUsWrapper = styled.section`
                       animation: ${FadeIn(`0`, `50px`)} 0.3s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
+                      animation-delay: 0.6s;
                   }
                   .person--2 {
                       animation: ${FadeIn(`0`, `50px`)} 0.4s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.05s;
+                      animation-delay: 0.6s;
                   }
                   .person--3 {
                       animation: ${FadeIn(`0`, `50px`)} 0.5s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.15s;
+                      animation-delay: 0.6s;
                   }
                   .person--4 {
                       animation: ${FadeIn(`0`, `50px`)} 0.6s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.2s;
+                      animation-delay: 0.6s;
                   }
                   .person--5 {
                       animation: ${FadeIn(`0`, `50px`)} 0.7s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.25s;
+                      animation-delay: 0.6s;
                   }
                   .person--6 {
                       animation: ${FadeIn(`0`, `50px`)} 0.8s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.3s;
+                      animation-delay: 0.6s;
                   }
                   .person--7 {
                       animation: ${FadeIn(`0`, `50px`)} 0.9s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.35s;
+                      animation-delay: 0.6s;
                   }
                   .person--8 {
                       animation: ${FadeIn(`0`, `50px`)} 1s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.4s;
+                      animation-delay: 0.6s;
                   }
               `
             : null}
