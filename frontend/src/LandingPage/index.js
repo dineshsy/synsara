@@ -12,7 +12,7 @@ import { PageNotFound } from '../Reusables/PageNotFound'
 const Index = (props) => {
     const [pageNumber, setPageNumber] = useState(0)
 
-    const afterLoad = (origin, destination, direction) => {
+    const onLeave = (origin, destination, direction) => {
         setPageNumber(destination.index)
     }
 
@@ -25,7 +25,7 @@ const Index = (props) => {
                 <ReactFullpage
                     scrollingSpeed={1000}
                     navigation={true}
-                    afterLoad={afterLoad}
+                    onLeave={onLeave}
                     navigationPosition="left"
                     slidesNavPosition="left"
                     navigationTooltips={[
@@ -38,12 +38,12 @@ const Index = (props) => {
                     render={({ state, fullpageApi }) => {
                         return (
                             <ReactFullpage.Wrapper>
-                                {/* <div className="section">
+                                <div className="section">
                                     <HeroBanner
                                         fullpageApi={fullpageApi}
                                         pageNumber={pageNumber}
                                     />
-                                </div> */}
+                                </div>
                                 <div className="section">
                                     <div style={{ position: 'relative' }}>
                                         <NonTechEvents id="hero" />

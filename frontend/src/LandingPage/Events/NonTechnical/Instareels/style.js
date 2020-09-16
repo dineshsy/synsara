@@ -10,6 +10,9 @@ export const EventWrapper = styled.section`
     @media ${sizeMaxW.tablet} {
         background: none;
     }
+    @media ${sizeMaxW.mobileL} {
+        padding: 2rem;
+    }
 `
 
 export const MainContentWrapper = styled.div`
@@ -44,7 +47,7 @@ export const RegisterWrapper = styled.div`
     }
     @media ${sizeMaxW.tablet} {
         justify-content: flex-start;
-        > svg {
+        > img {
             display: none;
         }
     }
