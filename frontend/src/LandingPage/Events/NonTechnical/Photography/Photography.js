@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
     EventWrapper,
     ContentWrapper,
@@ -11,26 +11,43 @@ import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import PhotographyBg from '../../../../Assets/Images/photography.webp'
-export const Photography = () => {
+export const Photography = ({ pageNumber, slideInfo }) => {
+    const [currentPageno, currentSlideno] = slideInfo
+    const [isAnimated, setIsAnimated] = useState(false)
+    useEffect(() => {
+        if (pageNumber === 1 && currentSlideno == 1 && !isAnimated) {
+            setTimeout(() => setIsAnimated(true), 3500)
+        }
+    }, [pageNumber, slideInfo])
+
     const theme = useTheme()
     const history = useHistory()
     return (
-        <EventWrapper>
+        <EventWrapper
+            pageNumber={pageNumber}
+            slideInfo={currentSlideno}
+            isAnimated={isAnimated}
+        >
             <MainContentWrapper>
                 <ContentWrapper gap="1rem">
                     <ContentWrapper gap="0rem">
-                        <Label bold size="4.1rem" color={theme.secondary}>
+                        <Label
+                            className="event__title"
+                            bold
+                            size="4.1rem"
+                            color={theme.secondary}
+                        >
                             Nizhaloviyam
                         </Label>
                     </ContentWrapper>
-                    <Label size="2rem" color={theme.textdark}>
+                    <Label className="para1" size="2rem" color={theme.textdark}>
                         Cameras, a tool to some, a medium to many. Your
                         photograph can tell a story without ever putting pen on
                         paper. It can describe who you are and how you look at
                         the world. Synsara’s Nizhaloviyam is looking to discover
                         how you look at “Culture in Tamil Nadu”.
                     </Label>
-                    <ContentWrapper gap="1rem">
+                    <ContentWrapper className="para2" gap="1rem">
                         <Label bold size="2.5rem" color={theme.secondary}>
                             Rules:
                         </Label>
@@ -56,15 +73,17 @@ export const Photography = () => {
                 </ContentWrapper>
                 <RegisterWrapper>
                     <img src={PhotographyBg} alt="" height="200px" />
-                    <Button
-                        onClick={() =>
-                            history.push(
-                                `/register/${FORM_ROUTES.nonTechEvents.photography}`
-                            )
-                        }
-                    >
-                        Register
-                    </Button>
+                    <div className="button__animation">
+                        <Button
+                            onClick={() =>
+                                history.push(
+                                    `/register/${FORM_ROUTES.nonTechEvents.photography}`
+                                )
+                            }
+                        >
+                            Register
+                        </Button>
+                    </div>
                 </RegisterWrapper>
             </MainContentWrapper>
         </EventWrapper>

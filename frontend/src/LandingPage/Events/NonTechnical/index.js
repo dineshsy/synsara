@@ -26,32 +26,44 @@ export const Index = ({ pageNumber, slideInfo }) => {
             </div>
             <div className="slide">
                 <SliderWrapper>
-                    <Photography />
+                    <Photography
+                        pageNumber={pageNumber}
+                        slideInfo={slideInfo}
+                    />
                 </SliderWrapper>
             </div>
             <div className="slide">
                 <SliderWrapper>
-                    <Treasurehunt />
+                    <Treasurehunt
+                        pageNumber={pageNumber}
+                        slideInfo={slideInfo}
+                    />
                 </SliderWrapper>
             </div>
             <div className="slide">
                 <SliderWrapper>
-                    <Connections />
+                    <Connections
+                        pageNumber={pageNumber}
+                        slideInfo={slideInfo}
+                    />
                 </SliderWrapper>
             </div>
             <div className="slide">
                 <SliderWrapper>
-                    <Instareels />
+                    <Instareels pageNumber={pageNumber} slideInfo={slideInfo} />
                 </SliderWrapper>
             </div>
             <div className="slide">
                 <SliderWrapper>
-                    <Memecontest />
+                    <Memecontest
+                        pageNumber={pageNumber}
+                        slideInfo={slideInfo}
+                    />
                 </SliderWrapper>
             </div>
             <div className="slide">
                 <SliderWrapper>
-                    <Dream11IPL />
+                    <Dream11IPL pageNumber={pageNumber} slideInfo={slideInfo} />
                 </SliderWrapper>
             </div>
         </>
