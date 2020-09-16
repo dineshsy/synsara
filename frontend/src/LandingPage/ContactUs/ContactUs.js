@@ -36,30 +36,31 @@ const ContactUsWrapper = styled.section`
                       animation: ${FadeIn(`0`, `50px`)} 0.3s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
+                      animation-delay: 0.6s;
                   }
                   .person--2 {
                       animation: ${FadeIn(`0`, `50px`)} 0.4s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.05s;
+                      animation-delay: 0.6s;
                   }
                   .person--3 {
                       animation: ${FadeIn(`0`, `50px`)} 0.5s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.15s;
+                      animation-delay: 0.6s;
                   }
                   .person--4 {
                       animation: ${FadeIn(`0`, `50px`)} 0.6s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.2s;
+                      animation-delay: 0.6s;
                   }
                   .person--5 {
                       animation: ${FadeIn(`0`, `50px`)} 0.7s ease-in;
                       opacity: 0;
                       animation-fill-mode: forwards;
-                      animation-delay: 0.25s;
+                      animation-delay: 0.3s;
                   }
                   .person--6 {
                       animation: ${FadeIn(`0`, `50px`)} 0.8s ease-in;
