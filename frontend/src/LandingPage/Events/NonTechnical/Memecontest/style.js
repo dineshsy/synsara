@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import EventBG from '../../../../Assets/Images/events-bg.png'
+import EventBG from '../../../../Assets/Images/events-bg.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
 import { sizeMaxW } from '../../../../utils/MediaQueires'
 
