@@ -11,9 +11,14 @@ import { PageNotFound } from '../Reusables/PageNotFound'
 
 const Index = (props) => {
     const [pageNumber, setPageNumber] = useState(0)
+    const [currentSlideInfo, setCurrentSlideInfo] = useState([0, 0])
 
     const onLeave = (origin, destination, direction) => {
         setPageNumber(destination.index)
+    }
+
+    const onSlideLeave = (section, origin, destination, direction) => {
+        setCurrentSlideInfo([section.index, destination.index])
     }
 
     return (
@@ -32,6 +37,7 @@ const Index = (props) => {
                         'Technical Events',
                         'Contact Us',
                     ]}
+                    onSlideLeave={onSlideLeave}
                     showActiveTooltip={true}
                     render={({ state, fullpageApi }) => {
                         return (
@@ -44,7 +50,11 @@ const Index = (props) => {
                                 </div>
                                 <div className="section">
                                     <div style={{ position: 'relative' }}>
-                                        <NonTechEvents id="hero" />
+                                        <NonTechEvents
+                                            pageNumber={pageNumber}
+                                            slideInfo={currentSlideInfo}
+                                            id="hero"
+                                        />
                                         <ScrollIndicator
                                             fullpageApi={fullpageApi}
                                         />
