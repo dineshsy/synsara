@@ -124,6 +124,7 @@ export default function ContactUs({ pageNumber }) {
                                 <div className="person__shape">
                                     <img
                                         src={praba}
+                                        alt=""
                                         className="person__photo person__photo--1"
                                     />
                                 </div>
@@ -145,6 +146,7 @@ export default function ContactUs({ pageNumber }) {
                                 <div className="person__shape">
                                     <img
                                         src={srima}
+                                        alt=""
                                         className="person__photo person__photo--2"
                                     />
                                 </div>
@@ -164,6 +166,7 @@ export default function ContactUs({ pageNumber }) {
                                 <div className="person__shape">
                                     <img
                                         src={linga}
+                                        alt=""
                                         className="person__photo person__photo--3"
                                     />
                                 </div>
@@ -183,6 +186,7 @@ export default function ContactUs({ pageNumber }) {
                                 <div className="person__shape">
                                     <img
                                         src={pooja}
+                                        alt=""
                                         className="person__photo person__photo--4"
                                     />
                                 </div>
@@ -204,6 +208,7 @@ export default function ContactUs({ pageNumber }) {
                                 <div className="person__shape">
                                     <img
                                         src={Deep}
+                                        alt=""
                                         className="person__photo person__photo--5"
                                     />
                                 </div>
@@ -225,6 +230,7 @@ export default function ContactUs({ pageNumber }) {
                                 <div className="person__shape">
                                     <img
                                         src={sandy}
+                                        alt=""
                                         className="person__photo person__photo--6"
                                     />
                                 </div>
@@ -244,6 +250,7 @@ export default function ContactUs({ pageNumber }) {
                                 <div className="person__shape">
                                     <img
                                         src={Jade}
+                                        alt=""
                                         className="person__photo person__photo--7"
                                     />
                                 </div>
@@ -263,6 +270,7 @@ export default function ContactUs({ pageNumber }) {
                                 <div className="person__shape">
                                     <img
                                         src={kaviya}
+                                        alt=""
                                         className="person__photo person__photo--8"
                                     />
                                 </div>

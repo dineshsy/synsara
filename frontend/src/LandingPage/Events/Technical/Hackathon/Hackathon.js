@@ -5,7 +5,8 @@ import { sizeMaxW, sizeMaxH } from '../../../../utils/MediaQueires'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { Button } from '../../../../Reusables/Button'
 import { useHistory } from 'react-router-dom'
-import HackathonBg from './HackathonBg'
+import HackathonBg1 from '../../../../Assets/Images/hackathon1.webp'
+import HackathonBg2 from '../../../../Assets/Images/hackathon2.webp'
 
 const PaperPresentationWrapper = styled.div`
     background: url(${EventBg}) no-repeat right;
@@ -49,30 +50,6 @@ const EventTitle = styled.h1`
 
     @media ${sizeMaxH.mobileL} and (orientation: landscape) {
         font-size: 24px;
-    }
-`
-
-const EventQuote = styled.q`
-    font-size: 18px;
-    font-weight: 600;
-    color: ${(props) => props.theme.primary};
-    margin-bottom: 1rem;
-
-    @media ${sizeMaxW.laptop} {
-        font-size: 16px;
-    }
-
-    @media ${sizeMaxW.tablet} {
-        font-size: 14px;
-    }
-
-    @media ${sizeMaxW.mobileL} {
-        font-size: 12px;
-        line-height: 14px;
-    }
-
-    @media ${sizeMaxH.mobileL} and (orientation: landscape) {
-        font-size: 9px;
     }
 `
 
@@ -127,6 +104,10 @@ const EventDetailsWithButton = styled.div`
 
         div {
             width: 100% !important;
+        }
+
+        img {
+            display: none;
         }
     }
 
@@ -194,7 +175,8 @@ export default function PaperPresentation(props) {
                 </ol>
             </EventDetails>
             <EventDetailsWithButton>
-                <HackathonBg />
+                <img src={HackathonBg1} alt="" height="200px" />
+                <img src={HackathonBg2} alt="" height="200px" />
                 <RegisterButton>
                     <Button
                         onClick={() =>

@@ -55,7 +55,7 @@ export const Dream11IPL = () => {
                     </ContentWrapper>
                 </ContentWrapper>
                 <RegisterWrapper>
-                    <img src={Ipl} height="300" />
+                    <img src={Ipl} height="300" alt="ipl" />
                     <Button
                         onClick={() =>
                             history.push(

@@ -5,7 +5,7 @@ import { sizeMaxW, sizeMaxH } from '../../../../utils/MediaQueires'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { Button } from '../../../../Reusables/Button'
 import { useHistory } from 'react-router-dom'
-import PaperPresentationBg from './PaperPresentationBg'
+import PaperPresentationBg from '../../../../Assets/Images/paperpresentation.webp'
 
 const PaperPresentationWrapper = styled.div`
     background: url(${EventBg}) no-repeat right;
@@ -128,6 +128,10 @@ const EventDetailsWithButton = styled.div`
         div {
             width: 100% !important;
         }
+
+        img {
+            display: none;
+        }
     }
 
     @media ${sizeMaxH.mobileL} and (orientation: landscape) {
@@ -224,7 +228,7 @@ export default function PaperPresentation(props) {
                 </ul>
             </EventDetails>
             <EventDetailsWithButton>
-                <PaperPresentationBg />
+                <img src={PaperPresentationBg} alt="" height="200px" />
                 <RegisterButton>
                     <Button
                         onClick={() =>
