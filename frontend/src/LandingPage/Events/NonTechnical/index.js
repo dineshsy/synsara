@@ -16,12 +16,12 @@ const SliderWrapper = styled.section`
     }
 `
 
-export const Index = () => {
+export const Index = ({ pageNumber, slideInfo }) => {
     return (
         <>
             <div className="slide">
                 <SliderWrapper>
-                    <Gaming />
+                    <Gaming pageNumber={pageNumber} slideInfo={slideInfo} />
                 </SliderWrapper>
             </div>
             <div className="slide">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
     EventWrapper,
     ContentWrapper,
@@ -11,11 +11,25 @@ import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 
-export const Gaming = () => {
+export const Gaming = ({ pageNumber, slideInfo }) => {
+    console.clear()
+    console.log(slideInfo)
+    const [currentPageno, currentSlideno] = slideInfo
+    const [isAnimated, setIsAnimated] = useState(false)
+    useEffect(() => {
+        if (pageNumber === 1 && currentSlideno == 0 && !isAnimated) {
+            setTimeout(() => setIsAnimated(true), 2500)
+        }
+    }, [pageNumber, slideInfo])
+
     const theme = useTheme()
     const history = useHistory()
     return (
-        <EventWrapper>
+        <EventWrapper
+            pageNumber={pageNumber}
+            slideInfo={currentSlideno}
+            isAnimated={isAnimated}
+        >
             <MainContentWrapper>
                 <ContentWrapper gap="1rem">
                     <ContentWrapper gap="0rem">
@@ -26,7 +40,7 @@ export const Gaming = () => {
                             "One-Shot, One Kill, No Luck, Pure Skill"
                         </Label>
                     </ContentWrapper>
-                    <Label size="2rem" color={theme.textdark}>
+                    <Label className="para" size="2rem" color={theme.textdark}>
                         Tamil Vanakkam to all you gamers out there. Synsara'20
                         is on the search for the ultimate squad in all of India
                         and we have a lot more than just a chicken dinner in

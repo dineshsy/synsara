@@ -1,7 +1,8 @@
-import styled from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 import EventBG from '../../../../Assets/Images/events-bg.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
 import { sizeMaxW } from '../../../../utils/MediaQueires'
+
 export const EventWrapper = styled.section`
     width: 100%;
     height: 100%;
@@ -13,6 +14,17 @@ export const EventWrapper = styled.section`
     @media ${sizeMaxW.mobileL} {
         padding: 2rem;
     }
+    ${({ pageNumber, slideInfo, isAnimated }) =>
+        pageNumber === 1 && slideInfo == 0 && !isAnimated
+            ? css`
+                  .para {
+                      animation: ${FadeIn(`0`, `50px`)} 0.3s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 0.6s;
+                  }
+              `
+            : null}
 `
 
 export const MainContentWrapper = styled.div`
