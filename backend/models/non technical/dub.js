@@ -1,12 +1,8 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
-var Photo = new Schema({
+var Dubmsash = new Schema({
     name: {
-        type: String,
-        default: '',
-    },
-    instaId: {
         type: String,
         default: '',
     },
@@ -32,4 +28,4 @@ var Photo = new Schema({
     },
 })
 
-module.exports = mongoose.model('Photo', Photo)
+module.exports = mongoose.model('Dubmsash', Dubmsash)

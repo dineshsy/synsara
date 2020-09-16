@@ -1,26 +1,26 @@
 const express = require('express')
 
-const Photo = require('../../models/non technical/photo')
+const Dubsmash = require('../../models/non technical/dub')
 const mailer = require('../../components/mail')
 
-const photoRouter = express.Router()
+const dubRouter = express.Router()
 
-photoRouter.route('/').post((req, res, next) => {
-    Photo.findOne({ emailId: req.body.emailId }).then((participant) => {
+dubRouter.route('/').post((req, res, next) => {
+    Dubsmash.findOne({ emailId: req.body.emailId }).then((participant) => {
         if (participant != null) {
             console.log('Participant already registered', participant)
             res.statusCode = 409
             res.setHeader('Content-Type', 'application/json')
             res.send(participant)
         } else {
-            Photo.create(req.body)
+            Dubsmash.create(req.body)
                 .then(
                     (participant) => {
                         console.log('Participant Registered', participant)
                         res.statusCode = 200
                         res.setHeader('Content-Type', 'application/json')
                         res.json(participant)
-                        mailer.sendmail(req.body.emailId, 'photo') //participant email and event name must be added
+                        mailer.sendmail(req.body.emailId, 'dub') //participant email and event name must be added
                     },
                     (err) => {
                         console.log('error')
@@ -35,4 +35,4 @@ photoRouter.route('/').post((req, res, next) => {
     })
 })
 
-module.exports = photoRouter
+module.exports = dubRouter
