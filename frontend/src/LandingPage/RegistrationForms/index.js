@@ -11,6 +11,7 @@ import CodingForm from './TechEvents/Coding/CodingForm'
 import PaperPresentationForm from './TechEvents/Paper Presentation/PaperPresentation'
 import InstaReelsForm from './NonTechEvents/InstaReelsContest/InstaReelsForm'
 import DebuggingForm from './TechEvents/Debugging/DebuggingForm'
+import HackathonForm from './TechEvents/Hackathon/Hackathon'
 import { PageNotFound } from '../../Reusables/PageNotFound'
 
 export const Index = ({ match }) => {
@@ -47,6 +48,9 @@ export const Index = ({ match }) => {
             </Route>
             <Route path={`/register/${FORM_ROUTES.techEvents.debugging}`}>
                 <DebuggingForm />
+            </Route>
+            <Route path={`/register/${FORM_ROUTES.techEvents.hackathon}`}>
+                <HackathonForm />
             </Route>
             <Route path="*" component={PageNotFound} />
         </Switch>

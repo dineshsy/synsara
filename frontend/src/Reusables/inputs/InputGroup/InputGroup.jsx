@@ -8,10 +8,13 @@ export default function InputGroup({
     textfields,
     onchangeHandler,
     rows,
+    numberOfPeople,
 }) {
     let valid = true
+    let validFields = 0
     textfields.forEach((Textfield) => {
         valid = valid && Textfield.state === 'normal'
+        validFields += Textfield.state === 'normal'
     })
 
     return (
@@ -43,11 +46,15 @@ export default function InputGroup({
                     />
                 ))}
             </div>
-            {valid ? null : (
+            {numberOfPeople !== validFields && numberOfPeople > 0 ? (
+                <div className="input-group-error">
+                    Please provide all the details for each participant
+                </div>
+            ) : numberOfPeople > 0 ? null : !valid ? (
                 <div className="input-group-error">
                     {`Please provide All valid ${label}s`}
                 </div>
-            )}
+            ) : null}
         </div>
     )
 }

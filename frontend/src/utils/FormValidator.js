@@ -4,8 +4,11 @@ function isEmail(email) {
     )
 }
 
-export const validateTextFields = (textfields) => {
+export const validateTextFields = (textfields, counts = false) => {
     let isValid = true
+    let texts = 0
+    let numbers = 0
+    let emails = 0
     textfields.forEach((field) => {
         if (!field.value.trim().length) {
             isValid = false
@@ -23,12 +26,18 @@ export const validateTextFields = (textfields) => {
             field.state = 'error'
             field.hint = `Please provide a valid Phone number`
         } else {
+            if (field.inputType === 'email') emails++
+            else if (field.inputType === 'number') numbers++
+            else if (field.name !== 'teamname' && field.name !== 'collegename')
+                texts++
             field.state = 'normal'
             field.hint = null
         }
     })
 
-    return [textfields, isValid]
+    return counts
+        ? [textfields, isValid, texts, emails, numbers]
+        : [textfields, isValid]
 }
 
 export const validateDropdowns = (dropdowns) => {
