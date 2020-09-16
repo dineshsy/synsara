@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import EventBg from '../../../../Assets/Images/events-bg.png'
+import EventBg from '../../../../Assets/Images/events-bg.webp'
 import { sizeMaxW, sizeMaxH } from '../../../../utils/MediaQueires'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { Button } from '../../../../Reusables/Button'
