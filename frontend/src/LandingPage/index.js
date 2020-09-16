@@ -19,8 +19,6 @@ const Index = (props) => {
 
     const onSlideLeave = (section, origin, destination, direction) => {
         setCurrentSlideInfo([section.index, destination.index])
-        // console.log('section ' + section.index)
-        // console.log('destination ' + destination.index)
     }
 
     return (
