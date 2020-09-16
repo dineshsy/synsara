@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer')
 const dotenv = require('dotenv')
 dotenv.config()
-const EVENTS = require('../utils/constants')
+const EMAIL_TEMPLATE = require('./EmailTemplate')
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -11,13 +11,13 @@ let transporter = nodemailer.createTransport({
     },
 })
 
-exports.sendmail = (toemail, event) => {
+exports.sendmail = (toemail, name, event) => {
     var num = '20'
     const mailOptions = {
         from: 'SYNSARA 2020 <synsara2020@gmail.com>',
         to: toemail,
         subject: "You're Invited to Synsara 2020", // email subject
-        text: 'TEST 123 \n Hello', //content to be added based on event recieved
+        html: EMAIL_TEMPLATE(name, event),
     }
 
     transporter.sendMail(mailOptions, function (error, info) {
