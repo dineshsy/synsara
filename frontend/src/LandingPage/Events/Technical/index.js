@@ -5,10 +5,15 @@ import Debugging from './Debugging/Debugging'
 import Hackathon from './Hackathon/Hackathon'
 import styled, { withTheme } from 'styled-components'
 import { sizeMaxH, sizeMaxW } from '../../../utils/MediaQueires'
+import OvalBG from '../../../Assets/svg/OvalBG.svg'
 
 const EventWrapper = styled.div`
     width: 100%;
     height: 100%;
+
+    @media ${sizeMaxW.tablet} {
+        background: url('${OvalBG}') no-repeat left;
+    }
     @media screen and ${sizeMaxH.tablet} and ${sizeMaxW.tablet} {
         padding: 2rem;
     }

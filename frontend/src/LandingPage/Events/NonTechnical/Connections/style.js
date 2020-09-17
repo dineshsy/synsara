@@ -90,7 +90,8 @@ export const RegisterWrapper = styled.div`
     }
     @media ${sizeMaxW.tablet} {
         justify-content: flex-start;
-        > img {
+        align-items: flex-end;
+        img {
             display: none;
         }
     }

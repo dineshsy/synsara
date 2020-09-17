@@ -88,6 +88,7 @@ export const RegisterWrapper = styled.div`
         animation-fill-mode: forwards;
     }
     @media ${sizeMaxW.tablet} {
+        align-items: flex-end;
         justify-content: flex-start;
         img {
             display: none;
