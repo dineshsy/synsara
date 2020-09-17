@@ -124,7 +124,7 @@ const EventQuote = styled.q`
 
 const EventDetails = styled.div`
     width: 50%;
-    font-size: 18px;
+    font-size: 24px;
     line-height: auto;
     max-width: 100%;
     height: 100%;

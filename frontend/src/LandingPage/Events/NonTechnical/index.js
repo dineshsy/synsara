@@ -11,9 +11,6 @@ import { sizeMaxH, sizeMaxW } from '../../../utils/MediaQueires'
 const SliderWrapper = styled.section`
     width: 100%;
     height: 100%;
-    @media screen and ${sizeMaxH.tablet} and ${sizeMaxW.tablet} {
-        padding: 2rem;
-    }
 `
 
 export const Index = ({ pageNumber, slideInfo }) => {

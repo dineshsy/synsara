@@ -6,17 +6,17 @@ export const Label = styled.h1`
         color: ${color};
         font-size: ${size};
         font-weight: ${bold ? 600 : 400};
-        @media ${sizeMaxH.mobile} {
-            font-size: calc(${size} / 1.5);
-        }
-        @media ${sizeMaxH.mobileL} {
-            font-size: calc(${size} / 1.45);
-        }
-        @media ${sizeMaxH.tablet} {
-            font-size: calc(${size} / 1.15);
-        }
-        @media ${sizeMinH.laptop} {
-            font-size: calc(${size} / 1);
-        }
     `}
+    @media ${sizeMinH.mobile} {
+        font-size: calc(${({ size }) => size} / 1.3);
+    }
+    @media ${sizeMinH.mobileL} {
+        font-size: calc(${({ size }) => size} / 1.2);
+    }
+    @media ${sizeMinH.tablet} {
+        font-size: calc(${({ size }) => size} / 1.15);
+    }
+    @media ${sizeMinH.laptop} {
+        font-size: calc(${({ size }) => size} / 1);
+    }
 `
