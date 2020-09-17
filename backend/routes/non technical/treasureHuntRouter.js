@@ -20,7 +20,11 @@ treasureHuntRouter.route('/').post((req, res, next) => {
                         res.statusCode = 200
                         res.setHeader('Content-Type', 'application/json')
                         res.json(participant)
-                        mailer.sendmail(req.body.emailId, 'treasureHunt') //participant email and event name must be added
+                        mailer.sendmail(
+                            req.body.emailId,
+                            req.body.name,
+                            'treasureHunt'
+                        ) //participant email and event name must be added
                     },
                     (err) => {
                         console.log('error')

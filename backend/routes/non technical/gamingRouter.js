@@ -24,7 +24,7 @@ gamingRouter.route('/').post(async (req, res, next) => {
             console.log('Participant already registered under ', username)
             res.statusCode = 409
             res.setHeader('Content-Type', 'application/json')
-            res.send(username)
+            res.json({ leader: username })
         } else {
             console.log('new')
             //New Registration
@@ -36,7 +36,11 @@ gamingRouter.route('/').post(async (req, res, next) => {
                         res.setHeader('Content-Type', 'application/json')
                         res.json(participant)
                         for (const mailObj of participant.players) {
-                            mailer.sendmail(mailObj.emailId, 'gaming')
+                            mailer.sendmail(
+                                mailObj.emailId,
+                                mailObj.name,
+                                'gaming'
+                            )
                         }
                         //participant email and event name must be added
                     },

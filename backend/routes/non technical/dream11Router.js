@@ -20,7 +20,11 @@ dream11Router.route('/').post((req, res, next) => {
                         res.statusCode = 200
                         res.setHeader('Content-Type', 'application/json')
                         res.json(participant)
-                        mailer.sendmail(req.body.emailId, 'dream11') //participant email and event name must be added
+                        mailer.sendmail(
+                            req.body.emailId,
+                            req.body.name,
+                            'dream11'
+                        ) //participant email and event name must be added
                     },
                     (err) => {
                         console.log('error')

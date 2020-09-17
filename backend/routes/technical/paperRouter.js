@@ -25,7 +25,7 @@ paperRouter.route('/').post(async (req, res, next) => {
             console.log('Participant is already registered under ', username)
             res.statusCode = 409
             res.setHeader('Content-Type', 'application/json')
-            res.send(username)
+            res.json({ leader: username })
         } else {
             console.log('new')
             //New Registration
@@ -37,7 +37,11 @@ paperRouter.route('/').post(async (req, res, next) => {
                         res.setHeader('Content-Type', 'application/json')
                         res.json(participant)
                         for (const mailObj of participant.members) {
-                            mailer.sendmail(mailObj.emailId, 'paper')
+                            mailer.sendmail(
+                                mailObj.emailId,
+                                mailObj.name,
+                                'paper'
+                            )
                         }
                         //participant email and event name must be added
                     },
