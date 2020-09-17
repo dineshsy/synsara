@@ -3,7 +3,7 @@ import { Gaming } from './Gaming/Gaming'
 import { Photography } from './Photography/Photography'
 import { Treasurehunt } from './Treasurehunt/Treasurehunt'
 import { Connections } from './Connections/Connections'
-import { Instareels } from './Instareels/Instareels'
+import { Dubsmash } from './Dubsmash/Dubsmash'
 import { Memecontest } from './Memecontest/Memecontest'
 import { Dream11IPL } from './Dream11IPL/Dream11IPL'
 import styled from 'styled-components'
@@ -50,7 +50,7 @@ export const Index = ({ pageNumber, slideInfo }) => {
             </div>
             <div className="slide">
                 <SliderWrapper>
-                    <Instareels pageNumber={pageNumber} slideInfo={slideInfo} />
+                    <Dubsmash pageNumber={pageNumber} slideInfo={slideInfo} />
                 </SliderWrapper>
             </div>
             <div className="slide">

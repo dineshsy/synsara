@@ -7,8 +7,7 @@ const INITIAL_STATE = {
     isDream11IPLRegistered: false,
     isTreasureHuntRegistered: false,
     isConnexionsRegistered: false,
-    isPhotographyRegistered: false,
-    isMemeContestRegistered: false,
+    isDubsmashRegistered: false,
 }
 
 const nonTechEventsReducer = (state = INITIAL_STATE, action) => {
@@ -22,8 +21,7 @@ const nonTechEventsReducer = (state = INITIAL_STATE, action) => {
                 isDream11IPLRegistered: false,
                 isTreasureHuntRegistered: false,
                 isConnexionsRegistered: false,
-                isPhotographyRegistered: false,
-                isMemeContestRegistered: false,
+                isDubsmashRegistered: false,
             }
         case ActionTypes.REGISTER_GAMING_EVENT_SUCCESS:
             return {
@@ -77,29 +75,16 @@ const nonTechEventsReducer = (state = INITIAL_STATE, action) => {
                 isError: true,
                 isLoading: false,
             }
-        case ActionTypes.REGISTER_PHOTOGRAPHY_EVENT_SUCCESS:
+        case ActionTypes.REGISTER_DUBSMASH_EVENT_SUCCESS:
             return {
                 ...state,
-                isPhotographyRegistered: true,
+                isDubsmashRegistered: true,
                 isLoading: false,
             }
-        case ActionTypes.REGISTER_PHOTOGRAPHY_EVENT_FAIL:
+        case ActionTypes.REGISTER_DUBSMASH_EVENT_FAIL:
             return {
                 ...state,
-                isPhotographyRegistered: false,
-                isError: true,
-                isLoading: false,
-            }
-        case ActionTypes.REGISTER_MEMECONTEST_EVENT_SUCCESS:
-            return {
-                ...state,
-                isMemeContestRegistered: true,
-                isLoading: false,
-            }
-        case ActionTypes.REGISTER_MEMECONTEST_EVENT_FAIL:
-            return {
-                ...state,
-                isMemeContestRegistered: false,
+                isDubsmashRegistered: false,
                 isError: true,
                 isLoading: false,
             }

@@ -11,7 +11,7 @@ import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import Instareel from '../../../../Assets/Images/instareel.webp'
-export const Instareels = ({ pageNumber, slideInfo }) => {
+export const Dubsmash = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -86,7 +86,7 @@ export const Instareels = ({ pageNumber, slideInfo }) => {
                         <Button
                             onClick={() =>
                                 history.push(
-                                    `/register/${FORM_ROUTES.nonTechEvents.instareels}`
+                                    `/register/${FORM_ROUTES.nonTechEvents.dubsmash}`
                                 )
                             }
                         >

@@ -32,7 +32,7 @@ const BgSVG = styled.svg`
     }
 `
 
-export default function PhotographyFormBg() {
+export default function DubsmashFormBg() {
     return (
         <BgSVG
             viewBox="0 0 971 968"
