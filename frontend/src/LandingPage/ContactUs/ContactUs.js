@@ -114,7 +114,7 @@ export default function ContactUs({ pageNumber }) {
         }
     }, [pageNumber])
     return (
-        <>
+        <div style={{ height: '100%', width: '100%', overflow: 'hidden' }}>
             <ContactUsWrapper pageNumber={pageNumber} isAnimated={isAnimated}>
                 <Title className="contactus__title">Event Coordinators</Title>
                 <Body>
@@ -293,6 +293,6 @@ export default function ContactUs({ pageNumber }) {
                     <Halfellipse />
                 </div>
             </ContactUsWrapper>
-        </>
+        </div>
     )
 }
