@@ -7,8 +7,20 @@ import { Button } from '../../../../Reusables/Button'
 import { useHistory } from 'react-router-dom'
 import CodingBg from '../../../../Assets/Images/coding.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
-import { ImageWrapper } from '../../NonTechnical/style'
-
+const float = () => keyframes`
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+`
 const moveInLeft = () => keyframes`
     0% {
         opacity: 0;
@@ -112,7 +124,7 @@ const EventQuote = styled.q`
 
 const EventDetails = styled.div`
     width: 50%;
-    font-size: 24px;
+    font-size: 18px;
     line-height: auto;
     max-width: 100%;
     height: 100%;
@@ -194,6 +206,9 @@ const EventHeading = styled.p`
     color: ${(props) => props.theme.secondary};
     margin-top: 1rem;
 `
+const ImageWrapper = styled.div`
+    animation: float 3s ease-in-out infinite;
+`
 
 export default function Coding({ pageNumber, slideInfo }) {
     const [currentPageno, currentSlideno] = slideInfo
@@ -255,9 +270,10 @@ export default function Coding({ pageNumber, slideInfo }) {
             </EventDetails>
             <EventDetailsWithButton>
                 <ImageWrapper>
-                    <img src={CodingBg} alt="" height="320px" />
+                    <div>
+                        <img src={CodingBg} alt="" height="320px" />
+                    </div>
                 </ImageWrapper>
-
                 <RegisterButton>
                     <div className="button__animation">
                         <Button
