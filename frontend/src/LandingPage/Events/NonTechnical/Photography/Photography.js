@@ -5,16 +5,13 @@ import {
     MainContentWrapper,
     RegisterWrapper,
 } from './style'
-import { Label } from '../style'
+import { Label, ImageWrapper } from '../style'
 import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import PhotographyBg from '../../../../Assets/svg/photo.svg'
 import styled, { keyframes, css } from 'styled-components'
-const ImageWrapper = styled.div`
-    animation: float 3s ease-in-out infinite;
-`
 export const Photography = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)

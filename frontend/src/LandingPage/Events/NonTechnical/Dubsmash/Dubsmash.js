@@ -5,7 +5,7 @@ import {
     MainContentWrapper,
     RegisterWrapper,
 } from './style'
-import { Label } from '../style'
+import { Label, ImageWrapper } from '../style'
 import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
@@ -81,7 +81,9 @@ export const Dubsmash = ({ pageNumber, slideInfo }) => {
                     </ContentWrapper>
                 </ContentWrapper>
                 <RegisterWrapper>
-                    <img src={Instareel} alt="" height="200px" />
+                    <ImageWrapper>
+                        <img src={Instareel} alt="" height="200px" />
+                    </ImageWrapper>
                     <div className="button__animation">
                         <Button
                             onClick={() =>
