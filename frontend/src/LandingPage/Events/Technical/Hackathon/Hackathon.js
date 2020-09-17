@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState, useEffect } from 'react'
+import styled, { keyframes, css } from 'styled-components'
 import EventBg from '../../../../Assets/Images/events-bg.webp'
 import { sizeMaxW, sizeMaxH } from '../../../../utils/MediaQueires'
 import { FORM_ROUTES } from '../../../../utils/constants'
@@ -7,7 +7,34 @@ import { Button } from '../../../../Reusables/Button'
 import { useHistory } from 'react-router-dom'
 import HackathonBg1 from '../../../../Assets/Images/hackathon1.webp'
 import HackathonBg2 from '../../../../Assets/Images/hackathon2.webp'
-
+import { FadeIn } from '../../../../utils/globalStyles'
+const float = () => keyframes`
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+`
+const moveInLeft = () => keyframes`
+    0% {
+        
+opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }`
 const PaperPresentationWrapper = styled.div`
     background: url(${EventBg}) no-repeat right;
     width: 100%;
@@ -27,6 +54,33 @@ const PaperPresentationWrapper = styled.div`
     @media ${sizeMaxH.mobileL} and (orientation: landscape) {
         flex-direction: column;
     }
+    ${({ pageNumber, slideInfo, isAnimated }) =>
+        pageNumber === 2 && slideInfo == 3 && !isAnimated
+            ? css`
+                  .para1 {
+                      animation: ${FadeIn(`0`, `50px`)} 0.5s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 0.8s;
+                  }
+                  .para2 {
+                      animation: ${FadeIn(`0`, `50px`)} 0.8s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 1s;
+                  }
+                  .event__title {
+                      animation-name: ${moveInLeft()};
+                      animation-duration: 2s;
+                  }
+                  .button__animation {
+                      animation: ${FadeIn(`0`, `150px`)} 1s ease-in;
+                      opacity: 0;
+                      animation-fill-mode: forwards;
+                      animation-delay: 1s;
+                  }
+              `
+            : null}
 `
 
 const EventTitle = styled.h1`
@@ -144,49 +198,78 @@ const EventHeading = styled.p`
 const EventSubHeading = styled.p`
     color: ${(props) => props.theme.secondary};
 `
+const ImageWrapper = styled.div`
+    animation: float 3s ease-in-out infinite;
+`
 
-export default function PaperPresentation(props) {
+export default function PaperPresentation({ pageNumber, slideInfo }) {
+    const [currentPageno, currentSlideno] = slideInfo
+    const [isAnimated, setIsAnimated] = useState(false)
+    useEffect(() => {
+        if (pageNumber === 2 && currentSlideno == 3 && !isAnimated) {
+            setTimeout(() => setIsAnimated(true), 3500)
+        }
+    }, [pageNumber, slideInfo])
     const history = useHistory()
 
     return (
-        <PaperPresentationWrapper>
+        <PaperPresentationWrapper
+            pageNumber={pageNumber}
+            slideInfo={currentSlideno}
+            isAnimated={isAnimated}
+        >
             <EventDetails>
-                <EventTitle>Niralayam</EventTitle>
-                <p>
-                    Think..Innovate.. Create.. Are you all ready to rack your
-                    brains to do some out of box thinking? Are you all ready to
-                    exercise your brains to do solve mind-bending problems?We
-                    bring to you the most anticipated event," The National Level
-                    Virtual Hackathon". Unleash your innovative ideas, offer
-                    technical solutions to real world problems and get a chance
-                    to win up to Rs 10,000.
-                </p>
-                <EventHeading>Rules to Remember</EventHeading>
-                <ol>
-                    <li>Team should have a maximum of 4 members.</li>
-                    <li>There is no registration fee.</li>
-                    <li>Certificates will be provided.</li>
-                    <li>
-                        Register and start sending your abstract to
-                        hackathon.synsara2020@gmail com before September 30.
-                    </li>
-                    <li>Results will be announced on October 1st.</li>
-                    <li>Event will be conducted on October 9th and 10th.</li>
-                </ol>
+                <div className="event__title">
+                    <EventTitle>Niralayam</EventTitle>
+                </div>
+                <div className="para1">
+                    <p>
+                        Think..Innovate.. Create.. Are you all ready to rack
+                        your brains to do some out of box thinking? Are you all
+                        ready to exercise your brains to do solve mind-bending
+                        problems?We bring to you the most anticipated event,"
+                        The National Level Virtual Hackathon". Unleash your
+                        innovative ideas, offer technical solutions to real
+                        world problems and get a chance to win up to Rs 10,000.
+                    </p>
+                </div>
+                <div className="para2">
+                    <EventHeading>Rules to Remember</EventHeading>
+                    <ol>
+                        <li>Team should have a maximum of 4 members.</li>
+                        <li>There is no registration fee.</li>
+                        <li>Certificates will be provided.</li>
+                        <li>
+                            Register and start sending your abstract to
+                            hackathon.synsara2020@gmail com before September 30.
+                        </li>
+                        <li>Results will be announced on October 1st.</li>
+                        <li>
+                            Event will be conducted on October 9th and 10th.
+                        </li>
+                    </ol>
+                </div>
             </EventDetails>
             <EventDetailsWithButton>
-                <img src={HackathonBg1} alt="" height="200px" />
-                <img src={HackathonBg2} alt="" height="200px" />
+                <ImageWrapper>
+                    <div>
+                        {' '}
+                        <img src={HackathonBg1} alt="" height="200px" />
+                        <img src={HackathonBg2} alt="" height="200px" />{' '}
+                    </div>
+                </ImageWrapper>
                 <RegisterButton>
-                    <Button
-                        onClick={() =>
-                            history.push(
-                                `/register/${FORM_ROUTES.techEvents.hackathon}`
-                            )
-                        }
-                    >
-                        Register
-                    </Button>
+                    <div className="button__animation">
+                        <Button
+                            onClick={() =>
+                                history.push(
+                                    `/register/${FORM_ROUTES.techEvents.hackathon}`
+                                )
+                            }
+                        >
+                            Register
+                        </Button>
+                    </div>
                 </RegisterButton>
             </EventDetailsWithButton>
         </PaperPresentationWrapper>

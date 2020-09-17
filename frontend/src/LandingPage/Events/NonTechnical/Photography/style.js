@@ -2,7 +2,20 @@ import styled, { keyframes, css } from 'styled-components'
 import EventBG from '../../../../Assets/Images/events-bg.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
 import { sizeMaxW } from '../../../../utils/MediaQueires'
-
+const float = () => keyframes`
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+`
 const moveInLeft = () => keyframes`
     0% {
         opacity: 0;
