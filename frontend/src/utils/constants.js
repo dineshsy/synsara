@@ -10,9 +10,7 @@ export const FORM_ROUTES = {
         dream11IPL: 'dream-11-ipl',
         treasureHunt: 'treasure-hunt',
         connexions: 'connexions',
-        photography: 'photography',
-        memeContest: 'meme-contest',
-        instareels: 'insta-reels',
+        dubsmash: 'dubsmash',
     },
 }
 

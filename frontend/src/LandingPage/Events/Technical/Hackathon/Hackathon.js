@@ -8,6 +8,10 @@ import { useHistory } from 'react-router-dom'
 import HackathonBg1 from '../../../../Assets/Images/hackathon1.webp'
 import HackathonBg2 from '../../../../Assets/Images/hackathon2.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
+<<<<<<< HEAD
+=======
+import { ImageWrapper } from '../../NonTechnical/style'
+>>>>>>> 7be7befb721a979aa8727b53e62f5ca894c5d08b
 
 const moveInLeft = () => keyframes`
     0% {
@@ -182,10 +186,13 @@ const EventHeading = styled.p`
     margin-top: 1rem;
 `
 
+<<<<<<< HEAD
 const EventSubHeading = styled.p`
     color: ${(props) => props.theme.secondary};
 `
 
+=======
+>>>>>>> 7be7befb721a979aa8727b53e62f5ca894c5d08b
 export default function PaperPresentation({ pageNumber, slideInfo }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
@@ -235,9 +242,16 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                 </div>
             </EventDetails>
             <EventDetailsWithButton>
+<<<<<<< HEAD
                 <img src={HackathonBg1} alt="" height="200px" />
                 <img src={HackathonBg2} alt="" height="200px" />
 
+=======
+                <ImageWrapper>
+                    <img src={HackathonBg1} alt="" height="200px" />
+                    <img src={HackathonBg2} alt="" height="200px" />{' '}
+                </ImageWrapper>
+>>>>>>> 7be7befb721a979aa8727b53e62f5ca894c5d08b
                 <RegisterButton>
                     <div className="button__animation">
                         <Button

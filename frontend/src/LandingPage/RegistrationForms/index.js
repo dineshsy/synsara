@@ -5,18 +5,10 @@ import { FORM_ROUTES } from '../../utils/constants'
 const ConnexionsForm = lazy(() =>
     import('./NonTechEvents/Connexions/ConnexionsForm')
 )
-const PhotographyForm = lazy(() =>
-    import('./NonTechEvents/Photography/PhotographyForm')
-)
-const MemeContestForm = lazy(() =>
-    import('./NonTechEvents/MemeContest/MemeContest')
-)
+const DubsmashForm = lazy(() => import('./NonTechEvents/Dubsmash/DubsmashForm'))
 const CodingForm = lazy(() => import('./TechEvents/Coding/CodingForm'))
 const PaperPresentationForm = lazy(() =>
     import('./TechEvents/Paper Presentation/PaperPresentation')
-)
-const InstaReelsForm = lazy(() =>
-    import('./NonTechEvents/InstaReelsContest/InstaReelsForm')
 )
 const DebuggingForm = lazy(() => import('./TechEvents/Debugging/DebuggingForm'))
 const HackathonForm = lazy(() => import('./TechEvents/Hackathon/Hackathon'))
@@ -30,7 +22,15 @@ const TreasureHuntForm = lazy(() =>
 )
 export const Index = ({ match }) => {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+            fallback={
+                <div id="loader" class="loader-wrapper">
+                    <span class="loader">
+                        <span class="loader-inner"></span>
+                    </span>
+                </div>
+            }
+        >
             <Switch>
                 <Route path={`/register/${FORM_ROUTES.nonTechEvents.gaming}`}>
                     <GamingForm />
@@ -50,20 +50,8 @@ export const Index = ({ match }) => {
                 >
                     <ConnexionsForm />
                 </Route>
-                <Route
-                    path={`/register/${FORM_ROUTES.nonTechEvents.photography}`}
-                >
-                    <PhotographyForm />
-                </Route>
-                <Route
-                    path={`/register/${FORM_ROUTES.nonTechEvents.memeContest}`}
-                >
-                    <MemeContestForm />
-                </Route>
-                <Route
-                    path={`/register/${FORM_ROUTES.nonTechEvents.instareels}`}
-                >
-                    <InstaReelsForm />
+                <Route path={`/register/${FORM_ROUTES.nonTechEvents.dubsmash}`}>
+                    <DubsmashForm />
                 </Route>
                 <Route path={`/register/${FORM_ROUTES.techEvents.coding}`}>
                     <CodingForm />

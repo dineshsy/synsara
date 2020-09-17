@@ -5,7 +5,7 @@ import {
     MainContentWrapper,
     RegisterWrapper,
 } from './style'
-import { Label } from '../style'
+import { Label, ImageWrapper } from '../style'
 import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
@@ -76,7 +76,9 @@ export const Dream11IPL = ({ pageNumber, slideInfo }) => {
                     </ContentWrapper>
                 </ContentWrapper>
                 <RegisterWrapper>
-                    <img src={Ipl} height="300" alt="ipl" />
+                    <ImageWrapper>
+                        <img src={Ipl} height="300" alt="ipl" />
+                    </ImageWrapper>
                     <div className="button__animation">
                         <Button
                             onClick={() =>

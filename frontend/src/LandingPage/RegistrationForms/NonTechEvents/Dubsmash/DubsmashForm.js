@@ -8,11 +8,11 @@ import { InputWrapper, Label, RadioButtonWrapper } from '../../style'
 import Textfield from '../../../../Reusables/inputs/text-field/text-field'
 import Dropdown from '../../../../Reusables/inputs/drop-down/drop-down'
 import { Button } from '../../../../Reusables/Button'
-import PhotographyFormBg from './PhotographyFormBg'
+import DubsmashFormBg from './DubsmashFormBg'
 import arrowDownIcon from '../../../../Assets/Images/arrow-down.png'
 import RadioButton from '../../../../Reusables/inputs/RadioButton/RadioButton'
 
-import { registerPhotographyEvent } from '../../../../redux/Events/NonTechEvents/Actions'
+import { registerDubsmashEvent } from '../../../../redux/Events/NonTechEvents/Actions'
 import {
     validateTextFields,
     validateDropdowns,
@@ -21,7 +21,7 @@ import {
 import { DEPARTMENTS } from '../../../../utils/constants'
 import { Loader } from '../../../../Reusables/ButtonLoader'
 
-class PhotographyForm extends Component {
+class DubsmashForm extends Component {
     state = {
         textfields: [
             {
@@ -41,16 +41,6 @@ class PhotographyForm extends Component {
                 name: 'email',
                 label: 'Email ID',
                 placeholder: 'johndoe@gmail.com',
-                value: '',
-                readOnly: false,
-            },
-            {
-                id: 'gaming-form-2',
-                inputType: 'text',
-                state: 'normal',
-                name: 'instaid',
-                label: 'Insta ID',
-                placeholder: 'itsdark_nine',
                 value: '',
                 readOnly: false,
             },
@@ -221,14 +211,13 @@ class PhotographyForm extends Component {
             const data = {
                 name: this.state.textfields[0].value,
                 emailId: this.state.textfields[1].value,
-                instaId: this.state.textfields[2].value,
                 collegeName: this.state.textfields[3].value,
                 mobileNumber: this.state.textfields[4].value,
                 dept: this.state.dropdowns[0].value,
                 year,
             }
 
-            this.props.registerPhotographyEvent(data)
+            this.props.registerDubsmashEvent(data)
         }
     }
 
@@ -236,8 +225,8 @@ class PhotographyForm extends Component {
         const field = this.state.textfields
         return (
             <>
-                <FormWrapper formName="Photography">
-                    <PhotographyFormBg />
+                <FormWrapper formName="Dubsmash">
+                    <DubsmashFormBg />
                     <InputWrapper>
                         <Textfield
                             textfield={field[0]}
@@ -249,10 +238,6 @@ class PhotographyForm extends Component {
                         />
                         <Textfield
                             textfield={field[2]}
-                            handleInputValueChange={this.handleInputValueChange}
-                        />
-                        <Textfield
-                            textfield={field[3]}
                             handleInputValueChange={this.handleInputValueChange}
                         />
                         <Dropdown
@@ -289,7 +274,7 @@ class PhotographyForm extends Component {
                             </Label>
                         </div>
                         <Textfield
-                            textfield={field[4]}
+                            textfield={field[3]}
                             handleInputValueChange={this.handleInputValueChange}
                         />
                     </InputWrapper>
@@ -308,14 +293,14 @@ class PhotographyForm extends Component {
 const mapStateToProps = ({ nonTechEvents }) => ({
     isLoading: nonTechEvents.isLoading,
     isError: nonTechEvents.isError,
-    isPhotographyRegistered: nonTechEvents.isPhotographyRegistered,
+    isDubsmashRegistered: nonTechEvents.isDubsmashRegistered,
 })
 
 const mapDispatchToProps = {
-    registerPhotographyEvent,
+    registerDubsmashEvent,
 }
 
 export default compose(
     connect(mapStateToProps, mapDispatchToProps),
     withTheme
-)(PhotographyForm)
+)(DubsmashForm)

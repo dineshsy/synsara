@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { HeroBanner } from './HeroBanner/HeroBanner'
+import Sponsors from './Sponsors/Sponsors'
 import ReactFullpage from '@fullpage/react-fullpage'
 import TechEvents from './Events/Technical/index'
 import { Index as NonTechEvents } from './Events/NonTechnical'
@@ -37,6 +38,7 @@ const Index = (props) => {
                         'Non-Technical Events',
                         'Technical Events',
                         'Contact Us',
+                        'Sponsors',
                     ]}
                     showActiveTooltip={true}
                     render={({ state, fullpageApi }) => {
@@ -73,6 +75,12 @@ const Index = (props) => {
                                 </div>
                                 <div className="section">
                                     <ContactUs
+                                        fullpageApi={fullpageApi}
+                                        pageNumber={pageNumber}
+                                    />
+                                </div>
+                                <div className="section">
+                                    <Sponsors
                                         fullpageApi={fullpageApi}
                                         pageNumber={pageNumber}
                                     />

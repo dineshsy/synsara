@@ -20,3 +20,7 @@ export const Label = styled.h1`
         font-size: calc(${({ size }) => size} / 1);
     }
 `
+
+export const ImageWrapper = styled.div`
+    animation: float 3s ease-in-out infinite;
+`

@@ -59,20 +59,20 @@ export const registerConnexionsEvent = (data) => (dispatch) => {
         })
 }
 
-export const registerPhotographyEvent = (data) => (dispatch) => {
+export const registerDubsmashEvent = (data) => (dispatch) => {
     dispatch({ type: ActionTypes.NON_TECH_EVENTS_LOADING })
     axios
-        .post('/nontechnical/photo', data)
+        .post('/nontechnical/dub', data)
         .then((res) => {
-            dispatch({ type: ActionTypes.REGISTER_PHOTOGRAPHY_EVENT_SUCCESS })
+            dispatch({ type: ActionTypes.REGISTER_DUBSMASH_EVENT_SUCCESS })
             dispatch(registrationSuccess(res.data))
         })
         .catch((err) => {
-            dispatch({ type: ActionTypes.REGISTER_PHOTOGRAPHY_EVENT_FAIL })
+            dispatch({ type: ActionTypes.REGISTER_DUBSMASH_EVENT_FAIL })
             dispatch(
                 registrationFailed({
                     err_type: err.response,
-                    event: 'Photography',
+                    event: 'Dubsmash',
                 })
             )
         })
@@ -92,44 +92,6 @@ export const registerTreasureHuntEvent = (data) => (dispatch) => {
                 registrationFailed({
                     err_type: err.response,
                     event: 'Treasure Hunt',
-                })
-            )
-        })
-}
-
-export const registerMemeContestEvent = (data) => (dispatch) => {
-    dispatch({ type: ActionTypes.NON_TECH_EVENTS_LOADING })
-    axios
-        .post('/nontechnical/*MEME_CONTEST_ROUTE*', data)
-        .then((res) => {
-            dispatch(registrationSuccess(res.data))
-            dispatch({ type: ActionTypes.REGISTER_MEMECONTEST_EVENT_SUCCESS })
-        })
-        .catch((err) => {
-            dispatch({ type: ActionTypes.REGISTER_MEMECONTEST_EVENT_FAIL })
-            dispatch(
-                registrationFailed({
-                    err_type: err.response,
-                    event: 'Meme Contest',
-                })
-            )
-        })
-}
-
-export const registerInstaReelsEvent = (data) => (dispatch) => {
-    dispatch({ type: ActionTypes.NON_TECH_EVENTS_LOADING })
-    axios
-        .post('/nontechnical/*INSTA_REELS_ROUTE*', data)
-        .then((res) => {
-            dispatch(registrationSuccess(res.data))
-            dispatch({ type: ActionTypes.REGISTER_INSTA_REEL_CONTEST_SUCCESS })
-        })
-        .catch((err) => {
-            dispatch({ type: ActionTypes.REGISTER_INSTA_REEL_CONTEST_FAIL })
-            dispatch(
-                registrationFailed({
-                    err_type: err.response,
-                    event: 'Insta Reel',
                 })
             )
         })

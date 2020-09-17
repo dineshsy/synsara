@@ -5,14 +5,17 @@ import {
     MainContentWrapper,
     RegisterWrapper,
 } from './style'
-import { Label } from '../style'
+import { Label, ImageWrapper } from '../style'
 import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import PhotographyBg from '../../../../Assets/svg/photo.svg'
 import styled, { keyframes, css } from 'styled-components'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7be7befb721a979aa8727b53e62f5ca894c5d08b
 export const Photography = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
