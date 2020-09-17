@@ -12,7 +12,6 @@ let transporter = nodemailer.createTransport({
 })
 
 exports.sendmail = (toemail, name, event) => {
-    var num = '20'
     const mailOptions = {
         from: 'SYNSARA 2020 <synsara2020@gmail.com>',
         to: toemail,
