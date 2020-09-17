@@ -2,6 +2,8 @@ import styled, { keyframes, css } from 'styled-components'
 import EventBG from '../../../../Assets/Images/events-bg.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
 import { sizeMaxW } from '../../../../utils/MediaQueires'
+import OvalBG from '../../../../Assets/svg/OvalBG.svg'
+
 const float = () => keyframes`
     0% {
         box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
@@ -36,7 +38,7 @@ export const EventWrapper = styled.section`
     background: url('${EventBG}') no-repeat right;
     padding: 6rem;
     @media ${sizeMaxW.tablet} {
-        background: none;
+        background: url('${OvalBG}') no-repeat left;
     }
     @media ${sizeMaxW.mobileL} {
         padding: 2rem;
@@ -103,7 +105,7 @@ export const RegisterWrapper = styled.div`
     }
     @media ${sizeMaxW.tablet} {
         justify-content: flex-start;
-        > img {
+        img {
             display: none;
         }
     }
