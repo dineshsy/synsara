@@ -33,6 +33,7 @@ debuggingRouter.route('/').post((req, res, next) => {
                 )
                 .catch((err) => {
                     console.log('error')
+                    console.log(err)
                     next(err)
                 })
         }
