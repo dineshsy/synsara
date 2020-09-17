@@ -7,11 +7,7 @@ import { Button } from '../../../../Reusables/Button'
 import { useHistory } from 'react-router-dom'
 import DebuggingBg from '../../../../Assets/Images/debugging.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
-<<<<<<< HEAD
-
-=======
 import { ImageWrapper } from '../../NonTechnical/style'
->>>>>>> 7be7befb721a979aa8727b53e62f5ca894c5d08b
 const moveInLeft = () => keyframes`
     0% {
         opacity: 0;
@@ -256,14 +252,9 @@ export default function Debugging({ pageNumber, slideInfo }) {
                 </div>
             </EventDetails>
             <EventDetailsWithButton>
-<<<<<<< HEAD
-                {' '}
-                <img src={DebuggingBg} alt="" height="200px" />
-=======
                 <ImageWrapper>
                     <img src={DebuggingBg} alt="" height="200px" />
                 </ImageWrapper>
->>>>>>> 7be7befb721a979aa8727b53e62f5ca894c5d08b
                 <RegisterButton>
                     <div className="button__animation">
                         <Button

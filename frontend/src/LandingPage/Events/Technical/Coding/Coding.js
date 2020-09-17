@@ -7,6 +7,7 @@ import { Button } from '../../../../Reusables/Button'
 import { useHistory } from 'react-router-dom'
 import CodingBg from '../../../../Assets/Images/coding.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
+import { ImageWrapper } from '../../NonTechnical/style'
 
 const moveInLeft = () => keyframes`
     0% {
@@ -253,7 +254,9 @@ export default function Coding({ pageNumber, slideInfo }) {
                 </div>
             </EventDetails>
             <EventDetailsWithButton>
-                <img src={CodingBg} alt="" height="320px" />
+                <ImageWrapper>
+                    <img src={CodingBg} alt="" height="320px" />
+                </ImageWrapper>
 
                 <RegisterButton>
                     <div className="button__animation">

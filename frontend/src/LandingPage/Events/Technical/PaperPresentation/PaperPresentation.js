@@ -7,6 +7,7 @@ import { Button } from '../../../../Reusables/Button'
 import { useHistory } from 'react-router-dom'
 import PaperPresentationBg from '../../../../Assets/Images/paperpresentation.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
+import { ImageWrapper } from '../../NonTechnical/style'
 
 const moveInLeft = () => keyframes`
     0% {
@@ -289,8 +290,9 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                 </div>
             </EventDetails>
             <EventDetailsWithButton>
-                {' '}
-                <img src={PaperPresentationBg} alt="" height="200px" />{' '}
+                <ImageWrapper>
+                    <img src={PaperPresentationBg} alt="" height="200px" />{' '}
+                </ImageWrapper>
                 <RegisterButton>
                     <div className="button__animation">
                         <Button
