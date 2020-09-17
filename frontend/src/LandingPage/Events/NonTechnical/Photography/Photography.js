@@ -12,9 +12,7 @@ import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import PhotographyBg from '../../../../Assets/svg/photo.svg'
 import styled, { keyframes, css } from 'styled-components'
-const ImageWrapper = styled.div`
-    animation: float 3s ease-in-out infinite;
-`
+
 export const Photography = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
@@ -76,13 +74,8 @@ export const Photography = ({ pageNumber, slideInfo }) => {
                     </ContentWrapper>
                 </ContentWrapper>
                 <RegisterWrapper>
-                    <ImageWrapper>
-                        {' '}
-                        <div>
-                            {' '}
-                            <img src={PhotographyBg} />
-                        </div>
-                    </ImageWrapper>
+                    <img src={PhotographyBg} />
+
                     <div className="button__animation">
                         <Button
                             onClick={() =>

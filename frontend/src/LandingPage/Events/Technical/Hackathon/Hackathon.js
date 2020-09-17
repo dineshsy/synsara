@@ -8,20 +8,7 @@ import { useHistory } from 'react-router-dom'
 import HackathonBg1 from '../../../../Assets/Images/hackathon1.webp'
 import HackathonBg2 from '../../../../Assets/Images/hackathon2.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
-const float = () => keyframes`
-    0% {
-        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-        transform: translatey(0px);
-    }
-    50% {
-        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
-        transform: translatey(-20px);
-    }
-    100% {
-        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-        transform: translatey(0px);
-    }
-`
+
 const moveInLeft = () => keyframes`
     0% {
         
@@ -198,9 +185,6 @@ const EventHeading = styled.p`
 const EventSubHeading = styled.p`
     color: ${(props) => props.theme.secondary};
 `
-const ImageWrapper = styled.div`
-    animation: float 3s ease-in-out infinite;
-`
 
 export default function PaperPresentation({ pageNumber, slideInfo }) {
     const [currentPageno, currentSlideno] = slideInfo
@@ -251,13 +235,9 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                 </div>
             </EventDetails>
             <EventDetailsWithButton>
-                <ImageWrapper>
-                    <div>
-                        {' '}
-                        <img src={HackathonBg1} alt="" height="200px" />
-                        <img src={HackathonBg2} alt="" height="200px" />{' '}
-                    </div>
-                </ImageWrapper>
+                <img src={HackathonBg1} alt="" height="200px" />
+                <img src={HackathonBg2} alt="" height="200px" />
+
                 <RegisterButton>
                     <div className="button__animation">
                         <Button

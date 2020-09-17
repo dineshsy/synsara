@@ -13,10 +13,6 @@ import { useHistory } from 'react-router-dom'
 import GamingBg from '../../../../Assets/Images/gaming.webp'
 import styled, { keyframes, css } from 'styled-components'
 
-const ImageWrapper = styled.div`
-    animation: float 3s ease-in-out infinite;
-`
-
 export const Gaming = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
@@ -90,11 +86,8 @@ export const Gaming = ({ pageNumber, slideInfo }) => {
                     </ContentWrapper>
                 </ContentWrapper>
                 <RegisterWrapper>
-                    <ImageWrapper>
-                        <div>
-                            <img src={GamingBg} alt="" height="200px" />
-                        </div>
-                    </ImageWrapper>
+                    <img src={GamingBg} alt="" height="200px" />
+
                     <div className="button__animation">
                         <Button
                             onClick={() =>

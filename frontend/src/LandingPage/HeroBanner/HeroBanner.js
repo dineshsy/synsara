@@ -14,6 +14,17 @@ const FadeIn = (x, y) => keyframes`
         opacity: 1;
         transform: translate(0,0);
     }`
+const moveInLeft = () => keyframes`
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }`
 export const HeroWrapper = styled.div`
     ${({ isAnimated, isWindowLoaded }) =>
         !isAnimated && isWindowLoaded
@@ -45,6 +56,10 @@ export const HeroWrapper = styled.div`
                       animation-name: rotating;
                       animation-duration: 1s;
                       animation-timing-function: ease-in-out;
+                  }
+                  .hero__title {
+                      animation-name: ${moveInLeft()};
+                      animation-duration: 1s;
                   }
               `
             : null}
@@ -79,16 +94,17 @@ export const HeroBanner = ({ fullpageApi }) => {
                 </div>
                 <div className="content-wrapper">
                     <div className="hero__text">
-                        <h1 className="hero__primary">
-                            Synsara 20<sup>20</sup>
-                        </h1>
+                        <p className="hero__title">
+                            Sri Sairam Engineering College
+                        </p>
+                        <p className="hero__title">CSE Department</p>
+                        <p className="hero__title"> Presents</p>
+                        <h1 className="hero__primary">Synsara 2020</h1>
+
                         <p className="hero__secondary">
-                            Hey there! Welcome to Synsara'20, a virtual
-                            symposium bringing all our trademark events to your
-                            bedroom door for an experience unlike any other.
-                            Stock up some snacks and get comfortable, because
-                            we've got exciting challenges and lucrative prizes
-                            waiting for you come October!
+                            A culmination of the nation's best young minds in a
+                            contest of innovative thinking and exhilarating
+                            creations.
                         </p>
                         <div className="hero__button">
                             <Button
