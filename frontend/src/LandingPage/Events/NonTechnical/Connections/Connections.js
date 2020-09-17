@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
     EventWrapper,
     ContentWrapper,
@@ -12,23 +12,45 @@ import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import Connection from '../../../../Assets/Images/connexions.png'
 
-export const Connections = () => {
+export const Connections = ({ pageNumber, slideInfo }) => {
+    const [currentPageno, currentSlideno] = slideInfo
+    const [isAnimated, setIsAnimated] = useState(false)
+    useEffect(() => {
+        if (pageNumber === 1 && currentSlideno == 3 && !isAnimated) {
+            setTimeout(() => setIsAnimated(true), 3500)
+        }
+    }, [pageNumber, slideInfo])
+
     const theme = useTheme()
     const history = useHistory()
     return (
-        <EventWrapper>
+        <EventWrapper
+            pageNumber={pageNumber}
+            slideInfo={currentSlideno}
+            isAnimated={isAnimated}
+        >
             <MainContentWrapper>
                 <ContentWrapper gap="1rem">
                     <ContentWrapper gap="0rem">
-                        <Label bold size="4.1rem" color={theme.secondary}>
+                        <Label
+                            className="event__title"
+                            bold
+                            size="4.1rem"
+                            color={theme.secondary}
+                        >
                             Oppu
                         </Label>
-                        <Label bold size="1.5rem" color={theme.primary}>
+                        <Label
+                            className="para1"
+                            bold
+                            size="1.5rem"
+                            color={theme.primary}
+                        >
                             "A picture can speak a thousand words more than a
                             person ever could!!"
                         </Label>
                     </ContentWrapper>
-                    <Label size="2rem" color={theme.textdark}>
+                    <Label className="para1" size="2rem" color={theme.textdark}>
                         Hola guys! Picture speaks more than the words. And here
                         is the game to check out on how precise you find answers
                         through the pictures and clues. Get your brains
@@ -38,7 +60,7 @@ export const Connections = () => {
                         playing connection, here is the call to action. Register
                         and enjoy your day to the fullest!
                     </Label>
-                    <ContentWrapper gap="1rem">
+                    <ContentWrapper className="para2" gap="1rem">
                         <Label bold size="2.5rem" color={theme.secondary}>
                             Rules:
                         </Label>
@@ -73,15 +95,17 @@ export const Connections = () => {
                 </ContentWrapper>
                 <RegisterWrapper>
                     <img src={Connection} alt="" height="200" />
-                    <Button
-                        onClick={() =>
-                            history.push(
-                                `/register/${FORM_ROUTES.nonTechEvents.connexions}`
-                            )
-                        }
-                    >
-                        Register
-                    </Button>
+                    <div className="button__animation">
+                        <Button
+                            onClick={() =>
+                                history.push(
+                                    `/register/${FORM_ROUTES.nonTechEvents.connexions}`
+                                )
+                            }
+                        >
+                            Register
+                        </Button>
+                    </div>
                 </RegisterWrapper>
             </MainContentWrapper>
         </EventWrapper>

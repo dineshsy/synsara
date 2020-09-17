@@ -62,7 +62,10 @@ const Index = (props) => {
                                 </div>
                                 <div className="section">
                                     <div style={{ position: 'relative' }}>
-                                        <TechEvents />
+                                        <TechEvents
+                                            pageNumber={pageNumber}
+                                            slideInfo={currentSlideInfo}
+                                        />
                                         <ScrollIndicator
                                             fullpageApi={fullpageApi}
                                         />
