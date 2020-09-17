@@ -18,7 +18,6 @@
 
 .hero__logo {
     position: absolute;
-
     left: 2rem;
 }
 
@@ -48,7 +47,7 @@
 .hero__primary {
     color: #3b93f7;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 5rem;
     max-width: 50rem;
     text-align: center;
 }
@@ -62,6 +61,7 @@
     text-align: center;
     padding-bottom: 1rem;
 }
+
 .hero__secondary {
     max-width: 50rem;
     font-weight: 600;
@@ -78,6 +78,7 @@
     border-radius: 10px;
     color: white;
 }
+
 .hero__button {
     max-width: 50rem;
     text-align: center;
@@ -87,9 +88,8 @@
     width: 100%;
     height: 100%;
     margin-right: auto;
-    margin-left: 5rem;
     display: flex;
-    padding: 2 rem;
+    padding: 2rem;
 }
 
 @media (max-width: 1024px) {
@@ -135,6 +135,13 @@
     .hero__bg {
         width: 80%;
     }
+    .hero__text {
+        margin-bottom: 40% !important;
+        text-align: center;
+    }
+}
+
+@media (max-height: 700px) {
     .hero__text {
         margin-bottom: 20% !important;
         text-align: center;

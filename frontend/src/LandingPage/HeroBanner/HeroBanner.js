@@ -99,7 +99,7 @@ export const HeroBanner = ({ fullpageApi }) => {
                         </p>
                         <p className="hero__title">CSE Department</p>
                         <p className="hero__title"> Presents</p>
-                        <h1 className="hero__primary">Synsara 2020</h1>
+                        <h1 className="hero__primary">SYNSARA 2020</h1>
 
                         <p className="hero__secondary">
                             A culmination of the nation's best young minds in a
