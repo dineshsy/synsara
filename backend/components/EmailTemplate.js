@@ -186,7 +186,8 @@ const EMAIL_TEMPLATE = (
 <div style="line-height: 1.2; font-size: 12px; color: #555555; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14px;">
 <p style="line-height: 1.2; word-break: break-word; font-size: 16px; mso-line-height-alt: 19px; margin: 0;"><span style="font-size: 16px;"><strong>Hello ${mailerName}, We Welcome you to ${eventName},</strong></span></p>
 <p style="line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0; color:#3563c1;font-size: 15px;"><br/>${eventDescription[eventName].phrase}</p>
-<p style="line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;"> ${eventDescription[eventName].description}</p>
+<br/>
+<p style="line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;font-size: 15px; font-weight: 600;">${eventDescription[eventName].description}</p>
 <p style="line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;"></p>
 <p style="line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;"> </p>
 <p style="line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;"><strong>Further communication will be made through below telegram channel. We kindly request you to join <a href="${eventDescription[eventName].telegram}" rel="noopener" style="text-decoration: underline; color: #0068A5;" target="_blank">here</a>.</strong></p>
