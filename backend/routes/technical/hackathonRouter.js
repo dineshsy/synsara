@@ -53,7 +53,7 @@ hackathonRouter.route('/').post(async (req, res, next) => {
                         for (const mailObj of participant.members) {
                             mailer.sendmail(
                                 mailObj.emailId,
-                                mailobj.name,
+                                mailObj.name,
                                 'hackathon'
                             )
                         }
