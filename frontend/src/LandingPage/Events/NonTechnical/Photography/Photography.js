@@ -40,6 +40,14 @@ export const Photography = ({ pageNumber, slideInfo }) => {
                         >
                             Nizhaloviyam
                         </Label>
+                        <Label
+                            className="para1"
+                            bold
+                            size="1.5rem"
+                            color={theme.primary}
+                        >
+                            An Indigenous Photography Contest
+                        </Label>
                     </ContentWrapper>
                     <Label className="para1" size="2rem" color={theme.textdark}>
                         Cameras, a tool to some, a medium to many. Your

@@ -45,6 +45,14 @@ export const Treasurehunt = ({ pageNumber, slideInfo }) => {
                             size="1.5rem"
                             color={theme.primary}
                         >
+                            An Indigenous Photography Contest
+                        </Label>
+                        <Label
+                            className="para1"
+                            bold
+                            size="1.5rem"
+                            color={theme.textdark}
+                        >
                             "Who seeks shall find!"
                         </Label>
                     </ContentWrapper>

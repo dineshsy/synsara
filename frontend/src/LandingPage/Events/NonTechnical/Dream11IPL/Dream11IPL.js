@@ -44,6 +44,14 @@ export const Dream11IPL = ({ pageNumber, slideInfo }) => {
                             size="1.5rem"
                             color={theme.primary}
                         >
+                            A hunt for India's next master tactician
+                        </Label>
+                        <Label
+                            className="para1"
+                            bold
+                            size="1.5rem"
+                            color={theme.textdark}
+                        >
                             "The essence of strategy is choosing what not to
                             do."
                         </Label>

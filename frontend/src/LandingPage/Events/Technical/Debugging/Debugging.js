@@ -212,6 +212,11 @@ export default function Debugging({ pageNumber, slideInfo }) {
                     <EventTitle>Bhogi</EventTitle>
                 </div>
                 <div className="para1">
+                    <EventSubHeading>
+                        A contest for the innate debugger in you.
+                    </EventSubHeading>
+                </div>
+                <div className="para1">
                     <EventSubHeading>🔥BURN THE BUG 🔥</EventSubHeading>
                     <p>
                         Are you the detective of a crime movie where you are

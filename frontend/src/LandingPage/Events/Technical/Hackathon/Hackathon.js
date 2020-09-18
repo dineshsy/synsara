@@ -207,6 +207,12 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                 <div className="event__title">
                     <EventTitle>Niralayam</EventTitle>
                 </div>
+                <div className="event__title">
+                    <EventSubHeading>
+                        An Exhilarating Virtual Hackathon!!
+                    </EventSubHeading>
+                </div>
+
                 <div className="para1">
                     <p>
                         Think..Innovate.. Create.. Are you all ready to rack

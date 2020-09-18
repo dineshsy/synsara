@@ -45,6 +45,16 @@ export const Dubsmash = ({ pageNumber, slideInfo }) => {
                             size="1.5rem"
                             color={theme.primary}
                         >
+                            A platform to put your multi-faceted talents to good
+                            use
+                        </Label>
+
+                        <Label
+                            className="para1"
+                            bold
+                            size="1.5rem"
+                            color={theme.textdark}
+                        >
                             "The creative adult is the child who survived"
                         </Label>
                     </ContentWrapper>
