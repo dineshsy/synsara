@@ -184,7 +184,7 @@ const EMAIL_TEMPLATE = (
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif"><![endif]-->
 <div style="color:#555555;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
 <div style="line-height: 1.2; font-size: 12px; color: #555555; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14px;">
-<p style="line-height: 1.2; word-break: break-word; font-size: 16px; mso-line-height-alt: 19px; margin: 0;"><span style="font-size: 16px;"><strong>Hello ${mailerName}, We Welcome you to ${eventName},</strong></span></p>
+<p style="line-height: 1.2; word-break: break-word; font-size: 16px; mso-line-height-alt: 19px; margin: 0;"><span style="font-size: 16px;"><strong>Hello ${mailerName}, We Welcome you to ${eventDescription[eventName].name},</strong></span></p>
 <p style="line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0; color:#3563c1;font-size: 15px;"><br/>${eventDescription[eventName].phrase}</p>
 <br/>
 <p style="line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;font-size: 15px; font-weight: 600;">${eventDescription[eventName].description}</p>
