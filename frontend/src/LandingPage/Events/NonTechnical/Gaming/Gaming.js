@@ -46,6 +46,14 @@ export const Gaming = ({ pageNumber, slideInfo }) => {
                             size="1.5rem"
                             color={theme.primary}
                         >
+                            Sawadee kaa
+                        </Label>
+                        <Label
+                            className="para1"
+                            bold
+                            size="1.5rem"
+                            color={theme.textdark}
+                        >
                             "One-Shot, One Kill, No Luck, Pure Skill"
                         </Label>
                     </ContentWrapper>

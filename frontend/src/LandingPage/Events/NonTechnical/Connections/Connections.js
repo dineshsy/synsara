@@ -46,6 +46,15 @@ export const Connections = ({ pageNumber, slideInfo }) => {
                             size="1.5rem"
                             color={theme.primary}
                         >
+                            An event designed for codebreakers and detective
+                            sleuths.
+                        </Label>
+                        <Label
+                            className="para1"
+                            bold
+                            size="1.5rem"
+                            color={theme.darktext}
+                        >
                             "A picture can speak a thousand words more than a
                             person ever could!!"
                         </Label>

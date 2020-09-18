@@ -50,7 +50,7 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                             className="para1"
                             bold
                             size="1.5rem"
-                            color={theme.primary}
+                            color={theme.textdark}
                         >
                             “Creativity is intelligence having fun.”
                         </Label>

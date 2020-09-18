@@ -196,7 +196,7 @@ export default function Debugging({ pageNumber, slideInfo }) {
                         <span role="img" aria-label="fire">
                             🔥
                         </span>
-                        BURN THE BUG{' '}
+                        BURN THE BUG
                         <span role="img" aria-label="fire">
                             🔥
                         </span>

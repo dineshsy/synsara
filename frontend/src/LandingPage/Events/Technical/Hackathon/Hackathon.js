@@ -183,6 +183,10 @@ const EventHeading = styled.p`
     margin-top: 1rem;
 `
 
+const EventSubHeading = styled.p`
+    color: ${(props) => props.theme.secondary};
+`
+
 export default function PaperPresentation({ pageNumber, slideInfo }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
@@ -203,6 +207,12 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                 <div className="event__title">
                     <EventTitle>Niralayam</EventTitle>
                 </div>
+                <div className="event__title">
+                    <EventSubHeading>
+                        An Exhilarating Virtual Hackathon!!
+                    </EventSubHeading>
+                </div>
+
                 <div className="para1">
                     <p>
                         Think..Innovate.. Create.. Are you all ready to rack
