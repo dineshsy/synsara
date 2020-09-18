@@ -243,8 +243,10 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
             </EventDetails>
             <EventDetailsWithButton>
                 <ImageWrapper>
-                    <img src={HackathonBg1} alt="" height="200px" />
-                    <img src={HackathonBg2} alt="" height="200px" />{' '}
+                    <div style={{ width: 'min-content' }}>
+                        <img src={HackathonBg1} alt="" height="200px" />
+                        <img src={HackathonBg2} alt="" height="200px" />
+                    </div>
                 </ImageWrapper>
                 <RegisterButton>
                     <div className="button__animation">
