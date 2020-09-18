@@ -36,6 +36,11 @@ const DebuggingWrapper = styled.div`
         flex-direction: column;
         background: none;
     }
+    @media ${sizeMaxW.laptop} and (orientation: landscape) {
+        padding: 6rem;
+        flex-direction: column;
+        background: none;
+    }
     @media ${sizeMaxH.mobileL} and (orientation: landscape) {
         flex-direction: column;
     }
@@ -133,6 +138,20 @@ const EventDetailsWithButton = styled.div`
         div {
             width: 100% !important;
         }
+        img {
+            display: none;
+        }
+    }
+    @media ${sizeMaxW.laptop}and (orientation: landscape) {
+        font-size: 14px;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 100%;
+
+        div {
+            width: 100% !important;
+        }
+
         img {
             display: none;
         }

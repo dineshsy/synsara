@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { sizeMinH } from '../../../utils/MediaQueires'
+import { sizeMinH, sizeMaxH } from '../../../utils/MediaQueires'
 
 export const Label = styled.h1`
     ${({ color, size, bold }) => css`

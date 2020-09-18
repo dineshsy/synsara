@@ -31,9 +31,13 @@ const PaperPresentationWrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    @media ${sizeMaxW.tablet} {
+    @media ${sizeMaxW.laptop} and (orientation: landscape) {
         padding: 2rem;
+        flex-direction: column;
+        background: none;
+    }
+    @media ${sizeMaxW.tablet} {
+        padding: 6rem;
         flex-direction: column;
         background: none;
     }
@@ -175,7 +179,20 @@ const EventDetailsWithButton = styled.div`
             display: none;
         }
     }
+    @media ${sizeMaxW.laptop}and (orientation: landscape) {
+        font-size: 14px;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 100%;
 
+        div {
+            width: 100% !important;
+        }
+
+        img {
+            display: none;
+        }
+    }
     @media ${sizeMaxH.mobileL} and (orientation: landscape) {
         font-size: 10px;
         flex-direction: row;

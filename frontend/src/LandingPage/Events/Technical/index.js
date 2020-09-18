@@ -17,6 +17,13 @@ const EventWrapper = styled.div`
     @media screen and ${sizeMaxH.tablet} and ${sizeMaxW.tablet} {
         padding: 2rem;
     }
+
+    @media ${sizeMaxW.laptop} and (orientation: landscape) {
+        background: url('${OvalBG}') no-repeat left;
+    }
+    @media ${sizeMaxW.tablet} and (orientation: landscape) {
+        padding: 2rem;
+    }
 `
 
 function TechincalEvents({ pageNumber, slideInfo }) {
