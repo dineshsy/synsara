@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
-var Dubmsash = new Schema({
+var Dubsmash = new Schema({
     name: {
         type: String,
         default: '',
@@ -28,4 +28,4 @@ var Dubmsash = new Schema({
     },
 })
 
-module.exports = mongoose.model('Dubmsash', Dubmsash)
+module.exports = mongoose.model('Dubsmash', Dubsmash)
