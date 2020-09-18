@@ -150,6 +150,17 @@
     .hero__logo img {
         width: 6rem;
     }
+    .hero__primary,
+    .hero__secondary,
+    .hero__title {
+        width: 40rem;
+    }
+    .hero__button {
+        max-width: 40rem;
+    }
+    .hero #button {
+        margin-top: 2rem;
+    }
     .hero__text {
         margin-bottom: 5rem !important;
         text-align: center;
