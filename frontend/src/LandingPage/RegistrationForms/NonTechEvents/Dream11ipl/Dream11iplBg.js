@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { sizeMaxW, sizeMaxH } from '../../../../utils/MediaQueires'
-import iplIcon from '../../../../Assets/Images/dream-11-ipl.png'
+import iplIcon from '../../../../Assets/Images/Ipl.png'
 
 const BgSVG = styled.svg`
     width: auto;

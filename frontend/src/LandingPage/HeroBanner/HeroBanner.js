@@ -4,7 +4,7 @@ import { LandingBG } from '../../Assets/svg/LandingBG'
 import Thiruvalluvar from '../../Assets/Images/Thiruvalluvar.webp'
 import './HeroBanner.css'
 import { Button } from '../../Reusables/Button'
-import Logo from '../../Assets/Images/synsara_logo.png'
+import Logo from '../../Assets/Images/synsara_logo.webp'
 
 const FadeIn = (x, y) => keyframes`
     0%{
