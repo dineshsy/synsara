@@ -28,7 +28,7 @@ const EVENT_DESCRIPTION = {
             'Submit an abstract of 200-500 words before 30th September 2020 to udhisynsara2020@gmail.com',
         telegram: 'https://t.me/joinchat/NWXpE1YRt4aiysX0jjdaKQ',
     },
-    connextion: {
+    connexion: {
         name: 'Oppu',
         phrase: 'An event designed for codebreakers and detective sleuths.',
         description:
