@@ -27,7 +27,7 @@ const Index = (props) => {
             <Route path="/register" component={RegistrationForms} />
             <Route path="/" exact>
                 <ReactFullpage
-                    scrollingSpeed={1000}
+                    scrollingSpeed={700}
                     navigation={true}
                     onLeave={onLeave}
                     onSlideLeave={onSlideLeave}
