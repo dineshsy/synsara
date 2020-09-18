@@ -9,6 +9,7 @@ export const validateTextFields = (textfields, counts = false) => {
     let texts = 0
     let numbers = 0
     let emails = 0
+    let nonGrouptexts = 0
     textfields.forEach((field) => {
         if (!field.value.trim().length) {
             isValid = false
@@ -30,13 +31,14 @@ export const validateTextFields = (textfields, counts = false) => {
             else if (field.inputType === 'number') numbers++
             else if (field.name !== 'teamname' && field.name !== 'collegename')
                 texts++
+            else nonGrouptexts++
             field.state = 'normal'
             field.hint = null
         }
     })
 
     return counts
-        ? [textfields, isValid, texts, emails, numbers]
+        ? [textfields, isValid, texts, emails, numbers, nonGrouptexts]
         : [textfields, isValid]
 }
 

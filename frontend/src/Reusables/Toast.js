@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { connect } from 'react-redux'
 
@@ -203,10 +203,24 @@ class Toast extends React.Component {
                     error_details.err_type &&
                     error_details.err_type.status === 409
                 ) {
-                    this.setState({
-                        className: ['show', 'warning'],
-                        msg: 'You have already registered for this event',
-                    })
+                    const { data } = error_details.err_type
+                    if (data.error) {
+                        if (data.error === 'teamname')
+                            this.setState({
+                                className: ['show', 'warning'],
+                                msg: 'The team name is already taken.',
+                            })
+                        else if (data.error === 'player')
+                            this.setState({
+                                className: ['show', 'warning'],
+                                msg:
+                                    'One of the team members has already registered for this event.',
+                            })
+                    } else
+                        this.setState({
+                            className: ['show', 'warning'],
+                            msg: 'You have already registered for this event',
+                        })
                 } else {
                     this.setState({
                         className: ['show', 'error'],
@@ -236,7 +250,6 @@ class Toast extends React.Component {
     }
 
     onClose = () => {
-        console.log(this.state.timeoutId)
         this.setState({
             className: [''],
         })

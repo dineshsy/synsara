@@ -10,6 +10,7 @@ import arrowDownIcon from '../../../../Assets/Images/arrow-down.png'
 import RadioButton from '../../../../Reusables/inputs/RadioButton/RadioButton'
 import { DEPARTMENTS } from '../../../../utils/constants'
 import { registerHackathonEvent } from '../../../../redux/Events/TechEvents/Actions'
+import HackathonBg from './HackathonBg'
 import { connect } from 'react-redux'
 import {
     validateTextFields,
@@ -17,7 +18,6 @@ import {
     validateRadioButtons,
 } from '../../../../utils/FormValidator'
 import { Loader } from '../../../../Reusables/ButtonLoader'
-import { sizeMaxH } from '../../../../utils/MediaQueires'
 
 class HackathonForm extends Component {
     state = {
@@ -164,6 +164,57 @@ class HackathonForm extends Component {
                 readOnly: false,
             },
         ],
+        dropdowns: [
+            {
+                toggle: false,
+                value: '',
+                field: {
+                    id: 'gaming-form-6',
+                    inputType: 'text',
+                    state: 'normal',
+                    name: 'department',
+                    label: 'Department',
+                    placeholder: 'Select your Department',
+                    value: '',
+                    imgBtn: arrowDownIcon,
+                    readOnly: true,
+                },
+                dropdown: DEPARTMENTS.map((department, idx) => ({
+                    id: `dropdown-${idx + 1}`,
+                    name: department,
+                    state: 'not selected',
+                })),
+            },
+        ],
+        radioButtons: [
+            {
+                label: 'Year',
+                name: 'year',
+                error: '',
+                options: [
+                    {
+                        id: 'gaming-form-rb-0',
+                        active: false,
+                        label: 'I',
+                    },
+                    {
+                        id: 'gaming-form-rb-1',
+                        active: false,
+                        label: 'II',
+                    },
+                    {
+                        id: 'gaming-form-rb-2',
+                        active: false,
+                        label: 'III',
+                    },
+                    {
+                        id: 'gaming-form-rb-3',
+                        active: false,
+                        label: 'IV',
+                    },
+                ],
+            },
+        ],
     }
 
     handleInputValueChange = (event) => {
@@ -180,10 +231,69 @@ class HackathonForm extends Component {
         })
     }
 
+    handleDropdowntoggle = (index) => {
+        let dropdowns = this.state.dropdowns.concat()
+        let dropdownMenu = dropdowns[index]
+        dropdownMenu.toggle = !dropdownMenu.toggle
+
+        this.setState({
+            dropdowns,
+        })
+    }
+
+    handleDropdownClick = (index, clickDropdown) => {
+        let dropdowns = this.state.dropdowns.concat()
+        let dropdownMenu = dropdowns[index]
+        dropdownMenu.dropdown.forEach((dropdown) => {
+            if (
+                dropdown.name === clickDropdown &&
+                dropdown.state !== 'selected'
+            ) {
+                dropdown.state = 'selected'
+                dropdownMenu.value = clickDropdown
+                dropdownMenu.field.value = clickDropdown
+            } else {
+                dropdown.state = 'not selected'
+            }
+        })
+
+        this.setState({
+            dropdowns,
+        })
+
+        const scope = this
+        setTimeout(() => {
+            scope.handleDropdowntoggle(index)
+        }, 150)
+    }
+
+    handleRadioButtonClick = (index, id) => {
+        const radioButtons = this.state.radioButtons.concat()
+        radioButtons[index].options.forEach((option) => {
+            if (option.id === id) {
+                option.active = true
+            } else {
+                option.active = false
+            }
+        })
+
+        this.setState({ radioButtons })
+    }
+
     handleFormSubmit = (event) => {
         event.preventDefault()
 
         let textfields = this.state.textfields.concat()
+        let dropdowns = this.state.dropdowns.concat()
+        let radioButtons = this.state.radioButtons.concat()
+
+        const [validatedDropdowns, isDropdownValid] = validateDropdowns(
+            dropdowns
+        )
+        const [
+            validatedRadioButtons,
+            isRadioButtonValid,
+        ] = validateRadioButtons(radioButtons)
 
         const [
             validatedTextfields,
@@ -191,23 +301,39 @@ class HackathonForm extends Component {
             texts,
             emails,
             numbers,
+            nonGrouptexts,
         ] = validateTextFields(textfields, true)
         this.setState({
             validatedTextfields,
+            validatedRadioButtons,
+            validatedDropdowns,
             people: Math.max(emails, texts, numbers),
         })
-        if (emails === texts && emails === numbers && emails > 0) {
+        if (
+            emails === texts &&
+            emails === numbers &&
+            emails > 0 &&
+            nonGrouptexts === 2 &&
+            isRadioButtonValid &&
+            isDropdownValid
+        ) {
+            var year = null
+            this.state.radioButtons[0].options.forEach((option) => {
+                if (option.active) year = option.label
+            })
             const data = {
-                players: [],
+                teamName: this.state.textfields[0].value,
+                members: [],
             }
             for (let index = 0; index < 4; index++) {
                 if (this.state.textfields[2 + index].value.trim().length) {
-                    data.players.push({
-                        teamName: this.state.textfields[0].value,
+                    data.members.push({
                         name: this.state.textfields[2 + index].value,
                         emailId: this.state.textfields[6 + index].value,
                         collegeName: this.state.textfields[1].value,
                         mobileNumber: this.state.textfields[10].value,
+                        dept: this.state.dropdowns[0].value,
+                        year,
                     })
                 }
             }
@@ -223,6 +349,7 @@ class HackathonForm extends Component {
         return (
             <>
                 <FormWrapper formName="Hackathon">
+                    <HackathonBg />
                     <InputWrapper>
                         <Textfield
                             textfield={field[0]}
@@ -268,6 +395,39 @@ class HackathonForm extends Component {
                             theme={theme}
                             numberOfPeople={people}
                         />
+                        <Dropdown
+                            dropdownMenu={this.state.dropdowns[0]}
+                            handleDropdowntoggle={() =>
+                                this.handleDropdowntoggle(0)
+                            }
+                            handleDropdownClick={(name) =>
+                                this.handleDropdownClick(0, name)
+                            }
+                        />
+                        <div style={{ height: '9rem' }}>
+                            <Label state="normal" size="1.5rem">
+                                {this.state.radioButtons[0].label}
+                            </Label>
+                            <RadioButtonWrapper>
+                                {this.state.radioButtons[0].options.map(
+                                    (button) => (
+                                        <RadioButton
+                                            key={button.id}
+                                            {...button}
+                                            radioBtnClick={(id) =>
+                                                this.handleRadioButtonClick(
+                                                    0,
+                                                    id
+                                                )
+                                            }
+                                        />
+                                    )
+                                )}
+                            </RadioButtonWrapper>
+                            <Label state="error" size="1.25rem">
+                                {this.state.radioButtons[0].error}
+                            </Label>
+                        </div>
                         <Button
                             onClick={this.handleFormSubmit}
                             disabled={this.props.isLoading}
@@ -281,10 +441,10 @@ class HackathonForm extends Component {
     }
 }
 
-const mapStateToProps = ({ nonTechEvents }) => ({
-    isLoading: nonTechEvents.isLoading,
-    isError: nonTechEvents.isError,
-    isHackathonRegistered: nonTechEvents.isHackathonRegistered,
+const mapStateToProps = ({ techEvents }) => ({
+    isLoading: techEvents.isLoading,
+    isError: techEvents.isError,
+    isHackathonRegistered: techEvents.isHackathonRegistered,
 })
 
 const mapDispatchToProps = {
