@@ -37,8 +37,8 @@ const Index = (props) => {
                         'Home',
                         'Non-Technical Events',
                         'Technical Events',
-                        'Contact Us',
                         'Sponsors',
+                        'Contact Us',
                     ]}
                     showActiveTooltip={true}
                     render={({ state, fullpageApi }) => {
@@ -74,13 +74,13 @@ const Index = (props) => {
                                     </div>
                                 </div>
                                 <div className="section">
-                                    <ContactUs
+                                    <Sponsors
                                         fullpageApi={fullpageApi}
                                         pageNumber={pageNumber}
                                     />
                                 </div>
                                 <div className="section">
-                                    <Sponsors
+                                    <ContactUs
                                         fullpageApi={fullpageApi}
                                         pageNumber={pageNumber}
                                     />
