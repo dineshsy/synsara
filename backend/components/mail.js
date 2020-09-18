@@ -13,7 +13,7 @@ let transporter = nodemailer.createTransport({
 
 exports.sendmail = (toemail, name, event) => {
     const mailOptions = {
-        from: 'SYNSARA 2020 <synsara2020@gmail.com>',
+        from: 'SYNSARA 2020 <synsara2k20.cse@sairam.edu.in>',
         to: toemail,
         subject: "You're Invited to Synsara 2020", // email subject
         html: EMAIL_TEMPLATE(name, event),
