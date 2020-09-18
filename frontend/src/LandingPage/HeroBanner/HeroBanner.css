@@ -145,3 +145,13 @@
         text-align: center;
     }
 }
+
+@media only screen and (max-width: 1000px) and (max-height: 500px) and (orientation: landscape) {
+    .hero__logo img {
+        width: 6rem;
+    }
+    .hero__text {
+        margin-bottom: 5rem !important;
+        text-align: center;
+    }
+}
