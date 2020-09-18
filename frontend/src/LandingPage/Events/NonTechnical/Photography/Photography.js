@@ -91,8 +91,9 @@ export const Photography = ({ pageNumber, slideInfo }) => {
                     <div className="button__animation">
                         <Button
                             onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.nonTechEvents.photography}`
+                                window.open(
+                                    'https://www.instagram.com/synsara_photography_2020/',
+                                    '_blank'
                                 )
                             }
                         >

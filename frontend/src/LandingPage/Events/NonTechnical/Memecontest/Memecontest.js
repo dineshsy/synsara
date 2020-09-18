@@ -95,8 +95,9 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                     <div className="button__animation">
                         <Button
                             onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.nonTechEvents.memeContest}`
+                                window.open(
+                                    'https://www.instagram.com/synsara_contests_2020/',
+                                    '_blank'
                                 )
                             }
                         >
