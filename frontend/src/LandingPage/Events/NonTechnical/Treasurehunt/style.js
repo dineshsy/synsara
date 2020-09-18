@@ -28,6 +28,13 @@ export const EventWrapper = styled.section`
     @media ${sizeMaxW.mobileL} {
         padding: 2rem;
     }
+
+    @media ${sizeMaxW.laptop} and (orientation: landscape) {
+        background: url('${OvalBG}') no-repeat left;
+    }
+    @media ${sizeMaxW.tablet} and (orientation: landscape) {
+        padding: 2rem;
+    }
     ${({ pageNumber, slideInfo, isAnimated }) =>
         pageNumber === 1 && slideInfo === 2 && !isAnimated
             ? css`
@@ -67,6 +74,9 @@ export const MainContentWrapper = styled.div`
     @media ${sizeMaxW.tablet} {
         grid-template-columns: 1fr;
     }
+    @media ${sizeMaxW.laptop} and (orientation: landscape) {
+        grid-template-columns: 1fr;
+    }
 `
 
 export const ContentWrapper = styled.div`
@@ -90,6 +100,14 @@ export const RegisterWrapper = styled.div`
     @media ${sizeMaxW.tablet} {
         align-items: flex-end;
         justify-content: flex-start;
+        img {
+            display: none;
+        }
+    }
+    @media ${sizeMaxW.laptop} and (orientation: landscape) {
+        justify-content: flex-start;
+        align-items: flex-end;
+
         img {
             display: none;
         }

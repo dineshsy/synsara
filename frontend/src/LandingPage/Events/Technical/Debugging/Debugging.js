@@ -32,7 +32,7 @@ const DebuggingWrapper = styled.div`
     justify-content: center;
     align-items: center;
     @media ${sizeMaxW.tablet} {
-        padding: 4rem;
+        padding: 2rem;
         flex-direction: column;
         background: none;
     }
