@@ -19,6 +19,7 @@
 .hero__logo {
     position: absolute;
     left: 2rem;
+    top: 2rem;
 }
 
 @keyframes rotating {
@@ -56,17 +57,14 @@
     max-width: 50rem;
     font-weight: 600;
     font-size: 2.5rem;
-    line-height: 3.5rem;
     color: #3563c1;
     text-align: center;
-    padding-bottom: 1rem;
 }
 
 .hero__secondary {
     max-width: 50rem;
     font-weight: 600;
     font-size: 2rem;
-    line-height: 3.5rem;
     color: #3563c1;
     text-align: center;
 }
@@ -108,7 +106,7 @@
         left: 1%;
     }
     .hero__logo img {
-        width: 40%;
+        width: 6rem;
     }
 }
 

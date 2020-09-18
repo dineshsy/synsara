@@ -45,7 +45,8 @@ export const Treasurehunt = ({ pageNumber, slideInfo }) => {
                             size="1.5rem"
                             color={theme.primary}
                         >
-                            An Indigenous Photography Contest
+                            A Virtual quest for Synsara's elusive treasure
+                            chest.
                         </Label>
                         <Label
                             className="para1"
