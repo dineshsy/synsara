@@ -20,6 +20,8 @@ import {
 } from '../../../../utils/FormValidator'
 import { DEPARTMENTS } from '../../../../utils/constants'
 import { Loader } from '../../../../Reusables/ButtonLoader'
+import { Helmet } from 'react-helmet'
+import ScrollToTop from '../../../../utils/ScrollToTop'
 
 class DubsmashForm extends Component {
     state = {
@@ -225,6 +227,14 @@ class DubsmashForm extends Component {
         const field = this.state.textfields
         return (
             <>
+                <ScrollToTop />
+                <Helmet>
+                    <title>Synsara'20 - Dubsmash Event</title>
+                    <meta
+                        name="description"
+                        content="Registration form for dubsmash event"
+                    />
+                </Helmet>
                 <FormWrapper formName="Dubsmash">
                     <DubsmashFormBg />
                     <InputWrapper>

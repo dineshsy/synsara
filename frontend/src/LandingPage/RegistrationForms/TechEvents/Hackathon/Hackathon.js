@@ -18,6 +18,8 @@ import {
     validateRadioButtons,
 } from '../../../../utils/FormValidator'
 import { Loader } from '../../../../Reusables/ButtonLoader'
+import { Helmet } from 'react-helmet'
+import ScrollToTop from '../../../../utils/ScrollToTop'
 
 class HackathonForm extends Component {
     state = {
@@ -348,6 +350,14 @@ class HackathonForm extends Component {
         const field = this.state.textfields
         return (
             <>
+                <ScrollToTop />
+                <Helmet>
+                    <title>Synsara'20 - Hackathon Event</title>
+                    <meta
+                        name="description"
+                        content="Registration form for hackathon event"
+                    />
+                </Helmet>
                 <FormWrapper formName="Hackathon">
                     <HackathonBg />
                     <InputWrapper>

@@ -20,6 +20,8 @@ import {
 } from '../../../../utils/FormValidator'
 import { DEPARTMENTS } from '../../../../utils/constants'
 import { Loader } from '../../../../Reusables/ButtonLoader'
+import { Helmet } from 'react-helmet'
+import ScrollToTop from '../../../../utils/ScrollToTop'
 
 class TreasureHuntForm extends Component {
     state = {
@@ -226,6 +228,14 @@ class TreasureHuntForm extends Component {
         const field = this.state.textfields
         return (
             <>
+                <ScrollToTop />
+                <Helmet>
+                    <title>Synsara'20 - Treasure Hunt Event</title>
+                    <meta
+                        name="description"
+                        content="Registration form for treasure hunt event"
+                    />
+                </Helmet>
                 <FormWrapper formName="Treasure Hunt">
                     <TreasureHuntBg />
                     <InputWrapper>

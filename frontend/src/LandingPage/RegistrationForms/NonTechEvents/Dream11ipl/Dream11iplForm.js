@@ -20,6 +20,8 @@ import {
 } from '../../../../utils/FormValidator'
 import { DEPARTMENTS } from '../../../../utils/constants'
 import { Loader } from '../../../../Reusables/ButtonLoader'
+import { Helmet } from 'react-helmet'
+import ScrollToTop from '../../../../utils/ScrollToTop'
 
 class Dream11iplForm extends Component {
     state = {
@@ -225,6 +227,14 @@ class Dream11iplForm extends Component {
         const field = this.state.textfields
         return (
             <>
+                <ScrollToTop />
+                <Helmet>
+                    <title>Synsara'20 - Dream 11 IPL Event</title>
+                    <meta
+                        name="description"
+                        content="Registration form for Dream 11 ipl event"
+                    />
+                </Helmet>
                 <FormWrapper formName="Dream 11 ipl">
                     <Dream11iplBg />
                     <InputWrapper>

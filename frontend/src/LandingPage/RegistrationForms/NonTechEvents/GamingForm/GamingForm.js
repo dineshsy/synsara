@@ -18,6 +18,8 @@ import {
     validateRadioButtons,
 } from '../../../../utils/FormValidator'
 import { Loader } from '../../../../Reusables/ButtonLoader'
+import { Helmet } from 'react-helmet'
+import ScrollToTop from '../../../../utils/ScrollToTop'
 
 class GamingForm extends Component {
     state = {
@@ -331,6 +333,14 @@ class GamingForm extends Component {
         const field = this.state.textfields
         return (
             <>
+                <ScrollToTop />
+                <Helmet>
+                    <title>Synsara'20 - Gaming Event</title>
+                    <meta
+                        name="description"
+                        content="Registration form for gaming event"
+                    />
+                </Helmet>
                 <FormWrapper formName="Gaming">
                     <GamingFormBg />
                     <InputWrapper>

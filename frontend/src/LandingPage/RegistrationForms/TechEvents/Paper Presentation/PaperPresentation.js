@@ -22,6 +22,8 @@ import {
 import { DEPARTMENTS } from '../../../../utils/constants'
 import { Loader } from '../../../../Reusables/ButtonLoader'
 import { registerPaperPresentationEvent } from '../../../../redux/Events/TechEvents/Actions'
+import { Helmet } from 'react-helmet'
+import ScrollToTop from '../../../../utils/ScrollToTop'
 
 class PaperPresentationForm extends Component {
     state = {
@@ -282,6 +284,14 @@ class PaperPresentationForm extends Component {
         const { checkboxs } = this.state
         return (
             <>
+                <ScrollToTop />
+                <Helmet>
+                    <title>Synsara'20 - Paper Presentation Event</title>
+                    <meta
+                        name="description"
+                        content="Registration form for Paper Presentation event"
+                    />
+                </Helmet>
                 <FormWrapper formName="Paper Presentation">
                     <PaperPresentationFormBg />
                     <InputWrapper>

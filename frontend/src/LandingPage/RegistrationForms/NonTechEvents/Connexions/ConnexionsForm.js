@@ -20,6 +20,8 @@ import {
 } from '../../../../utils/FormValidator'
 import { registerConnexionsEvent } from '../../../../redux/Events/NonTechEvents/Actions'
 import { Loader } from '../../../../Reusables/ButtonLoader'
+import { Helmet } from 'react-helmet'
+import ScrollToTop from '../../../../utils/ScrollToTop'
 
 class ConnexionsForm extends Component {
     state = {
@@ -235,6 +237,14 @@ class ConnexionsForm extends Component {
         const field = this.state.textfields
         return (
             <>
+                <ScrollToTop />
+                <Helmet>
+                    <title>Synsara'20 - Connexions Event</title>
+                    <meta
+                        name="description"
+                        content="Registration form for connexions event"
+                    />
+                </Helmet>
                 <FormWrapper formName="Connexions">
                     <ConnexionsFormBg />
                     <InputWrapper>

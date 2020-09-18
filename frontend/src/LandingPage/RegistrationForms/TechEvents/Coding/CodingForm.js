@@ -20,6 +20,8 @@ import {
 import { Loader } from '../../../../Reusables/ButtonLoader'
 import { registerCodingEvent } from '../../../../redux/Events/TechEvents/Actions'
 import { DEPARTMENTS } from '../../../../utils/constants'
+import { Helmet } from 'react-helmet'
+import ScrollToTop from '../../../../utils/ScrollToTop'
 
 class CodingForm extends Component {
     state = {
@@ -230,7 +232,6 @@ class CodingForm extends Component {
             }
 
             this.props.registerCodingEvent(data)
-            // API call to backend
         }
     }
 
@@ -238,6 +239,14 @@ class CodingForm extends Component {
         const field = this.state.textfields
         return (
             <>
+                <ScrollToTop />
+                <Helmet>
+                    <title>Synsara'20 - Coding Event</title>
+                    <meta
+                        name="description"
+                        content="Registration form for coding event"
+                    />
+                </Helmet>
                 <FormWrapper formName="Coding">
                     <CodingFormBg />
                     <InputWrapper>

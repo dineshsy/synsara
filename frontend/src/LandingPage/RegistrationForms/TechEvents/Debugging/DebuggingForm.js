@@ -17,6 +17,8 @@ import {
 } from '../../../../utils/FormValidator'
 import { Loader } from '../../../../Reusables/ButtonLoader'
 import { registerDebuggingEvent } from '../../../../redux/Events/TechEvents/Actions'
+import { Helmet } from 'react-helmet'
+import ScrollToTop from '../../../../utils/ScrollToTop'
 
 class DebuggingForm extends Component {
     state = {
@@ -223,6 +225,14 @@ class DebuggingForm extends Component {
         const field = this.state.textfields
         return (
             <>
+                <ScrollToTop />
+                <Helmet>
+                    <title>Synsara'20 - Debugging Event</title>
+                    <meta
+                        name="description"
+                        content="Registration form for debugging event"
+                    />
+                </Helmet>
                 <FormWrapper formName="Debugging">
                     <DebuggingFormBg />
                     <InputWrapper>
