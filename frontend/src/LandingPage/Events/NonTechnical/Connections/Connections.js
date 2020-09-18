@@ -16,10 +16,10 @@ export const Connections = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 1 && currentSlideno == 3 && !isAnimated) {
+        if (pageNumber === 1 && currentSlideno === 3 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
-    }, [pageNumber, slideInfo])
+    }, [pageNumber, currentSlideno, isAnimated])
 
     const theme = useTheme()
     const history = useHistory()
@@ -88,7 +88,10 @@ export const Connections = ({ pageNumber, slideInfo }) => {
                             </Label>
                             <Label size="2rem" color={theme.textdark}>
                                 Do not miss the fun because everything will be
-                                interactive!🤩
+                                interactive!
+                                <span role="img" aria-label="starry-eyes">
+                                    🤩
+                                </span>
                             </Label>
                         </ContentWrapper>
                     </ContentWrapper>

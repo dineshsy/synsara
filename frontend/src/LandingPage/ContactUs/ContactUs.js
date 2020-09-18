@@ -112,7 +112,7 @@ export default function ContactUs({ pageNumber }) {
         if (pageNumber === 3 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 2500)
         }
-    }, [pageNumber])
+    }, [pageNumber, isAnimated])
     return (
         <div style={{ height: '100%', width: '100%', overflow: 'hidden' }}>
             <ContactUsWrapper pageNumber={pageNumber} isAnimated={isAnimated}>

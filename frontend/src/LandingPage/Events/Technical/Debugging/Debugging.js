@@ -40,7 +40,7 @@ const DebuggingWrapper = styled.div`
         flex-direction: column;
     }
     ${({ pageNumber, slideInfo, isAnimated }) =>
-        pageNumber === 2 && slideInfo == 2 && !isAnimated
+        pageNumber === 2 && slideInfo === 2 && !isAnimated
             ? css`
                   .para1 {
                       animation: ${FadeIn(`0`, `50px`)} 0.5s ease-in;
@@ -85,26 +85,6 @@ const EventTitle = styled.h1`
     }
     @media ${sizeMaxH.mobileL} and (orientation: landscape) {
         font-size: 24px;
-    }
-`
-
-const EventQuote = styled.q`
-    font-size: 18px;
-    font-weight: 600;
-    color: ${(props) => props.theme.primary};
-    margin-bottom: 1rem;
-    @media ${sizeMaxW.laptop} {
-        font-size: 16px;
-    }
-    @media ${sizeMaxW.tablet} {
-        font-size: 14px;
-    }
-    @media ${sizeMaxW.mobileL} {
-        font-size: 12px;
-        line-height: 14px;
-    }
-    @media ${sizeMaxH.mobileL} and (orientation: landscape) {
-        font-size: 9px;
     }
 `
 
@@ -194,10 +174,10 @@ export default function Debugging({ pageNumber, slideInfo }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 2 && currentSlideno == 2 && !isAnimated) {
+        if (pageNumber === 2 && currentSlideno === 2 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
-    }, [pageNumber, slideInfo])
+    }, [pageNumber, currentSlideno, isAnimated])
 
     const history = useHistory()
 
@@ -212,7 +192,15 @@ export default function Debugging({ pageNumber, slideInfo }) {
                     <EventTitle>Bhogi</EventTitle>
                 </div>
                 <div className="para1">
-                    <EventSubHeading>🔥BURN THE BUG 🔥</EventSubHeading>
+                    <EventSubHeading>
+                        <span role="img" aria-label="fire">
+                            🔥
+                        </span>
+                        BURN THE BUG{' '}
+                        <span role="img" aria-label="fire">
+                            🔥
+                        </span>
+                    </EventSubHeading>
                     <p>
                         Are you the detective of a crime movie where you are
                         also the murderer…? If yes, then this is your

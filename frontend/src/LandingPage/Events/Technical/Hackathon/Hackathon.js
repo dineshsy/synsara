@@ -43,7 +43,7 @@ const PaperPresentationWrapper = styled.div`
         flex-direction: column;
     }
     ${({ pageNumber, slideInfo, isAnimated }) =>
-        pageNumber === 2 && slideInfo == 3 && !isAnimated
+        pageNumber === 2 && slideInfo === 3 && !isAnimated
             ? css`
                   .para1 {
                       animation: ${FadeIn(`0`, `50px`)} 0.5s ease-in;
@@ -187,10 +187,10 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 2 && currentSlideno == 3 && !isAnimated) {
+        if (pageNumber === 2 && currentSlideno === 3 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
-    }, [pageNumber, slideInfo])
+    }, [pageNumber, currentSlideno, isAnimated])
     const history = useHistory()
 
     return (

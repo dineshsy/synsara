@@ -48,7 +48,7 @@ class PaperPresentationForm extends Component {
             },
             {
                 id: 'gaming-form-2',
-                inputType: 'text',
+                inputType: 'email',
                 state: 'normal',
                 name: 'email1',
                 label: 'Email ID',
@@ -58,7 +58,7 @@ class PaperPresentationForm extends Component {
             },
             {
                 id: 'gaming-form-3',
-                inputType: 'text',
+                inputType: 'email',
                 state: 'normal',
                 name: 'email2',
                 label: '',
@@ -78,7 +78,7 @@ class PaperPresentationForm extends Component {
             },
             {
                 id: 'gaming-form-5',
-                inputType: 'integer',
+                inputType: 'number',
                 state: 'normal',
                 name: 'phone number',
                 label: 'Phone Number',
@@ -175,7 +175,7 @@ class PaperPresentationForm extends Component {
     handleDropdownClick = (index, clickDropdown) => {
         let dropdowns = this.state.dropdowns.concat()
         let dropdownMenu = dropdowns[index]
-        dropdownMenu.dropdown.map((dropdown) => {
+        dropdownMenu.dropdown.forEach((dropdown) => {
             if (
                 dropdown.name === clickDropdown &&
                 dropdown.state !== 'selected'

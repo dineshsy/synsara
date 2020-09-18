@@ -92,10 +92,10 @@ const ScrollIndicatorWrapper = styled.div`
 export const ScrollIndicator = ({ fullpageApi }) => {
     return (
         <ScrollIndicatorWrapper onClick={() => fullpageApi.moveSlideRight()}>
-            <div class="round">
+            <div className="round">
                 <div id="cta">
-                    <span class="arrow primera next "></span>
-                    <span class="arrow segunda next "></span>
+                    <span className="arrow primera next "></span>
+                    <span className="arrow segunda next "></span>
                 </div>
             </div>
         </ScrollIndicatorWrapper>

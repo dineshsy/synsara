@@ -145,7 +145,7 @@ class DubsmashForm extends Component {
     handleDropdownClick = (index, clickDropdown) => {
         let dropdowns = this.state.dropdowns.concat()
         let dropdownMenu = dropdowns[index]
-        dropdownMenu.dropdown.map((dropdown) => {
+        dropdownMenu.dropdown.forEach((dropdown) => {
             if (
                 dropdown.name === clickDropdown &&
                 dropdown.state !== 'selected'
@@ -211,8 +211,8 @@ class DubsmashForm extends Component {
             const data = {
                 name: this.state.textfields[0].value,
                 emailId: this.state.textfields[1].value,
-                collegeName: this.state.textfields[3].value,
-                mobileNumber: this.state.textfields[4].value,
+                collegeName: this.state.textfields[2].value,
+                mobileNumber: this.state.textfields[3].value,
                 dept: this.state.dropdowns[0].value,
                 year,
             }

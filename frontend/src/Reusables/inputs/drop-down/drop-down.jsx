@@ -9,7 +9,6 @@ import {
     UP_ARROW_KEY_CODE,
     ESCAPE_KEY_CODE,
     SPACEBAR_KEY_CODE,
-    TAB_KEY_CODE,
 } from '../../../utils/constants'
 
 const DropdownContainer = styled.div`

@@ -145,7 +145,7 @@ class TreasureHuntForm extends Component {
     handleDropdownClick = (index, clickDropdown) => {
         let dropdowns = this.state.dropdowns.concat()
         let dropdownMenu = dropdowns[index]
-        dropdownMenu.dropdown.map((dropdown) => {
+        dropdownMenu.dropdown.forEach((dropdown) => {
             if (
                 dropdown.name === clickDropdown &&
                 dropdown.state !== 'selected'
@@ -223,7 +223,6 @@ class TreasureHuntForm extends Component {
     }
 
     render() {
-        const { theme } = this.props
         const field = this.state.textfields
         return (
             <>

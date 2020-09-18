@@ -15,10 +15,10 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 1 && currentSlideno == 5 && !isAnimated) {
+        if (pageNumber === 1 && currentSlideno === 5 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
-    }, [pageNumber, slideInfo])
+    }, [pageNumber, currentSlideno, isAnimated])
     const theme = useTheme()
     const history = useHistory()
     return (
@@ -61,7 +61,10 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                         opportunity to showcase your creativity and make us
                         laugh and think with your very own memes. Remember,
                         “Content plays a vital role than the context”. Get ready
-                        with your memes to this mega meme fight🔥
+                        with your memes to this mega meme fight
+                        <span role="img" aria-label="fire">
+                            🔥
+                        </span>
                     </Label>
                     <Label className="para1" size="2rem" color={theme.textdark}>
                         Theme: “Current Affairs on Tamil culture”

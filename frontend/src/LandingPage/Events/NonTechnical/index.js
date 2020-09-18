@@ -7,7 +7,6 @@ import { Dubsmash } from './Dubsmash/Dubsmash'
 import { Memecontest } from './Memecontest/Memecontest'
 import { Dream11IPL } from './Dream11IPL/Dream11IPL'
 import styled from 'styled-components'
-import { sizeMaxH, sizeMaxW } from '../../../utils/MediaQueires'
 const SliderWrapper = styled.section`
     width: 100%;
     height: 100%;

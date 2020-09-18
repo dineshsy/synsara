@@ -29,7 +29,7 @@ export const EventWrapper = styled.section`
         padding: 2rem;
     }
     ${({ pageNumber, slideInfo, isAnimated }) =>
-        pageNumber === 1 && slideInfo == 6 && !isAnimated
+        pageNumber === 1 && slideInfo === 6 && !isAnimated
             ? css`
                   .para1 {
                       animation: ${FadeIn(`0`, `50px`)} 0.5s ease-in;

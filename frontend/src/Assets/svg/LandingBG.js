@@ -260,8 +260,8 @@ export const LandingBG = () => {
                     y2="35.8094"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#3B93F7" />
-                    <stop offset="1" stop-color="#3563C1" />
+                    <stop stopColor="#3B93F7" />
+                    <stop offset="1" stopColor="#3563C1" />
                 </linearGradient>
                 <image
                     id="image0"

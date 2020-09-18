@@ -24,9 +24,9 @@ export const Halfellipse = () => {
                     width="1915"
                     height="1816"
                     filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                    colorInterpolationFilters="sRGB"
                 >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feBlend
                         mode="normal"
                         in="SourceGraphic"
@@ -46,8 +46,8 @@ export const Halfellipse = () => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(726 642.5) rotate(-90) scale(781.5 824.292)"
                 >
-                    <stop stop-color="#3563C1" stop-opacity="0.8" />
-                    <stop offset="1" stop-color="#3B93F7" stop-opacity="0.2" />
+                    <stop stopColor="#3563C1" stopOpacity="0.8" />
+                    <stop offset="1" stopColor="#3B93F7" stopOpacity="0.2" />
                 </radialGradient>
             </defs>
         </svg>

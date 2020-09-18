@@ -11,16 +11,15 @@ import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import GamingBg from '../../../../Assets/Images/gaming.webp'
-import styled, { keyframes, css } from 'styled-components'
 
 export const Gaming = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 1 && currentSlideno == 0 && !isAnimated) {
+        if (pageNumber === 1 && currentSlideno === 0 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
-    }, [pageNumber, slideInfo])
+    }, [pageNumber, currentSlideno, isAnimated])
 
     const theme = useTheme()
     const history = useHistory()

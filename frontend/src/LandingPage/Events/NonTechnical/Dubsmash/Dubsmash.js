@@ -15,10 +15,10 @@ export const Dubsmash = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 1 && currentSlideno == 4 && !isAnimated) {
+        if (pageNumber === 1 && currentSlideno === 4 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
-    }, [pageNumber, slideInfo])
+    }, [pageNumber, currentSlideno, isAnimated])
 
     const theme = useTheme()
     const history = useHistory()

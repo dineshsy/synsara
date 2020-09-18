@@ -11,15 +11,15 @@ import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import PhotographyBg from '../../../../Assets/svg/photo.svg'
-import styled, { keyframes, css } from 'styled-components'
+
 export const Photography = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 1 && currentSlideno == 1 && !isAnimated) {
+        if (pageNumber === 1 && currentSlideno === 1 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
-    }, [pageNumber, slideInfo])
+    }, [pageNumber, currentSlideno, isAnimated])
 
     const theme = useTheme()
     const history = useHistory()
@@ -62,9 +62,12 @@ export const Photography = ({ pageNumber, slideInfo }) => {
                             </Label>
                             <Label size="2rem" color={theme.textdark}>
                                 So get ready with ur cameras and lenses! Lets
-                                click the entire universe🔥 and do not forget to
-                                register for this fun filled event before 4th
-                                October 2020.
+                                click the entire universe
+                                <span role="img" aria-label="fire">
+                                    🔥
+                                </span>{' '}
+                                and do not forget to register for this fun
+                                filled event before 4th October 2020.
                             </Label>
                             <Label bold size="1.5rem" color={theme.primary}>
                                 Come, show us how you tell stories
@@ -74,11 +77,7 @@ export const Photography = ({ pageNumber, slideInfo }) => {
                 </ContentWrapper>
                 <RegisterWrapper>
                     <ImageWrapper>
-                        {' '}
-                        <div>
-                            {' '}
-                            <img src={PhotographyBg} />
-                        </div>
+                        <img src={PhotographyBg} alt="" />
                     </ImageWrapper>
                     <div className="button__animation">
                         <Button
