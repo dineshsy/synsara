@@ -13,7 +13,6 @@ import { PageNotFound } from '../Reusables/PageNotFound'
 const Index = (props) => {
     const [pageNumber, setPageNumber] = useState(0)
     const [currentSlideInfo, setCurrentSlideInfo] = useState([0, 0])
-    const [navVisible, setNavVisible] = useState(true)
     const Navref = useRef(null)
     const location = useLocation()
     useEffect(() => {

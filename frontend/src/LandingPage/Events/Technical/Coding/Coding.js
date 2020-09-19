@@ -38,7 +38,7 @@ const CodingFormWrapper = styled.div`
         background: none;
     }
     @media ${sizeMaxW.laptop} and (orientation: landscape) {
-        padding: 6rem;
+        padding: 2rem;
         flex-direction: column;
         background: none;
     }
@@ -136,6 +136,7 @@ const EventDetails = styled.div`
     @media ${sizeMaxH.mobileL} and (orientation: landscape) {
         width: fit-content;
         font-size: 10px;
+        line-height: 14px;
     }
 `
 
@@ -286,9 +287,6 @@ export default function Coding({ pageNumber, slideInfo }) {
                     <ul>
                         <Label size="2rem" color={theme.textdark}>
                             This round will be held on 9 th of October.
-                        </Label>
-                        <Label size="2rem" color={theme.textdark}>
-                            The time allotted will be 2 hours from 2-4 pm.
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
                             The time allotted will be 2 hours from 2-4 pm.

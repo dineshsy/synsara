@@ -39,7 +39,7 @@ const PaperPresentationWrapper = styled.div`
         background: none;
     }
     @media ${sizeMaxW.laptop} and (orientation: landscape) {
-        padding: 6rem;
+        padding: 2rem;
         flex-direction: column;
         background: none;
     }
@@ -251,7 +251,8 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                         problems?We bring to you the most anticipated event,"
                         The National Level Virtual Hackathon". Unleash your
                         innovative ideas, offer technical solutions to real
-                        world problems and get a chance to win up to Rs 10,000.
+                        world problems and get a chance to win up to Rs 10,000
+                        along with exciting Intern offers.
                     </Label>
                 </div>
                 <div className="para2">
@@ -268,7 +269,7 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
                             Register and start sending your abstract to
-                            hackathon.synsara2020@gmail com before September 30.
+                            hackathon.synsara2020@gmail.com before September 30.
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
                             Results will be announced on October 1st.

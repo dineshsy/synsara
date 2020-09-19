@@ -37,7 +37,7 @@ const DebuggingWrapper = styled.div`
         background: none;
     }
     @media ${sizeMaxW.laptop} and (orientation: landscape) {
-        padding: 6rem;
+        padding: 2rem;
         flex-direction: column;
         background: none;
     }
@@ -218,6 +218,16 @@ export default function Debugging({ pageNumber, slideInfo }) {
                         Bhogi
                     </Label>
                 </div>
+                <Label
+                    className="para1"
+                    bold
+                    className="para1"
+                    bold
+                    size="1.5rem"
+                    color={theme.primary}
+                >
+                    A contest for the innate debugger in you.
+                </Label>
                 <div className="para1">
                     <Label
                         className="para1"
