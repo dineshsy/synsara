@@ -32,12 +32,12 @@ const PaperPresentationWrapper = styled.div`
     justify-content: center;
     align-items: center;
     @media ${sizeMaxW.laptop} and (orientation: landscape) {
-        padding: 2rem;
+        padding: 6rem;
         flex-direction: column;
         background: none;
     }
     @media ${sizeMaxW.tablet} {
-        padding: 6rem;
+        padding: 2rem;
         flex-direction: column;
         background: none;
     }
