@@ -361,7 +361,6 @@ class HackathonForm extends Component {
                     member++
                 }
             }
-            console.log(data)
             this.props.registerHackathonEvent(data)
         }
     }

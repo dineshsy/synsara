@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, useLocation } from 'react-router-dom'
 import { HeroBanner } from './HeroBanner/HeroBanner'
 import Sponsors from './Sponsors/Sponsors'
 import ReactFullpage from '@fullpage/react-fullpage'
@@ -15,8 +15,10 @@ const Index = (props) => {
     const [currentSlideInfo, setCurrentSlideInfo] = useState([0, 0])
     const [navVisible, setNavVisible] = useState(true)
     const Navref = useRef(null)
+    const location = useLocation()
     useEffect(() => {
-        Navref.current = document.getElementById('fp-nav')
+        if (location.pathname == '/')
+            Navref.current = document.getElementById('fp-nav')
         const navTimeout = setTimeout(
             () => Navref.current.classList.add('hide-tooltip'),
             2000
@@ -24,7 +26,7 @@ const Index = (props) => {
         return () => {
             clearTimeout(navTimeout)
         }
-    }, [])
+    }, [location])
 
     const onLeave = (origin, destination, direction) => {
         Navref.current.classList.remove('hide-tooltip')
