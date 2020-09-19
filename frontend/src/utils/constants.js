@@ -26,6 +26,8 @@ export const DEPARTMENTS = [
     'Production Engineering',
     'Civil Engineering',
     'MBA',
+    'Arts & Science',
+    'Viscom',
 ]
 
 export const SPACEBAR_KEY_CODE = [0, 32]

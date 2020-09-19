@@ -49,8 +49,8 @@ const Index = (props) => {
                     slidesNavPosition="left"
                     navigationTooltips={[
                         'Home',
-                        'Non-Technical Events',
                         'Technical Events',
+                        'Non-Technical Events',
                         'Sponsors',
                         'Contact Us',
                     ]}
@@ -66,10 +66,9 @@ const Index = (props) => {
                                 </div>
                                 <div className="section">
                                     <div style={{ position: 'relative' }}>
-                                        <NonTechEvents
+                                        <TechEvents
                                             pageNumber={pageNumber}
                                             slideInfo={currentSlideInfo}
-                                            id="hero"
                                         />
                                         <ScrollIndicator
                                             fullpageApi={fullpageApi}
@@ -78,9 +77,10 @@ const Index = (props) => {
                                 </div>
                                 <div className="section">
                                     <div style={{ position: 'relative' }}>
-                                        <TechEvents
+                                        <NonTechEvents
                                             pageNumber={pageNumber}
                                             slideInfo={currentSlideInfo}
+                                            id="hero"
                                         />
                                         <ScrollIndicator
                                             fullpageApi={fullpageApi}

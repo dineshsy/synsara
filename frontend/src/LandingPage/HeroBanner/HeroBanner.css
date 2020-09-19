@@ -56,7 +56,7 @@
 .hero__title {
     max-width: 50rem;
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #3563c1;
     text-align: center;
 }
@@ -67,6 +67,10 @@
     font-size: 2rem;
     color: #3563c1;
     text-align: center;
+}
+
+.hero__title:first-child {
+    font-size: 2.75rem !important;
 }
 
 .btn__hero {
