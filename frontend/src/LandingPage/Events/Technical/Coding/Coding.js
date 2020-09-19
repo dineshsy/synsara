@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styled, { keyframes, css } from 'styled-components'
+import styled, { keyframes, css, useTheme } from 'styled-components'
 import EventBg from '../../../../Assets/Images/events-bg.webp'
 import { sizeMaxW, sizeMaxH } from '../../../../utils/MediaQueires'
 import { FORM_ROUTES } from '../../../../utils/constants'
@@ -7,6 +7,7 @@ import { Button } from '../../../../Reusables/Button'
 import { useHistory } from 'react-router-dom'
 import CodingBg from '../../../../Assets/Images/coding.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
+import { Label } from '../../NonTechnical/style'
 const moveInLeft = () => keyframes`
     0% {
         opacity: 0;
@@ -163,7 +164,7 @@ const EventDetailsWithButton = styled.div`
         }
     }
     @media ${sizeMaxW.laptop}and (orientation: landscape) {
-        font-size: 14px;
+        font-size: 1rem;
         flex-direction: row;
         justify-content: flex-end;
         width: 100%;
@@ -224,7 +225,7 @@ export default function Coding({ pageNumber, slideInfo }) {
     }, [pageNumber, currentSlideno, isAnimated])
 
     const history = useHistory()
-
+    const theme = useTheme()
     return (
         <CodingFormWrapper
             pageNumber={pageNumber}
@@ -233,42 +234,85 @@ export default function Coding({ pageNumber, slideInfo }) {
         >
             <EventDetails>
                 <div className="event__title">
-                    <EventTitle>Kaniniral</EventTitle>
+                    <Label
+                        className="event__title"
+                        bold
+                        size="4.1rem"
+                        color={theme.secondary}
+                    >
+                        Kaniniral
+                    </Label>
                 </div>
-                <EventQuote>Where your code speaks rather than you</EventQuote>
+                <Label
+                    className="para1"
+                    bold
+                    size="1.5rem"
+                    color={theme.primary}
+                >
+                    Where your code speaks rather than you
+                </Label>
+
                 <div className="para1">
-                    <p>
+                    <Label
+                        className="para1"
+                        bold
+                        size="1.5rem"
+                        color={theme.textdark}
+                    >
                         <q>Hail Coders….!</q> A fascinating shout-out to all the
                         technophiles out there.
-                    </p>
-                    <p>
+                    </Label>
+                    <Label className="para1" size="2rem" color={theme.textdark}>
                         Save your dates on 9th and 10th to Test your competence
                         among the top programmers in the town.
-                    </p>
-                    <p>This contest has two rounds.</p>
-                    <p>Platform: Hackerrank</p>
+                    </Label>
+                    <Label
+                        className="para1"
+                        size="2.25rem"
+                        color={theme.textdark}
+                    >
+                        This contest has two rounds.
+                    </Label>
+                    <Label
+                        className="para1"
+                        size="2.25rem"
+                        color={theme.textdark}
+                    >
+                        <b>Platform:</b> Hackerrank
+                    </Label>
                     <EventHeading>ROUND 1:</EventHeading>
                 </div>
                 <div className="para2">
                     <ul>
-                        <li>This round will be held on 9 th of October.</li>
-                        <li>The time allotted will be 2 hours from 2-4 pm.</li>
-                        <li>
+                        <Label size="2rem" color={theme.textdark}>
+                            This round will be held on 9 th of October.
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
+                            The time allotted will be 2 hours from 2-4 pm.
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
+                            The time allotted will be 2 hours from 2-4 pm.
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
                             The round consists of 3 Coding Challenges to solve.
-                        </li>
-                        <li>The results will be announced on the same day.</li>
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
+                            The results will be announced on the same day.
+                        </Label>
                     </ul>
 
                     <EventHeading>ROUND 2:</EventHeading>
                     <ul>
-                        <li>
+                        <Label size="2rem" color={theme.textdark}>
                             The contestants Shortlisted from Round 1 will be
                             intimated about Round 2.
-                        </li>
-                        <li>This round is on the 10th of October. ️</li>
-                        <li>
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
+                            This round is on the 10th of October.
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
                             The time duration will be 2 hours from 9 to 11 am.
-                        </li>
+                        </Label>
                     </ul>
                 </div>
             </EventDetails>

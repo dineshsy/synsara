@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styled, { keyframes, css } from 'styled-components'
+import styled, { keyframes, css, useTheme } from 'styled-components'
 import EventBg from '../../../../Assets/Images/events-bg.webp'
 import { sizeMaxW, sizeMaxH } from '../../../../utils/MediaQueires'
 import { FORM_ROUTES } from '../../../../utils/constants'
@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom'
 import HackathonBg1 from '../../../../Assets/Images/hackathon1.webp'
 import HackathonBg2 from '../../../../Assets/Images/hackathon2.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
-import { ImageWrapper } from '../../NonTechnical/style'
+import { ImageWrapper, Label } from '../../NonTechnical/style'
 
 const moveInLeft = () => keyframes`
     0% {
@@ -207,6 +207,7 @@ const EventSubHeading = styled.p`
 export default function PaperPresentation({ pageNumber, slideInfo }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
+    const theme = useTheme()
     useEffect(() => {
         if (pageNumber === 1 && currentSlideno === 3 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
@@ -222,16 +223,28 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
         >
             <EventDetails>
                 <div className="event__title">
-                    <EventTitle>Niralayam</EventTitle>
+                    <Label
+                        className="event__title"
+                        bold
+                        size="4.1rem"
+                        color={theme.secondary}
+                    >
+                        Niralayam
+                    </Label>
                 </div>
                 <div className="event__title">
-                    <EventSubHeading>
+                    <Label
+                        className="para1"
+                        bold
+                        size="1.5rem"
+                        color={theme.primary}
+                    >
                         An Exhilarating Virtual Hackathon!!
-                    </EventSubHeading>
+                    </Label>
                 </div>
 
                 <div className="para1">
-                    <p>
+                    <Label className="para1" size="2rem" color={theme.textdark}>
                         Think..Innovate.. Create.. Are you all ready to rack
                         your brains to do some out of box thinking? Are you all
                         ready to exercise your brains to do solve mind-bending
@@ -239,22 +252,30 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                         The National Level Virtual Hackathon". Unleash your
                         innovative ideas, offer technical solutions to real
                         world problems and get a chance to win up to Rs 10,000.
-                    </p>
+                    </Label>
                 </div>
                 <div className="para2">
                     <EventHeading>Rules to Remember</EventHeading>
                     <ol>
-                        <li>Team should have a maximum of 4 members.</li>
-                        <li>There is no registration fee.</li>
-                        <li>Certificates will be provided.</li>
-                        <li>
+                        <Label size="2rem" color={theme.textdark}>
+                            Team should have a maximum of 4 members.
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
+                            There is no registration fee.
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
+                            Certificates will be provided.
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
                             Register and start sending your abstract to
                             hackathon.synsara2020@gmail com before September 30.
-                        </li>
-                        <li>Results will be announced on October 1st.</li>
-                        <li>
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
+                            Results will be announced on October 1st.
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
                             Event will be conducted on October 9th and 10th.
-                        </li>
+                        </Label>
                     </ol>
                 </div>
             </EventDetails>
