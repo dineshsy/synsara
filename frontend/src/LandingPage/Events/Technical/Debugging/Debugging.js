@@ -45,7 +45,7 @@ const DebuggingWrapper = styled.div`
         flex-direction: column;
     }
     ${({ pageNumber, slideInfo, isAnimated }) =>
-        pageNumber === 2 && slideInfo === 2 && !isAnimated
+        pageNumber === 1 && slideInfo === 2 && !isAnimated
             ? css`
                   .para1 {
                       animation: ${FadeIn(`0`, `50px`)} 0.5s ease-in;
@@ -193,7 +193,7 @@ export default function Debugging({ pageNumber, slideInfo }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 2 && currentSlideno === 2 && !isAnimated) {
+        if (pageNumber === 1 && currentSlideno === 2 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
     }, [pageNumber, currentSlideno, isAnimated])

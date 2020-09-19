@@ -16,7 +16,7 @@ export const Photography = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 1 && currentSlideno === 1 && !isAnimated) {
+        if (pageNumber === 2 && currentSlideno === 1 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
     }, [pageNumber, currentSlideno, isAnimated])

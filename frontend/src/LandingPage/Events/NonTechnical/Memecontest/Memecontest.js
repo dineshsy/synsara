@@ -15,7 +15,7 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 1 && currentSlideno === 5 && !isAnimated) {
+        if (pageNumber === 2 && currentSlideno === 5 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
     }, [pageNumber, currentSlideno, isAnimated])

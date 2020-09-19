@@ -30,7 +30,7 @@ const ContactUsWrapper = styled.section`
         opacity: ${({ isAnimated }) => (isAnimated ? `1` : `0`)};
     }
     ${({ pageNumber, isAnimated }) =>
-        pageNumber === 3 && !isAnimated
+        pageNumber === 4 && !isAnimated
             ? css`
                   .person--1 {
                       animation: ${FadeIn(`0`, `50px`)} 0.3s ease-in;
@@ -109,7 +109,7 @@ const FadeIn = (x, y) => keyframes`
 export default function ContactUs({ pageNumber }) {
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 3 && !isAnimated) {
+        if (pageNumber === 4 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 2500)
         }
     }, [pageNumber, isAnimated])
