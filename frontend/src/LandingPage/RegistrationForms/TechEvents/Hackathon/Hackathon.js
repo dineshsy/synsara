@@ -327,16 +327,38 @@ class HackathonForm extends Component {
                 teamName: this.state.textfields[0].value,
                 members: [],
             }
-            for (let index = 0; index < 4; index++) {
+            for (let index = 0; index < emails; index++) {
+                data.members.push({
+                    collegeName: this.state.textfields[1].value,
+                    dept: this.state.dropdowns[0].value,
+                    year,
+                })
+            }
+            for (let index = 0, member = 0; index < 4; index++) {
                 if (this.state.textfields[2 + index].value.trim().length) {
-                    data.members.push({
+                    data.members[member] = {
+                        ...data.members[member],
                         name: this.state.textfields[2 + index].value,
+                    }
+                    member++
+                }
+            }
+            for (let index = 0, member = 0; index < 4; index++) {
+                if (this.state.textfields[6 + index].value.trim().length) {
+                    data.members[member] = {
+                        ...data.members[member],
                         emailId: this.state.textfields[6 + index].value,
-                        collegeName: this.state.textfields[1].value,
-                        mobileNumber: this.state.textfields[10].value,
-                        dept: this.state.dropdowns[0].value,
-                        year,
-                    })
+                    }
+                    member++
+                }
+            }
+            for (let index = 0, member = 0; index < 4; index++) {
+                if (this.state.textfields[10 + index].value.trim().length) {
+                    data.members[member] = {
+                        ...data.members[member],
+                        mobileNumber: this.state.textfields[10 + index].value,
+                    }
+                    member++
                 }
             }
             console.log(data)
