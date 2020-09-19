@@ -30,7 +30,7 @@ class GamingForm extends Component {
                 state: 'normal',
                 name: 'name1',
                 label: '',
-                placeholder: 'John',
+                placeholder: 'Player 1',
                 value: '',
                 readOnly: false,
             },
@@ -40,7 +40,7 @@ class GamingForm extends Component {
                 state: 'normal',
                 name: 'name2',
                 label: '',
-                placeholder: 'John',
+                placeholder: 'Player 2',
                 value: '',
                 readOnly: false,
             },
@@ -50,7 +50,7 @@ class GamingForm extends Component {
                 state: 'normal',
                 name: 'name3',
                 label: '',
-                placeholder: 'John',
+                placeholder: 'Player 3',
                 value: '',
                 readOnly: false,
             },
@@ -60,7 +60,7 @@ class GamingForm extends Component {
                 state: 'normal',
                 name: 'name4',
                 label: '',
-                placeholder: 'John',
+                placeholder: 'Player 4',
                 value: '',
                 readOnly: false,
             },
@@ -158,8 +158,38 @@ class GamingForm extends Component {
                 id: 'gaming-form-5',
                 inputType: 'number',
                 state: 'normal',
-                name: 'phone number',
-                label: 'Phone Number',
+                name: 'phone number1',
+                label: '',
+                placeholder: '9632587412',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-6',
+                inputType: 'number',
+                state: 'normal',
+                name: 'phone number2',
+                label: '',
+                placeholder: '9632587412',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-7',
+                inputType: 'number',
+                state: 'normal',
+                name: 'phone number3',
+                label: '',
+                placeholder: '9632587412',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-8',
+                inputType: 'number',
+                state: 'normal',
+                name: 'phone number4',
+                label: '',
                 placeholder: '9632587412',
                 value: '',
                 readOnly: false,
@@ -318,7 +348,7 @@ class GamingForm extends Component {
                     emailId: this.state.textfields[4 + index].value,
                     gamingId: this.state.textfields[8 + index].value,
                     collegeName: this.state.textfields[12].value,
-                    mobileNumber: this.state.textfields[13].value,
+                    mobileNumber: this.state.textfields[13 + index].value,
                     dept: this.state.dropdowns[0].value,
                     year,
                 })
@@ -377,6 +407,17 @@ class GamingForm extends Component {
                             ]}
                             theme={theme}
                         />
+                        <InputGroup
+                            label="Phone Number"
+                            onchangeHandler={this.handleInputValueChange}
+                            textfields={[
+                                textfields[13],
+                                textfields[14],
+                                textfields[15],
+                                textfields[16],
+                            ]}
+                            theme={theme}
+                        />
                         <Textfield
                             textfield={textfields[12]}
                             handleInputValueChange={this.handleInputValueChange}
@@ -390,7 +431,7 @@ class GamingForm extends Component {
                                 this.handleDropdownClick(0, name)
                             }
                         />
-                        <div style={{ height: '9rem' }}>
+                        <div style={{ height: '11rem' }}>
                             <Label state="normal" size="1.5rem">
                                 {this.state.radioButtons[0].label}
                             </Label>
@@ -414,10 +455,6 @@ class GamingForm extends Component {
                                 {this.state.radioButtons[0].error}
                             </Label>
                         </div>
-                        <Textfield
-                            textfield={field[13]}
-                            handleInputValueChange={this.handleInputValueChange}
-                        />
                     </InputWrapper>
                     <Button
                         onClick={this.handleFormSubmit}

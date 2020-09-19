@@ -361,6 +361,10 @@ class HackathonForm extends Component {
                 <FormWrapper formName="Hackathon">
                     <HackathonBg />
                     <InputWrapper>
+                        <em style={{ fontSize: '1.5rem', color: 'red' }}>
+                            * A team must contain atleast 1 participant and a
+                            maximum of 4.
+                        </em>
                         <Textfield
                             textfield={field[0]}
                             handleInputValueChange={this.handleInputValueChange}

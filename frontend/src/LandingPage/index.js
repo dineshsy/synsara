@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { HeroBanner } from './HeroBanner/HeroBanner'
 import Sponsors from './Sponsors/Sponsors'
@@ -13,8 +13,22 @@ import { PageNotFound } from '../Reusables/PageNotFound'
 const Index = (props) => {
     const [pageNumber, setPageNumber] = useState(0)
     const [currentSlideInfo, setCurrentSlideInfo] = useState([0, 0])
+    const [navVisible, setNavVisible] = useState(true)
+    const Navref = useRef(null)
+    useEffect(() => {
+        Navref.current = document.getElementById('fp-nav')
+        const navTimeout = setTimeout(
+            () => Navref.current.classList.add('hide-tooltip'),
+            2000
+        )
+        return () => {
+            clearTimeout(navTimeout)
+        }
+    }, [])
 
     const onLeave = (origin, destination, direction) => {
+        Navref.current.classList.remove('hide-tooltip')
+        setTimeout(() => Navref.current.classList.add('hide-tooltip'), 2000)
         setPageNumber(destination.index)
     }
 

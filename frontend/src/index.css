@@ -23,6 +23,10 @@ body {
 
 /* Overrinding Navbar Styles of fullPage.js*/
 
+#fp-nav.hide-tooltip.fp-show-active a.active + .fp-tooltip {
+    display: none !important;
+}
+
 .fp-tooltip {
     color: #333333 !important;
 }
@@ -45,8 +49,8 @@ body {
     border-color: unset !important;
     border: none;
     transform: rotate(45deg);
-    border-bottom: 3px solid #3563C1 !important;
-    border-left: 3px solid #3563C1 !important;
+    border-bottom: 3px solid #3563c1 !important;
+    border-left: 3px solid #3563c1 !important;
 }
 
 .fp-controlArrow.fp-next {
@@ -59,8 +63,8 @@ body {
     border-color: unset !important;
     border: none;
     transform: rotate(45deg);
-    border-top: 3px solid #3563C1 !important;
-    border-right: 3px solid #3563C1 !important;
+    border-top: 3px solid #3563c1 !important;
+    border-right: 3px solid #3563c1 !important;
 }
 
 @media (max-height: 425px) {
