@@ -9,15 +9,19 @@ export const Label = styled.h1`
     `}
     @media ${sizeMinH.mobile} {
         font-size: calc(${({ size }) => size} / 1.3);
+        line-height: calc(${({ size }) => size} / 1);
     }
     @media ${sizeMinH.mobileL} {
         font-size: calc(${({ size }) => size} / 1.2);
+        line-height: calc(${({ size }) => size} / 0.9);
     }
     @media ${sizeMinH.tablet} {
         font-size: calc(${({ size }) => size} / 1.15);
+        line-height: calc(${({ size }) => size} / 0.85);
     }
     @media ${sizeMinH.laptop} {
         font-size: calc(${({ size }) => size} / 1);
+        line-height: calc(${({ size }) => size} / 0.7);
     }
 `
 
