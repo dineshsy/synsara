@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import CodeChefLogo from '../../Assets/Images/codechef.webp'
 import HawkShawLogo from '../../Assets/Images/hawkshaw.webp'
 import WebboombaaLogo from '../../Assets/Images/Webboombaa.webp'
+import MadrasSwitchgears from '../../Assets/Images/madras-switchgears.webp'
 
 const SponsorsWrapper = styled.div`
     width: 100%;
@@ -15,22 +16,32 @@ const SponsorsWrapper = styled.div`
         height: auto;
     }
 
-    @media (max-width: 1024px) {
-        img {
-            width: 300px;
-            height: auto;
-        }
-    }
-
     @media (max-width: 768px) and (orientation: portrait) {
         & #logo-div {
             flex-direction: column !important;
             justify-content: unset;
             margin-bottom: 0 !important;
+        }
+    }
 
-            img {
-                margin-bottom: 3rem;
-            }
+    @media only screen and (max-width: 500px) and (max-height: 750px) {
+        img {
+            width: 200px;
+        }
+    }
+    @media only screen and (max-width: 500px) and (max-height: 600px) {
+        img {
+            width: 150px;
+        }
+    }
+    @media only screen and (min-width: 500px) {
+        img {
+            width: 250px;
+        }
+    }
+    @media only screen and (min-width: 1000px) {
+        img {
+            width: 300px;
         }
     }
 `
@@ -38,7 +49,7 @@ const SponsorsWrapper = styled.div`
 const SponsorsTitle = styled.h1`
     text-align: center;
     color: ${(props) => props.theme.primary};
-    font-size: 48px;
+    font-size: 3rem;
     text-transform: uppercase;
     & span {
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -60,6 +71,16 @@ const BgWrapper = styled.svg`
     @media (max-width: 768px) and (orientation: portrait) {
         width: 50%;
         height: auto;
+    }
+`
+
+const RowWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    > img {
+        margin: 2.5rem;
     }
 `
 
@@ -86,7 +107,7 @@ const Bg = () => (
 
 const Star = () => (
     <svg
-        style={{ width: '40px', height: 'auto' }}
+        style={{ width: '2.75rem', height: '2.75rem' }}
         viewBox="0 0 61 51"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -145,32 +166,14 @@ export default function Sponsors() {
                 <span>Sponsors</span>
                 <Star />
             </SponsorsTitle>
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    width: '100%',
-                    height: 'fit-content',
-                    justifyContent: 'space-evenly',
-                    alignItems: 'center',
-                    marginBottom: '2rem',
-                }}
-                id="logo-div"
-            >
-                <img src={WebboombaaLogo} alt="" />
+            <RowWrapper>
+                <img src={MadrasSwitchgears} alt="" />
                 <img src={HawkShawLogo} alt="" />
-            </div>
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    width: '100%',
-                    height: 'fit-content',
-                    alignItems: 'center',
-                }}
-            >
+            </RowWrapper>
+            <RowWrapper>
+                <img src={WebboombaaLogo} alt="" />
                 <img src={CodeChefLogo} alt="" />
-            </div>
+            </RowWrapper>
         </SponsorsWrapper>
     )
 }
