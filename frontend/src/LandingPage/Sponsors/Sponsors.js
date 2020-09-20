@@ -24,14 +24,9 @@ const SponsorsWrapper = styled.div`
         }
     }
 
-    @media only screen and (max-width: 500px) and (max-height: 750px) {
+    @media only screen and (max-width: 500px) {
         img {
             width: 200px;
-        }
-    }
-    @media only screen and (max-width: 500px) and (max-height: 700px) {
-        img {
-            width: 150px;
         }
     }
 
