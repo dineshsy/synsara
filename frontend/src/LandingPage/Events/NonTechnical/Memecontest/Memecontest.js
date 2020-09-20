@@ -36,7 +36,7 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                             size="4.1rem"
                             color={theme.secondary}
                         >
-                            Chitiram Pesudadi
+                            Chithiram Pesudhadee
                         </Label>
                         <Label
                             className="para1"
@@ -52,22 +52,22 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                             size="1.5rem"
                             color={theme.textdark}
                         >
-                            “Creativity is intelligence having fun.”
+                            <q>Creativity is intelligence having fun.</q>
                         </Label>
                     </ContentWrapper>
                     <Label className="para1" size="2rem" color={theme.textdark}>
                         To all the meme creators out there who make the content
                         go viral with their talent, we present you a wonderful
                         opportunity to showcase your creativity and make us
-                        laugh and think with your very own memes. Remember,
-                        “Content plays a vital role than the context”. Get ready
-                        with your memes to this mega meme fight
+                        laugh and think with your very own memes. Remember,{' '}
+                        <q>Content plays a vital role than the context</q>. Get
+                        ready with your memes to this mega meme fight
                         <span role="img" aria-label="fire">
                             🔥
                         </span>
                     </Label>
                     <Label className="para1" size="2rem" color={theme.textdark}>
-                        Theme: “Current Affairs on Tamil culture”
+                        Theme: <q>Current Affairs on Tamil culture</q>
                     </Label>
                     <ContentWrapper className="para2" gap="1rem">
                         <Label bold size="2.5rem" color={theme.secondary}>
