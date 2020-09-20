@@ -29,11 +29,12 @@ const SponsorsWrapper = styled.div`
             width: 200px;
         }
     }
-    @media only screen and (max-width: 500px) and (max-height: 600px) {
+    @media only screen and (max-width: 500px) and (max-height: 700px) {
         img {
             width: 150px;
         }
     }
+
     @media only screen and (min-width: 500px) {
         img {
             width: 250px;
