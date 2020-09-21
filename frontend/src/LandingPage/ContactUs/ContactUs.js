@@ -10,6 +10,9 @@ import sandy from '../../Assets/Images/sandy.webp'
 import Jade from '../../Assets/Images/Jade.webp'
 import kaviya from '../../Assets/Images/kaviya.webp'
 import { Halfellipse } from '../../Assets/svg/Halfellipse'
+import { Facebook } from '../../Assets/svg/Facebook'
+import { Linkedin } from '../../Assets/svg/Linkedin'
+import { Instagram } from '../../Assets/svg/Instagram'
 
 const ContactUsWrapper = styled.section`
     width: 100%;
@@ -18,7 +21,8 @@ const ContactUsWrapper = styled.section`
     min-height: 100vh;
     padding: 3rem 3rem 0 3rem;
     margin: auto;
-    position: relative;
+    display: flex;
+    flex-flow: column;
     .person--1,
     .person--2,
     .person--3,
@@ -113,6 +117,8 @@ export default function ContactUs({ pageNumber }) {
             setTimeout(() => setIsAnimated(true), 2500)
         }
     }, [pageNumber, isAnimated])
+    const d = new Date()
+    const currentYear = d.getFullYear()
     return (
         <div style={{ height: '100%', width: '100%', overflow: 'hidden' }}>
             <ContactUsWrapper pageNumber={pageNumber} isAnimated={isAnimated}>
@@ -277,9 +283,17 @@ export default function ContactUs({ pageNumber }) {
                         </div>
                     </div>
                 </Body>
-                <div className="ellipse__box">
-                    <Halfellipse />
-                </div>
+
+                <footer className="contact-us footer">
+                    <small>&copy; Copyright {currentYear}, Synsara'20</small>
+
+                    <div className="social-icons">
+                        <p>Follow us for more updates:</p>
+                        <Facebook fill="#3563C1" />
+                        <Instagram fill="#3563C1" />
+                        <Linkedin fill="#3563C1" />
+                    </div>
+                </footer>
             </ContactUsWrapper>
         </div>
     )

@@ -19,7 +19,8 @@ const Index = (props) => {
         if (location.pathname == '/')
             Navref.current = document.getElementById('fp-nav')
         const navTimeout = setTimeout(
-            () => Navref.current.classList.add('hide-tooltip'),
+            () =>
+                Navref.current && Navref.current.classList.add('hide-tooltip'),
             2000
         )
         return () => {

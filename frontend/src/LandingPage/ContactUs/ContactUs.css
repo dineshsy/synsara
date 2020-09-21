@@ -66,6 +66,36 @@
     margin-top: 5px;
 }
 
+.contact-us.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    align-self: flex-end;
+    padding: 2rem 5%;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: rgba(220, 248, 251, 0.5);
+}
+
+.contact-us.footer .social-icons {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.contact-us.footer .social-icons>p {
+    font-size: 1.2rem;
+}
+
+.contact-us.footer>small {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
 @keyframes floating {
     from {
         transform: translate(0, 0px);
@@ -100,15 +130,12 @@
         width: 5rem;
         height: 5rem;
     }
-
     .person__photo--4 {
         transform: scale(2.3) translate(5px);
     }
-
     .person__photo--5 {
         transform: scale(2.2) translate(5px, 7px);
     }
-
     .person__photo--6 {
         transform: scale(1.5) translate(5px);
     }
@@ -120,6 +147,13 @@
     }
     .ellipse__box {
         display: none;
+    }
+    .contact-us.footer .social-icons>p {
+        display: none;
+    }
+    .contact-us.footer .social-icons svg {
+        width: 18px;
+        height: 18px;
     }
 }
 
@@ -135,7 +169,6 @@
         padding: 1rem 0;
         text-align: left;
     }
-
     .person__shape {
         display: inline-block;
         width: 5rem;
@@ -149,5 +182,12 @@
     }
     .ellipse__box {
         display: none;
+    }
+    .contact-us.footer .social-icons>p {
+        display: none;
+    }
+    .contact-us.footer .social-icons svg {
+        width: 18px;
+        height: 18px;
     }
 }
