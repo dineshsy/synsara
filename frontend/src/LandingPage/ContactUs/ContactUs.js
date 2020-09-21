@@ -213,6 +213,9 @@ export default function ContactUs({ pageNumber }) {
                                     <p className="person__gmail">
                                         charransachin@gmail.com
                                     </p>
+                                    <p className="person__mobile">
+                                        +91 75502 87647
+                                    </p>
                                 </div>
                             </div>
                         </div>
