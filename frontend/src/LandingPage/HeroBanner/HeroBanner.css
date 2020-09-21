@@ -61,6 +61,10 @@
     text-align: center;
 }
 
+.hero__title:nth-child(2) {
+    font-size: 2.5rem;
+}
+
 .hero__secondary {
     max-width: 50rem;
     font-weight: 600;
@@ -143,9 +147,16 @@
     }
 }
 
-@media (max-height: 700px) {
+@media (max-height: 700px) and (max-width: 500px) {
     .hero__text {
         margin-bottom: 20% !important;
+        text-align: center;
+    }
+}
+
+@media (max-height: 700px) and (min-width: 1000px) {
+    .hero__text {
+        margin-bottom: 5% !important;
         text-align: center;
     }
 }
