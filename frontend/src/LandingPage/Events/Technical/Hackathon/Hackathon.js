@@ -32,8 +32,10 @@ const PaperPresentationWrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: auto;
 
     @media ${sizeMaxW.tablet} {
+        justify-content: flex-start;
         padding: 2rem;
         flex-direction: column;
         background: none;
@@ -75,38 +77,14 @@ const PaperPresentationWrapper = styled.div`
             : null}
 `
 
-const EventTitle = styled.h1`
-    font-size: 48px;
-    line-height: 50px;
-    font-weight: 600;
-    color: ${(props) => props.theme.secondary};
-
-    @media ${sizeMaxW.laptop} {
-        font-size: 44px;
-    }
-
-    @media ${sizeMaxW.tablet} {
-        font-size: 40px;
-    }
-
-    @media ${sizeMaxW.mobileL} {
-        font-size: 30px;
-        line-height: 32px;
-    }
-
-    @media ${sizeMaxH.mobileL} and (orientation: landscape) {
-        font-size: 24px;
-    }
-`
-
 const EventDetails = styled.div`
     width: 50%;
     font-size: 18px;
     line-height: 24px;
     max-width: 100%;
-    height: 100%;
+    height: fit-content;
 
-    & ul {
+    ul {
         list-style: none;
     }
 
@@ -143,37 +121,28 @@ const EventDetailsWithButton = styled.div`
     line-height: auto;
 
     @media ${sizeMaxW.tablet} {
+        height: fit-content;
         font-size: 14px;
         flex-direction: row;
-        justify-content: flex-end;
         width: 100%;
 
-        div {
-            width: 100% !important;
-        }
-
-        img {
+        #hackathon-img {
             display: none;
         }
     }
     @media ${sizeMaxW.laptop}and (orientation: landscape) {
+        height: fit-content;
         font-size: 14px;
         flex-direction: row;
-        justify-content: flex-end;
         width: 100%;
-
-        div {
-            width: 100% !important;
-        }
-
-        img {
+        #hackathon-img {
             display: none;
         }
     }
     @media ${sizeMaxH.mobileL} and (orientation: landscape) {
+        height: fit-content;
         font-size: 10px;
         flex-direction: row;
-        justify-content: flex-end;
     }
 `
 
@@ -183,13 +152,13 @@ const RegisterButton = styled.div`
     flex-direction: row;
     justify-content: center;
     @media ${sizeMaxW.tablet} {
-        width: 100%;
+        width: fit-content !important;
         justify-content: flex-end;
         margin-top: 2rem;
     }
 
     @media ${sizeMaxW.mobileL} and (orientation: landscape) {
-        width: 100%;
+        width: fit-content !important;
         justify-content: flex-end;
     }
 `
@@ -198,10 +167,7 @@ const EventHeading = styled.p`
     font-weight: 600;
     color: ${(props) => props.theme.secondary};
     margin-top: 1rem;
-`
-
-const EventSubHeading = styled.p`
-    color: ${(props) => props.theme.secondary};
+    font-size: 1.6rem;
 `
 
 export default function PaperPresentation({ pageNumber, slideInfo }) {
@@ -226,7 +192,7 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                     <Label
                         className="event__title"
                         bold
-                        size="4.1rem"
+                        size="3rem"
                         color={theme.secondary}
                     >
                         Niralayam
@@ -242,53 +208,150 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                         An Exhilarating Virtual Hackathon!!
                     </Label>
                 </div>
-
                 <div className="para1">
-                    <Label className="para1" size="2rem" color={theme.textdark}>
-                        Think..Innovate.. Create.. Are you all ready to rack
-                        your brains to do some out of box thinking? Are you all
-                        ready to exercise your brains to do solve mind-bending
-                        problems?We bring to you the most anticipated event,"
-                        The National Level Virtual Hackathon". Unleash your
-                        innovative ideas, offer technical solutions to real
-                        world problems and get a chance to win up to Rs 10,000
-                        along with exciting Intern offers.
+                    <Label
+                        className="para1"
+                        size="1.75rem"
+                        color={theme.textdark}
+                    >
+                        Coder-Designer-Thinker-Presenter
                     </Label>
+                    <Label
+                        className="para1"
+                        size="1.75rem"
+                        color={theme.textdark}
+                    >
+                        Unite here for the ultimate culmination of your ideas.
+                    </Label>
+                    <Label
+                        className="para1"
+                        size="1.75rem"
+                        color={theme.textdark}
+                    >
+                        Prize money worth 10k and exciting internship offers
+                        awaits you.
+                    </Label>
+                </div>
+                <div className="para2">
+                    <EventHeading>THEMES</EventHeading>
+                    <ul>
+                        <li>
+                            <Label size="1.5rem" color={theme.secondary}>
+                                Health care and Bio medical
+                            </Label>
+                        </li>
+                        <Label size="1.5rem" color={theme.textdark}>
+                            Designing devices that will help in managing health
+                            care better.
+                        </Label>
+                        <li>
+                            <Label size="1.5rem" color={theme.secondary}>
+                                Agriculture and Rural Development
+                            </Label>
+                        </li>
+                        <Label size="1.5rem" color={theme.textdark}>
+                            Integrating the rural development and agriculture
+                            with technology for maximize productivity and
+                            output.
+                        </Label>
+                        <li>
+                            <Label size="1.5rem" color={theme.secondary}>
+                                Robotics and Drones
+                            </Label>
+                        </li>
+                        <Label size="1.5rem" color={theme.textdark}>
+                            Design and build an efficient robot with usage
+                            value.
+                        </Label>
+                        <li>
+                            <Label size="1.5rem" color={theme.secondary}>
+                                Security and surveillance
+                            </Label>
+                        </li>
+                        <Label size="1.5rem" color={theme.textdark}>
+                            Build accurate devices for efficient surveillance
+                            and security for easy understanding and usability.
+                        </Label>
+                        <li>
+                            <Label size="1.5rem" color={theme.secondary}>
+                                Financial
+                            </Label>
+                        </li>
+                        <Label size="1.5rem" color={theme.textdark}>
+                            Provide technology that seamlessly integrate into
+                            the world of finance.
+                        </Label>
+                        <li>
+                            <Label size="1.5rem" color={theme.secondary}>
+                                Smart communication
+                            </Label>
+                        </li>
+                        <Label size="1.5rem" color={theme.textdark}>
+                            Give smart communication an upgrade using the
+                            emerging technologies.
+                        </Label>
+                        <li>
+                            <Label size="1.5rem" color={theme.secondary}>
+                                Sustainable Environment(Tourism, Hospitality,
+                                Entertainment and retail)
+                            </Label>
+                        </li>
+                        <Label size="1.5rem" color={theme.textdark}>
+                            Provide modern day solutions in any of the above
+                            mentioned domain.
+                        </Label>
+                        <li>
+                            <Label size="1.5rem" color={theme.secondary}>
+                                Mobile and Web Development
+                            </Label>
+                        </li>
+                        <Label size="1.5rem" color={theme.textdark}>
+                            Creating applications that engage users and
+                            alternative solutions for all online problems
+                        </Label>
+                        <li>
+                            <Label size="1.5rem" color={theme.secondary}>
+                                Own innovative ideas
+                            </Label>
+                        </li>
+                        <Label size="1.5rem" color={theme.textdark}>
+                            Provide most creative solutions to real world
+                            problems.
+                        </Label>
+                    </ul>
+                </div>
+            </EventDetails>
+            <EventDetailsWithButton>
+                <div id="hackathon-img" style={{ width: 'min-content' }}>
+                    <ImageWrapper>
+                        <img src={HackathonBg1} alt="" height="100px" />
+                        <img src={HackathonBg2} alt="" height="100px" />
+                    </ImageWrapper>
                 </div>
                 <div className="para2">
                     <EventHeading>Rules to Remember</EventHeading>
                     <ol>
-                        <Label size="2rem" color={theme.textdark}>
-                            Team should have a maximum of 4 members.
+                        <Label size="1.5rem" color={theme.textdark}>
+                            No registration fee
                         </Label>
-                        <Label size="2rem" color={theme.textdark}>
-                            There is no registration fee.
+                        <Label size="1.5rem" color={theme.textdark}>
+                            Team of maximum 4 members
                         </Label>
-                        <Label size="2rem" color={theme.textdark}>
+                        <Label size="1.5rem" color={theme.textdark}>
                             Certificates will be provided.
                         </Label>
-                        <Label size="2rem" color={theme.textdark}>
-                            Register and start sending your abstract to
-                            hackathon.synsara2020@gmail.com before September 30.
+                        <Label size="1.5rem" color={theme.textdark}>
+                            Register and send abstract to
+                            hackathon.synsara2020@gmail.com
                         </Label>
-                        <Label size="2rem" color={theme.textdark}>
-                            Results will be announced on October 1st.
-                        </Label>
-                        <Label size="2rem" color={theme.textdark}>
-                            Event will be conducted on October 9th and 10th.
+                        <Label size="1.5rem" color={theme.textdark}>
+                            Certificates for all participants.
                         </Label>
                     </ol>
                 </div>
-            </EventDetails>
-            <EventDetailsWithButton>
-                <ImageWrapper>
-                    <div style={{ width: 'min-content' }}>
-                        <img src={HackathonBg1} alt="" height="200px" />
-                        <img src={HackathonBg2} alt="" height="200px" />
-                    </div>
-                </ImageWrapper>
-                <RegisterButton>
-                    <div className="button__animation">
+
+                <div className="button__animation">
+                    <RegisterButton>
                         <Button
                             onClick={() =>
                                 history.push(
@@ -298,8 +361,8 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                         >
                             Register
                         </Button>
-                    </div>
-                </RegisterButton>
+                    </RegisterButton>
+                </div>
             </EventDetailsWithButton>
         </PaperPresentationWrapper>
     )
