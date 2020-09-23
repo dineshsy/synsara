@@ -10,6 +10,7 @@ export const validateTextFields = (textfields, counts = false) => {
     let numbers = 0
     let emails = 0
     let nonGrouptexts = 0
+    let collgeNameCounter = 0
     textfields.forEach((field) => {
         if (!field.value.trim().length) {
             isValid = false
@@ -27,9 +28,30 @@ export const validateTextFields = (textfields, counts = false) => {
             field.state = 'error'
             field.hint = `Please provide a valid Phone number`
         } else {
+            console.log(
+                ![
+                    'collegename1',
+                    'collegename2',
+                    'collegename3',
+                    'collegename4',
+                    'collegename',
+                ].includes(field.name)
+            )
             if (field.inputType === 'email') emails++
             else if (field.inputType === 'number') numbers++
-            else if (field.name !== 'teamname' && field.name !== 'collegename')
+            else if (
+                [
+                    'collegename1',
+                    'collegename2',
+                    'collegename3',
+                    'collegename4',
+                ].includes(field.name)
+            ) {
+                collgeNameCounter++
+            } else if (
+                field.name !== 'teamname' &&
+                field.name !== 'collegename'
+            )
                 texts++
             else nonGrouptexts++
             field.state = 'normal'
@@ -37,8 +59,20 @@ export const validateTextFields = (textfields, counts = false) => {
         }
     })
 
+    console.log(texts)
+    console.log(emails)
+    console.log(numbers)
+
     return counts
-        ? [textfields, isValid, texts, emails, numbers, nonGrouptexts]
+        ? [
+              textfields,
+              isValid,
+              texts,
+              emails,
+              numbers,
+              nonGrouptexts,
+              collgeNameCounter,
+          ]
         : [textfields, isValid]
 }
 
