@@ -110,7 +110,7 @@ class GamingForm extends Component {
                 state: 'normal',
                 name: 'gameid1',
                 label: '',
-                placeholder: 'Game ID',
+                placeholder: 'PUBG ID',
                 value: '',
                 readOnly: false,
             },
@@ -120,7 +120,7 @@ class GamingForm extends Component {
                 state: 'normal',
                 name: 'gameid2',
                 label: '',
-                placeholder: 'Game ID',
+                placeholder: 'PUBG ID',
                 value: '',
                 readOnly: false,
             },
@@ -130,7 +130,7 @@ class GamingForm extends Component {
                 state: 'normal',
                 name: 'gameid3',
                 label: '',
-                placeholder: 'Game ID',
+                placeholder: 'PUBG ID',
                 value: '',
                 readOnly: false,
             },
@@ -140,7 +140,7 @@ class GamingForm extends Component {
                 state: 'normal',
                 name: 'gameid4',
                 label: '',
-                placeholder: 'Game ID',
+                placeholder: 'PUBG ID',
                 value: '',
                 readOnly: false,
             },
@@ -371,7 +371,7 @@ class GamingForm extends Component {
                         content="Registration form for gaming event"
                     />
                 </Helmet>
-                <FormWrapper formName="Gaming">
+                <FormWrapper formName="Aadukalam">
                     <GamingFormBg />
                     <InputWrapper>
                         <InputGroup
@@ -397,7 +397,7 @@ class GamingForm extends Component {
                             theme={theme}
                         />
                         <InputGroup
-                            label="Game ID"
+                            label="Pubg ID"
                             onchangeHandler={this.handleInputValueChange}
                             textfields={[
                                 textfields[8],
