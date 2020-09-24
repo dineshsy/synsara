@@ -15,7 +15,7 @@ const DropdownContainer = styled.div`
     width: fit-content;
     .dropdown-container {
         scrollbar-width: thin;
-        scrollbar-color: ${(props) => setLightness(0.25, props.theme.textdark)};
+        scrollbar-color: ${(props) => props.theme.textdark};
     }
 
     .dropdown-container::-webkit-scrollbar {
@@ -27,7 +27,7 @@ const DropdownContainer = styled.div`
     }
 
     .dropdown-container::-webkit-scrollbar-thumb {
-        background-color: ${(props) => rgba(props.theme.grey, 0.25)};
+        background-color: ${(props) => props.theme.grey};
         border-radius: 20px;
         border: 2px solid transparent;
     }

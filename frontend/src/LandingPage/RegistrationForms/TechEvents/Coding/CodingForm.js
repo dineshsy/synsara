@@ -241,13 +241,13 @@ class CodingForm extends Component {
             <>
                 <ScrollToTop />
                 <Helmet>
-                    <title>Synsara'20 - Coding Event</title>
+                    <title>Synsara'20 - Kaniniral Event</title>
                     <meta
                         name="description"
                         content="Registration form for coding event"
                     />
                 </Helmet>
-                <FormWrapper formName="Coding">
+                <FormWrapper formName="Kaniniral">
                     <CodingFormBg />
                     <InputWrapper>
                         <Textfield

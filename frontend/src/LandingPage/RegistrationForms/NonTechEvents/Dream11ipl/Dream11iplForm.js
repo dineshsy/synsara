@@ -229,13 +229,13 @@ class Dream11iplForm extends Component {
             <>
                 <ScrollToTop />
                 <Helmet>
-                    <title>Synsara'20 - Dream 11 IPL Event</title>
+                    <title>Synsara'20 - Tegidi Event</title>
                     <meta
                         name="description"
                         content="Registration form for Dream 11 ipl event"
                     />
                 </Helmet>
-                <FormWrapper formName="Dream 11 ipl">
+                <FormWrapper formName="Tegidi">
                     <Dream11iplBg />
                     <InputWrapper>
                         <Textfield

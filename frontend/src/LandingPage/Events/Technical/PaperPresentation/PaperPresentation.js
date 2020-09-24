@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styled, { keyframes, css } from 'styled-components'
+import styled, { keyframes, css, useTheme } from 'styled-components'
 import EventBg from '../../../../Assets/Images/events-bg.webp'
 import { sizeMaxW, sizeMaxH } from '../../../../utils/MediaQueires'
 import { FORM_ROUTES } from '../../../../utils/constants'
@@ -7,7 +7,7 @@ import { Button } from '../../../../Reusables/Button'
 import { useHistory } from 'react-router-dom'
 import PaperPresentationBg from '../../../../Assets/Images/paperpresentation.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
-import { ImageWrapper } from '../../NonTechnical/style'
+import { ImageWrapper, Label } from '../../NonTechnical/style'
 
 const moveInLeft = () => keyframes`
     0% {
@@ -37,7 +37,7 @@ const PaperPresentationWrapper = styled.div`
         background: none;
     }
     @media ${sizeMaxW.tablet} {
-        padding: 6rem;
+        padding: 2rem;
         flex-direction: column;
         background: none;
     }
@@ -46,7 +46,7 @@ const PaperPresentationWrapper = styled.div`
         flex-direction: column;
     }
     ${({ pageNumber, slideInfo, isAnimated }) =>
-        pageNumber === 2 && slideInfo === 1 && !isAnimated
+        pageNumber === 1 && slideInfo === 1 && !isAnimated
             ? css`
                   .para1 {
                       animation: ${FadeIn(`0`, `50px`)} 0.5s ease-in;
@@ -230,8 +230,9 @@ const EventSubHeading = styled.p`
 export default function PaperPresentation({ pageNumber, slideInfo }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
+    const theme = useTheme()
     useEffect(() => {
-        if (pageNumber === 2 && currentSlideno === 1 && !isAnimated) {
+        if (pageNumber === 1 && currentSlideno === 1 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
     }, [pageNumber, currentSlideno, isAnimated])
@@ -245,64 +246,84 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
         >
             <EventDetails>
                 <div className="event__title">
-                    {' '}
-                    <EventTitle>Udhi</EventTitle>
+                    <Label
+                        className="event__title"
+                        bold
+                        size="4.1rem"
+                        color={theme.secondary}
+                    >
+                        Udhi
+                    </Label>
                 </div>
                 <div className="para1">
-                    {' '}
-                    <EventSubHeading>
+                    <Label
+                        className="para1"
+                        bold
+                        size="1.5rem"
+                        color={theme.primary}
+                    >
                         A Contest for budding entrepreneurs
-                    </EventSubHeading>
-                    <EventQuote>
+                    </Label>
+                    <Label
+                        className="para1"
+                        bold
+                        size="1.5rem"
+                        color={theme.textdark}
+                    >
                         Money never starts an idea, it is the idea that starts
                         the money
-                    </EventQuote>
-                    <p>
+                    </Label>
+                    <Label className="para1" size="2rem" color={theme.textdark}>
                         Vanakkam Makale!! Do you have what it takes to be a
                         successful entrepreneur? Do you happen to have the
                         infamous million dollar idea? Then here is our exalted
                         event for you. Be judged by prominent corporate
                         representatives and bag your prize. May the best idea
-                        win
-                    </p>
+                        win.
+                        <span role="img" aria-label="star">
+                            ✨
+                        </span>
+                        <span role="img" aria-label="star">
+                            ✨
+                        </span>
+                    </Label>
                 </div>
                 <div className="para2">
-                    {' '}
                     <EventHeading>Rules:</EventHeading>
                     <ul>
-                        <li>
+                        <Label size="2rem" color={theme.textdark}>
                             Any college student is eligible to participate in
                             this event.
-                        </li>
-                        <li>
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
                             The participants can form a team of at most 2
                             members.
-                        </li>
+                        </Label>
                     </ul>
                     <EventHeading>Stage 1: Abstract Submission</EventHeading>
                     <ul>
-                        <li>
+                        <Label size="2rem" color={theme.textdark}>
                             The participant should register in synsara2020.tech
                             website and submit an abstract of 200-500 words
                             before 30th September 2020.
-                        </li>
-                        <li>
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
                             Final list of participating entries will be mailed
                             by 2nd October.
-                        </li>
+                        </Label>
                     </ul>
                     <EventHeading>Stage 2: Presentation</EventHeading>
                     <ul>
-                        <li>
+                        <Label size="2rem" color={theme.textdark}>
                             The final round will be conducted virtually and all
                             the details regarding the finals will be intimated
                             through Telegram.
-                        </li>
-                        <li>
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
                             Each team shall be allotted 10 minutes (7 minutes
                             for presentation and 3 minutes for questionnaire by
                             the panel of judges).
-                        </li>
+                        </Label>
                     </ul>
                 </div>
             </EventDetails>

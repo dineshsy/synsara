@@ -51,8 +51,8 @@ class ConnexionsForm extends Component {
                 inputType: 'text',
                 state: 'normal',
                 name: 'zoomid',
-                label: 'Zoom ID',
-                placeholder: '123-456-7890',
+                label: 'Zoom Name',
+                placeholder: 'John Doe',
                 value: '',
                 readOnly: false,
             },
@@ -239,13 +239,13 @@ class ConnexionsForm extends Component {
             <>
                 <ScrollToTop />
                 <Helmet>
-                    <title>Synsara'20 - Connexions Event</title>
+                    <title>Synsara'20 - Oppu Event</title>
                     <meta
                         name="description"
                         content="Registration form for connexions event"
                     />
                 </Helmet>
-                <FormWrapper formName="Connexions">
+                <FormWrapper formName="Oppu">
                     <ConnexionsFormBg />
                     <InputWrapper>
                         <Textfield

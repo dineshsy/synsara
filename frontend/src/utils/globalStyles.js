@@ -42,6 +42,12 @@ export const ResponsiveBoilerPlate = createGlobalStyle`
         }
     }
 
+    @media only screen and (max-width: 400px) and (max-height: 650px) {
+        html {
+            font-size:40%;
+        }
+    }
+
     ::selection {
         background-color: #2aa3f6;
         color: white;

@@ -10,6 +10,9 @@ import sandy from '../../Assets/Images/sandy.webp'
 import Jade from '../../Assets/Images/Jade.webp'
 import kaviya from '../../Assets/Images/kaviya.webp'
 import { Halfellipse } from '../../Assets/svg/Halfellipse'
+import { Facebook } from '../../Assets/svg/Facebook'
+import { Linkedin } from '../../Assets/svg/Linkedin'
+import { Instagram } from '../../Assets/svg/Instagram'
 
 const ContactUsWrapper = styled.section`
     width: 100%;
@@ -18,7 +21,8 @@ const ContactUsWrapper = styled.section`
     min-height: 100vh;
     padding: 3rem 3rem 0 3rem;
     margin: auto;
-    position: relative;
+    display: flex;
+    flex-flow: column;
     .person--1,
     .person--2,
     .person--3,
@@ -30,7 +34,7 @@ const ContactUsWrapper = styled.section`
         opacity: ${({ isAnimated }) => (isAnimated ? `1` : `0`)};
     }
     ${({ pageNumber, isAnimated }) =>
-        pageNumber === 3 && !isAnimated
+        pageNumber === 4 && !isAnimated
             ? css`
                   .person--1 {
                       animation: ${FadeIn(`0`, `50px`)} 0.3s ease-in;
@@ -109,10 +113,12 @@ const FadeIn = (x, y) => keyframes`
 export default function ContactUs({ pageNumber }) {
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 3 && !isAnimated) {
+        if (pageNumber === 4 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 2500)
         }
     }, [pageNumber, isAnimated])
+    const d = new Date()
+    const currentYear = d.getFullYear()
     return (
         <div style={{ height: '100%', width: '100%', overflow: 'hidden' }}>
             <ContactUsWrapper pageNumber={pageNumber} isAnimated={isAnimated}>
@@ -155,9 +161,6 @@ export default function ContactUs({ pageNumber }) {
                                     <p className="person__gmail">
                                         srimathiravi479@gmail.com
                                     </p>
-                                    <p className="person__mobile">
-                                        +91 8056420428
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -194,9 +197,6 @@ export default function ContactUs({ pageNumber }) {
                                     <p className="person__name">Pooja K</p>
                                     <p className="person__gmail">
                                         poojakarthikeyan1113@gmail.com
-                                    </p>
-                                    <p className="person__mobile">
-                                        +91 9952091331
                                     </p>
                                 </div>
                             </div>
@@ -239,9 +239,6 @@ export default function ContactUs({ pageNumber }) {
                                     <p className="person__gmail">
                                         santhiyavenkat.2000@gmail.com
                                     </p>
-                                    <p className="person__mobile">
-                                        +91 9080843782
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -281,17 +278,22 @@ export default function ContactUs({ pageNumber }) {
                                     <p className="person__gmail">
                                         kaviyalakshmi.k@gmail.com
                                     </p>
-                                    <p className="person__mobile">
-                                        +91 8072084724
-                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </Body>
-                <div className="ellipse__box">
-                    <Halfellipse />
-                </div>
+
+                <footer className="contact-us footer">
+                    <small>&copy; Copyright {currentYear}, Synsara'20</small>
+
+                    <div className="social-icons">
+                        <p>Follow us for more updates:</p>
+                        <Facebook fill="#3563C1" />
+                        <Instagram fill="#3563C1" />
+                        <Linkedin fill="#3563C1" />
+                    </div>
+                </footer>
             </ContactUsWrapper>
         </div>
     )

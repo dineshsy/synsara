@@ -19,13 +19,16 @@ export const DEPARTMENTS = [
     'Electronics & Communications Engineering',
     'Information Technology',
     'Computer Science & Engineering',
-    'Mechanical',
+    'Mechanical Engineering',
+    'Biomedical Engineering',
     'Science & Humanities',
     'Instrumentation & Control Engineering',
     'Electronics & Instrumentation Engineering',
     'Production Engineering',
     'Civil Engineering',
     'MBA',
+    'Arts & Science',
+    'Viscom',
 ]
 
 export const SPACEBAR_KEY_CODE = [0, 32]

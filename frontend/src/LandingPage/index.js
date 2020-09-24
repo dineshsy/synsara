@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import React, { useState, useEffect, useRef } from 'react'
+import { Switch, Route, useLocation } from 'react-router-dom'
 import { HeroBanner } from './HeroBanner/HeroBanner'
 import Sponsors from './Sponsors/Sponsors'
 import ReactFullpage from '@fullpage/react-fullpage'
@@ -13,8 +13,24 @@ import { PageNotFound } from '../Reusables/PageNotFound'
 const Index = (props) => {
     const [pageNumber, setPageNumber] = useState(0)
     const [currentSlideInfo, setCurrentSlideInfo] = useState([0, 0])
+    const Navref = useRef(null)
+    const location = useLocation()
+    useEffect(() => {
+        if (location.pathname == '/')
+            Navref.current = document.getElementById('fp-nav')
+        const navTimeout = setTimeout(
+            () =>
+                Navref.current && Navref.current.classList.add('hide-tooltip'),
+            2000
+        )
+        return () => {
+            clearTimeout(navTimeout)
+        }
+    }, [location])
 
     const onLeave = (origin, destination, direction) => {
+        Navref.current.classList.remove('hide-tooltip')
+        setTimeout(() => Navref.current.classList.add('hide-tooltip'), 2000)
         setPageNumber(destination.index)
     }
 
@@ -35,8 +51,8 @@ const Index = (props) => {
                     slidesNavPosition="left"
                     navigationTooltips={[
                         'Home',
-                        'Non-Technical Events',
                         'Technical Events',
+                        'Non-Technical Events',
                         'Sponsors',
                         'Contact Us',
                     ]}
@@ -52,10 +68,9 @@ const Index = (props) => {
                                 </div>
                                 <div className="section">
                                     <div style={{ position: 'relative' }}>
-                                        <NonTechEvents
+                                        <TechEvents
                                             pageNumber={pageNumber}
                                             slideInfo={currentSlideInfo}
-                                            id="hero"
                                         />
                                         <ScrollIndicator
                                             fullpageApi={fullpageApi}
@@ -64,9 +79,10 @@ const Index = (props) => {
                                 </div>
                                 <div className="section">
                                     <div style={{ position: 'relative' }}>
-                                        <TechEvents
+                                        <NonTechEvents
                                             pageNumber={pageNumber}
                                             slideInfo={currentSlideInfo}
+                                            id="hero"
                                         />
                                         <ScrollIndicator
                                             fullpageApi={fullpageApi}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styled, { keyframes, css } from 'styled-components'
+import styled, { keyframes, css, useTheme } from 'styled-components'
 import EventBg from '../../../../Assets/Images/events-bg.webp'
 import { sizeMaxW, sizeMaxH } from '../../../../utils/MediaQueires'
 import { FORM_ROUTES } from '../../../../utils/constants'
@@ -7,7 +7,7 @@ import { Button } from '../../../../Reusables/Button'
 import { useHistory } from 'react-router-dom'
 import DebuggingBg from '../../../../Assets/Images/debugging.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
-import { ImageWrapper } from '../../NonTechnical/style'
+import { ImageWrapper, Label } from '../../NonTechnical/style'
 const moveInLeft = () => keyframes`
     0% {
         opacity: 0;
@@ -37,7 +37,7 @@ const DebuggingWrapper = styled.div`
         background: none;
     }
     @media ${sizeMaxW.laptop} and (orientation: landscape) {
-        padding: 6rem;
+        padding: 2rem;
         flex-direction: column;
         background: none;
     }
@@ -45,7 +45,7 @@ const DebuggingWrapper = styled.div`
         flex-direction: column;
     }
     ${({ pageNumber, slideInfo, isAnimated }) =>
-        pageNumber === 2 && slideInfo === 2 && !isAnimated
+        pageNumber === 1 && slideInfo === 2 && !isAnimated
             ? css`
                   .para1 {
                       animation: ${FadeIn(`0`, `50px`)} 0.5s ease-in;
@@ -192,8 +192,9 @@ const EventSubHeading = styled.p`
 export default function Debugging({ pageNumber, slideInfo }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
+    const theme = useTheme()
     useEffect(() => {
-        if (pageNumber === 2 && currentSlideno === 2 && !isAnimated) {
+        if (pageNumber === 1 && currentSlideno === 2 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
     }, [pageNumber, currentSlideno, isAnimated])
@@ -208,10 +209,32 @@ export default function Debugging({ pageNumber, slideInfo }) {
         >
             <EventDetails>
                 <div className="event__title">
-                    <EventTitle>Bhogi</EventTitle>
+                    <Label
+                        className="event__title"
+                        bold
+                        size="4.1rem"
+                        color={theme.secondary}
+                    >
+                        Bhogi
+                    </Label>
                 </div>
+                <Label
+                    className="para1"
+                    bold
+                    className="para1"
+                    bold
+                    size="1.5rem"
+                    color={theme.primary}
+                >
+                    A contest for the innate debugger in you.
+                </Label>
                 <div className="para1">
-                    <EventSubHeading>
+                    <Label
+                        className="para1"
+                        bold
+                        size="1.5rem"
+                        color={theme.primary}
+                    >
                         <span role="img" aria-label="fire">
                             🔥
                         </span>
@@ -219,8 +242,8 @@ export default function Debugging({ pageNumber, slideInfo }) {
                         <span role="img" aria-label="fire">
                             🔥
                         </span>
-                    </EventSubHeading>
-                    <p>
+                    </Label>
+                    <Label className="para1" size="2rem" color={theme.textdark}>
                         Are you the detective of a crime movie where you are
                         also the murderer…? If yes, then this is your
                         battlefield. We are on a quest to discover the new
@@ -230,31 +253,31 @@ export default function Debugging({ pageNumber, slideInfo }) {
                         proficiency in their Programming skills. This contest
                         will be held on October 10th and it consists of two
                         rounds:
-                    </p>
+                    </Label>
                 </div>
                 <div className="para2">
                     <EventHeading>
                         Round-1: “TECH-MASTERS”-The Beginning
                     </EventHeading>
                     <ul>
-                        <li>
+                        <Label size="2rem" color={theme.textdark}>
                             This round consists of 30 MCQ questions for 30
                             minutes, based on conceptual skills and
                             understanding of the Logics of Programming.
-                        </li>
+                        </Label>
                     </ul>
                     <EventHeading>
                         Round-2: “BUG MASTERS”-The Conclusion
                     </EventHeading>
                     <ul>
-                        <li>
+                        <Label size="2rem" color={theme.textdark}>
                             The shortlisted participants from round 1 will
                             receive intimation on the same day.
-                        </li>
-                        <li>
+                        </Label>
+                        <Label size="2rem" color={theme.textdark}>
                             This Final Round will have a time limit of 30
                             minutes and will be based on C, Data Structures.
-                        </li>
+                        </Label>
                     </ul>
                 </div>
             </EventDetails>

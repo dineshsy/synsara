@@ -16,7 +16,7 @@ export const Treasurehunt = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 1 && currentSlideno === 2 && !isAnimated) {
+        if (pageNumber === 2 && currentSlideno === 2 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
     }, [pageNumber, currentSlideno, isAnimated])
@@ -37,7 +37,7 @@ export const Treasurehunt = ({ pageNumber, slideInfo }) => {
                             size="4.1rem"
                             color={theme.secondary}
                         >
-                            Draviyam Tedu
+                            Diraviyam Thedu
                         </Label>
                         <Label
                             className="para1"
@@ -62,7 +62,7 @@ export const Treasurehunt = ({ pageNumber, slideInfo }) => {
                         the dream of a dreamer, a mirage of the desert."
                     </Label>
                     <Label className="para1" size="2rem" color={theme.textdark}>
-                        Synsara's Dhiraviyam Thedu is a contest designed for the
+                        Synsara's Diraviyam Tedu is a contest designed for the
                         witty treasure hunter in you. Like any treasure hunt,
                         this contest has its own take on twists and turns that
                         need solving. Solve all of them to get the coveted

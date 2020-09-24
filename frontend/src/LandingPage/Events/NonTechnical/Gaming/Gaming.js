@@ -16,7 +16,7 @@ export const Gaming = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 1 && currentSlideno === 0 && !isAnimated) {
+        if (pageNumber === 2 && currentSlideno === 0 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
     }, [pageNumber, currentSlideno, isAnimated])
@@ -46,7 +46,7 @@ export const Gaming = ({ pageNumber, slideInfo }) => {
                             size="1.5rem"
                             color={theme.primary}
                         >
-                            Sawadee kaa
+                            A PUBG-M TOURNAMENT
                         </Label>
                         <Label
                             className="para1"
@@ -94,7 +94,7 @@ export const Gaming = ({ pageNumber, slideInfo }) => {
                 </ContentWrapper>
                 <RegisterWrapper>
                     <ImageWrapper>
-                        <img src={GamingBg} alt="" height="200px" />
+                        <img src={GamingBg} alt="" height="350px" />
                     </ImageWrapper>
                     <div className="button__animation">
                         <Button

@@ -56,9 +56,13 @@
 .hero__title {
     max-width: 50rem;
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #3563c1;
     text-align: center;
+}
+
+.hero__title:nth-child(2) {
+    font-size: 2.5rem;
 }
 
 .hero__secondary {
@@ -67,6 +71,10 @@
     font-size: 2rem;
     color: #3563c1;
     text-align: center;
+}
+
+.hero__title:first-child {
+    font-size: 2.75rem !important;
 }
 
 .btn__hero {
@@ -139,9 +147,16 @@
     }
 }
 
-@media (max-height: 700px) {
+@media (max-height: 700px) and (max-width: 500px) {
     .hero__text {
         margin-bottom: 20% !important;
+        text-align: center;
+    }
+}
+
+@media (max-height: 700px) and (min-width: 1000px) {
+    .hero__text {
+        margin-bottom: 5% !important;
         text-align: center;
     }
 }

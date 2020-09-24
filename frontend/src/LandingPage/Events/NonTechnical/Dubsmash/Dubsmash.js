@@ -15,7 +15,7 @@ export const Dubsmash = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 1 && currentSlideno === 4 && !isAnimated) {
+        if (pageNumber === 2 && currentSlideno === 4 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 3500)
         }
     }, [pageNumber, currentSlideno, isAnimated])
@@ -37,7 +37,7 @@ export const Dubsmash = ({ pageNumber, slideInfo }) => {
                             size="4.1rem"
                             color={theme.secondary}
                         >
-                            Paatum Nane Paavamum Nane
+                            Paatum Nane Paavamum Naane
                         </Label>
                         <Label
                             className="para1"
@@ -55,7 +55,7 @@ export const Dubsmash = ({ pageNumber, slideInfo }) => {
                             size="1.5rem"
                             color={theme.textdark}
                         >
-                            "The creative adult is the child who survived"
+                            <q>The creative adult is the child who survived</q>
                         </Label>
                     </ContentWrapper>
                     <Label className="para1" size="2rem" color={theme.textdark}>
