@@ -94,7 +94,7 @@ export const Gaming = ({ pageNumber, slideInfo }) => {
                 </ContentWrapper>
                 <RegisterWrapper>
                     <ImageWrapper>
-                        <img src={GamingBg} alt="" height="200px" />
+                        <img src={GamingBg} alt="" height="350px" />
                     </ImageWrapper>
                     <div className="button__animation">
                         <Button

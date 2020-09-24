@@ -39,11 +39,12 @@ class HackathonForm extends Component {
                 id: 'gaming-form-1',
                 inputType: 'text',
                 state: 'normal',
-                name: 'collegename',
-                label: 'College Name',
-                placeholder: 'Sri Sairam Engineering College',
+                name: 'teamname',
+                label: 'Team Name',
+                placeholder: 'Mavericks',
                 value: '',
                 readOnly: false,
+                value: 'hello',
             },
             {
                 id: 'gaming-form-2',
@@ -51,7 +52,7 @@ class HackathonForm extends Component {
                 state: 'normal',
                 name: 'name1',
                 label: '',
-                placeholder: 'Team member 1',
+                placeholder: 'Team Leader',
                 value: '',
                 readOnly: false,
             },
@@ -61,7 +62,7 @@ class HackathonForm extends Component {
                 state: 'normal',
                 name: 'name2',
                 label: '',
-                placeholder: 'Team member 2',
+                placeholder: 'Team member 1',
                 value: '',
                 readOnly: false,
             },
@@ -71,7 +72,7 @@ class HackathonForm extends Component {
                 state: 'normal',
                 name: 'name3',
                 label: '',
-                placeholder: 'Team member 3',
+                placeholder: 'Team member 2',
                 value: '',
                 readOnly: false,
             },
@@ -81,7 +82,7 @@ class HackathonForm extends Component {
                 state: 'normal',
                 name: 'name4',
                 label: '',
-                placeholder: 'Team member 4',
+                placeholder: 'Team member 3',
                 value: '',
                 readOnly: false,
             },
@@ -162,6 +163,46 @@ class HackathonForm extends Component {
                 name: 'phonenumber4',
                 label: '',
                 placeholder: '9632587412',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-14',
+                inputType: 'text',
+                state: 'normal',
+                name: 'collegename1',
+                label: '',
+                placeholder: 'Sri Sairam Engineering College',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-15',
+                inputType: 'text',
+                state: 'normal',
+                name: 'collegename2',
+                label: '',
+                placeholder: 'Sri Sairam Engineering College',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-16',
+                inputType: 'text',
+                state: 'normal',
+                name: 'collegename3',
+                label: '',
+                placeholder: 'Sri Sairam Engineering College',
+                value: '',
+                readOnly: false,
+            },
+            {
+                id: 'gaming-form-17',
+                inputType: 'text',
+                state: 'normal',
+                name: 'collegename4',
+                label: '',
+                placeholder: 'Sri Sairam Engineering College',
                 value: '',
                 readOnly: false,
             },
@@ -304,16 +345,19 @@ class HackathonForm extends Component {
             emails,
             numbers,
             nonGrouptexts,
+            collegeNameCounter,
         ] = validateTextFields(textfields, true)
         this.setState({
             validatedTextfields,
             validatedRadioButtons,
             validatedDropdowns,
-            people: Math.max(emails, texts, numbers),
+            people: Math.max(emails, texts, numbers, collegeNameCounter),
         })
+        console.log(nonGrouptexts)
         if (
             emails === texts &&
             emails === numbers &&
+            emails === collegeNameCounter &&
             emails > 0 &&
             nonGrouptexts === 2 &&
             isRadioButtonValid &&
@@ -329,11 +373,21 @@ class HackathonForm extends Component {
             }
             for (let index = 0; index < emails; index++) {
                 data.members.push({
-                    collegeName: this.state.textfields[1].value,
                     dept: this.state.dropdowns[0].value,
                     year,
                 })
             }
+
+            for (let index = 0, member = 0; index < 4; index++) {
+                if (this.state.textfields[14 + index].value.trim().length) {
+                    data.members[member] = {
+                        ...data.members[member],
+                        collegeName: this.state.textfields[index + 14].value,
+                    }
+                    member++
+                }
+            }
+
             for (let index = 0, member = 0; index < 4; index++) {
                 if (this.state.textfields[2 + index].value.trim().length) {
                     data.members[member] = {
@@ -390,9 +444,17 @@ class HackathonForm extends Component {
                             textfield={field[0]}
                             handleInputValueChange={this.handleInputValueChange}
                         />
-                        <Textfield
-                            textfield={field[1]}
-                            handleInputValueChange={this.handleInputValueChange}
+                        <InputGroup
+                            label="College Name"
+                            onchangeHandler={this.handleInputValueChange}
+                            textfields={[
+                                textfields[14],
+                                textfields[15],
+                                textfields[16],
+                                textfields[17],
+                            ]}
+                            theme={theme}
+                            numberOfPeople={people}
                         />
                         <InputGroup
                             label="Participants Name"
