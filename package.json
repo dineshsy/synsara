@@ -9,6 +9,7 @@
         "install-dependencies": "concurrently \"npm run frontend-dependencies\" \"npm run backend-dependencies\"",
         "frontend": "cd frontend && npm run dev",
         "backend": "cd backend && npm run dev",
+        "deploy-backend": "git subtree push --prefix backend/ heroku master",
         "start": "concurrently \"npm run frontend\" \"npm run backend\""
     },
     "author": "Dinesh",
