@@ -104,7 +104,8 @@ export const HeroBanner = ({ fullpageApi }) => {
                         <p className="hero__secondary">
                             A culmination of the nation's best young minds in a
                             contest of innovative thinking and exhilarating
-                            creations.
+                            creations. Get ready to tough it out against
+                            competition on october 9 and 10.
                         </p>
                         <div className="hero__button">
                             <Button
