@@ -375,7 +375,7 @@ class GamingForm extends Component {
                     <GamingFormBg />
                     <InputWrapper>
                         <InputGroup
-                            label="Participants Name"
+                            label="Player Name"
                             onchangeHandler={this.handleInputValueChange}
                             textfields={[
                                 textfields[0],

@@ -46,7 +46,7 @@ export const Gaming = ({ pageNumber, slideInfo }) => {
                             size="1.5rem"
                             color={theme.primary}
                         >
-                            Sawadee kaa
+                            A PUBG-M TOURNAMENT
                         </Label>
                         <Label
                             className="para1"
