@@ -46,7 +46,7 @@ const EVENT_DESCRIPTION = {
         name: 'Paatum Nane Paavamum Nane',
         phrase: 'A platform to put your multi-faceted talents to good use ',
         description:
-            'Send the Video before 6th October 2020 to dubsmash.synsara2020@gmail.com , Your Results will be announced in the Instagram page , So Stay Tuned ! ',
+            'Send the Video along with Instagram ID before 6th October 2020 to dubsmash.synsara2020@gmail.com , Your Results will be announced in the Instagram page , So Stay Tuned ! ',
         telegram: 'https://t.me/joinchat/AAAAAFdoRaQ6s-bl1c4ikg',
     },
     gaming: {
