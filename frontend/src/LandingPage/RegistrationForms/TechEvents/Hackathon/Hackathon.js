@@ -427,13 +427,13 @@ class HackathonForm extends Component {
             <>
                 <ScrollToTop />
                 <Helmet>
-                    <title>Synsara'20 - Hackathon Event</title>
+                    <title>Synsara'20 - Niralayam Event</title>
                     <meta
                         name="description"
                         content="Registration form for hackathon event"
                     />
                 </Helmet>
-                <FormWrapper formName="Hackathon">
+                <FormWrapper formName="Niralayam">
                     <HackathonBg />
                     <InputWrapper>
                         <em style={{ fontSize: '1.5rem', color: 'red' }}>

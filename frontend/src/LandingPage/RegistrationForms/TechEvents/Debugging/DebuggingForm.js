@@ -227,13 +227,13 @@ class DebuggingForm extends Component {
             <>
                 <ScrollToTop />
                 <Helmet>
-                    <title>Synsara'20 - Debugging Event</title>
+                    <title>Synsara'20 - Bhogi Event</title>
                     <meta
                         name="description"
                         content="Registration form for debugging event"
                     />
                 </Helmet>
-                <FormWrapper formName="Debugging">
+                <FormWrapper formName="Bhogi">
                     <DebuggingFormBg />
                     <InputWrapper>
                         <Textfield
