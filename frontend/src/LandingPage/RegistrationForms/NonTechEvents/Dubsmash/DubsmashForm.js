@@ -229,13 +229,13 @@ class DubsmashForm extends Component {
             <>
                 <ScrollToTop />
                 <Helmet>
-                    <title>Synsara'20 - Dubsmash Event</title>
+                    <title>Synsara'20 - Paatum Nane Paavamum Naane Event</title>
                     <meta
                         name="description"
                         content="Registration form for dubsmash event"
                     />
                 </Helmet>
-                <FormWrapper formName="Dubsmash">
+                <FormWrapper formName="Paatum Nane Paavamum Naane">
                     <DubsmashFormBg />
                     <InputWrapper>
                         <Textfield

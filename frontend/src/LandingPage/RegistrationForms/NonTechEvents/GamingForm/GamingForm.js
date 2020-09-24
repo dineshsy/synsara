@@ -365,7 +365,7 @@ class GamingForm extends Component {
             <>
                 <ScrollToTop />
                 <Helmet>
-                    <title>Synsara'20 - Gaming Event</title>
+                    <title>Synsara'20 - Aadukalam Event</title>
                     <meta
                         name="description"
                         content="Registration form for gaming event"

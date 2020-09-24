@@ -239,13 +239,13 @@ class ConnexionsForm extends Component {
             <>
                 <ScrollToTop />
                 <Helmet>
-                    <title>Synsara'20 - Connexions Event</title>
+                    <title>Synsara'20 - Oppu Event</title>
                     <meta
                         name="description"
                         content="Registration form for connexions event"
                     />
                 </Helmet>
-                <FormWrapper formName="Connexions">
+                <FormWrapper formName="Oppu">
                     <ConnexionsFormBg />
                     <InputWrapper>
                         <Textfield

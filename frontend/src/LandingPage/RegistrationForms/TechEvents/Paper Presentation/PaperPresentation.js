@@ -286,13 +286,13 @@ class PaperPresentationForm extends Component {
             <>
                 <ScrollToTop />
                 <Helmet>
-                    <title>Synsara'20 - Paper Presentation Event</title>
+                    <title>Synsara'20 - Udhi Event</title>
                     <meta
                         name="description"
                         content="Registration form for Paper Presentation event"
                     />
                 </Helmet>
-                <FormWrapper formName="Paper Presentation">
+                <FormWrapper formName="Udhi">
                     <PaperPresentationFormBg />
                     <InputWrapper>
                         <Checkbox
