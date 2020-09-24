@@ -30,7 +30,7 @@ class GamingForm extends Component {
                 state: 'normal',
                 name: 'name1',
                 label: '',
-                placeholder: 'Player 1',
+                placeholder: 'luckytoloot',
                 value: '',
                 readOnly: false,
             },
@@ -40,7 +40,7 @@ class GamingForm extends Component {
                 state: 'normal',
                 name: 'name2',
                 label: '',
-                placeholder: 'Player 2',
+                placeholder: '¥ourShadow',
                 value: '',
                 readOnly: false,
             },
@@ -50,7 +50,7 @@ class GamingForm extends Component {
                 state: 'normal',
                 name: 'name3',
                 label: '',
-                placeholder: 'Player 3',
+                placeholder: 'FRO5T27',
                 value: '',
                 readOnly: false,
             },
@@ -60,7 +60,7 @@ class GamingForm extends Component {
                 state: 'normal',
                 name: 'name4',
                 label: '',
-                placeholder: 'Player 4',
+                placeholder: 'DCOEC',
                 value: '',
                 readOnly: false,
             },
@@ -375,7 +375,7 @@ class GamingForm extends Component {
                     <GamingFormBg />
                     <InputWrapper>
                         <InputGroup
-                            label="Player Name"
+                            label="Pubg Name"
                             onchangeHandler={this.handleInputValueChange}
                             textfields={[
                                 textfields[0],
