@@ -230,13 +230,13 @@ class TreasureHuntForm extends Component {
             <>
                 <ScrollToTop />
                 <Helmet>
-                    <title>Synsara'20 - Diraviyam Thedu Event</title>
+                    <title>Synsara'20 - Diraviyam Tedu Event</title>
                     <meta
                         name="description"
                         content="Registration form for treasure hunt event"
                     />
                 </Helmet>
-                <FormWrapper formName="Diraviyam Thedu">
+                <FormWrapper formName="Diraviyam Tedu">
                     <TreasureHuntBg />
                     <InputWrapper>
                         <Textfield
