@@ -40,7 +40,7 @@ const EVENT_DESCRIPTION = {
         phrase: "A hunt for India's next master tactician",
         description:
             'Save your dates on 6th , 7th and 8th of October to Test your competence among the top tacticians in the town.',
-        telegram: 'https://t.me/joinchat/AAAAAEmASAhz-tlkx46p8Q',
+        telegram: 'https://t.me/joinchat/NyqgFVYgs_30d_vhk8tEhA',
     },
     dub: {
         name: 'Paatum Nane Paavamum Nane',
