@@ -66,12 +66,11 @@
 }
 
 .hero__secondary {
-    max-width: 40rem;
+    max-width: 50rem;
     font-weight: 600;
     font-size: 2rem;
     color: #3563c1;
     text-align: center;
-    margin: auto;
 }
 
 .hero__title:first-child {
@@ -155,10 +154,17 @@
     }
 }
 
-@media (max-height: 600px) and (max-width: 500px) {
+@media (max-height: 550px) and (max-width: 500px) {
     .hero__text {
         margin-bottom: 2% !important;
         text-align: center;
+    }
+    .hero__secondary {
+        margin: 0 auto;
+        max-width: 40rem;
+    }
+    .hero #button {
+        margin-top: 1rem;
     }
 }
 
