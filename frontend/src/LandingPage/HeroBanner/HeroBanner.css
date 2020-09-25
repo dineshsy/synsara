@@ -154,6 +154,20 @@
     }
 }
 
+@media (max-height: 550px) and (max-width: 500px) {
+    .hero__text {
+        margin-bottom: 2% !important;
+        text-align: center;
+    }
+    .hero__secondary {
+        margin: 0 auto;
+        max-width: 40rem;
+    }
+    .hero #button {
+        margin-top: 1rem;
+    }
+}
+
 @media (max-height: 700px) and (min-width: 1000px) {
     .hero__text {
         margin-bottom: 5% !important;
