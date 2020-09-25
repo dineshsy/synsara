@@ -37,7 +37,7 @@ export const Treasurehunt = ({ pageNumber, slideInfo }) => {
                             size="4.1rem"
                             color={theme.secondary}
                         >
-                            Diraviyam Thedu
+                            Diraviyam Tedu
                         </Label>
                         <Label
                             className="para1"
