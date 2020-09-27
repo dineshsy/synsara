@@ -10,7 +10,7 @@ import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
-import GamingBg from '../../../../Assets/Images/gaming.webp'
+import GamingBg from '../../../../Assets/Images/gaming.png'
 
 export const Gaming = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
