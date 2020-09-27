@@ -62,16 +62,16 @@
     color: #3b93f7;
     font-weight: 600;
     font-size: 5rem;
-    max-width: 50rem;
+    max-width: 40rem;
     text-align: center;
 }
 
 .hero__primary img {
-    height: 125px;
+    height: 100px;
 }
 
 .hero__title {
-    max-width: 50rem;
+    max-width: 40rem;
     font-weight: 600;
     font-size: 2rem;
     color: #3563c1;
@@ -83,7 +83,7 @@
 }
 
 .hero__secondary {
-    max-width: 50rem;
+    max-width: 40rem;
     font-weight: 600;
     font-size: 2rem;
     color: #3563c1;
@@ -103,7 +103,7 @@
 }
 
 .hero__button {
-    max-width: 50rem;
+    max-width: 40rem;
     text-align: center;
 }
 
@@ -112,7 +112,7 @@
     height: 100%;
     margin-right: auto;
     display: flex;
-    padding: 2rem;
+    padding: 7rem;
 }
 
 @media (max-width: 1024px) {
@@ -135,7 +135,7 @@
     }
 
     .hero__primary img {
-        height: 100px;
+        height: 75px;
     }
 }
 
@@ -163,25 +163,25 @@
         width: 80%;
     }
     .hero__text {
-        margin-bottom: 40% !important;
+        margin-bottom: 30% !important;
         text-align: center;
     }
 }
 
 @media (max-height: 700px) and (max-width: 500px) {
     .hero__text {
-        margin-bottom: 20% !important;
+        margin-bottom: 10% !important;
         text-align: center;
     }
 }
 
 @media (max-height: 550px) and (max-width: 500px) {
     .hero__primary img {
-        height: 75px;
+        height: 50px;
     }
 
     .hero__text {
-        margin-bottom: 2% !important;
+        margin-bottom: 0 !important;
         text-align: center;
     }
     .hero__secondary {
@@ -195,7 +195,7 @@
 
 @media (max-height: 700px) and (min-width: 1000px) {
     .hero__text {
-        margin-bottom: 5% !important;
+        margin-bottom: 0 !important;
         text-align: center;
     }
 }
@@ -212,10 +212,10 @@
     .hero__primary,
     .hero__secondary,
     .hero__title {
-        width: 40rem;
+        width: 30rem;
     }
     .hero__button {
-        max-width: 40rem;
+        max-width: 30rem;
     }
     .hero #button {
         margin-top: 2rem;
