@@ -33,7 +33,7 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="event__title"
                             bold
-                            size="4.1rem"
+                            size="4rem"
                             color={theme.secondary}
                         >
                             Chithiram Pesudhadee
@@ -41,7 +41,7 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2.25rem"
                             color={theme.primary}
                         >
                             (An Electrifying meme battle!)
@@ -49,7 +49,7 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2rem"
                             color={theme.textdark}
                         >
                             <q>Creativity is intelligence having fun.</q>
@@ -62,9 +62,6 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                         laugh and think with your very own memes. Remember,{' '}
                         <q>Content plays a vital role than the context</q>. Get
                         ready with your memes to this mega meme fight
-                        <span role="img" aria-label="fire">
-                            🔥
-                        </span>
                     </Label>
                     <Label className="para1" size="2rem" color={theme.textdark}>
                         Theme: <q>Current Affairs on Tamil culture</q>

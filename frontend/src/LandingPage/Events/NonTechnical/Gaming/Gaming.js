@@ -35,7 +35,7 @@ export const Gaming = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="event__title"
                             bold
-                            size="4.1rem"
+                            size="4rem"
                             color={theme.secondary}
                         >
                             Aadukalam
@@ -43,7 +43,7 @@ export const Gaming = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2.25rem"
                             color={theme.primary}
                         >
                             A PUBG-M TOURNAMENT
@@ -51,7 +51,7 @@ export const Gaming = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2rem"
                             color={theme.textdark}
                         >
                             "One-Shot, One Kill, No Luck, Pure Skill"

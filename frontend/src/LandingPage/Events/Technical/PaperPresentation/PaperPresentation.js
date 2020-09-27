@@ -249,7 +249,7 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                     <Label
                         className="event__title"
                         bold
-                        size="4.1rem"
+                        size="4rem"
                         color={theme.secondary}
                     >
                         Udhi
@@ -259,7 +259,7 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                     <Label
                         className="para1"
                         bold
-                        size="1.5rem"
+                        size="2.25rem"
                         color={theme.primary}
                     >
                         A Contest for budding entrepreneurs
@@ -267,11 +267,13 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                     <Label
                         className="para1"
                         bold
-                        size="1.5rem"
+                        size="2rem"
                         color={theme.textdark}
                     >
-                        Money never starts an idea, it is the idea that starts
-                        the money
+                        <q>
+                            Money never starts an idea, it is the idea that
+                            starts the money
+                        </q>
                     </Label>
                     <Label className="para1" size="2rem" color={theme.textdark}>
                         Vanakkam Makale!! Do you have what it takes to be a
@@ -280,12 +282,6 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                         event for you. Be judged by prominent corporate
                         representatives and bag your prize. May the best idea
                         win.
-                        <span role="img" aria-label="star">
-                            ✨
-                        </span>
-                        <span role="img" aria-label="star">
-                            ✨
-                        </span>
                     </Label>
                 </div>
                 <div className="para2">
@@ -329,7 +325,7 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
             </EventDetails>
             <EventDetailsWithButton>
                 <ImageWrapper>
-                    <img src={PaperPresentationBg} alt="" height="200px" />{' '}
+                    <img src={PaperPresentationBg} alt="" height="200px" />
                 </ImageWrapper>
                 <RegisterButton>
                     <div className="button__animation">

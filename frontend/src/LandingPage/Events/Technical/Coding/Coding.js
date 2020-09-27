@@ -238,7 +238,7 @@ export default function Coding({ pageNumber, slideInfo }) {
                     <Label
                         className="event__title"
                         bold
-                        size="4.1rem"
+                        size="4rem"
                         color={theme.secondary}
                     >
                         Kaniniral
@@ -247,19 +247,14 @@ export default function Coding({ pageNumber, slideInfo }) {
                 <Label
                     className="para1"
                     bold
-                    size="1.5rem"
+                    size="2.25rem"
                     color={theme.primary}
                 >
                     Where your code speaks rather than you
                 </Label>
 
                 <div className="para1">
-                    <Label
-                        className="para1"
-                        bold
-                        size="1.5rem"
-                        color={theme.textdark}
-                    >
+                    <Label className="para1" size="2rem" color={theme.textdark}>
                         <q>Hail Coders….!</q> A fascinating shout-out to all the
                         technophiles out there.
                     </Label>
@@ -267,11 +262,7 @@ export default function Coding({ pageNumber, slideInfo }) {
                         Save your dates on 9th and 10th to Test your competence
                         among the top programmers in the town.
                     </Label>
-                    <Label
-                        className="para1"
-                        size="2.25rem"
-                        color={theme.textdark}
-                    >
+                    <Label className="para1" size="2rem" color={theme.textdark}>
                         This contest has two rounds.
                     </Label>
                     <Label
@@ -279,7 +270,12 @@ export default function Coding({ pageNumber, slideInfo }) {
                         size="2.25rem"
                         color={theme.textdark}
                     >
-                        <b>Platform:</b> Hackerrank
+                        <span
+                            style={{ color: theme.secondary, fontWeight: 600 }}
+                        >
+                            Platform:
+                        </span>{' '}
+                        Hackerrank
                     </Label>
                     <EventHeading>ROUND 1:</EventHeading>
                 </div>

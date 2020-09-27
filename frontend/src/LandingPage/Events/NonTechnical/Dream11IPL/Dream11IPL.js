@@ -33,7 +33,7 @@ export const Dream11IPL = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="event__title"
                             bold
-                            size="4.1rem"
+                            size="4rem"
                             color={theme.secondary}
                         >
                             Tegidi
@@ -41,7 +41,7 @@ export const Dream11IPL = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2.25rem"
                             color={theme.primary}
                         >
                             A hunt for India's next master tactician
@@ -49,11 +49,13 @@ export const Dream11IPL = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2rem"
                             color={theme.textdark}
                         >
-                            "The essence of strategy is choosing what not to
-                            do."
+                            <q>
+                                The essence of strategy is choosing what not to
+                                do.
+                            </q>
                         </Label>
                     </ContentWrapper>
                     <Label className="para1" size="2rem" color={theme.textdark}>
@@ -85,7 +87,7 @@ export const Dream11IPL = ({ pageNumber, slideInfo }) => {
                 </ContentWrapper>
                 <RegisterWrapper>
                     <ImageWrapper>
-                        <img src={Ipl} height="300" alt="ipl" />
+                        <img src={Ipl} height="200" alt="ipl" />
                     </ImageWrapper>
                     <div className="button__animation">
                         <Button

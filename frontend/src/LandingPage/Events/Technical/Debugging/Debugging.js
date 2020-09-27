@@ -212,7 +212,7 @@ export default function Debugging({ pageNumber, slideInfo }) {
                     <Label
                         className="event__title"
                         bold
-                        size="4.1rem"
+                        size="4rem"
                         color={theme.secondary}
                     >
                         Bhogi
@@ -223,7 +223,7 @@ export default function Debugging({ pageNumber, slideInfo }) {
                     bold
                     className="para1"
                     bold
-                    size="1.5rem"
+                    size="2.25rem"
                     color={theme.primary}
                 >
                     A contest for the innate debugger in you.
@@ -232,16 +232,10 @@ export default function Debugging({ pageNumber, slideInfo }) {
                     <Label
                         className="para1"
                         bold
-                        size="1.5rem"
-                        color={theme.primary}
+                        size="2rem"
+                        color={theme.textdark}
                     >
-                        <span role="img" aria-label="fire">
-                            🔥
-                        </span>
                         BURN THE BUG
-                        <span role="img" aria-label="fire">
-                            🔥
-                        </span>
                     </Label>
                     <Label className="para1" size="2rem" color={theme.textdark}>
                         Are you the detective of a crime movie where you are

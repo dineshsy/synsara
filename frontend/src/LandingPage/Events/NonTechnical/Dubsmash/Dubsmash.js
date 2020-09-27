@@ -34,7 +34,7 @@ export const Dubsmash = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="event__title"
                             bold
-                            size="4.1rem"
+                            size="4rem"
                             color={theme.secondary}
                         >
                             Paatum Nane Paavamum Naane
@@ -42,7 +42,7 @@ export const Dubsmash = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2.25rem"
                             color={theme.primary}
                         >
                             A platform to put your multi-faceted talents to good
@@ -52,7 +52,7 @@ export const Dubsmash = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2rem"
                             color={theme.textdark}
                         >
                             <q>The creative adult is the child who survived</q>

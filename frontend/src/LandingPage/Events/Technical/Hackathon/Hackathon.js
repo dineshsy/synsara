@@ -34,6 +34,11 @@ const PaperPresentationWrapper = styled.div`
     align-items: center;
     margin: auto;
 
+    ol {
+        margin-left: 1.25rem;
+        font-size: 1.25rem;
+    }
+
     @media ${sizeMaxW.tablet} {
         justify-content: flex-start;
         padding: 2rem;
@@ -83,10 +88,6 @@ const EventDetails = styled.div`
     line-height: 24px;
     max-width: 100%;
     height: fit-content;
-
-    ul {
-        list-style: none;
-    }
 
     @media ${sizeMaxW.laptop} {
         font-size: 16px;
@@ -234,7 +235,7 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                 </div>
                 <div className="para2">
                     <EventHeading>THEMES</EventHeading>
-                    <ul>
+                    <ol>
                         <li>
                             <Label size="1.5rem" color={theme.secondary}>
                                 Health care and Bio medical
@@ -318,35 +319,53 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                             Provide most creative solutions to real world
                             problems.
                         </Label>
-                    </ul>
+                    </ol>
                 </div>
             </EventDetails>
             <EventDetailsWithButton>
                 <div id="hackathon-img" style={{ width: 'min-content' }}>
                     <ImageWrapper>
-                        <img src={HackathonBg1} alt="" height="100px" />
-                        <img src={HackathonBg2} alt="" height="100px" />
+                        <img src={HackathonBg1} alt="" height="150px" />
+                        <img src={HackathonBg2} alt="" height="150px" />
                     </ImageWrapper>
                 </div>
                 <div className="para2">
                     <EventHeading>Rules to Remember</EventHeading>
                     <ol>
-                        <Label size="1.5rem" color={theme.textdark}>
-                            No registration fee
-                        </Label>
-                        <Label size="1.5rem" color={theme.textdark}>
-                            Team of maximum 4 members
-                        </Label>
-                        <Label size="1.5rem" color={theme.textdark}>
-                            Certificates will be provided.
-                        </Label>
-                        <Label size="1.5rem" color={theme.textdark}>
-                            Register and send abstract to
-                            hackathon.synsara2020@gmail.com
-                        </Label>
-                        <Label size="1.5rem" color={theme.textdark}>
-                            Certificates for all participants.
-                        </Label>
+                        <li>
+                            <Label size="1.5rem" color={theme.textdark}>
+                                No registration fee
+                            </Label>
+                        </li>
+                        <li>
+                            <Label size="1.5rem" color={theme.textdark}>
+                                Team of maximum 4 members
+                            </Label>
+                        </li>
+                        <li>
+                            <Label size="1.5rem" color={theme.textdark}>
+                                Certificates will be provided.
+                            </Label>
+                        </li>
+                        <li>
+                            <Label size="1.5rem" color={theme.textdark}>
+                                Register and send abstract to{' '}
+                                <a
+                                    style={{
+                                        textDecoration: 'none',
+                                        color: theme.secondary,
+                                    }}
+                                    href="mailto:hackathon.synsara2020@gmail.com"
+                                >
+                                    hackathon.synsara2020@gmail.com
+                                </a>
+                            </Label>
+                        </li>
+                        <li>
+                            <Label size="1.5rem" color={theme.textdark}>
+                                Certificates for all participants.
+                            </Label>
+                        </li>
                     </ol>
                 </div>
 

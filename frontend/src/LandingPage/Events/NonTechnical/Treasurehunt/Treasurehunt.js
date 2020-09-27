@@ -34,7 +34,7 @@ export const Treasurehunt = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="event__title"
                             bold
-                            size="4.1rem"
+                            size="4rem"
                             color={theme.secondary}
                         >
                             Diraviyam Tedu
@@ -42,7 +42,7 @@ export const Treasurehunt = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2.25rem"
                             color={theme.primary}
                         >
                             A Virtual quest for Synsara's elusive treasure
@@ -51,7 +51,7 @@ export const Treasurehunt = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2rem"
                             color={theme.textdark}
                         >
                             "Who seeks shall find!"
@@ -90,7 +90,7 @@ export const Treasurehunt = ({ pageNumber, slideInfo }) => {
                 </ContentWrapper>
                 <RegisterWrapper>
                     <ImageWrapper>
-                        <img src={TreasurehuntBg} alt="" height="200px" />
+                        <img src={TreasurehuntBg} alt="" height="250px" />
                     </ImageWrapper>
                     <div className="button__animation">
                         <Button
