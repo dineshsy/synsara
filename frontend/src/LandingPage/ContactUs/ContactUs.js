@@ -9,10 +9,16 @@ import Deep from '../../Assets/Images/Deep.webp'
 import sandy from '../../Assets/Images/sandy.webp'
 import Jade from '../../Assets/Images/Jade.webp'
 import kaviya from '../../Assets/Images/kaviya.webp'
-import { Halfellipse } from '../../Assets/svg/Halfellipse'
+import CoordinatorsImg from '../../Assets/Images/coordinators.png'
 import { Facebook } from '../../Assets/svg/Facebook'
 import { Linkedin } from '../../Assets/svg/Linkedin'
 import { Instagram } from '../../Assets/svg/Instagram'
+
+const ContactUsImg = styled.img`
+    @media (max-width: 1024px) {
+        display: none;
+    }
+`
 
 const ContactUsWrapper = styled.section`
     width: 100%;
@@ -281,6 +287,14 @@ export default function ContactUs({ pageNumber }) {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="row">
+                        <ContactUsImg
+                            src={CoordinatorsImg}
+                            height="200px"
+                            alt="coordinators"
+                            style={{ margin: 'auto' }}
+                        />
                     </div>
                 </Body>
 
