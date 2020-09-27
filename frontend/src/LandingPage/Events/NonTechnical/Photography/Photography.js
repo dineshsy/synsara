@@ -71,8 +71,8 @@ export const Photography = ({ pageNumber, slideInfo }) => {
                             <Label size="2rem" color={theme.textdark}>
                                 So get ready with ur cameras and lenses! Lets
                                 click the entire universe and do not forget to
-                                register for this fun filled event before 4th
-                                October 2020.
+                                register for this fun filled event before{' '}
+                                <b>4th October 2020</b>.
                             </Label>
                             <Label bold size="2.25rem" color={theme.primary}>
                                 Come, show us how you tell stories

@@ -22,6 +22,19 @@
     top: 2rem;
 }
 
+.landing__curve__bg {
+    z-index: -1;
+    position: absolute;
+    width: 78%;
+    height: 78%;
+    bottom: 0%;
+    left: -4%;
+}
+
+.hero__logo img {
+    width: 60%;
+}
+
 @keyframes rotating {
     0% {
         transform: translateX(200%) rotate(100deg);
@@ -74,7 +87,7 @@
     font-weight: 600;
     font-size: 2rem;
     color: #3563c1;
-    text-align: center;
+    text-align: justify;
 }
 
 .hero__title:first-child {
@@ -107,13 +120,8 @@
         font-size: 1.5rem;
         line-height: 2.2rem;
     }
-    .hero__logo img,
-    .hero__logo p {
-        width: 60% !important;
-    }
-
-    .hero__logo p {
-        font-size: 0.9rem !important;
+    .hero__logo img {
+        width: 40% !important;
     }
 }
 
@@ -122,13 +130,8 @@
         top: 1%;
         left: 1%;
     }
-    .hero__logo img,
-    .hero__logo p {
+    .hero__logo img {
         width: 12rem !important;
-    }
-
-    .hero__logo p {
-        font-size: 0.4rem !important;
     }
 
     .hero__primary img {

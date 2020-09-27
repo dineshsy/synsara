@@ -10,7 +10,7 @@ import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
-import Connection from '../../../../Assets/Images/connexions.webp'
+import Connection from '../../../../Assets/Images/connexions.png'
 
 export const Connections = ({ pageNumber, slideInfo }) => {
     const [currentPageno, currentSlideno] = slideInfo
@@ -106,7 +106,7 @@ export const Connections = ({ pageNumber, slideInfo }) => {
                 </ContentWrapper>
                 <RegisterWrapper>
                     <ImageWrapper>
-                        <img src={Connection} alt="" height="200" />
+                        <img src={Connection} alt="" height="350" />
                     </ImageWrapper>
                     <div className="button__animation">
                         <Button

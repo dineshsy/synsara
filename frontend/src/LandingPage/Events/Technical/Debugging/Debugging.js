@@ -245,8 +245,8 @@ export default function Debugging({ pageNumber, slideInfo }) {
                         our exploration list. Click on register to challenge the
                         whole lot of programmers waiting to portray their
                         proficiency in their Programming skills. This contest
-                        will be held on October 10th and it consists of two
-                        rounds:
+                        will be held on <b>October 10th</b> and it consists of
+                        two rounds:
                     </Label>
                 </div>
                 <div className="para2">

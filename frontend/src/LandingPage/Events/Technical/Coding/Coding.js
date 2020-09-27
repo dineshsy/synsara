@@ -282,10 +282,11 @@ export default function Coding({ pageNumber, slideInfo }) {
                 <div className="para2">
                     <ul>
                         <Label size="2rem" color={theme.textdark}>
-                            This round will be held on 9 th of October.
+                            This round will be held on <b>9 th of October</b>.
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
-                            The time allotted will be 2 hours from 2-4 pm.
+                            The time allotted will be 2 hours from <b>2-4 pm</b>
+                            .
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
                             The round consists of 3 Coding Challenges to solve.
@@ -302,10 +303,11 @@ export default function Coding({ pageNumber, slideInfo }) {
                             intimated about Round 2.
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
-                            This round is on the 10th of October.
+                            This round is on the <b>10th of October</b>.
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
-                            The time duration will be 2 hours from 9 to 11 am.
+                            The time duration will be 2 hours from{' '}
+                            <b>9 to 11 am</b>.
                         </Label>
                     </ul>
                 </div>

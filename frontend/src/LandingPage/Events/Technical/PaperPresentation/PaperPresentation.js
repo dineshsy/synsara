@@ -301,11 +301,11 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                         <Label size="2rem" color={theme.textdark}>
                             The participant should register in synsara2020.tech
                             website and submit an abstract of 200-500 words
-                            before 30th September 2020.
+                            before <b>30th September 2020</b>.
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
                             Final list of participating entries will be mailed
-                            by 2nd October.
+                            by <b>2nd October</b>.
                         </Label>
                     </ul>
                     <EventHeading>Stage 2: Presentation</EventHeading>

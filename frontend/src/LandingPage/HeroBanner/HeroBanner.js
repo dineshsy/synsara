@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled, { keyframes, css } from 'styled-components'
-import { LandingBG } from '../../Assets/svg/LandingBG'
+import { LandingBG, LandingCurveBg } from '../../Assets/svg/LandingBG'
 import Thiruvalluvar from '../../Assets/Images/Thiruvalluvar.webp'
 import './HeroBanner.css'
 import { Button } from '../../Reusables/Button'
@@ -67,6 +67,7 @@ export const HeroWrapper = styled.div`
 
     width: 100%;
     height: 100%;
+    overflow: hidden;
 `
 export const HeroBanner = ({ fullpageApi }) => {
     const [isAnimated, setIsAnimated] = useState(false)
@@ -90,20 +91,9 @@ export const HeroBanner = ({ fullpageApi }) => {
                         alt="thiruvalluvar"
                     />
                 </div>
+                <LandingCurveBg />
                 <div className="hero__logo">
                     <img src={CollegeLogo} alt="logo" />
-                    <p
-                        style={{
-                            width: '100%',
-                            color: '#005596',
-                            textAlign: 'center',
-                            fontSize: '1.5rem',
-                            fontWeight: 'bold',
-                            textTransform: 'uppercase',
-                        }}
-                    >
-                        An Autonomous Institution
-                    </p>
                 </div>
                 <div className="content-wrapper">
                     <div className="hero__text">
