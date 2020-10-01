@@ -40,7 +40,7 @@ const ContactUsWrapper = styled.section`
         opacity: ${({ isAnimated }) => (isAnimated ? `1` : `0`)};
     }
     ${({ pageNumber, isAnimated }) =>
-        pageNumber === 4 && !isAnimated
+        pageNumber === 5 && !isAnimated
             ? css`
                   .person--1 {
                       animation: ${FadeIn(`0`, `50px`)} 0.3s ease-in;
