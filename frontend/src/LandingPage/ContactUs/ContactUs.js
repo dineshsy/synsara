@@ -119,7 +119,7 @@ const FadeIn = (x, y) => keyframes`
 export default function ContactUs({ pageNumber }) {
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 4 && !isAnimated) {
+        if (pageNumber === 5 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 2500)
         }
     }, [pageNumber, isAnimated])

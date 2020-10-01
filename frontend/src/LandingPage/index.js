@@ -11,6 +11,7 @@ import { ScrollIndicator } from '../Reusables/ScrollIndicator'
 import { PageNotFound } from '../Reusables/PageNotFound'
 import { SwipeIndicator } from '../Reusables/SwipeIndicator'
 import useResizeObserver from '../utils/useResizeObserver'
+import StaffCoordinators from './StaffCoordinators/StaffCoordinators'
 
 const Index = (props) => {
     const [pageNumber, setPageNumber] = useState(0)
@@ -63,6 +64,7 @@ const Index = (props) => {
                             'Home',
                             'Technical Events',
                             'Non-Technical Events',
+                            'Staff Coordinators',
                             'Sponsors',
                             'Contact Us',
                         ]}
@@ -98,6 +100,12 @@ const Index = (props) => {
                                                 fullpageApi={fullpageApi}
                                             />
                                         </div>
+                                    </div>
+                                    <div className="section">
+                                        <StaffCoordinators
+                                            fullpageApi={fullpageApi}
+                                            pageNumber={pageNumber}
+                                        />
                                     </div>
                                     <div className="section">
                                         <Sponsors

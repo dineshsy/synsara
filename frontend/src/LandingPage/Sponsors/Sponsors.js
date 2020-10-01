@@ -4,6 +4,9 @@ import CodeChefLogo from '../../Assets/Images/codechef.webp'
 import HawkShawLogo from '../../Assets/Images/hawkshaw.webp'
 import WebboombaaLogo from '../../Assets/Images/Webboombaa.webp'
 import MadrasSwitchgears from '../../Assets/Images/madras-switchgears.webp'
+import LemaLabsLogo from '../../Assets/Images/lema-labs-logo.png'
+import RedHatLogo from '../../Assets/Images/red-hat-logo.svg'
+import AdvantageProLogo from '../../Assets/Images/advantagepro_logo.jpg'
 
 const SponsorsWrapper = styled.div`
     width: 100%;
@@ -12,7 +15,7 @@ const SponsorsWrapper = styled.div`
     padding: 6rem;
 
     img {
-        width: 400px;
+        width: 225px;
         height: auto;
     }
 
@@ -26,18 +29,18 @@ const SponsorsWrapper = styled.div`
 
     @media only screen and (max-width: 500px) {
         img {
-            width: 200px;
+            width: 125px;
         }
     }
 
     @media only screen and (min-width: 500px) {
         img {
-            width: 250px;
+            width: 175px;
         }
     }
     @media only screen and (min-width: 1000px) {
         img {
-            width: 300px;
+            width: 225px;
         }
     }
 `
@@ -77,6 +80,12 @@ const RowWrapper = styled.div`
     align-items: center;
     > img {
         margin: 2.5rem;
+    }
+
+    @media (max-width: 768px) and (orientation: portrait) {
+        > img {
+            margin-bottom: 1rem !important;
+        }
     }
 `
 
@@ -163,12 +172,15 @@ export default function Sponsors() {
                 <Star />
             </SponsorsTitle>
             <RowWrapper>
+                <img src={LemaLabsLogo} alt="" />
                 <img src={MadrasSwitchgears} alt="" />
                 <img src={HawkShawLogo} alt="" />
+                <img src={RedHatLogo} alt="" />
             </RowWrapper>
             <RowWrapper>
                 <img src={WebboombaaLogo} alt="" />
                 <img src={CodeChefLogo} alt="" />
+                <img src={AdvantageProLogo} alt="" />
             </RowWrapper>
         </SponsorsWrapper>
     )

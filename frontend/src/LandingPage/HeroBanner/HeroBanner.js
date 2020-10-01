@@ -97,7 +97,9 @@ export const HeroBanner = ({ fullpageApi }) => {
                 </div>
                 <div className="content-wrapper">
                     <div className="hero__text">
-                        <p className="hero__title">DEPARTMENT OF CSE</p>
+                        <p className="hero__title">
+                            DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+                        </p>
                         <p
                             className="hero__title"
                             style={{
