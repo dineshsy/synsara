@@ -7,7 +7,7 @@ import StaffImage from '../../Assets/Images/staff.png'
 
 const StaffCoordWrapper = styled.div`
     height: 100%;
-    padding: 6rem;
+    padding: 4rem 6rem;
     border: 15px solid rgba(59, 147, 247, 0.58);
 
     h3 {
@@ -76,7 +76,7 @@ function StaffCoordinators(props) {
                     textAlign: 'center',
                 }}
             >
-                Staff Coordinators
+                Special Thanks to
             </h1>
             <div
                 style={{
@@ -107,6 +107,15 @@ function StaffCoordinators(props) {
                     <p>Principal</p>
                 </Staff>
             </div>
+            <h1
+                style={{
+                    fontSize: '4rem',
+                    color: props.theme.secondary,
+                    textAlign: 'center',
+                }}
+            >
+                Staff Coordinators
+            </h1>
             <StaffContacts>
                 <div style={{ textAlign: 'center' }}>
                     <img src={StaffImage} alt="" />
