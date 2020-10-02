@@ -91,7 +91,8 @@
 }
 
 .hero__title:first-child {
-    font-size: 2.75rem !important;
+    font-size: 2.5rem !important;
+    line-height: 120%;
 }
 
 .btn__hero {

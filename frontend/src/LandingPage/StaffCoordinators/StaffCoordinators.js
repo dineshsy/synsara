@@ -3,7 +3,10 @@ import styled, { withTheme } from 'styled-components'
 import HodImage from '../../Assets/Images/hod.png'
 import PrincipalImage from '../../Assets/Images/principal.jpg'
 import CeoImage from '../../Assets/Images/ceo.jpg'
-import StaffImage from '../../Assets/Images/staff.png'
+import StaffImage1 from '../../Assets/Images/staff1.jpg'
+import StaffImage2 from '../../Assets/Images/staff2.jpg'
+import StaffImage3 from '../../Assets/Images/staff3.jpg'
+import StaffImage4 from '../../Assets/Images/staff4.jpg'
 
 const StaffCoordWrapper = styled.div`
     height: 100%;
@@ -52,16 +55,17 @@ const StaffContacts = styled.div`
     margin-top: 5rem;
 
     img {
-        border-radius: 50%;
-        width: 100px;
+        border-radius: 5%;
+        width: 200px;
         height: auto;
+        margin: 1rem;
     }
 
     @media (max-width: 768px) {
         flex-direction: column;
         gap: 2rem;
         img {
-            display: none;
+            width: 100px;
         }
     }
 `
@@ -117,25 +121,33 @@ function StaffCoordinators(props) {
                 Staff Coordinators
             </h1>
             <StaffContacts>
-                <div style={{ textAlign: 'center' }}>
-                    <img src={StaffImage} alt="" />
-                    <h3>Mrs. M. Padmapriya</h3>
-                    <p>98407 08360</p>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'space-evenly',
+                    }}
+                >
+                    <div style={{ textAlign: 'center' }}>
+                        <img src={StaffImage1} alt="" />
+                    </div>
+                    <div style={{ textAlign: 'center' }}>
+                        <img src={StaffImage2} alt="" />
+                    </div>
                 </div>
-                <div style={{ textAlign: 'center' }}>
-                    <img src={StaffImage} alt="" />
-                    <h3>Mrs. M. Kiruthiga Devi</h3>
-                    <p>97911 28792</p>
-                </div>
-                <div style={{ textAlign: 'center' }}>
-                    <img src={StaffImage} alt="" />
-                    <h3>Mr. N. Gopinath</h3>
-                    <p>99523 27939</p>
-                </div>
-                <div style={{ textAlign: 'center' }}>
-                    <img src={StaffImage} alt="" />
-                    <h3>Dr. A. Chinnasamy</h3>
-                    <p>99940 85043</p>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'space-evenly',
+                    }}
+                >
+                    <div style={{ textAlign: 'center' }}>
+                        <img src={StaffImage3} alt="" />
+                    </div>
+                    <div style={{ textAlign: 'center' }}>
+                        <img src={StaffImage4} alt="" />
+                    </div>
                 </div>
             </StaffContacts>
         </StaffCoordWrapper>
