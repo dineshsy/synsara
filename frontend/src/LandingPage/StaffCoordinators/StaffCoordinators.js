@@ -92,11 +92,6 @@ function StaffCoordinators(props) {
                 }}
             >
                 <Staff>
-                    <img src={HodImage} alt="" />
-                    <h3 style={{ color: props.theme.primary }}>Dr.B.Latha</h3>
-                    <p>Head of the Department</p>
-                </Staff>
-                <Staff>
                     <img src={CeoImage} alt="" />
                     <h3 style={{ color: props.theme.primary }}>
                         Mr. Sai Prakash Leo Muthu
@@ -109,6 +104,11 @@ function StaffCoordinators(props) {
                         Dr. A. Rajendra Prasad
                     </h3>
                     <p>Principal</p>
+                </Staff>
+                <Staff>
+                    <img src={HodImage} alt="" />
+                    <h3 style={{ color: props.theme.primary }}>Dr.B.Latha</h3>
+                    <p>Head of the Department</p>
                 </Staff>
             </div>
             <h1
@@ -143,10 +143,10 @@ function StaffCoordinators(props) {
                     }}
                 >
                     <div style={{ textAlign: 'center' }}>
-                        <img src={StaffImage3} alt="" />
+                        <img src={StaffImage4} alt="" />
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                        <img src={StaffImage4} alt="" />
+                        <img src={StaffImage3} alt="" />
                     </div>
                 </div>
             </StaffContacts>
