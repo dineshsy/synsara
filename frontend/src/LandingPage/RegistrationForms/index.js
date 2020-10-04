@@ -20,6 +20,7 @@ const Dream11iplForm = lazy(() =>
 const TreasureHuntForm = lazy(() =>
     import('./NonTechEvents/TreasureHunt/TreasureHuntForm')
 )
+
 export const Index = ({ match }) => {
     return (
         <Suspense

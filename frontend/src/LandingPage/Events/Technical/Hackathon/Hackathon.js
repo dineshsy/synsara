@@ -9,6 +9,7 @@ import HackathonBg1 from '../../../../Assets/Images/hackathon1.webp'
 import HackathonBg2 from '../../../../Assets/Images/hackathon2.webp'
 import { FadeIn } from '../../../../utils/globalStyles'
 import { ImageWrapper, Label } from '../../NonTechnical/style'
+import { registrationFailed } from '../../../../redux/Events/Toast/Actions'
 
 const moveInLeft = () => keyframes`
     0% {
@@ -171,7 +172,7 @@ const EventHeading = styled.p`
     font-size: 1.6rem;
 `
 
-export default function PaperPresentation({ pageNumber, slideInfo }) {
+export default function PaperPresentation({ pageNumber, slideInfo,callMeWhenRegClosed }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     const theme = useTheme()
@@ -371,13 +372,7 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
 
                 <div className="button__animation">
                     <RegisterButton>
-                        <Button
-                            onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.techEvents.hackathon}`
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </RegisterButton>
