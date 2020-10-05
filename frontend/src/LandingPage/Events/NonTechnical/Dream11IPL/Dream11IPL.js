@@ -11,7 +11,7 @@ import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import Ipl from '../../../../Assets/Images/Ipl.png'
-export const Dream11IPL = ({ pageNumber, slideInfo }) => {
+export const Dream11IPL = ({ pageNumber, slideInfo, callMeWhenRegClosed }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -90,13 +90,7 @@ export const Dream11IPL = ({ pageNumber, slideInfo }) => {
                         <img src={Ipl} height="350" alt="ipl" />
                     </ImageWrapper>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.nonTechEvents.dream11IPL}`
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

@@ -216,7 +216,7 @@ const ImageWrapper = styled.div`
     animation: float 3s ease-in-out infinite;
 `
 
-export default function Coding({ pageNumber, slideInfo }) {
+export default function Coding({ pageNumber, slideInfo, callMeWhenRegClosed }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -320,13 +320,7 @@ export default function Coding({ pageNumber, slideInfo }) {
                 </ImageWrapper>
                 <RegisterButton>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.techEvents.coding}`
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

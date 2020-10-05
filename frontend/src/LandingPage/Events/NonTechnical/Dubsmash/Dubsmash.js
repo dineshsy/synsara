@@ -11,7 +11,7 @@ import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import Instareel from '../../../../Assets/Images/instareel.webp'
-export const Dubsmash = ({ pageNumber, slideInfo }) => {
+export const Dubsmash = ({ pageNumber, slideInfo, callMeWhenRegClosed }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -95,13 +95,7 @@ export const Dubsmash = ({ pageNumber, slideInfo }) => {
                         <img src={Instareel} alt="" height="200px" />
                     </ImageWrapper>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.nonTechEvents.dubsmash}`
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

@@ -12,7 +12,7 @@ import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import PhotographyBg from '../../../../Assets/svg/photo.svg'
 
-export const Photography = ({ pageNumber, slideInfo }) => {
+export const Photography = ({ pageNumber, slideInfo, callMeWhenRegClosed }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -86,14 +86,7 @@ export const Photography = ({ pageNumber, slideInfo }) => {
                     </ImageWrapper>
 
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                window.open(
-                                    'https://www.instagram.com/synsara_photography_2020/',
-                                    '_blank'
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

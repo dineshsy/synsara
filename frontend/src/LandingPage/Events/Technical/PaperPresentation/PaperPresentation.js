@@ -227,7 +227,7 @@ const EventSubHeading = styled.p`
     color: ${(props) => props.theme.secondary};
 `
 
-export default function PaperPresentation({ pageNumber, slideInfo }) {
+export default function PaperPresentation({ pageNumber, slideInfo, callMeWhenRegClosed }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     const theme = useTheme()
@@ -329,13 +329,7 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                 </ImageWrapper>
                 <RegisterButton>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.techEvents.paperPresentation}`
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

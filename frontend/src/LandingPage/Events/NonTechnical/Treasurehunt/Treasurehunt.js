@@ -12,7 +12,7 @@ import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import TreasurehuntBg from '../../../../Assets/Images/treasurehunt.webp'
-export const Treasurehunt = ({ pageNumber, slideInfo }) => {
+export const Treasurehunt = ({ pageNumber, slideInfo, callMeWhenRegClosed }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -93,13 +93,7 @@ export const Treasurehunt = ({ pageNumber, slideInfo }) => {
                         <img src={TreasurehuntBg} alt="" height="250px" />
                     </ImageWrapper>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.nonTechEvents.treasureHunt}`
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

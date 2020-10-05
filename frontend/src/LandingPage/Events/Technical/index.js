@@ -33,12 +33,10 @@ function TechincalEvents({ pageNumber, slideInfo, registrationFailed }) {
         <>
             <div className="slide">
                 <EventWrapper>
-                    <Coding pageNumber={pageNumber} slideInfo={slideInfo} />
-                </EventWrapper>
-            </div>
-            <div className="slide">
-                <EventWrapper>
-                    <PaperPresentation
+                    <Coding
+                        callMeWhenRegClosed={() =>
+                            registrationFailed('Kaniniral')
+                        }
                         pageNumber={pageNumber}
                         slideInfo={slideInfo}
                     />
@@ -46,7 +44,20 @@ function TechincalEvents({ pageNumber, slideInfo, registrationFailed }) {
             </div>
             <div className="slide">
                 <EventWrapper>
-                    <Debugging pageNumber={pageNumber} slideInfo={slideInfo} />
+                    <PaperPresentation
+                        callMeWhenRegClosed={() => registrationFailed('Udhi')}
+                        pageNumber={pageNumber}
+                        slideInfo={slideInfo}
+                    />
+                </EventWrapper>
+            </div>
+            <div className="slide">
+                <EventWrapper>
+                    <Debugging
+                        callMeWhenRegClosed={() => registrationFailed('Bhogi')}
+                        pageNumber={pageNumber}
+                        slideInfo={slideInfo}
+                    />
                 </EventWrapper>
             </div>
             <div className="slide">

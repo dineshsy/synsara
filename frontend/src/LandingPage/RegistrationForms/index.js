@@ -2,24 +2,24 @@ import React, { Suspense, lazy } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { FORM_ROUTES } from '../../utils/constants'
 
-const ConnexionsForm = lazy(() =>
-    import('./NonTechEvents/Connexions/ConnexionsForm')
-)
-const DubsmashForm = lazy(() => import('./NonTechEvents/Dubsmash/DubsmashForm'))
-const CodingForm = lazy(() => import('./TechEvents/Coding/CodingForm'))
-const PaperPresentationForm = lazy(() =>
-    import('./TechEvents/Paper Presentation/PaperPresentation')
-)
-const DebuggingForm = lazy(() => import('./TechEvents/Debugging/DebuggingForm'))
-const HackathonForm = lazy(() => import('./TechEvents/Hackathon/Hackathon'))
+// const ConnexionsForm = lazy(() =>
+//     import('./NonTechEvents/Connexions/ConnexionsForm')
+// )
+// const DubsmashForm = lazy(() => import('./NonTechEvents/Dubsmash/DubsmashForm'))
+// const CodingForm = lazy(() => import('./TechEvents/Coding/CodingForm'))
+// const PaperPresentationForm = lazy(() =>
+//     import('./TechEvents/Paper Presentation/PaperPresentation')
+// )
+// const DebuggingForm = lazy(() => import('./TechEvents/Debugging/DebuggingForm'))
+// const HackathonForm = lazy(() => import('./TechEvents/Hackathon/Hackathon'))
 const { PageNotFound } = lazy(() => import('../../Reusables/PageNotFound'))
 const GamingForm = lazy(() => import('./NonTechEvents/GamingForm/GamingForm'))
-const Dream11iplForm = lazy(() =>
-    import('./NonTechEvents/Dream11ipl/Dream11iplForm')
-)
-const TreasureHuntForm = lazy(() =>
-    import('./NonTechEvents/TreasureHunt/TreasureHuntForm')
-)
+// const Dream11iplForm = lazy(() =>
+//     import('./NonTechEvents/Dream11ipl/Dream11iplForm')
+// )
+// const TreasureHuntForm = lazy(() =>
+//     import('./NonTechEvents/TreasureHunt/TreasureHuntForm')
+// )
 
 export const Index = ({ match }) => {
     return (
@@ -36,7 +36,7 @@ export const Index = ({ match }) => {
                 <Route path={`/register/${FORM_ROUTES.nonTechEvents.gaming}`}>
                     <GamingForm />
                 </Route>
-                <Route
+                {/* <Route
                     path={`/register/${FORM_ROUTES.nonTechEvents.dream11IPL}`}
                 >
                     <Dream11iplForm />
@@ -64,8 +64,8 @@ export const Index = ({ match }) => {
                 </Route>
                 <Route path={`/register/${FORM_ROUTES.techEvents.debugging}`}>
                     <DebuggingForm />
-                </Route>
-                {/* <Route path={`/register/${FORM_ROUTES.techEvents.hackathon}`}>
+                </Route> 
+                <Route path={`/register/${FORM_ROUTES.techEvents.hackathon}`}>
                     <HackathonForm />
                 </Route> */}
                 <Route path="*" component={PageNotFound} />

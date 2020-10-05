@@ -11,7 +11,7 @@ import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import MemeContestBg from '../../../../Assets/Images/memecontest.webp'
-export const Memecontest = ({ pageNumber, slideInfo }) => {
+export const Memecontest = ({ pageNumber, slideInfo, callMeWhenRegClosed }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -90,14 +90,7 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                         <img src={MemeContestBg} alt="" height="200px" />
                     </ImageWrapper>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                window.open(
-                                    'https://www.instagram.com/synsara_contests_2020/',
-                                    '_blank'
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>
