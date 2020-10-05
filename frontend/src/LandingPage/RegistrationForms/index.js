@@ -65,9 +65,9 @@ export const Index = ({ match }) => {
                 <Route path={`/register/${FORM_ROUTES.techEvents.debugging}`}>
                     <DebuggingForm />
                 </Route>
-                <Route path={`/register/${FORM_ROUTES.techEvents.hackathon}`}>
+                {/* <Route path={`/register/${FORM_ROUTES.techEvents.hackathon}`}>
                     <HackathonForm />
-                </Route>
+                </Route> */}
                 <Route path="*" component={PageNotFound} />
             </Switch>
         </Suspense>
