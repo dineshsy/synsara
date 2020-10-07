@@ -12,7 +12,7 @@ import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import GamingBg from '../../../../Assets/Images/gaming.png'
 
-export const Gaming = ({ pageNumber, slideInfo }) => {
+export const Gaming = ({ pageNumber, slideInfo, callMeWhenRegClosed }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -97,13 +97,7 @@ export const Gaming = ({ pageNumber, slideInfo }) => {
                         <img src={GamingBg} alt="" height="350px" />
                     </ImageWrapper>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.nonTechEvents.gaming}`
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

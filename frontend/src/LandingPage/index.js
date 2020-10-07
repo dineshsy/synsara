@@ -51,7 +51,7 @@ const Index = (props) => {
         <>
             {showSwipeIndicator && width < 768 && <SwipeIndicator />}
             <Switch>
-                <Route path="/register" component={RegistrationForms} />
+                {/* <Route path="/register" component={RegistrationForms} /> */}
                 <Route path="/" exact>
                     <ReactFullpage
                         scrollingSpeed={700}
