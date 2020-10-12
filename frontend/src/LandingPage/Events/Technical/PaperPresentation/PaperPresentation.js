@@ -227,7 +227,7 @@ const EventSubHeading = styled.p`
     color: ${(props) => props.theme.secondary};
 `
 
-export default function PaperPresentation({ pageNumber, slideInfo }) {
+export default function PaperPresentation({ pageNumber, slideInfo, callMeWhenRegClosed }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     const theme = useTheme()
@@ -249,7 +249,7 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                     <Label
                         className="event__title"
                         bold
-                        size="4.1rem"
+                        size="4rem"
                         color={theme.secondary}
                     >
                         Udhi
@@ -259,7 +259,7 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                     <Label
                         className="para1"
                         bold
-                        size="1.5rem"
+                        size="2.25rem"
                         color={theme.primary}
                     >
                         A Contest for budding entrepreneurs
@@ -267,11 +267,13 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                     <Label
                         className="para1"
                         bold
-                        size="1.5rem"
+                        size="2rem"
                         color={theme.textdark}
                     >
-                        Money never starts an idea, it is the idea that starts
-                        the money
+                        <q>
+                            Money never starts an idea, it is the idea that
+                            starts the money
+                        </q>
                     </Label>
                     <Label className="para1" size="2rem" color={theme.textdark}>
                         Vanakkam Makale!! Do you have what it takes to be a
@@ -280,12 +282,6 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                         event for you. Be judged by prominent corporate
                         representatives and bag your prize. May the best idea
                         win.
-                        <span role="img" aria-label="star">
-                            ✨
-                        </span>
-                        <span role="img" aria-label="star">
-                            ✨
-                        </span>
                     </Label>
                 </div>
                 <div className="para2">
@@ -305,11 +301,11 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
                         <Label size="2rem" color={theme.textdark}>
                             The participant should register in synsara2020.tech
                             website and submit an abstract of 200-500 words
-                            before 30th September 2020.
+                            before <b>30th September 2020</b>.
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
                             Final list of participating entries will be mailed
-                            by 2nd October.
+                            by <b>2nd October</b>.
                         </Label>
                     </ul>
                     <EventHeading>Stage 2: Presentation</EventHeading>
@@ -329,17 +325,11 @@ export default function PaperPresentation({ pageNumber, slideInfo }) {
             </EventDetails>
             <EventDetailsWithButton>
                 <ImageWrapper>
-                    <img src={PaperPresentationBg} alt="" height="200px" />{' '}
+                    <img src={PaperPresentationBg} alt="" height="200px" />
                 </ImageWrapper>
                 <RegisterButton>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.techEvents.paperPresentation}`
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

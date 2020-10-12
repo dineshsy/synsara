@@ -11,7 +11,7 @@ import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import MemeContestBg from '../../../../Assets/Images/memecontest.webp'
-export const Memecontest = ({ pageNumber, slideInfo }) => {
+export const Memecontest = ({ pageNumber, slideInfo, callMeWhenRegClosed }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -33,7 +33,7 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="event__title"
                             bold
-                            size="4.1rem"
+                            size="4rem"
                             color={theme.secondary}
                         >
                             Chithiram Pesudhadee
@@ -41,7 +41,7 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2.25rem"
                             color={theme.primary}
                         >
                             (An Electrifying meme battle!)
@@ -49,7 +49,7 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2rem"
                             color={theme.textdark}
                         >
                             <q>Creativity is intelligence having fun.</q>
@@ -62,9 +62,6 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                         laugh and think with your very own memes. Remember,{' '}
                         <q>Content plays a vital role than the context</q>. Get
                         ready with your memes to this mega meme fight
-                        <span role="img" aria-label="fire">
-                            🔥
-                        </span>
                     </Label>
                     <Label className="para1" size="2rem" color={theme.textdark}>
                         Theme: <q>Current Affairs on Tamil culture</q>
@@ -93,14 +90,7 @@ export const Memecontest = ({ pageNumber, slideInfo }) => {
                         <img src={MemeContestBg} alt="" height="200px" />
                     </ImageWrapper>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                window.open(
-                                    'https://www.instagram.com/synsara_contests_2020/',
-                                    '_blank'
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

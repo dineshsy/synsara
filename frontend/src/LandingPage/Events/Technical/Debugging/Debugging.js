@@ -189,7 +189,7 @@ const EventSubHeading = styled.p`
     color: ${(props) => props.theme.primary};
 `
 
-export default function Debugging({ pageNumber, slideInfo }) {
+export default function Debugging({ pageNumber, slideInfo, callMeWhenRegClosed }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     const theme = useTheme()
@@ -212,7 +212,7 @@ export default function Debugging({ pageNumber, slideInfo }) {
                     <Label
                         className="event__title"
                         bold
-                        size="4.1rem"
+                        size="4rem"
                         color={theme.secondary}
                     >
                         Bhogi
@@ -223,7 +223,7 @@ export default function Debugging({ pageNumber, slideInfo }) {
                     bold
                     className="para1"
                     bold
-                    size="1.5rem"
+                    size="2.25rem"
                     color={theme.primary}
                 >
                     A contest for the innate debugger in you.
@@ -232,16 +232,10 @@ export default function Debugging({ pageNumber, slideInfo }) {
                     <Label
                         className="para1"
                         bold
-                        size="1.5rem"
-                        color={theme.primary}
+                        size="2rem"
+                        color={theme.textdark}
                     >
-                        <span role="img" aria-label="fire">
-                            🔥
-                        </span>
                         BURN THE BUG
-                        <span role="img" aria-label="fire">
-                            🔥
-                        </span>
                     </Label>
                     <Label className="para1" size="2rem" color={theme.textdark}>
                         Are you the detective of a crime movie where you are
@@ -251,8 +245,8 @@ export default function Debugging({ pageNumber, slideInfo }) {
                         our exploration list. Click on register to challenge the
                         whole lot of programmers waiting to portray their
                         proficiency in their Programming skills. This contest
-                        will be held on October 10th and it consists of two
-                        rounds:
+                        will be held on <b>October 10th</b> and it consists of
+                        two rounds:
                     </Label>
                 </div>
                 <div className="para2">
@@ -287,13 +281,7 @@ export default function Debugging({ pageNumber, slideInfo }) {
                 </ImageWrapper>
                 <RegisterButton>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.techEvents.debugging}`
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

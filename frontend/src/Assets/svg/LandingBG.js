@@ -344,3 +344,18 @@ export const LandingBG = () => {
         </svg>
     )
 }
+
+export const LandingCurveBg = () => (
+    <svg
+        preserveAspectRatio="none"
+        viewBox="0 0 946 803"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="landing__curve__bg"
+    >
+        <path
+            d="M155.959 90.2462C75.1376 2.46292 2.88817 -2.05981 -23.1339 6.65172L-140 940.665L809.797 1059.51C863.488 921.097 862.781 869.43 719.38 709.394C575.98 549.359 668.934 277.309 450.307 272.203C231.681 267.097 256.985 199.975 155.959 90.2462Z"
+            fill="#DCF8FB"
+        />
+    </svg>
+)

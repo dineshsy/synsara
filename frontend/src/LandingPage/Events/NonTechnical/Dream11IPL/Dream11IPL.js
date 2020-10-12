@@ -10,8 +10,8 @@ import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
-import Ipl from '../../../../Assets/Images/Ipl.webp'
-export const Dream11IPL = ({ pageNumber, slideInfo }) => {
+import Ipl from '../../../../Assets/Images/Ipl.png'
+export const Dream11IPL = ({ pageNumber, slideInfo, callMeWhenRegClosed }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -33,7 +33,7 @@ export const Dream11IPL = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="event__title"
                             bold
-                            size="4.1rem"
+                            size="4rem"
                             color={theme.secondary}
                         >
                             Tegidi
@@ -41,7 +41,7 @@ export const Dream11IPL = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2.25rem"
                             color={theme.primary}
                         >
                             A hunt for India's next master tactician
@@ -49,11 +49,13 @@ export const Dream11IPL = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2rem"
                             color={theme.textdark}
                         >
-                            "The essence of strategy is choosing what not to
-                            do."
+                            <q>
+                                The essence of strategy is choosing what not to
+                                do.
+                            </q>
                         </Label>
                     </ContentWrapper>
                     <Label className="para1" size="2rem" color={theme.textdark}>
@@ -85,16 +87,10 @@ export const Dream11IPL = ({ pageNumber, slideInfo }) => {
                 </ContentWrapper>
                 <RegisterWrapper>
                     <ImageWrapper>
-                        <img src={Ipl} height="300" alt="ipl" />
+                        <img src={Ipl} height="350" alt="ipl" />
                     </ImageWrapper>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.nonTechEvents.dream11IPL}`
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

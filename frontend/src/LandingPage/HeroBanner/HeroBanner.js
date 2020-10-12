@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import styled, { keyframes, css } from 'styled-components'
-import { LandingBG } from '../../Assets/svg/LandingBG'
+import { LandingBG, LandingCurveBg } from '../../Assets/svg/LandingBG'
 import Thiruvalluvar from '../../Assets/Images/Thiruvalluvar.webp'
 import './HeroBanner.css'
 import { Button } from '../../Reusables/Button'
-import Logo from '../../Assets/Images/synsara_logo.webp'
+import CollegeLogo from '../../Assets/Images/sairam-logo.png'
+import Logo from '../../Assets/Images/synsara-logo.png'
 
 const FadeIn = (x, y) => keyframes`
     0%{
@@ -66,6 +67,7 @@ export const HeroWrapper = styled.div`
 
     width: 100%;
     height: 100%;
+    overflow: hidden;
 `
 export const HeroBanner = ({ fullpageApi }) => {
     const [isAnimated, setIsAnimated] = useState(false)
@@ -89,17 +91,27 @@ export const HeroBanner = ({ fullpageApi }) => {
                         alt="thiruvalluvar"
                     />
                 </div>
+                <LandingCurveBg />
                 <div className="hero__logo">
-                    <img src={Logo} alt="logo" />
+                    <img src={CollegeLogo} alt="logo" />
                 </div>
                 <div className="content-wrapper">
                     <div className="hero__text">
                         <p className="hero__title">
-                            Sri Sairam Engineering College
+                            DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
                         </p>
-                        <p className="hero__title">CSE Department</p>
-                        <p className="hero__title"> Presents</p>
-                        <h1 className="hero__primary">SYNSARA'20</h1>
+                        <p
+                            className="hero__title"
+                            style={{
+                                fontFamily: 'charm',
+                                fontWeight: 'bold',
+                            }}
+                        >
+                            Proudly Presents
+                        </p>
+                        <h1 className="hero__primary">
+                            <img src={Logo} alt="synsara-logo" />
+                        </h1>
 
                         <p className="hero__secondary">
                             A culmination of the nation's best young minds in a

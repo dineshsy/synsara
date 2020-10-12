@@ -10,9 +10,9 @@ import { useTheme } from 'styled-components'
 import { Button } from '../../../../Reusables/Button'
 import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
-import Connection from '../../../../Assets/Images/connexions.webp'
+import Connection from '../../../../Assets/Images/connexions.png'
 
-export const Connections = ({ pageNumber, slideInfo }) => {
+export const Connections = ({ pageNumber, slideInfo, callMeWhenRegClosed }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -35,7 +35,7 @@ export const Connections = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="event__title"
                             bold
-                            size="4.1rem"
+                            size="4rem"
                             color={theme.secondary}
                         >
                             Oppu
@@ -43,7 +43,7 @@ export const Connections = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2.25rem"
                             color={theme.primary}
                         >
                             An event designed for codebreakers and detective
@@ -52,11 +52,13 @@ export const Connections = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
-                            color={theme.darktext}
+                            size="2rem"
+                            color={theme.textdark}
                         >
-                            "A picture can speak a thousand words more than a
-                            person ever could!!"
+                            <q>
+                                A picture can speak a thousand words more than a
+                                person ever could!!
+                            </q>
                         </Label>
                     </ContentWrapper>
                     <Label className="para1" size="2rem" color={theme.textdark}>
@@ -98,25 +100,16 @@ export const Connections = ({ pageNumber, slideInfo }) => {
                             <Label size="2rem" color={theme.textdark}>
                                 Do not miss the fun because everything will be
                                 interactive!
-                                <span role="img" aria-label="starry-eyes">
-                                    🤩
-                                </span>
                             </Label>
                         </ContentWrapper>
                     </ContentWrapper>
                 </ContentWrapper>
                 <RegisterWrapper>
                     <ImageWrapper>
-                        <img src={Connection} alt="" height="200" />
+                        <img src={Connection} alt="" height="350" />
                     </ImageWrapper>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.nonTechEvents.connexions}`
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

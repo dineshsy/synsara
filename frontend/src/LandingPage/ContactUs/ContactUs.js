@@ -9,10 +9,16 @@ import Deep from '../../Assets/Images/Deep.webp'
 import sandy from '../../Assets/Images/sandy.webp'
 import Jade from '../../Assets/Images/Jade.webp'
 import kaviya from '../../Assets/Images/kaviya.webp'
-import { Halfellipse } from '../../Assets/svg/Halfellipse'
+import CoordinatorsImg from '../../Assets/Images/coordinators.png'
 import { Facebook } from '../../Assets/svg/Facebook'
 import { Linkedin } from '../../Assets/svg/Linkedin'
 import { Instagram } from '../../Assets/svg/Instagram'
+
+const ContactUsImg = styled.img`
+    @media (max-width: 1024px) {
+        display: none;
+    }
+`
 
 const ContactUsWrapper = styled.section`
     width: 100%;
@@ -34,7 +40,7 @@ const ContactUsWrapper = styled.section`
         opacity: ${({ isAnimated }) => (isAnimated ? `1` : `0`)};
     }
     ${({ pageNumber, isAnimated }) =>
-        pageNumber === 4 && !isAnimated
+        pageNumber === 5 && !isAnimated
             ? css`
                   .person--1 {
                       animation: ${FadeIn(`0`, `50px`)} 0.3s ease-in;
@@ -113,7 +119,7 @@ const FadeIn = (x, y) => keyframes`
 export default function ContactUs({ pageNumber }) {
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
-        if (pageNumber === 4 && !isAnimated) {
+        if (pageNumber === 5 && !isAnimated) {
             setTimeout(() => setIsAnimated(true), 2500)
         }
     }, [pageNumber, isAnimated])
@@ -281,6 +287,14 @@ export default function ContactUs({ pageNumber }) {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="row">
+                        <ContactUsImg
+                            src={CoordinatorsImg}
+                            height="200px"
+                            alt="coordinators"
+                            style={{ margin: 'auto' }}
+                        />
                     </div>
                 </Body>
 

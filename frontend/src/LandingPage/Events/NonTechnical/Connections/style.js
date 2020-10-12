@@ -70,7 +70,7 @@ export const MainContentWrapper = styled.div`
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 0.4fr;
+    grid-template-columns: 0.6fr 0.4fr;
     margin: auto;
     @media ${sizeMaxW.tablet} {
         grid-template-columns: 1fr;

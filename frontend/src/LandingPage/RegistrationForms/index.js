@@ -20,6 +20,7 @@ const Dream11iplForm = lazy(() =>
 const TreasureHuntForm = lazy(() =>
     import('./NonTechEvents/TreasureHunt/TreasureHuntForm')
 )
+
 export const Index = ({ match }) => {
     return (
         <Suspense
@@ -63,7 +64,7 @@ export const Index = ({ match }) => {
                 </Route>
                 <Route path={`/register/${FORM_ROUTES.techEvents.debugging}`}>
                     <DebuggingForm />
-                </Route>
+                </Route> 
                 <Route path={`/register/${FORM_ROUTES.techEvents.hackathon}`}>
                     <HackathonForm />
                 </Route>

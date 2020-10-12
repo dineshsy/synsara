@@ -201,6 +201,14 @@ class Toast extends React.Component {
                 const { error_details } = toast
                 if (
                     error_details.err_type &&
+                    error_details.err_type === 'REG_CLOSED'
+                ) {
+                    this.setState({
+                        className: ['show', 'error'],
+                        msg: `Sorry, registration for the ${error_details.event} is now closed.`,
+                    })
+                } else if (
+                    error_details.err_type &&
                     error_details.err_type.status === 409
                 ) {
                     const { data } = error_details.err_type

@@ -216,7 +216,7 @@ const ImageWrapper = styled.div`
     animation: float 3s ease-in-out infinite;
 `
 
-export default function Coding({ pageNumber, slideInfo }) {
+export default function Coding({ pageNumber, slideInfo, callMeWhenRegClosed }) {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -238,7 +238,7 @@ export default function Coding({ pageNumber, slideInfo }) {
                     <Label
                         className="event__title"
                         bold
-                        size="4.1rem"
+                        size="4rem"
                         color={theme.secondary}
                     >
                         Kaniniral
@@ -247,19 +247,14 @@ export default function Coding({ pageNumber, slideInfo }) {
                 <Label
                     className="para1"
                     bold
-                    size="1.5rem"
+                    size="2.25rem"
                     color={theme.primary}
                 >
                     Where your code speaks rather than you
                 </Label>
 
                 <div className="para1">
-                    <Label
-                        className="para1"
-                        bold
-                        size="1.5rem"
-                        color={theme.textdark}
-                    >
+                    <Label className="para1" size="2rem" color={theme.textdark}>
                         <q>Hail Coders….!</q> A fascinating shout-out to all the
                         technophiles out there.
                     </Label>
@@ -267,11 +262,7 @@ export default function Coding({ pageNumber, slideInfo }) {
                         Save your dates on 9th and 10th to Test your competence
                         among the top programmers in the town.
                     </Label>
-                    <Label
-                        className="para1"
-                        size="2.25rem"
-                        color={theme.textdark}
-                    >
+                    <Label className="para1" size="2rem" color={theme.textdark}>
                         This contest has two rounds.
                     </Label>
                     <Label
@@ -279,17 +270,23 @@ export default function Coding({ pageNumber, slideInfo }) {
                         size="2.25rem"
                         color={theme.textdark}
                     >
-                        <b>Platform:</b> Hackerrank
+                        <span
+                            style={{ color: theme.secondary, fontWeight: 600 }}
+                        >
+                            Platform:
+                        </span>{' '}
+                        Hackerrank
                     </Label>
                     <EventHeading>ROUND 1:</EventHeading>
                 </div>
                 <div className="para2">
                     <ul>
                         <Label size="2rem" color={theme.textdark}>
-                            This round will be held on 9 th of October.
+                            This round will be held on <b>9 th of October</b>.
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
-                            The time allotted will be 2 hours from 2-4 pm.
+                            The time allotted will be 2 hours from <b>2-4 pm</b>
+                            .
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
                             The round consists of 3 Coding Challenges to solve.
@@ -306,10 +303,11 @@ export default function Coding({ pageNumber, slideInfo }) {
                             intimated about Round 2.
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
-                            This round is on the 10th of October.
+                            This round is on the <b>10th of October</b>.
                         </Label>
                         <Label size="2rem" color={theme.textdark}>
-                            The time duration will be 2 hours from 9 to 11 am.
+                            The time duration will be 2 hours from{' '}
+                            <b>9 to 11 am</b>.
                         </Label>
                     </ul>
                 </div>
@@ -322,13 +320,7 @@ export default function Coding({ pageNumber, slideInfo }) {
                 </ImageWrapper>
                 <RegisterButton>
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                history.push(
-                                    `/register/${FORM_ROUTES.techEvents.coding}`
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>

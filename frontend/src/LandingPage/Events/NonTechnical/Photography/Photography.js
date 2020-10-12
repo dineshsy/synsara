@@ -12,7 +12,7 @@ import { FORM_ROUTES } from '../../../../utils/constants'
 import { useHistory } from 'react-router-dom'
 import PhotographyBg from '../../../../Assets/svg/photo.svg'
 
-export const Photography = ({ pageNumber, slideInfo }) => {
+export const Photography = ({ pageNumber, slideInfo, callMeWhenRegClosed }) => {
     const [currentPageno, currentSlideno] = slideInfo
     const [isAnimated, setIsAnimated] = useState(false)
     useEffect(() => {
@@ -35,7 +35,7 @@ export const Photography = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="event__title"
                             bold
-                            size="4.1rem"
+                            size="4rem"
                             color={theme.secondary}
                         >
                             Nizhaloviyam
@@ -43,7 +43,7 @@ export const Photography = ({ pageNumber, slideInfo }) => {
                         <Label
                             className="para1"
                             bold
-                            size="1.5rem"
+                            size="2.25rem"
                             color={theme.primary}
                         >
                             An Indigenous Photography Contest
@@ -70,14 +70,11 @@ export const Photography = ({ pageNumber, slideInfo }) => {
                             </Label>
                             <Label size="2rem" color={theme.textdark}>
                                 So get ready with ur cameras and lenses! Lets
-                                click the entire universe
-                                <span role="img" aria-label="fire">
-                                    🔥
-                                </span>{' '}
-                                and do not forget to register for this fun
-                                filled event before 4th October 2020.
+                                click the entire universe and do not forget to
+                                register for this fun filled event before{' '}
+                                <b>4th October 2020</b>.
                             </Label>
-                            <Label bold size="1.5rem" color={theme.primary}>
+                            <Label bold size="2.25rem" color={theme.primary}>
                                 Come, show us how you tell stories
                             </Label>
                         </ContentWrapper>
@@ -85,18 +82,11 @@ export const Photography = ({ pageNumber, slideInfo }) => {
                 </ContentWrapper>
                 <RegisterWrapper>
                     <ImageWrapper>
-                        <img src={PhotographyBg} alt="" />
+                        <img src={PhotographyBg} alt="" width="250px" />
                     </ImageWrapper>
 
                     <div className="button__animation">
-                        <Button
-                            onClick={() =>
-                                window.open(
-                                    'https://www.instagram.com/synsara_photography_2020/',
-                                    '_blank'
-                                )
-                            }
-                        >
+                        <Button onClick={() => callMeWhenRegClosed()}>
                             Register
                         </Button>
                     </div>
